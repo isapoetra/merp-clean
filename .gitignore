@@ -1,0 +1,6 @@
+/dcu
+/bin
+*.~*
+*.exe
+*.dof
+*.res
