@@ -1,11 +1,12 @@
 unit dmun;
-
+
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, Mask, DBCtrls, Buttons, ComCtrls, ZConnection, DB, ZAbstractRODataset, ZAbstractDataset,
-  ZDataset;
+  Dialogs, StdCtrls, ExtCtrls, Mask, DBCtrls, Buttons, ComCtrls, ZConnection,
+  DB, ZAbstractRODataset, ZAbstractDataset,
+  ZDataset, ZAbstractConnection;
 type
   Tdm = class(TDataModule)
     conerp: TZConnection;
@@ -489,7 +490,7 @@ type
     wp: TZQuery;
     barangpajakrpt: TZQuery;
     fakturpajakdetailrptfd_id: TIntegerField;
-    fakturpajakdetailrptfd_kode: TStringField;   
+    fakturpajakdetailrptfd_kode: TStringField;
     fakturpajakdetailrptfd_kd_barang: TIntegerField;
     fakturpajakdetailrptfd_nama_barang: TStringField;
     fakturpajakdetailrptfd_qty: TIntegerField;
@@ -956,6 +957,7 @@ type
     procedure jobdesBeforeOpen(DataSet: TDataSet);
     procedure jobdesAfterOpen(DataSet: TDataSet);
     procedure jurnal_umum_detailAfterPost(DataSet: TDataSet);
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -967,48 +969,58 @@ var
 
 implementation
 
-uses belisupun, progressun,strutils;
+uses belisupun, progressun, strutils, helper;
 
 {$R *.dfm}
 
 procedure Tdm.belidetailBeforePost(DataSet: TDataSet);
 begin
-  
-  belidetail.FieldByName('bd_tgl').Value   := date();
-  belidetail.FieldByName('bd_total').Value := belidetail.fieldbyname('bd_harga').Value*belidetail.fieldbyname('bd_qty').Value;
+
+  belidetail.FieldByName('bd_tgl').Value := date();
+  belidetail.FieldByName('bd_total').Value :=
+    belidetail.fieldbyname('bd_harga').Value *
+    belidetail.fieldbyname('bd_qty').Value;
 end;
 
 procedure Tdm.footnoteBeforePost(DataSet: TDataSet);
 begin
-  footnote.FieldByName('fn_supplier_id').Value := supplier.fieldbyname('sp_id').AsString;
+  footnote.FieldByName('fn_supplier_id').Value :=
+    supplier.fieldbyname('sp_id').AsString;
 end;
 
 procedure Tdm.jualdetailNewRecord(DataSet: TDataSet);
 begin
-  jualdetail.FieldByName('jd_disc_persen').Value :=0;
-  jualdetail.FieldByName('jd_discrp').Value      :=0;
-  jualdetail.FieldByName('jd_qty').Value               :=0;
+  jualdetail.FieldByName('jd_disc_persen').Value := 0;
+  jualdetail.FieldByName('jd_discrp').Value := 0;
+  jualdetail.FieldByName('jd_qty').Value := 0;
 end;
 
 procedure Tdm.jualdetailBeforePost(DataSet: TDataSet);
-var jd : TZquery;
+var
+  jd: TZquery;
 begin
 
-//  if jd.FieldByName('jd_disc')
+  //  if jd.FieldByName('jd_disc')
 
   jd := jualdetail;
-  jd.FieldByName('jd_tgl').Value   := date;
-  jd.FieldByName('jd_margin').Value := (jd.fieldbyname('jd_harga_jual').Value-jd.fieldbyname('jd_discrp').Value-jd.fieldbyname('jd_harga_pokok').Value)*(jd.fieldbyname('jd_qty').Value);
-  jd.FieldByName('jd_total').Value := (jd.fieldbyname('jd_harga_jual').Value-
-                                      ((jd.fieldbyname('jd_harga_jual').Value)*(jd.fieldbyname('jd_disc_persen').Value/100))-
-                                      jd.fieldbyname('jd_discrp').Value)
-                                      *jd.fieldbyname('jd_qty').Value;
+  jd.FieldByName('jd_tgl').Value := date;
+  jd.FieldByName('jd_margin').Value := (jd.fieldbyname('jd_harga_jual').Value -
+    jd.fieldbyname('jd_discrp').Value - jd.fieldbyname('jd_harga_pokok').Value)
+    *
+    (jd.fieldbyname('jd_qty').Value);
+  jd.FieldByName('jd_total').Value := (jd.fieldbyname('jd_harga_jual').Value -
+    ((jd.fieldbyname('jd_harga_jual').Value) *
+    (jd.fieldbyname('jd_disc_persen').Value / 100)) -
+    jd.fieldbyname('jd_discrp').Value)
+    * jd.fieldbyname('jd_qty').Value;
 
 end;
 
 procedure Tdm.penawaran_detailBeforePost(DataSet: TDataSet);
 begin
-  penawaran_detail.FieldByName('qd_total').Value := penawaran_detail.FieldByName('qd_harga').Value*penawaran_detail.FieldByName('qd_qty').Value;
+  penawaran_detail.FieldByName('qd_total').Value :=
+    penawaran_detail.FieldByName('qd_harga').Value *
+    penawaran_detail.FieldByName('qd_qty').Value;
 end;
 
 procedure Tdm.jobdesBeforeOpen(DataSet: TDataSet);
@@ -1018,134 +1030,141 @@ end;
 
 procedure Tdm.jobdesAfterOpen(DataSet: TDataSet);
 begin
- progressfrm.Close;
-// progressfrm.Destroy;
+  progressfrm.Close;
+  // progressfrm.Destroy;
 end;
 
 procedure Tdm.jurnal_umum_detailAfterPost(DataSet: TDataSet);
 begin
 
-
   with jurnal_umum_Detail do
- begin
-   if (fieldbyname('jl_debet').AsFloat > 0) and  (fieldbyname('jl_kredit').AsFloat > 0)then
-   begin
-       messagedlg('Posting Error! Tidak boleh di dua sisi debet dan kredit',mtError,[mbOk],0);
-       abort;
-   end;
+  begin
+    if (fieldbyname('jl_debet').AsFloat > 0) and
+      (fieldbyname('jl_kredit').AsFloat > 0) then
+    begin
+      messagedlg('Posting Error! Tidak boleh di dua sisi debet dan kredit',
+        mtError, [mbOk], 0);
+      abort;
+    end;
 
-   // mendeteksi posting untuk klasifikasi harta
-   if (LeftStr(fieldbyname('jl_akun').Value,1))='1' then
-   begin
-     if fieldbyname('jl_debet').AsFloat > 0 then
-     begin
+    // mendeteksi posting untuk klasifikasi harta
+    if (LeftStr(fieldbyname('jl_akun').Value, 1)) = '1' then
+    begin
+      if fieldbyname('jl_debet').AsFloat > 0 then
+      begin
         edit;
         fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value;
-     end;
+      end;
 
-     if fieldbyname('jl_kredit').AsFloat > 0 then
-     begin
+      if fieldbyname('jl_kredit').AsFloat > 0 then
+      begin
         edit;
-        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value*-1;
-     end;
+        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value * -1;
+      end;
 
-   end; // enf if leftstr
-
-
-
+    end; // enf if leftstr
 
     // mendeteksi posting untuk klasifikasi hutang
-   if (LeftStr(fieldbyname('jl_akun').Value,1))='2' then
-   begin
-     if fieldbyname('jl_debet').AsFloat > 0 then
-     begin
+    if (LeftStr(fieldbyname('jl_akun').Value, 1)) = '2' then
+    begin
+      if fieldbyname('jl_debet').AsFloat > 0 then
+      begin
         edit;
-        fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value*-1;
-     end;
+        fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value * -1;
+      end;
 
-     if fieldbyname('jl_kredit').AsFloat > 0 then
-     begin
+      if fieldbyname('jl_kredit').AsFloat > 0 then
+      begin
         edit;
         fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value;
-     end;
+      end;
 
-   end; // enf if leftstr
-
-
+    end; // enf if leftstr
 
     // mendeteksi posting untuk klasifikasi modal
-   if (LeftStr(fieldbyname('jl_akun').Value,1))='3' then
-   begin
-     if fieldbyname('jl_debet').AsFloat > 0 then
-     begin
+    if (LeftStr(fieldbyname('jl_akun').Value, 1)) = '3' then
+    begin
+      if fieldbyname('jl_debet').AsFloat > 0 then
+      begin
         edit;
-        fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value*-1;
-     end;
+        fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value * -1;
+      end;
 
-     if fieldbyname('jl_kredit').AsFloat > 0 then
-     begin
-        edit;
-        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value;
-     end;
-
-   end; // enf if leftstr
-
-
-     // mendeteksi posting untuk klasifikasi pendapatan
-   if (LeftStr(fieldbyname('jl_akun').Value,1))='4' then
-   begin
-     if fieldbyname('jl_debet').AsFloat > 0 then
-     begin
-        edit;
-        fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value*-1;
-     end;
-
-     if fieldbyname('jl_kredit').AsFloat > 0 then
-     begin
+      if fieldbyname('jl_kredit').AsFloat > 0 then
+      begin
         edit;
         fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value;
-     end;
+      end;
 
-   end; // enf if leftstr
+    end; // enf if leftstr
 
-     // mendeteksi posting untuk klasifikasi modal
-   if (LeftStr(fieldbyname('jl_akun').Value,1))='5' then
-   begin
-     if fieldbyname('jl_debet').AsFloat > 0 then
-     begin
+    // mendeteksi posting untuk klasifikasi pendapatan
+    if (LeftStr(fieldbyname('jl_akun').Value, 1)) = '4' then
+    begin
+      if fieldbyname('jl_debet').AsFloat > 0 then
+      begin
+        edit;
+        fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value * -1;
+      end;
+
+      if fieldbyname('jl_kredit').AsFloat > 0 then
+      begin
+        edit;
+        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value;
+      end;
+
+    end; // enf if leftstr
+
+    // mendeteksi posting untuk klasifikasi modal
+    if (LeftStr(fieldbyname('jl_akun').Value, 1)) = '5' then
+    begin
+      if fieldbyname('jl_debet').AsFloat > 0 then
+      begin
         edit;
         fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value;
-     end;
+      end;
 
-     if fieldbyname('jl_kredit').AsFloat > 0 then
-     begin
+      if fieldbyname('jl_kredit').AsFloat > 0 then
+      begin
         edit;
-        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value*-1;
-     end;
+        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value * -1;
+      end;
 
-   end; // enf if leftstr
+    end; // enf if leftstr
 
-    if (LeftStr(fieldbyname('jl_akun').Value,1))='6' then
-   begin
-     if fieldbyname('jl_debet').AsFloat > 0 then
-     begin
+    if (LeftStr(fieldbyname('jl_akun').Value, 1)) = '6' then
+    begin
+      if fieldbyname('jl_debet').AsFloat > 0 then
+      begin
         edit;
         fieldbyname('jl_amount').Value := fieldbyname('jl_debet').Value;
-     end;
+      end;
 
-     if fieldbyname('jl_kredit').AsFloat > 0 then
-     begin
+      if fieldbyname('jl_kredit').AsFloat > 0 then
+      begin
         edit;
-        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value*-1;
-     end;
+        fieldbyname('jl_amount').Value := fieldbyname('jl_kredit').Value * -1;
+      end;
 
-   end; // enf if leftstr
+    end; // enf if leftstr
 
+  end; // end of with jurnalumum detail
+end;
 
- end;  // end of with jurnalumum detail
-
-
-
+procedure Tdm.DataModuleCreate(Sender: TObject);
+begin
+  with (conerp) do
+  begin
+    Disconnect;
+    Protocol := helper.getConfig('db.protocol');
+    HostName := helper.getConfig('db.host');
+    Password := helper.getConfig('db.password');
+    User := helper.getConfig('db.user');
+    Catalog := helper.getConfig('db.database');
+    Connect;
+  end;
 end;
 
 end.
+
+

@@ -1,15 +1,16 @@
 object dm: Tdm
   OldCreateOrder = False
-  Left = 247
-  Top = 129
-  Height = 701
+  OnCreate = DataModuleCreate
+  Left = 148
+  Top = 18
+  Height = 644
   Width = 1158
   object conerp: TZConnection
-    HostName = '10.0.2.2'
+    HostName = 'localhost'
     Port = 3306
     Database = 'merp'
-    User = 'merp'
-    Password = 'merp'
+    User = 'root'
+    Password = 'root'
     Protocol = 'mysql-5'
     Left = 8
     Top = 8

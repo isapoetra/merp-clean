@@ -1,11 +1,14 @@
 unit utamaun;
-
+
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, ExtCtrls, ComCtrls, StdCtrls, Buttons;
-
+  Dialogs, Menus, ExtCtrls, ComCtrls, StdCtrls, Buttons, helper, gnugettext,
+  ToolWin, ActnMan, ActnCtrls, ActnMenus, ImgList, XPStyleActnCtrls,
+  ActnList, StdActns, CustomizeDlg, DBClientActns, DBActns;
+resourcestring
+  exitmessage =  'Yakin keluar dari mERP ?';
 type
   Tutamafrm = class(TForm)
     utamamn: TMainMenu;
@@ -102,9 +105,6 @@ type
     N20: TMenuItem;
     ampilkanShortcut1: TMenuItem;
     SpeedButton15: TSpeedButton;
-    SpeedButton16: TSpeedButton;
-    pnshow: TPanel;
-    SpeedButton17: TSpeedButton;
     btnlistjual: TSpeedButton;
     btndo: TSpeedButton;
     btndolist: TSpeedButton;
@@ -117,6 +117,7 @@ type
     DaftarFakturPajak1: TMenuItem;
     Jasa1: TMenuItem;
     btnfaktur: TSpeedButton;
+    ControlBar2: TControlBar;
     procedure Exit1Click(Sender: TObject);
     procedure GroupSettings1Click(Sender: TObject);
     procedure UserSettings1Click(Sender: TObject);
@@ -168,9 +169,7 @@ type
     procedure SpeedButton13Click(Sender: TObject);
     procedure SpeedButton11Click(Sender: TObject);
     procedure SpeedButton12Click(Sender: TObject);
-    procedure pnclosebtnClick(Sender: TObject);
     procedure ampilkanShortcut1Click(Sender: TObject);
-    procedure SpeedButton17Click(Sender: TObject);
     procedure btnlistjualClick(Sender: TObject);
     procedure btndoClick(Sender: TObject);
     procedure btndolistClick(Sender: TObject);
@@ -180,6 +179,9 @@ type
     procedure DaftarFakturPajak1Click(Sender: TObject);
     procedure Jasa1Click(Sender: TObject);
     procedure btnfakturClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure ShowHideMenu(Sender: TObject);
+    procedure Action1Execute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -191,7 +193,7 @@ var
 
 implementation
 
-uses grouplistun, userlistun, passchangeun, barangmstrun,fungsi_merp,
+uses grouplistun, userlistun, passchangeun, barangmstrun, fungsi_merp,
   categorilistun, supplierun, customerun, belisupun, polistun, jualun,
   gudangun, gudangaddun, inventoryun, invoicelistun, deliveryun, akunun,
   neracaun, projectun, penawaranun, foot_globalun, labarugiun, glun,
@@ -204,45 +206,45 @@ uses grouplistun, userlistun, passchangeun, barangmstrun,fungsi_merp,
 
 procedure Tutamafrm.Exit1Click(Sender: TObject);
 begin
-  if messagedlg('Keluar dari mERP?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
-  begin
-    Application.Terminate;
-  end;
+  self.Close;
 end;
 
 procedure Tutamafrm.GroupSettings1Click(Sender: TObject);
 begin
   if groupfrm = nil then
- begin
-   application.CreateForm(Tgroupfrm,groupfrm);
-   groupfrm.Show;
- end else
- begin
-  groupfrm.show;
- end;
+  begin
+    application.CreateForm(Tgroupfrm, groupfrm);
+    groupfrm.Show;
+  end
+  else
+  begin
+    groupfrm.show;
+  end;
 
 end;
 
 procedure Tutamafrm.UserSettings1Click(Sender: TObject);
 begin
- if userlistfrm = nil then
- begin
-   application.createform(TUserlistFrm,UserListfrm);
-   userlistfrm.Show;
- end else
- begin
-      userlistfrm.Show;
- end;
+  if userlistfrm = nil then
+  begin
+    application.createform(TUserlistFrm, UserListfrm);
+    userlistfrm.Show;
+  end
+  else
+  begin
+    userlistfrm.Show;
+  end;
 
 end;
 
 procedure Tutamafrm.GantiPassword1Click(Sender: TObject);
 begin
-  if passchangefrm=nil then
+  if passchangefrm = nil then
   begin
-     application.CreateForm(TPasschangefrm,PassChangefrm);
-     passchangefrm.ShowModal;
-  end else
+    application.CreateForm(TPasschangefrm, PassChangefrm);
+    passchangefrm.ShowModal;
+  end
+  else
   begin
     passchangefrm.ShowModal;
   end;
@@ -252,327 +254,347 @@ procedure Tutamafrm.Barang2Click(Sender: TObject);
 begin
   if barangmstrfrm = nil then
   begin
-     application.CreateForm(TBarangMstrFrm,BarangMstrFrm);
-     barangmstrfrm.showmodal;
-  end else
+    application.CreateForm(TBarangMstrFrm, BarangMstrFrm);
+    barangmstrfrm.showmodal;
+  end
+  else
   begin
-     barangmstrfrm.showmodal;
+    barangmstrfrm.showmodal;
   end;
 
 end;
 
 procedure Tutamafrm.Kategori1Click(Sender: TObject);
 begin
-  aktifkanform(kategorifrm,TKategorifrm);
+  aktifkanform(kategorifrm, TKategorifrm);
 end;
 
 procedure Tutamafrm.Supplier2Click(Sender: TObject);
 begin
- aktifkanform(supplierfrm,TSupplierFrm);
+  aktifkanform(supplierfrm, TSupplierFrm);
 end;
 
 procedure Tutamafrm.Customer1Click(Sender: TObject);
 begin
-  aktifkanform(CustomerFrm,TCustomerFrm);
+  aktifkanform(CustomerFrm, TCustomerFrm);
 end;
 
 procedure Tutamafrm.Vendor1Click(Sender: TObject);
 begin
-  isBeliLangsung :=0;
-  aktifkanform(belisupfrm,TBeliSupFrm);
+  isBeliLangsung := 0;
+  aktifkanform(belisupfrm, TBeliSupFrm);
 end;
 
 procedure Tutamafrm.Langsung1Click(Sender: TObject);
 begin
-  aktifkanform(polistfrm,TPOListfrm);
+  aktifkanform(polistfrm, TPOListfrm);
 end;
 
 procedure Tutamafrm.Ritel1Click(Sender: TObject);
 begin
-   isJual := 1;
-   aktifkanform(jualfrm,TJualfrm);
+  isJual := 1;
+  aktifkanform(jualfrm, TJualfrm);
 end;
 
 procedure Tutamafrm.Gudang1Click(Sender: TObject);
 begin
-  aktifkanform(gudangfrm,TGudangfrm);
+  aktifkanform(gudangfrm, TGudangfrm);
 end;
 
 procedure Tutamafrm.StockBarang1Click(Sender: TObject);
 begin
-  aktifkanform(inventoryfrm,TInventoryfrm);
+  aktifkanform(inventoryfrm, TInventoryfrm);
 end;
 
 procedure Tutamafrm.ListInvoice1Click(Sender: TObject);
 begin
- aktifkanform(invoicelistfrm,TInvoiceListfrm);
+  aktifkanform(invoicelistfrm, TInvoiceListfrm);
 end;
 
 procedure Tutamafrm.BarangMasuk1Click(Sender: TObject);
 begin
-  isInventory :=1;
-  aktifkanform(polistfrm,TPolistfrm);
+  isInventory := 1;
+  aktifkanform(polistfrm, TPolistfrm);
 
 end;
 
 procedure Tutamafrm.PengirimanBarang1Click(Sender: TObject);
 begin
-  aktifkanform(deliveryfrm,TDeliveryfrm);
+  aktifkanform(deliveryfrm, TDeliveryfrm);
 end;
 
 procedure Tutamafrm.DaftarAkun1Click(Sender: TObject);
 begin
-  aktifkanform(akunfrm,TAkunfrm);
+  aktifkanform(akunfrm, TAkunfrm);
 end;
 
 procedure Tutamafrm.Neraca1Click(Sender: TObject);
 begin
- aktifkanform(neracafrm,TNeracafrm);
+  aktifkanform(neracafrm, TNeracafrm);
 end;
 
 procedure Tutamafrm.Langsung2Click(Sender: TObject);
 begin
- isBeliLangsung := 1;
-   aktifkanform(belisupfrm,TBeliSupFrm);
+  isBeliLangsung := 1;
+  aktifkanform(belisupfrm, TBeliSupFrm);
 end;
 
 procedure Tutamafrm.Project1Click(Sender: TObject);
 begin
- aktifkanform(projectfrm,TProjectfrm);
+  aktifkanform(projectfrm, TProjectfrm);
 end;
 
 procedure Tutamafrm.Penawaran1Click(Sender: TObject);
 begin
-  isPenawaran :=1;
-  aktifkanform(penawaranfrm,TPenawaranfrm);
+  isPenawaran := 1;
+  aktifkanform(penawaranfrm, TPenawaranfrm);
 end;
 
 procedure Tutamafrm.FootnoteQuotation1Click(Sender: TObject);
 begin
- aktifkanform(footnote_globalfrm,TFootnote_globalfrm);
+  aktifkanform(footnote_globalfrm, TFootnote_globalfrm);
 end;
 
 procedure Tutamafrm.LabaRugi1Click(Sender: TObject);
 begin
-  aktifkanform(labarugifrm,TLabaRugifrm);
+  aktifkanform(labarugifrm, TLabaRugifrm);
 end;
 
 procedure Tutamafrm.GeneralLedgerBukuBesar1Click(Sender: TObject);
 begin
-  aktifkanform(glfrm,TGlfrm);
+  aktifkanform(glfrm, TGlfrm);
 end;
 
 procedure Tutamafrm.MasterKaryawan1Click(Sender: TObject);
 begin
- aktifkanform(karyawanfrm,TKaryawanfrm);
+  aktifkanform(karyawanfrm, TKaryawanfrm);
 end;
 
 procedure Tutamafrm.MasterPekerjaan1Click(Sender: TObject);
 begin
- aktifkanform(jobdesfrm,tjobdesfrm);
+  aktifkanform(jobdesfrm, tjobdesfrm);
 end;
 
 procedure Tutamafrm.MasterLevelGaji1Click(Sender: TObject);
 begin
-  aktifkanform(salarylevelfrm,TSalaryLevelfrm);
+  aktifkanform(salarylevelfrm, TSalaryLevelfrm);
 end;
 
 procedure Tutamafrm.MasterPTKP1Click(Sender: TObject);
 begin
- aktifkanform(ptkpfrm,Tptkpfrm);
+  aktifkanform(ptkpfrm, Tptkpfrm);
 end;
 
 procedure Tutamafrm.MasterDepartemen1Click(Sender: TObject);
 begin
- aktifkanform(deptfrm,TDeptfrm);
+  aktifkanform(deptfrm, TDeptfrm);
 end;
 
 procedure Tutamafrm.MasterBank1Click(Sender: TObject);
 begin
- aktifkanform(bankfrm,Tbankfrm);
+  aktifkanform(bankfrm, Tbankfrm);
 end;
 
 procedure Tutamafrm.arifPph211Click(Sender: TObject);
 begin
- aktifkanform(pphfrm,Tpphfrm);
+  aktifkanform(pphfrm, Tpphfrm);
 end;
 
 procedure Tutamafrm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
- if messagedlg('Yakin keluar dari mERP ?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
- begin
- application.Terminate;
- end else
- begin
-   abort;
- end;
+  if messagedlg(_(exitmessage), mtConfirmation, [mbYes, mbNo], 0) =
+    mrYes then
+    Action := caFree
+else
+  Action := caNone;
 end;
 
 procedure Tutamafrm.InputPenggajian1Click(Sender: TObject);
 begin
-  aktifkanform(salaryinputfrm,TSalaryinputfrm);
+  aktifkanform(salaryinputfrm, TSalaryinputfrm);
 end;
 
 procedure Tutamafrm.MasterPenambahGaji1Click(Sender: TObject);
 begin
- aktifkanform(salaryleveltambahfrm,TSalaryLevelTambahfrm);
+  aktifkanform(salaryleveltambahfrm, TSalaryLevelTambahfrm);
 end;
 
 procedure Tutamafrm.MasterPengurangGaji1Click(Sender: TObject);
 begin
-  aktifkanform(pengurangGajifrm,TPengurangGajifrm);
+  aktifkanform(pengurangGajifrm, TPengurangGajifrm);
 end;
 
 procedure Tutamafrm.LaporanPenggajian1Click(Sender: TObject);
 begin
-  aktifkanform(salaryrptfrm,TSalaryrptfrm);
+  aktifkanform(salaryrptfrm, TSalaryrptfrm);
 end;
 
 procedure Tutamafrm.EntryJurnalUmum1Click(Sender: TObject);
 begin
- aktifkanform(jurnalUmumfrm,TJurnalUmumfrm);
+  aktifkanform(jurnalUmumfrm, TJurnalUmumfrm);
 end;
 
 procedure Tutamafrm.ListDeliveryOrder1Click(Sender: TObject);
 begin
-  aktifkanform(dolistfrm,TDolistfrm);
+  aktifkanform(dolistfrm, TDolistfrm);
 end;
 
 procedure Tutamafrm.ListDaftarInvoice1Click(Sender: TObject);
 begin
 
- aktifkanform(tagihanfrm,TTagihanfrm);
+  aktifkanform(tagihanfrm, TTagihanfrm);
 end;
 
 procedure Tutamafrm.SpeedButton3Click(Sender: TObject);
 begin
- aktifkanform(supplierfrm,Tsupplierfrm);
+  aktifkanform(supplierfrm, Tsupplierfrm);
 end;
 
 procedure Tutamafrm.SpeedButton4Click(Sender: TObject);
 begin
-  aktifkanform(CustomerFrm,TCustomerFrm);
+  aktifkanform(CustomerFrm, TCustomerFrm);
 end;
 
 procedure Tutamafrm.SpeedButton2Click(Sender: TObject);
 begin
- aktifkanform(barangmstrfrm,Tbarangmstrfrm);
+  aktifkanform(barangmstrfrm, Tbarangmstrfrm);
 end;
 
 procedure Tutamafrm.SpeedButton5Click(Sender: TObject);
 begin
-  aktifkanform(inventoryfrm,TInventoryfrm);
+  aktifkanform(inventoryfrm, TInventoryfrm);
 end;
 
 procedure Tutamafrm.SpeedButton6Click(Sender: TObject);
 begin
-  isInventory :=1;
-  aktifkanform(polistfrm,TPolistfrm);
+  isInventory := 1;
+  aktifkanform(polistfrm, TPolistfrm);
 end;
 
 procedure Tutamafrm.SpeedButton7Click(Sender: TObject);
 begin
-  isBeliLangsung :=0;
-  aktifkanform(belisupfrm,TBeliSupFrm);
+  isBeliLangsung := 0;
+  aktifkanform(belisupfrm, TBeliSupFrm);
 end;
 
 procedure Tutamafrm.SpeedButton8Click(Sender: TObject);
 begin
-  aktifkanform(polistfrm,TPOListfrm);
+  aktifkanform(polistfrm, TPOListfrm);
 end;
 
 procedure Tutamafrm.SpeedButton1Click(Sender: TObject);
 begin
- isJual := 1;
- aktifkanform(jualfrm,TJualfrm);
+  isJual := 1;
+  aktifkanform(jualfrm, TJualfrm);
 end;
 
 procedure Tutamafrm.btninvoiceClick(Sender: TObject);
 begin
-  aktifkanform(tagihanfrm,TTagihanfrm);
+  aktifkanform(tagihanfrm, TTagihanfrm);
 end;
 
 procedure Tutamafrm.SpeedButton13Click(Sender: TObject);
 begin
-  aktifkanform(jurnalUmumListfrm,TJurnalUmumListfrm);
+  aktifkanform(jurnalUmumListfrm, TJurnalUmumListfrm);
 end;
 
 procedure Tutamafrm.SpeedButton11Click(Sender: TObject);
 begin
-   aktifkanform(akunfrm,TAkunfrm);
+  aktifkanform(akunfrm, TAkunfrm);
 end;
 
 procedure Tutamafrm.SpeedButton12Click(Sender: TObject);
 begin
-  aktifkanform(glfrm,TGlfrm);
+  aktifkanform(glfrm, TGlfrm);
 end;
 
-procedure Tutamafrm.pnclosebtnClick(Sender: TObject);
-begin
-  pnshow.Visible := true;
-  pnshortcut.Visible := false;
-end;
+
 
 procedure Tutamafrm.ampilkanShortcut1Click(Sender: TObject);
 begin
- pnshortcut.Visible := true;
+  pnshortcut.Visible := true;
 end;
 
-procedure Tutamafrm.SpeedButton17Click(Sender: TObject);
-begin
- pnshortcut.Visible := true;
- pnshow.Visible := false;
-end;
+
 
 procedure Tutamafrm.btnlistjualClick(Sender: TObject);
 begin
- aktifkanform(invoicelistfrm,TInvoiceListfrm);
+  aktifkanform(invoicelistfrm, TInvoiceListfrm);
 end;
 
 procedure Tutamafrm.btndoClick(Sender: TObject);
 begin
- aktifkanform(deliveryfrm,TDeliveryfrm);
+  aktifkanform(deliveryfrm, TDeliveryfrm);
 end;
 
 procedure Tutamafrm.btndolistClick(Sender: TObject);
 begin
-   aktifkanform(dolistfrm,TDolistfrm);
+  aktifkanform(dolistfrm, TDolistfrm);
 end;
 
 procedure Tutamafrm.DataClean1Click(Sender: TObject);
 begin
-  if messagedlg('Yakin Akan melakukan data Clean? Prosedure ini hanya untuk '+#13+
-  'Super User yang akan mengakibatkan data transaksi penjualan/pembelian serta seluruh '+#13+
-  'Data yang terkait akan dihapus!',mtWarning,[mbYes,mbNo],1) = mrYes then
+  if messagedlg('Yakin Akan melakukan data Clean? Prosedure ini hanya untuk ' +
+    #13 +
+    'Super User yang akan mengakibatkan data transaksi penjualan/pembelian serta seluruh ' + #13
+    +
+    'Data yang terkait akan dihapus!', mtWarning, [mbYes, mbNo], 1) = mrYes then
   begin
-    aktifkanform(dataCleanfrm,TDataCleanfrm);
+    aktifkanform(dataCleanfrm, TDataCleanfrm);
   end;
 end;
 
 procedure Tutamafrm.Penjualan2Click(Sender: TObject);
 begin
- aktifkanform(jualrptfrm,TJualRptfrm);
+  aktifkanform(jualrptfrm, TJualRptfrm);
 end;
 
 procedure Tutamafrm.Project2Click(Sender: TObject);
 begin
-  aktifkanform(projectlapfrm,TProjectlapfrm);
+  aktifkanform(projectlapfrm, TProjectlapfrm);
 end;
 
 procedure Tutamafrm.DaftarFakturPajak1Click(Sender: TObject);
 begin
- //aktifkanform(fakturpajakviewfrm,TFakturPajakViewfrm);
-  aktifkanform(fakturpajakfrm,TFakturPajakfrm);
+  //aktifkanform(fakturpajakviewfrm,TFakturPajakViewfrm);
+  aktifkanform(fakturpajakfrm, TFakturPajakfrm);
 end;
 
 procedure Tutamafrm.Jasa1Click(Sender: TObject);
 begin
- aktifkanform(Jasafrm,TJasafrm);
+  aktifkanform(Jasafrm, TJasafrm);
 end;
 
 procedure Tutamafrm.btnfakturClick(Sender: TObject);
 begin
-  aktifkanform(fakturpajakfrm,TFakturPajakfrm);
+  aktifkanform(fakturpajakfrm, TFakturPajakfrm);
+end;
+
+procedure Tutamafrm.FormCreate(Sender: TObject);
+begin
+  TranslateComponent(self);
+  Label1.Caption := getAppName();
+  self.Caption := Label1.Caption;
+end;
+
+procedure Tutamafrm.ShowHideMenu(Sender: TObject);
+begin
+   pnshortcut.Visible := not pnshortcut.Visible;
+end;
+
+procedure Tutamafrm.Action1Execute(Sender: TObject);
+begin
+  if userlistfrm = nil then
+  begin
+    application.createform(TUserlistFrm, UserListfrm);
+    userlistfrm.Show;
+  end
+  else
+  begin
+    userlistfrm.Show;
+  end;
 end;
 
 end.
+
+

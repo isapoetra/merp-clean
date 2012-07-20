@@ -1,6 +1,6 @@
 object useraddfrm: Tuseraddfrm
-  Left = 629
-  Top = 130
+  Left = 639
+  Top = 133
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'mERP 1.0'
@@ -132,7 +132,7 @@ object useraddfrm: Tuseraddfrm
     object Label5: TLabel
       Left = 16
       Top = 88
-      Width = 79
+      Width = 80
       Height = 16
       Caption = 'Group Akses:'
       Font.Charset = ANSI_CHARSET

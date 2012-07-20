@@ -1,7 +1,10 @@
 program mERP;
-
+{$DEFINE DXGETTEXTDEBUG}
 uses
+  Controls,
   Forms,
+  SysUtils,
+  acl in 'units\acl.pas',
   utamaun in 'units\utamaun.pas' {utamafrm},
   dmun in 'units\dmun.pas' {dm: TDataModule},
   userlistun in 'units\userlistun.pas' {userlistfrm},
@@ -17,7 +20,6 @@ uses
   rep_add_frm in 'units\rep_add_frm.pas' {add_rep_frm},
   kategoriaddun in 'units\kategoriaddun.pas' {kategoriaddfrm},
   fungsi_merp in 'units\fungsi_merp.pas',
-//  fungsi in '..\..\master\Fungsi\fungsi.pas',
   supplierun in 'units\supplierun.pas' {supplierfrm},
   supplieraddun in 'units\supplieraddun.pas' {supplieraddfrm},
   customerun in 'units\customerun.pas' {customerfrm},
@@ -71,7 +73,8 @@ uses
   salary_prosesun in 'units\salary_prosesun.pas' {salaryprosesfrm},
   salaryleveldetailun in 'units\salaryleveldetailun.pas' {salaryleveldetailfrm},
   salaryleveltambahun in 'units\salaryleveltambahun.pas' {salaryleveltambahfrm},
-  salary_level_tambahaddun in 'units\salary_level_tambahaddun.pas' {salaryleveltambahaddfrm},
+  salary_level_tambahaddun in 'units\salary_level_tambahaddun.pas'
+  {salaryleveltambahaddfrm},
   penguranggajiun in 'units\penguranggajiun.pas' {penguranggajifrm},
   penguranggajiaddun in 'units\penguranggajiaddun.pas' {penguranggajiaddfrm},
   salaryrptun in 'units\salaryrptun.pas' {salaryrptfrm},
@@ -94,16 +97,56 @@ uses
   wpviewun in 'units\wpviewun.pas' {wpviewfrm},
   fakturpajakun in 'units\fakturpajakun.pas' {fakturpajakfrm},
   invoiceamountun in 'units\invoiceamountun.pas' {invoiceamountfrm},
-  tanggalubahun in 'units\tanggalubahun.pas' {tanggalubahfrm};
+  tanggalubahun in 'units\tanggalubahun.pas' {tanggalubahfrm},
+  helper in 'units\Helper.pas',
+  gnugettext in 'units\gnugettext.pas',
+  baseForm in 'units\baseForm.pas' {frmBase},
+  mainform in 'units\mainform.pas' {frmMain},
+  splashform in 'units\splashform.pas' {frmSplash},
+  loginform in 'units\loginform.pas' {frmLogin},
+
+  initform in 'units\initform.pas' {frmInit},
+  configuration in 'units\configuration.pas';
 
 {$R *.res}
-
+var
+  splash: TFrmSplash;
+  ok: Boolean;
 begin
+  ok := true;
+  UseLanguage('en');
   Application.Initialize;
-  Application.Title := 'mERP Ver 1.0';
-  Application.CreateForm(Tutamafrm, utamafrm);
-  Application.CreateForm(Tdm, dm);
-  Application.CreateForm(Tds, ds);
-  Application.CreateForm(Ttanggalubahfrm, tanggalubahfrm);
-  Application.Run;
+  splash := TfrmSplash.create(nil);
+  splash.Show();
+  splash.setStatus('Loading...');
+  //Application.Title := 'MIRP 1.0';
+  Application.Title := 'mERP';
+
+  if (not FileExists(ChangeFileExt(Application.ExeName, '.ini'))) then
+  begin
+    splash.Hide;
+    with (TfrmInit.Create(nil)) do
+      try
+        if (ShowModal <> mrOk) then
+          ok := false;
+      finally
+        Free;
+      end;
+  end;
+  if (ok) then
+  begin
+    splash.Show;
+    splash.setStatus('Connecting to database');
+    Application.CreateForm(Tdm, dm);
+    Application.CreateForm(Tds, ds);
+    splash.setStatus('Creating Main form');
+    Application.CreateForm(TfrmMain, frmMain);
+    Application.CreateForm(Ttanggalubahfrm, tanggalubahfrm);
+    splash.Free;
+    Application.Run;
+  end
+  else
+    splash.Free;
+
 end.
+

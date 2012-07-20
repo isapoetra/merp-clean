@@ -1,55 +1,38 @@
-object userlistfrm: Tuserlistfrm
-  Left = 489
-  Top = 136
+inherited userlistfrm: Tuserlistfrm
+  Left = 442
+  Top = 150
+  VertScrollBar.Range = 0
   BorderStyle = bsSingle
   Caption = 'mERP 1.0'
-  ClientHeight = 453
+  ClientHeight = 459
   ClientWidth = 621
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  OldCreateOrder = False
+  OldCreateOrder = True
   Position = poScreenCenter
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
+  inherited Panel4: TPanel
     Width = 621
-    Height = 41
-    Align = alTop
-    Caption = '`'
-    TabOrder = 0
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 81
-      Height = 18
-      Caption = 'Daftar User'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
+  end
+  inherited Panel5: TPanel
+    Width = 621
+    TabOrder = 3
+  end
+  inherited Panel1: TPanel
+    Width = 621
+    TabOrder = 4
   end
   object Panel2: TPanel
     Left = 0
-    Top = 53
+    Top = 45
     Width = 621
-    Height = 359
+    Height = 373
     Align = alClient
     TabOrder = 1
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
       Width = 619
-      Height = 357
+      Height = 371
       Align = alClient
       DataSource = ds.user
       TabOrder = 0
@@ -128,7 +111,7 @@ object userlistfrm: Tuserlistfrm
   end
   object Panel3: TPanel
     Left = 0
-    Top = 412
+    Top = 418
     Width = 621
     Height = 41
     Align = alBottom
@@ -213,27 +196,5 @@ object userlistfrm: Tuserlistfrm
       Transparent = False
       OnClick = SpeedButton3Click
     end
-  end
-  object Panel4: TPanel
-    Left = 0
-    Top = 41
-    Width = 621
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    TabOrder = 3
-  end
-  object Panel5: TPanel
-    Left = 0
-    Top = 49
-    Width = 621
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 805596
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 4
   end
 end

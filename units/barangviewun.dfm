@@ -1,6 +1,6 @@
 object barangviewfrm: Tbarangviewfrm
-  Left = 222
-  Top = 121
+  Left = 473
+  Top = 258
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'mERP 1.0'

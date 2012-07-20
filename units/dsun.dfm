@@ -1,8 +1,7 @@
 object ds: Tds
   OldCreateOrder = False
-  Left = 766
-  Top = 41
-  Height = 687
+  Left = 778
+  Height = 644
   Width = 538
   object user: TDataSource
     DataSet = dm.user

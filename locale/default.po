@@ -1,0 +1,3036 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: merp-1\n"
+"POT-Creation-Date: 2012-07-19 01:02\n"
+"PO-Revision-Date: 2012-07-19 00:57\n"
+"Last-Translator: Iwan Sapoetra <isapoetra@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: dxgettext 1.2.2\n"
+
+#. akunfrm..Caption
+#. akunviewfrm..Caption
+#. bankaddfrm..Caption
+#. bankfrm..Caption
+#. barangaddfrm..Caption
+#. barangmstrfrm..Caption
+#. barangviewfrm..Caption
+#. belilsgfrm..Caption
+#. belisupfrm..Caption
+#. belisupfrm..RvSystem1..TitlePreview
+#. calendarfrm..Caption
+#. custncpfrm..Caption
+#. datacleanfrm..Caption
+#. deliveryfrm..Caption
+#. deptaddfrm..Caption
+#. deptfrm..Caption
+#. dolistfrm..Caption
+#. invoicprintfrm..Caption
+#. fakturpajakfrm..Caption
+#. fakturpajakviewfrm..Caption
+#. footnotefrm..Caption
+#. glfrm..Caption
+#. groupfrm..Caption
+#. gudangpickfrm..Caption
+#. gudangfrm..Caption
+#. inventoryfrm..Caption
+#. inventoryviewfrm..Caption
+#. invoicelistfrm..Caption
+#. jabatanaddfrm..Caption
+#. jasaaddfrm..Caption
+#. jasafrm..Caption
+#. jatuhtempofrm..Caption
+#. jobdesfrm..Caption
+#. jualprojectfrm..Caption
+#. jualfrm..Caption
+#. jurnalumumlistfrm..Caption
+#. jurnalumumfrm..Caption
+#. karyawanaddfrm..Caption
+#. kategorifrm..Caption
+#. labarugifrm..Caption
+#. listrepfrm..Caption
+#. lunaspiutangfrm..Caption
+#. neracafrm..Caption
+#. detailorderfrm..Caption
+#. pajakAddfrm..Caption
+#. passchangefrm..Caption
+#. payadjustaddfrm..Caption
+#. payadjustmentfrm..Caption
+#. penawaranfrm..Caption
+#. penguranggajiaddfrm..Caption
+#. jualrptfrm..Caption
+#. polistfrm..Caption
+#. polistfrm..RvSystem1..TitlePreview
+#. pphaddfrm..Caption
+#. pphfrm..Caption
+#. projectaddfrm..Caption
+#. projectlapfrm..Caption
+#. projectfrm..Caption
+#. ptkpaddfrm..Caption
+#. ptkpfrm..Caption
+#. add_rep_frm..Caption
+#. salaryleveltambahaddfrm..Caption
+#. salarylevelfrm..Caption
+#. salaryprosesfrm..Caption
+#. salaryinputfrm..Caption
+#. salaryleveladdfrm..Caption
+#. salaryleveldetailfrm..Caption
+#. salaryleveltambahfrm..Caption
+#. salaryrptfrm..Caption
+#. tagihanfrm..Caption
+#. useraddfrm..Caption
+#. userlistfrm..Caption
+#. utamafrm..Caption
+#. utamafrm..Panel3..Label1..Caption
+#: units/akunun.dfm:6  units/akunviewun.dfm:6 units/bankaddun.dfm:6
+#: units/bankun.dfm:6 units/barangaddun.dfm:6 units/barangmstrun.dfm:6
+#: units/barangviewun.dfm:6 units/belilsgun.dfm:6 units/belisupun.dfm:6
+#: units/belisupun.dfm:750 units/calendarun.dfm:6 units/custandcpun.dfm:6
+#: units/datacleanun.dfm:6 units/deliveryun.dfm:6 units/deptaddun.dfm:6
+#: units/deptun.dfm:6 units/dolistun.dfm:6 units/fakturdaninvoiceun.dfm:6
+#: units/fakturpajakun.dfm:6 units/fakturpajakviewun.dfm:6
+#: units/footnoteun.dfm:6 units/glun.dfm:6 units/grouplistun.dfm:6
+#: units/gudangpickun.dfm:6 units/gudangun.dfm:6 units/inventoryun.dfm:6
+#: units/inventoryviewun.dfm:6 units/invoicelistun.dfm:6
+#: units/jabatanaddun.dfm:6 units/jasaaddun.dfm:6 units/jasaun.dfm:6
+#: units/jatuhtempoun.dfm:6 units/jobdesun.dfm:6 units/jualproject.dfm:6
+#: units/jualun.dfm:6 units/jurnalumumlistun.dfm:6 units/jurnalumumun.dfm:6
+#: units/karyawanaddun.dfm:6 units/kategorilistun.dfm:6 units/labarugiun.dfm:6
+#: units/listrep.dfm:6 units/lunaspiutangun.dfm:6 units/neracaun.dfm:6
+#: units/orderdetailun.dfm:6 units/pajakaddun.dfm:6 units/passchangeun.dfm:6
+#: units/payadjustaddun.dfm:6 units/payadjustmentun.dfm:6
+#: units/penawaranun.dfm:6 units/penguranggajiaddun.dfm:6
+#: units/penjualanrptun.dfm:6 units/polistun.dfm:6 units/polistun.dfm:243
+#: units/pphaddun.dfm:6 units/pphun.dfm:6 units/projectaddun.dfm:6
+#: units/projectlapun.dfm:6 units/projectun.dfm:6 units/ptkpaddun.dfm:6
+#: units/ptkpun.dfm:6 units/rep_add_frm.dfm:6
+#: units/salary_level_tambahaddun.dfm:6 units/salary_levelun.dfm:6
+#: units/salary_prosesun.dfm:6 units/salaryinputun.dfm:6
+#: units/salaryleveladdun.dfm:6 units/salaryleveldetailun.dfm:6
+#: units/salaryleveltambahun.dfm:6 units/salaryrptun.dfm:6
+#: units/tagihanun.dfm:6 units/useraddun.dfm:6 units/userlistun.dfm:6
+#: units/utamaun.dfm:6 units/utamaun.dfm:3282
+msgid "mERP 1.0"
+msgstr ""
+
+#. akunfrm..Panel1..Label1..Caption
+#: units/akunun.dfm:32 
+msgid "Rekening Perkiraan"
+msgstr ""
+
+#. akunfrm..Panel3..btntambah..Caption
+#. bankaddfrm..Panel3..btntambah..Caption
+#. bankfrm..Panel3..btntambah..Caption
+#. barangmstrfrm..Panel3..SpeedButton1..Caption
+#. belilsgfrm..Panel3..btntambah..Caption
+#. belisupfrm..Panel3..btntambah..Caption
+#. deliveryfrm..Panel3..btntambah..Caption
+#. deptaddfrm..Panel3..btntambah..Caption
+#. deptfrm..Panel3..btntambah..Caption
+#. fakturpajakfrm..Panel2..btnsimpan..Caption
+#. groupfrm..Panel3..SpeedButton1..Caption
+#. gudangfrm..Panel3..SpeedButton1..Caption
+#. jabatanaddfrm..Panel3..btntambah..Caption
+#. jasaaddfrm..Panel3..btntambah..Caption
+#. jasafrm..Panel3..btntambah..Caption
+#. jobdesfrm..Panel3..btntambah..Caption
+#. jualfrm..Panel3..btntambah..Caption
+#. jurnalumumlistfrm..Panel3..SpeedButton4..Caption
+#. jurnalumumfrm..Panel3..btntambah..Caption
+#. karyawanaddfrm..Panel3..btntambah..Caption
+#. karyawanfrm..Panel3..btntambah..Caption
+#. listrepfrm..Panel3..SpeedButton4..Caption
+#. payadjustmentfrm..Panel3..SpeedButton1..Caption
+#. penawaranfrm..Panel3..btntambah..Caption
+#. penguranggajiaddfrm..Panel3..btntambah..Caption
+#. penguranggajifrm..Panel3..btntambah..Caption
+#. pphaddfrm..Panel3..btntambah..Caption
+#. pphfrm..Panel3..btntambah..Caption
+#. projectfrm..Panel3..btntambah..Caption
+#. ptkpaddfrm..Panel3..btntambah..Caption
+#. ptkpfrm..Panel3..btntambah..Caption
+#. salaryleveltambahaddfrm..Panel3..btntambah..Caption
+#. salarylevelfrm..Panel3..btntambah..Caption
+#. salaryleveladdfrm..Panel3..btntambah..Caption
+#. salaryleveltambahfrm..Panel3..btntambah..Caption
+#. userlistfrm..Panel3..btnadd..Caption
+#: units/akunun.dfm:76  units/bankaddun.dfm:142 units/bankun.dfm:144
+#: units/barangmstrun.dfm:138 units/belilsgun.dfm:189 units/belisupun.dfm:77
+#: units/deliveryun.dfm:327 units/deptaddun.dfm:113 units/deptun.dfm:136
+#: units/fakturpajakun.dfm:75 units/grouplistun.dfm:100 units/gudangun.dfm:76
+#: units/jabatanaddun.dfm:75 units/jasaaddun.dfm:75 units/jasaun.dfm:139
+#: units/jobdesun.dfm:76 units/jualun.dfm:439 units/jurnalumumlistun.dfm:65
+#: units/jurnalumumun.dfm:245 units/karyawanaddun.dfm:76
+#: units/karyawanun.dfm:138 units/listrep.dfm:141 units/payadjustmentun.dfm:75
+#: units/penawaranun.dfm:285 units/penguranggajiaddun.dfm:173
+#: units/penguranggajiun.dfm:114 units/pphaddun.dfm:152 units/pphun.dfm:114
+#: units/projectun.dfm:177 units/ptkpaddun.dfm:173 units/ptkpun.dfm:150
+#: units/salary_level_tambahaddun.dfm:173 units/salary_levelun.dfm:211
+#: units/salaryleveladdun.dfm:176 units/salaryleveltambahun.dfm:75
+#: units/userlistun.dfm:143
+msgid "&Tambah"
+msgstr ""
+
+#. akunfrm..Panel3..btnsimpan..Caption
+#. bankaddfrm..Panel3..btnsimpan..Caption
+#. barangaddfrm..Panel3..SpeedButton1..Caption
+#. barangaddfrm..Panel3..SpeedButton4..Caption
+#. belilsgfrm..Panel3..btnsimpan..Caption
+#. belisupfrm..Panel3..btnsimpan..Caption
+#. deliveryfrm..Panel3..btnsimpan..Caption
+#. deptaddfrm..Panel3..btnsimpan..Caption
+#. groupaddfrm..Panel3..SpeedButton1..Caption
+#. jabatanaddfrm..Panel3..btnsimpan..Caption
+#. jasaaddfrm..Panel3..btnsimpan..Caption
+#. jualfrm..Panel3..btnsimpan..Caption
+#. karyawanaddfrm..Panel3..btnsimpan..Caption
+#. listrepfrm..Panel3..SpeedButton1..Caption
+#. pajakAddfrm..Panel2..btnsimpan..Caption
+#. passchangefrm..Panel3..SpeedButton1..Caption
+#. payadjustaddfrm..Panel3..SpeedButton1..Caption
+#. payadjustaddfrm..Panel3..SpeedButton4..Caption
+#. penawaranfrm..Panel3..btnsimpan..Caption
+#. penguranggajiaddfrm..Panel3..btnsimpan..Caption
+#. pphaddfrm..Panel3..btnsimpan..Caption
+#. projectaddfrm..Panel3..btnsimpan..Caption
+#. ptkpaddfrm..Panel3..btnsimpan..Caption
+#. add_rep_frm..Panel3..SpeedButton1..Caption
+#. add_rep_frm..Panel3..SpeedButton4..Caption
+#. salaryleveltambahaddfrm..Panel3..btnsimpan..Caption
+#. salaryleveladdfrm..Panel3..btnsimpan..Caption
+#. useraddfrm..Panel2..SpeedButton1..Caption
+#: units/akunun.dfm:138  units/bankaddun.dfm:266 units/barangaddun.dfm:92
+#: units/barangaddun.dfm:186 units/belilsgun.dfm:251 units/belisupun.dfm:139
+#: units/deliveryun.dfm:389 units/deptaddun.dfm:237 units/groupaddun.dfm:108
+#: units/jabatanaddun.dfm:199 units/jasaaddun.dfm:137 units/jualun.dfm:501
+#: units/karyawanaddun.dfm:200 units/listrep.dfm:48 units/pajakaddun.dfm:115
+#: units/passchangeun.dfm:191 units/payadjustaddun.dfm:79
+#: units/payadjustaddun.dfm:156 units/penawaranun.dfm:347
+#: units/penguranggajiaddun.dfm:297 units/pphaddun.dfm:276
+#: units/projectaddun.dfm:140 units/ptkpaddun.dfm:297
+#: units/rep_add_frm.dfm:103 units/rep_add_frm.dfm:196
+#: units/salary_level_tambahaddun.dfm:297 units/salaryleveladdun.dfm:300
+#: units/useraddun.dfm:74
+msgid "&Simpan"
+msgstr ""
+
+#. akunfrm..Panel3..btnbatal..Caption
+#. bankaddfrm..Panel3..btnbatal..Caption
+#. barangaddfrm..Panel3..SpeedButton2..Caption
+#. barangaddfrm..Panel3..SpeedButton3..Caption
+#. belilsgfrm..Panel3..btnbatal..Caption
+#. belisupfrm..Panel3..btnbatal..Caption
+#. deliveryfrm..Panel3..btnbatal..Caption
+#. deptaddfrm..Panel3..btnbatal..Caption
+#. groupaddfrm..Panel3..SpeedButton2..Caption
+#. jabatanaddfrm..Panel3..btnbatal..Caption
+#. jasaaddfrm..Panel3..btnbatal..Caption
+#. jualfrm..Panel3..btnbatal..Caption
+#. jurnalumumfrm..Panel3..btnbatal..Caption
+#. karyawanaddfrm..Panel3..btnbatal..Caption
+#. listrepfrm..Panel3..SpeedButton2..Caption
+#. pajakAddfrm..Panel2..btnbatal..Caption
+#. passchangefrm..Panel3..SpeedButton2..Caption
+#. payadjustaddfrm..Panel3..SpeedButton2..Caption
+#. payadjustaddfrm..Panel3..SpeedButton3..Caption
+#. penawaranfrm..Panel3..btnbatal..Caption
+#. penguranggajiaddfrm..Panel3..btnbatal..Caption
+#. pphaddfrm..Panel3..btnbatal..Caption
+#. projectaddfrm..Panel3..btnbatal..Caption
+#. ptkpaddfrm..Panel3..btnbatal..Caption
+#. add_rep_frm..Panel3..SpeedButton2..Caption
+#. add_rep_frm..Panel3..SpeedButton3..Caption
+#. salaryleveltambahaddfrm..Panel3..btnbatal..Caption
+#. salaryprosesfrm..Panel3..SpeedButton1..Caption
+#. salaryleveladdfrm..Panel3..btnbatal..Caption
+#. useraddfrm..Panel2..SpeedButton2..Caption
+#: units/akunun.dfm:200  units/bankaddun.dfm:204 units/barangaddun.dfm:76
+#: units/barangaddun.dfm:124 units/belilsgun.dfm:314 units/belisupun.dfm:202
+#: units/deliveryun.dfm:452 units/deptaddun.dfm:175 units/groupaddun.dfm:92
+#: units/jabatanaddun.dfm:137 units/jasaaddun.dfm:199 units/jualun.dfm:564
+#: units/jurnalumumun.dfm:307 units/karyawanaddun.dfm:138 units/listrep.dfm:32
+#: units/pajakaddun.dfm:175 units/passchangeun.dfm:175
+#: units/payadjustaddun.dfm:63 units/payadjustaddun.dfm:95
+#: units/penawaranun.dfm:410 units/penguranggajiaddun.dfm:235
+#: units/pphaddun.dfm:214 units/projectaddun.dfm:78 units/ptkpaddun.dfm:235
+#: units/rep_add_frm.dfm:87 units/rep_add_frm.dfm:135
+#: units/salary_level_tambahaddun.dfm:235 units/salary_prosesun.dfm:165
+#: units/salaryleveladdun.dfm:238 units/useraddun.dfm:57
+msgid "&Batal"
+msgstr ""
+
+#. akunfrm..DBGrid1......Title.Caption
+#. akunviewfrm..gridakun......Title.Caption
+#. jurnalumumfrm..gridjurnal......Title.Caption
+#. penguranggajifrm..gridkurang......Title.Caption
+#. ptkpfrm..DBGrid1......Title.Caption
+#. salaryleveladdfrm..PageControl1..TabSheet1..DBGrid2......Title.Caption
+#. salaryleveladdfrm..PageControl1..TabSheet2..DBGrid1......Title.Caption
+#. salaryleveltambahfrm..gridtambah......Title.Caption
+#: units/akunun.dfm:283  units/akunviewun.dfm:131 units/jurnalumumun.dfm:177
+#: units/penguranggajiun.dfm:82 units/ptkpun.dfm:118
+#: units/salaryleveladdun.dfm:386 units/salaryleveladdun.dfm:428
+#: units/salaryleveltambahun.dfm:275
+msgid "Kode"
+msgstr ""
+
+#. akunfrm..DBGrid1......Title.Caption
+#: units/akunun.dfm:295 
+msgid "Nama Akun"
+msgstr ""
+
+#. akunfrm..DBGrid1......Title.Caption
+#: units/akunun.dfm:307 
+msgid "Sub Klasifikasi"
+msgstr ""
+
+#. akunfrm..DBGrid1......Title.Caption
+#. akunviewfrm..gridakun......Title.Caption
+#: units/akunun.dfm:319  units/akunviewun.dfm:155
+msgid "Klasifikasi"
+msgstr ""
+
+#. akunviewfrm..Panel1..Label1..Caption
+#: units/akunviewun.dfm:34 
+msgid "Akun View"
+msgstr ""
+
+#. akunviewfrm..Panel2..Label2..Caption
+#. bankfrm..Panel2..Label2..Caption
+#. deptfrm..Panel2..Label2..Caption
+#. fakturpajakviewfrm..Panel2..Label2..Caption
+#. jobdesfrm..Panel2..Label2..Caption
+#. ptkpfrm..Panel2..Label2..Caption
+#. salarylevelfrm..Panel2..Label2..Caption
+#: units/akunviewun.dfm:77  units/bankun.dfm:53 units/deptun.dfm:74
+#: units/fakturpajakviewun.dfm:63 units/jobdesun.dfm:207 units/ptkpun.dfm:74
+#: units/salary_levelun.dfm:136
+msgid "Cari :"
+msgstr ""
+
+#. akunviewfrm..gridakun......Title.Caption
+#. jurnalumumfrm..gridjurnal......Title.Caption
+#: units/akunviewun.dfm:143  units/jurnalumumun.dfm:191
+msgid "Akun"
+msgstr ""
+
+#. bankaddfrm..Panel1..Label1..Caption
+#. salaryleveladdfrm..Panel1..Label1..Caption
+#: units/bankaddun.dfm:30  units/salaryleveladdun.dfm:32
+msgid "Add/Edit Level Gaji"
+msgstr ""
+
+#. bankaddfrm..Panel2..Label2..Caption
+#. karyawanaddfrm..pagebio..tab2..Label20..Caption
+#: units/bankaddun.dfm:73  units/karyawanaddun.dfm:699
+msgid "Nama Bank:"
+msgstr ""
+
+#. bankaddfrm..Panel2..Label3..Caption
+#. customeraddfrm..Panel2..Label3..Caption
+#. custpicaddfrm..Panel2..Label3..Caption
+#. karyawanaddfrm..pagebio..tab1..Label9..Caption
+#. supp_pic_addfrm..Panel2..Label3..Caption
+#. supplieraddfrm..Panel2..Label3..Caption
+#: units/bankaddun.dfm:86  units/customeraddun.dfm:35
+#: units/custpicaddun.dfm:37 units/karyawanaddun.dfm:317
+#: units/supp_pic_addun.dfm:34 units/supplieraddun.dfm:38
+msgid "Alamat:"
+msgstr ""
+
+#. bankfrm..Panel1..Label1..Caption
+#: units/bankun.dfm:32 
+msgid "Daftar Bank"
+msgstr ""
+
+#. bankfrm..DBGrid1......Title.Caption
+#: units/bankun.dfm:119 
+msgid "Nama Bank"
+msgstr ""
+
+#. bankfrm..DBGrid1......Title.Caption
+#. custncpfrm..DBGrid1......Title.Caption
+#. custncpfrm..DBGrid2......Title.Caption
+#. customerfrm..Panel2..DBGrid1......Title.Caption
+#. karyawanfrm..DBGrid1......Title.Caption
+#. supplierpicfrm..Panel2..DBGrid1......Title.Caption
+#. supplierfrm..Panel2..DBGrid1......Title.Caption
+#: units/bankun.dfm:126  units/custandcpun.dfm:122 units/custandcpun.dfm:211
+#: units/customerun.dfm:106 units/karyawanun.dfm:310
+#: units/supplierpicun.dfm:47 units/supplierun.dfm:168
+msgid "Alamat"
+msgstr ""
+
+#. bankfrm..Panel3..btnedit..Caption
+#. barangmstrfrm..Panel3..SpeedButton2..Caption
+#. deptfrm..Panel3..btnedit..Caption
+#. groupfrm..Panel3..SpeedButton2..Caption
+#. gudangfrm..Panel3..SpeedButton2..Caption
+#. jasafrm..Panel3..btnedit..Caption
+#. jobdesfrm..Panel3..btnedit..Caption
+#. karyawanfrm..Panel3..btnedit..Caption
+#. listrepfrm..Panel3..SpeedButton3..Caption
+#. payadjustmentfrm..Panel3..SpeedButton2..Caption
+#. penguranggajifrm..Panel3..btnedit..Caption
+#. pphfrm..Panel3..btnedit..Caption
+#. projectfrm..Panel3..btnedit..Caption
+#. ptkpfrm..Panel3..btnedit..Caption
+#. salarylevelfrm..Panel3..btnedit..Caption
+#. salaryinputfrm..Panel3..btnedit..Caption
+#. salaryleveltambahfrm..Panel3..btnedit..Caption
+#. userlistfrm..Panel3..btnedit..Caption
+#: units/bankun.dfm:206  units/barangmstrun.dfm:76 units/deptun.dfm:198
+#: units/grouplistun.dfm:117 units/gudangun.dfm:93 units/jasaun.dfm:77
+#: units/jobdesun.dfm:138 units/karyawanun.dfm:76 units/listrep.dfm:80
+#: units/payadjustmentun.dfm:91 units/penguranggajiun.dfm:176
+#: units/pphun.dfm:176 units/projectun.dfm:115 units/ptkpun.dfm:212
+#: units/salary_levelun.dfm:273 units/salaryinputun.dfm:76
+#: units/salaryleveltambahun.dfm:137 units/userlistun.dfm:126
+msgid "&Edit"
+msgstr ""
+
+#. bankfrm..Panel3..SpeedButton2..Caption
+#. deptfrm..Panel3..SpeedButton1..Caption
+#. fakturpajakfrm..Panel2..btnbatal..Caption
+#. jurnalumumlistfrm..Panel3..SpeedButton5..Caption
+#. karyawanfrm..Panel3..SpeedButton2..Caption
+#. listrepfrm..Panel3..SpeedButton5..Caption
+#. penguranggajifrm..Panel3..SpeedButton1..Caption
+#. pphfrm..Panel3..SpeedButton1..Caption
+#. projectfrm..Panel3..btnhapus..Caption
+#. ptkpfrm..Panel3..SpeedButton1..Caption
+#. salarylevelfrm..SpeedButton2..Caption
+#. salarylevelfrm..Panel3..SpeedButton1..Caption
+#. salaryinputfrm..Panel3..SpeedButton2..Caption
+#. salaryleveltambahfrm..Panel3..SpeedButton1..Caption
+#. userlistfrm..Panel3..SpeedButton3..Caption
+#: units/bankun.dfm:268  units/deptun.dfm:260 units/fakturpajakun.dfm:135
+#: units/jurnalumumlistun.dfm:127 units/karyawanun.dfm:200
+#: units/listrep.dfm:202 units/penguranggajiun.dfm:238 units/pphun.dfm:238
+#: units/projectun.dfm:239 units/ptkpun.dfm:274 units/salary_levelun.dfm:26
+#: units/salary_levelun.dfm:335 units/salaryinputun.dfm:199
+#: units/salaryleveltambahun.dfm:199 units/userlistun.dfm:189
+msgid "&Hapus"
+msgstr ""
+
+#. barangaddfrm..Panel1..Label1..Caption
+#: units/barangaddun.dfm:32 
+msgid "Add/Edit Barang"
+msgstr ""
+
+#. barangaddfrm..Panel3..btncari..Caption
+#. barangmstrfrm..Panel3..btncari..Caption
+#. listrepfrm..Panel3..btncari..Caption
+#. listrepfrm..Panel3..SpeedButton6..Caption
+#. add_rep_frm..Panel3..btncari..Caption
+#. supplierfrm..SpeedButton8..Caption
+#: units/barangaddun.dfm:108  units/barangmstrun.dfm:200 units/listrep.dfm:64
+#: units/listrep.dfm:264 units/rep_add_frm.dfm:119 units/supplierun.dfm:14
+msgid "&Cari"
+msgstr ""
+
+#. barangaddfrm..Panel2..Label2..Caption
+#: units/barangaddun.dfm:261 
+msgid "Kode Barang:"
+msgstr ""
+
+#. barangaddfrm..Panel2..Label3..Caption
+#: units/barangaddun.dfm:274 
+msgid "Barcode:"
+msgstr ""
+
+#. barangaddfrm..Panel2..Label4..Caption
+#: units/barangaddun.dfm:287 
+msgid "Nama Barang:"
+msgstr ""
+
+#. barangaddfrm..Panel2..Label5..Caption
+#: units/barangaddun.dfm:300 
+msgid "Type:"
+msgstr ""
+
+#. barangaddfrm..Panel2..Label6..Caption
+#. kategoriaddfrm..Panel2..Label2..Caption
+#: units/barangaddun.dfm:313  units/kategoriaddun.dfm:32
+msgid "Kategori:"
+msgstr ""
+
+#. barangaddfrm..Panel2..Label7..Caption
+#. belilsgfrm..Panel2..Label3..Caption
+#. belisupfrm..pnheader..Label3..Caption
+#. detailorderfrm..Panel2..Label3..Caption
+#. supplieraddfrm..Panel2..Label2..Caption
+#: units/barangaddun.dfm:326  units/belilsgun.dfm:111 units/belisupun.dfm:287
+#: units/orderdetailun.dfm:225 units/supplieraddun.dfm:25
+msgid "Supplier:"
+msgstr ""
+
+#. barangaddfrm..Panel2..Label8..Caption
+#: units/barangaddun.dfm:357 
+msgid "Unit:"
+msgstr ""
+
+#. barangmstrfrm..Panel1..Label1..Caption
+#: units/barangmstrun.dfm:32 
+msgid "Master Barang"
+msgstr ""
+
+#. barangmstrfrm..Panel2..DBGrid1......Title.Caption
+#. belilsgfrm..Panel6..DBGrid1......Title.Caption
+#. belisupfrm..Panel6..griditem......Title.Caption
+#. inventoryviewfrm..gridinv......Title.Caption
+#: units/barangmstrun.dfm:291  units/belilsgun.dfm:397
+#: units/belisupun.dfm:628 units/inventoryviewun.dfm:175
+msgid "Kode Barang"
+msgstr ""
+
+#. barangmstrfrm..Panel2..DBGrid1......Title.Caption
+#. belilsgfrm..Panel6..DBGrid1......Title.Caption
+#. belisupfrm..Panel6..griditem......Title.Caption
+#. deliveryfrm..griddo......Title.Caption
+#. detailorderfrm..DBGrid1......Title.Caption
+#. penawaranfrm..Panel6..DBGrid1......Title.Caption
+#: units/barangmstrun.dfm:303  units/belilsgun.dfm:404
+#: units/belisupun.dfm:640 units/deliveryun.dfm:540
+#: units/orderdetailun.dfm:164 units/penawaranun.dfm:503
+msgid "Nama Barang"
+msgstr ""
+
+#. barangmstrfrm..Panel2..DBGrid1......Title.Caption
+#. inventoryfrm..DBGrid1......Title.Caption
+#. penawaranfrm..Panel6..DBGrid1......Title.Caption
+#: units/barangmstrun.dfm:315  units/inventoryun.dfm:225
+#: units/penawaranun.dfm:519
+msgid "Unit"
+msgstr ""
+
+#. barangmstrfrm..Panel2..DBGrid1......Title.Caption
+#. barangviewfrm..gridview......Title.Caption
+#. deliveryfrm..griddo......Title.Caption
+#. dm..inventory..inventoryType..FieldName
+#. dm..inventory_post..StringField15..FieldName
+#. dm..inventoryref..StringField85..FieldName
+#. inventoryfrm..DBGrid1......FieldName
+#. inventoryviewfrm..gridinv......FieldName
+#. jualfrm..gridjual......Title.Caption
+#. penawaranfrm..Panel6..DBGrid1......Title.Caption
+#: units/barangmstrun.dfm:322  units/barangviewun.dfm:191
+#: units/deliveryun.dfm:548 units/dmun.dfm:582 units/dmun.dfm:1255
+#: units/dmun.dfm:3401 units/inventoryun.dfm:162 units/inventoryviewun.dfm:197
+#: units/jualun.dfm:692 units/penawaranun.dfm:511
+msgid "Type"
+msgstr ""
+
+#. barangmstrfrm..Panel2..DBGrid1......Title.Caption
+#. barangviewfrm..gridview......Title.Caption
+#: units/barangmstrun.dfm:334  units/barangviewun.dfm:215
+msgid "Barcode"
+msgstr ""
+
+#. barangmstrfrm..caripn..SpeedButton3..Caption
+#. listrepfrm..caripn..SpeedButton7..Caption
+#. utamafrm..Panel3..pnshortcut..SpeedButton14..Caption
+#: units/barangmstrun.dfm:362  units/listrep.dfm:365 units/utamaun.dfm:4774
+msgid "X"
+msgstr ""
+
+#. barangmstrfrm..caripn..Label2..Caption
+#: units/barangmstrun.dfm:377 
+msgid "Cari"
+msgstr ""
+
+#. barangviewfrm..Panel1..Label1..Caption
+#: units/barangviewun.dfm:33 
+msgid "View Barang"
+msgstr ""
+
+#. barangviewfrm..Panel2..Label2..Caption
+#. kategorifrm..caripn..Label2..Caption
+#. projectfrm..caripn..Label2..Caption
+#. supplierfrm..caripn..Label2..Caption
+#: units/barangviewun.dfm:77  units/categorilistun.dfm:74
+#: units/projectun.dfm:76 units/supplierun.dfm:203
+msgid "Cari:"
+msgstr ""
+
+#. barangviewfrm..gridview......Title.Caption
+#. inventoryviewfrm..gridinv......Title.Caption
+#: units/barangviewun.dfm:179  units/inventoryviewun.dfm:186
+msgid "Barang"
+msgstr ""
+
+#. barangviewfrm..gridview......Title.Caption
+#. deliveryfrm..griddo......Title.Caption
+#. inventoryfrm..DBGrid1......Title.Caption
+#. detailorderfrm..DBGrid1......Title.Caption
+#. penawaranfrm..Panel6..DBGrid1......Title.Caption
+#: units/barangviewun.dfm:203  units/deliveryun.dfm:532
+#: units/inventoryun.dfm:141 units/orderdetailun.dfm:153
+#: units/penawaranun.dfm:495
+msgid "Kd Barang"
+msgstr ""
+
+#. frmBase..Caption
+#: units/baseForm.dfm:6 
+msgid "frmBase"
+msgstr ""
+
+#. frmBase..Panel1..Label1..Caption
+#: units/baseForm.dfm:54 
+msgid "Daftar User"
+msgstr ""
+
+#. belilsgfrm..Panel1..Label1..Caption
+#. utamafrm..utamamn..Pembelian1..Langsung2..Caption
+#: units/belilsgun.dfm:32  units/utamaun.dfm:5897
+msgid "Pembelian Langsung"
+msgstr ""
+
+#. belilsgfrm..Panel2..Label5..Caption
+#. belisupfrm..pnheader..Label5..Caption
+#. deliveryfrm..pndo..Label5..Caption
+#. invoiceamountfrm..Label4..Caption
+#. jualfrm..pnheader..Label5..Caption
+#. jurnalumumfrm..pntop..Label3..Caption
+#. lunaspiutangfrm..Panel2..Label2..Caption
+#. penawaranfrm..Panel2..Label5..Caption
+#: units/belilsgun.dfm:75  units/belisupun.dfm:333 units/deliveryun.dfm:137
+#: units/invoiceamountun.dfm:52 units/jualun.dfm:149 units/jurnalumumun.dfm:91
+#: units/lunaspiutangun.dfm:130 units/penawaranun.dfm:135
+msgid "Tanggal:"
+msgstr ""
+
+#. belilsgfrm..Panel2..Label2..Caption
+#. penguranggajiaddfrm..Panel2..Label2..Caption
+#. ptkpaddfrm..Panel2..Label2..Caption
+#. salaryleveltambahaddfrm..Panel2..Label2..Caption
+#. salaryleveladdfrm..Panel2..Label2..Caption
+#: units/belilsgun.dfm:98  units/penguranggajiaddun.dfm:74
+#: units/ptkpaddun.dfm:62 units/salary_level_tambahaddun.dfm:74
+#: units/salaryleveladdun.dfm:77
+msgid "Kode:"
+msgstr ""
+
+#. belilsgfrm..Panel6..DBGrid1......Title.Caption
+#. inventoryfrm..DBGrid1......Title.Caption
+#. penawaranfrm..Panel6..DBGrid1......Title.Caption
+#: units/belilsgun.dfm:411  units/inventoryun.dfm:194
+#: units/penawaranun.dfm:526
+msgid "Harga"
+msgstr ""
+
+#. belilsgfrm..Panel6..DBGrid1......Title.Caption
+#. belisupfrm..Panel6..griditem......Title.Caption
+#. deliveryfrm..griddo......Title.Caption
+#. jualfrm..gridjual......Title.Caption
+#. detailorderfrm..DBGrid1......Title.Caption
+#. penawaranfrm..Panel6..DBGrid1......Title.Caption
+#: units/belilsgun.dfm:418  units/belisupun.dfm:678 units/deliveryun.dfm:556
+#: units/jualun.dfm:721 units/orderdetailun.dfm:177 units/penawaranun.dfm:533
+msgid "Qty"
+msgstr ""
+
+#. belilsgfrm..Panel6..DBGrid1......Title.Caption
+#. belisupfrm..Panel6..griditem......Title.Caption
+#. penawaranfrm..Panel6..DBGrid1......Title.Caption
+#: units/belilsgun.dfm:425  units/belisupun.dfm:691 units/penawaranun.dfm:539
+msgid "Total"
+msgstr ""
+
+#. belisupfrm..Panel1..title..Caption
+#: units/belisupun.dfm:33 
+msgid "Pembelian via Supplier"
+msgstr ""
+
+#. belisupfrm..pnheader..Label2..Caption
+#. detailorderfrm..Panel2..Label2..Caption
+#: units/belisupun.dfm:274  units/orderdetailun.dfm:212
+msgid "No.PO:"
+msgstr ""
+
+#. belisupfrm..pnheader..Label4..Caption
+#. deliveryfrm..pndo..Label4..Caption
+#. jualfrm..pnheader..Label4..Caption
+#. penawaranfrm..Panel2..Label4..Caption
+#: units/belisupun.dfm:310  units/deliveryun.dfm:114 units/jualun.dfm:126
+#: units/penawaranun.dfm:112
+msgid "Up:"
+msgstr ""
+
+#. belisupfrm..pnheader..Label6..Caption
+#. jualfrm..pnheader..Label6..Caption
+#: units/belisupun.dfm:356  units/jualun.dfm:172
+msgid "Jth Tempo:"
+msgstr ""
+
+#. belisupfrm..pnheader..Label7..Caption
+#: units/belisupun.dfm:409 
+msgid "Pembayaran:"
+msgstr ""
+
+#. belisupfrm..pnheader..Label8..Caption
+#: units/belisupun.dfm:422 
+msgid "langsung/supp"
+msgstr ""
+
+#. belisupfrm..pnheader..Label1..Caption
+#. jualfrm..pnheader..Label9..Caption
+#. penawaranfrm..Panel2..Label9..Caption
+#. projectlapfrm..Panel2..Label4..Caption
+#: units/belisupun.dfm:436  units/jualun.dfm:211 units/penawaranun.dfm:158
+#: units/projectlapun.dfm:101
+msgid "Project:"
+msgstr ""
+
+#. belisupfrm..pnheader..lookbayar....Items.Strings
+#. jualfrm..pnheader..dbcash....Items.Strings
+#: units/belisupun.dfm:564  units/jualun.dfm:342
+msgid "HUTANG"
+msgstr ""
+
+#. belisupfrm..pnheader..lookbayar....Items.Strings
+#. jualfrm..pnheader..dbcash....Items.Strings
+#: units/belisupun.dfm:565  units/jualun.dfm:341
+msgid "CASH"
+msgstr ""
+
+#. belisupfrm..Panel6..griditem......Title.Caption
+#: units/belisupun.dfm:652 
+msgid "Kirim Ke"
+msgstr ""
+
+#. belisupfrm..Panel6..griditem......Title.Caption
+#: units/belisupun.dfm:665 
+msgid "Unit Price"
+msgstr ""
+
+#. belisupfrm..RvSystem1..TitleSetup
+#. dolistfrm..rsdeliver..TitleSetup
+#. invoicprintfrm..RvSystem1..TitleSetup
+#. glfrm..rsgl..TitleSetup
+#. labarugifrm..rslr..TitleSetup
+#. neracafrm..rsneraca..TitleSetup
+#. pajakAddfrm..rspajak..TitleSetup
+#. penawaranfrm..rsQuot..TitleSetup
+#. jualrptfrm..RvSystem1..TitleSetup
+#. polistfrm..RvSystem1..TitleSetup
+#. projectlapfrm..RvSystem1..TitleSetup
+#. salaryrptfrm..rsgaji..TitleSetup
+#: units/belisupun.dfm:748  units/dolistun.dfm:274
+#: units/fakturdaninvoiceun.dfm:188 units/glun.dfm:217
+#: units/labarugiun.dfm:192 units/neracaun.dfm:175 units/pajakaddun.dfm:591
+#: units/penawaranun.dfm:556 units/penjualanrptun.dfm:173
+#: units/polistun.dfm:241 units/projectlapun.dfm:200 units/salaryrptun.dfm:209
+msgid "Output Options"
+msgstr ""
+
+#. belisupfrm..RvSystem1..TitleStatus
+#. dolistfrm..rsdeliver..TitleStatus
+#. invoicprintfrm..RvSystem1..TitleStatus
+#. glfrm..rsgl..TitleStatus
+#. labarugifrm..rslr..TitleStatus
+#. neracafrm..rsneraca..TitleStatus
+#. pajakAddfrm..rspajak..TitleStatus
+#. penawaranfrm..rsQuot..TitleStatus
+#. jualrptfrm..RvSystem1..TitleStatus
+#. polistfrm..RvSystem1..TitleStatus
+#. projectlapfrm..RvSystem1..TitleStatus
+#. salaryrptfrm..rsgaji..TitleStatus
+#: units/belisupun.dfm:749  units/dolistun.dfm:275
+#: units/fakturdaninvoiceun.dfm:189 units/glun.dfm:218
+#: units/labarugiun.dfm:193 units/neracaun.dfm:176 units/pajakaddun.dfm:592
+#: units/penawaranun.dfm:557 units/penjualanrptun.dfm:174
+#: units/polistun.dfm:242 units/projectlapun.dfm:201 units/salaryrptun.dfm:210
+msgid "Report Status"
+msgstr ""
+
+#. belisupfrm..RvSystem1..SystemFiler.StatusFormat
+#. dolistfrm..rsdeliver..SystemFiler.StatusFormat
+#. invoicprintfrm..RvSystem1..SystemFiler.StatusFormat
+#. glfrm..rsgl..SystemFiler.StatusFormat
+#. labarugifrm..rslr..SystemFiler.StatusFormat
+#. neracafrm..rsneraca..SystemFiler.StatusFormat
+#. pajakAddfrm..rspajak..SystemFiler.StatusFormat
+#. penawaranfrm..rsQuot..SystemFiler.StatusFormat
+#. jualrptfrm..RvSystem1..SystemFiler.StatusFormat
+#. polistfrm..RvSystem1..SystemFiler.StatusFormat
+#. projectlapfrm..RvSystem1..SystemFiler.StatusFormat
+#. salaryrptfrm..rsgaji..SystemFiler.StatusFormat
+#: units/belisupun.dfm:752  units/dolistun.dfm:278
+#: units/fakturdaninvoiceun.dfm:192 units/glun.dfm:221
+#: units/labarugiun.dfm:196 units/neracaun.dfm:179 units/pajakaddun.dfm:595
+#: units/penawaranun.dfm:560 units/penjualanrptun.dfm:177
+#: units/polistun.dfm:245 units/projectlapun.dfm:204 units/salaryrptun.dfm:213
+msgid "Generating page %p"
+msgstr ""
+
+#. belisupfrm..RvSystem1..SystemPrinter.StatusFormat
+#. dolistfrm..rsdeliver..SystemPrinter.StatusFormat
+#. invoicprintfrm..RvSystem1..SystemPrinter.StatusFormat
+#. glfrm..rsgl..SystemPrinter.StatusFormat
+#. labarugifrm..rslr..SystemPrinter.StatusFormat
+#. neracafrm..rsneraca..SystemPrinter.StatusFormat
+#. pajakAddfrm..rspajak..SystemPrinter.StatusFormat
+#. penawaranfrm..rsQuot..SystemPrinter.StatusFormat
+#. jualrptfrm..RvSystem1..SystemPrinter.StatusFormat
+#. polistfrm..RvSystem1..SystemPrinter.StatusFormat
+#. projectlapfrm..RvSystem1..SystemPrinter.StatusFormat
+#. salaryrptfrm..rsgaji..SystemPrinter.StatusFormat
+#: units/belisupun.dfm:757  units/dolistun.dfm:283
+#: units/fakturdaninvoiceun.dfm:197 units/glun.dfm:226
+#: units/labarugiun.dfm:201 units/neracaun.dfm:184 units/pajakaddun.dfm:600
+#: units/penawaranun.dfm:565 units/penjualanrptun.dfm:182
+#: units/polistun.dfm:250 units/projectlapun.dfm:209 units/salaryrptun.dfm:218
+msgid "Printing page %p"
+msgstr ""
+
+#. belisupfrm..RvSystem1..SystemPrinter.Title
+#. dolistfrm..rsdeliver..SystemPrinter.Title
+#. invoicprintfrm..RvSystem1..SystemPrinter.Title
+#. glfrm..rsgl..SystemPrinter.Title
+#. labarugifrm..rslr..SystemPrinter.Title
+#. neracafrm..rsneraca..SystemPrinter.Title
+#. pajakAddfrm..rspajak..SystemPrinter.Title
+#. penawaranfrm..rsQuot..SystemPrinter.Title
+#. jualrptfrm..RvSystem1..SystemPrinter.Title
+#. polistfrm..RvSystem1..SystemPrinter.Title
+#. projectlapfrm..RvSystem1..SystemPrinter.Title
+#. salaryrptfrm..rsgaji..SystemPrinter.Title
+#: units/belisupun.dfm:758  units/dolistun.dfm:284
+#: units/fakturdaninvoiceun.dfm:198 units/glun.dfm:227
+#: units/labarugiun.dfm:202 units/neracaun.dfm:185 units/pajakaddun.dfm:601
+#: units/penawaranun.dfm:566 units/penjualanrptun.dfm:183
+#: units/polistun.dfm:251 units/projectlapun.dfm:210 units/salaryrptun.dfm:219
+msgid "ReportPrinter Report"
+msgstr ""
+
+#. calendarfrm..Label2..Caption
+#: units/calendarun.dfm:24 
+msgid "double click pada tanggal untuk mengisi"
+msgstr ""
+
+#. kategorifrm..Panel2..DBGrid1......Title.Caption
+#: units/categorilistun.dfm:41 
+msgid "Kategori"
+msgstr ""
+
+#. kategorifrm..Panel2..DBGrid1......Title.Caption
+#. groupfrm..Panel2..DBGrid1......Title.Caption
+#: units/categorilistun.dfm:53  units/grouplistun.dfm:77
+msgid "ID"
+msgstr ""
+
+#. kategorifrm..Panel1..Label1..Caption
+#: units/categorilistun.dfm:103 
+msgid "List Kategori"
+msgstr ""
+
+#. custncpfrm..Label2..Caption
+#. jualfrm..pnheader..Label3..Caption
+#. penawaranfrm..Panel2..Label3..Caption
+#. projectaddfrm..Panel2..Label3..Caption
+#: units/custandcpun.dfm:26  units/jualun.dfm:104 units/penawaranun.dfm:90
+#: units/projectaddun.dfm:222
+msgid "Customer:"
+msgstr ""
+
+#. custncpfrm..Label3..Caption
+#: units/custandcpun.dfm:39 
+msgid "Contact Person:"
+msgstr ""
+
+#. custncpfrm..Panel1..Label1..Caption
+#: units/custandcpun.dfm:59 
+msgid "Customer && Contact Person"
+msgstr ""
+
+#. custncpfrm..DBGrid1......Title.Caption
+#. customerfrm..Panel2..DBGrid1......Title.Caption
+#. karyawanfrm..DBGrid1......Title.Caption
+#. supplierfrm..Panel2..DBGrid1......Title.Caption
+#: units/custandcpun.dfm:134  units/customerun.dfm:113
+#: units/karyawanun.dfm:317 units/supplierun.dfm:175
+msgid "Kota"
+msgstr ""
+
+#. custncpfrm..DBGrid1......Title.Caption
+#: units/custandcpun.dfm:145 
+msgid "Telp"
+msgstr ""
+
+#. custncpfrm..DBGrid2......Title.Caption
+#. custpicfrm..Panel2..DBGrid1......Title.Caption
+#. supplierpicfrm..Panel2..DBGrid1......Title.Caption
+#: units/custandcpun.dfm:175  units/custpicun.dfm:24
+#: units/supplierpicun.dfm:26
+msgid "Nama"
+msgstr ""
+
+#. custncpfrm..DBGrid2......Title.Caption
+#. custpicfrm..Panel2..DBGrid1......Title.Caption
+#: units/custandcpun.dfm:187  units/custpicun.dfm:31
+msgid "Handphone"
+msgstr ""
+
+#. custncpfrm..DBGrid2......Title.Caption
+#. custpicfrm..Panel2..DBGrid1......Title.Caption
+#: units/custandcpun.dfm:199  units/custpicun.dfm:38
+msgid "email"
+msgstr ""
+
+#. custncpfrm..DBGrid2......FieldName
+#. custpicfrm..Panel2..DBGrid1......FieldName
+#. dm..custpicview..LinkedFields
+#: units/custandcpun.dfm:222  units/custpicun.dfm:51 units/dmun.dfm:328
+msgid "cp_custid"
+msgstr ""
+
+#. custncpfrm..Panel2..Label4..Caption
+#. customerfrm..caripn..Label2..Caption
+#: units/custandcpun.dfm:249  units/customerun.dfm:142
+msgid "Cari Customer:"
+msgstr ""
+
+#. customeraddfrm..Panel1..Label1..Caption
+#: units/customeraddun.dfm:10 
+msgid "Add/Edit Customer"
+msgstr ""
+
+#. customeraddfrm..Panel2..Label2..Caption
+#: units/customeraddun.dfm:22 
+msgid "Nama Customer:"
+msgstr ""
+
+#. customeraddfrm..Panel2..Label4..Caption
+#. karyawanaddfrm..pagebio..tab1..Label10..Caption
+#. supplieraddfrm..Panel2..Label4..Caption
+#: units/customeraddun.dfm:48  units/karyawanaddun.dfm:304
+#: units/supplieraddun.dfm:51
+msgid "Kota:"
+msgstr ""
+
+#. customeraddfrm..Panel2..Label5..Caption
+#: units/customeraddun.dfm:61 
+msgid "Telp:"
+msgstr ""
+
+#. customeraddfrm..Panel2..Label6..Caption
+#. karyawanaddfrm..pagebio..tab2..Label22..Caption
+#: units/customeraddun.dfm:74  units/karyawanaddun.dfm:771
+msgid "NPWP:"
+msgstr ""
+
+#. customeraddfrm..Panel2..Label7..Caption
+#: units/customeraddun.dfm:87 
+msgid "Kode Cust:"
+msgstr ""
+
+#. customeraddfrm..Panel2..Label8..Caption
+#: units/customeraddun.dfm:100 
+msgid "Alamat Faktur Pajak:"
+msgstr ""
+
+#. customerfrm..Panel3..SpeedButton9..Caption
+#. dm..invoice..invoicePIC..FieldName
+#. invoicelistfrm..gridinv......FieldName
+#. supplierfrm..Panel3..SpeedButton9..Caption
+#: units/customerun.dfm:46  units/dmun.dfm:697 units/invoicelistun.dfm:211
+#: units/supplierun.dfm:96
+msgid "PIC"
+msgstr ""
+
+#. customerfrm..Panel2..DBGrid1......Title.Caption
+#. supplierfrm..Panel2..DBGrid1......Title.Caption
+#: units/customerun.dfm:120  units/supplierun.dfm:187
+msgid "Telp/Fax"
+msgstr ""
+
+#. customerfrm..Panel1..Label1..Caption
+#: units/customerun.dfm:172 
+msgid "Customer List"
+msgstr ""
+
+#. custpicaddfrm..Panel1..Label1..Caption
+#: units/custpicaddun.dfm:12 
+msgid "Add/Edit PIC"
+msgstr ""
+
+#. custpicaddfrm..Panel2..Label2..Caption
+#. supp_pic_addfrm..Panel2..Label2..Caption
+#: units/custpicaddun.dfm:24  units/supp_pic_addun.dfm:21
+msgid "Nama:"
+msgstr ""
+
+#. custpicaddfrm..Panel2..Label4..Caption
+#: units/custpicaddun.dfm:50 
+msgid "No HP:"
+msgstr ""
+
+#. custpicaddfrm..Panel2..Label5..Caption
+#: units/custpicaddun.dfm:63 
+msgid "Email:"
+msgstr ""
+
+#. custpicfrm..Panel2..DBGrid1......Title.Caption
+#: units/custpicun.dfm:45 
+msgid "alamat"
+msgstr ""
+
+#. custpicfrm..Panel1..Label1..Caption
+#: units/custpicun.dfm:64 
+msgid "Contact Person"
+msgstr ""
+
+#. datacleanfrm..cbjual..Caption
+#. jualfrm..Panel1..Label1..Caption
+#. utamafrm..Panel3..pnshortcut..Label5..Caption
+#. utamafrm..utamamn..Laporan1..Penjualan2..Caption
+#: units/datacleanun.dfm:25  units/jualun.dfm:46 units/utamaun.dfm:4378
+#: units/utamaun.dfm:6676
+msgid "Penjualan"
+msgstr ""
+
+#. datacleanfrm..cbbeli..Caption
+#. utamafrm..Panel3..pnshortcut..SpeedButton7..Caption
+#. utamafrm..Panel3..pnshortcut..Label3..Caption
+#: units/datacleanun.dfm:39  units/utamaun.dfm:3844 units/utamaun.dfm:4348
+msgid "Pembelian"
+msgstr ""
+
+#. datacleanfrm..cbinvoice..Caption
+#. utamafrm..Panel3..pnshortcut..btninvoice..Caption
+#: units/datacleanun.dfm:53  units/utamaun.dfm:4086
+msgid "Invoice"
+msgstr ""
+
+#. datacleanfrm..cbtax..Caption
+#. utamafrm..Panel3..pnshortcut..btnfaktur..Caption
+#: units/datacleanun.dfm:67  units/utamaun.dfm:5192
+msgid "Faktur Pajak"
+msgstr ""
+
+#. datacleanfrm..cbacct..Caption
+#. utamafrm..Panel3..pnshortcut..Label6..Caption
+#: units/datacleanun.dfm:81  units/utamaun.dfm:4761
+msgid "Accounting"
+msgstr ""
+
+#. datacleanfrm..BitBtn1..Caption
+#: units/datacleanun.dfm:95 
+msgid "Lakukan Cleanup"
+msgstr ""
+
+#. datacleanfrm..Panel1..Label1..Caption
+#: units/datacleanun.dfm:117 
+msgid "Data Cleanup"
+msgstr ""
+
+#. deliveryfrm..Panel1..Label1..Caption
+#: units/deliveryun.dfm:33 
+msgid "Pengiriman Barang"
+msgstr ""
+
+#. deliveryfrm..pndo..Label2..Caption
+#: units/deliveryun.dfm:78 
+msgid "No.DO:"
+msgstr ""
+
+#. deliveryfrm..pndo..Label3..Caption
+#: units/deliveryun.dfm:91 
+msgid "Ship To:"
+msgstr ""
+
+#. deliveryfrm..pndo..Label8..Caption
+#: units/deliveryun.dfm:159 
+msgid "No Trans Jual:"
+msgstr ""
+
+#. deptaddfrm..Panel1..Label1..Caption
+#: units/deptaddun.dfm:31 
+msgid "Add/Edit Departemen"
+msgstr ""
+
+#. deptaddfrm..Panel2..Label2..Caption
+#. karyawanaddfrm..pagebio..tab2..Label17..Caption
+#: units/deptaddun.dfm:74  units/karyawanaddun.dfm:660
+msgid "Departemen:"
+msgstr ""
+
+#. dm..conerp..HostName
+#: units/dmun.dfm:8 
+msgid "localhost"
+msgstr ""
+
+#. dm..conerp..Database
+#: units/dmun.dfm:10 
+msgid "merp"
+msgstr ""
+
+#. dm..conerp..User
+#. dm..conerp..Password
+#: units/dmun.dfm:11  units/dmun.dfm:12
+msgid "root"
+msgstr ""
+
+#. dm..user..userus_firstname..DisplayLabel
+#. dm..useradd..StringField1..DisplayLabel
+#. karyawanfrm..DBGrid1......Title.Caption
+#. salaryinputfrm..gridsalary......Title.Caption
+#: units/dmun.dfm:26  units/dmun.dfm:77 units/karyawanun.dfm:283
+#: units/salaryinputun.dfm:291
+msgid "Nama Depan"
+msgstr ""
+
+#. dm..user..userus_lastname..DisplayLabel
+#. dm..useradd..StringField2..DisplayLabel
+#. karyawanfrm..DBGrid1......Title.Caption
+#. salaryinputfrm..gridsalary......Title.Caption
+#: units/dmun.dfm:31  units/dmun.dfm:82 units/karyawanun.dfm:290
+#: units/salaryinputun.dfm:298
+msgid "Nama Belakang"
+msgstr ""
+
+#. dm..user..userus_username..DisplayLabel
+#. dm..useradd..StringField3..DisplayLabel
+#: units/dmun.dfm:36  units/dmun.dfm:87
+msgid "Username"
+msgstr ""
+
+#. dm..polistn..polistnSupplier..FieldName
+#. supplierfrm..Panel2..DBGrid1......Title.Caption
+#: units/dmun.dfm:355  units/supplierun.dfm:161
+msgid "Supplier"
+msgstr ""
+
+#. dm..inventory..inventorygudang..DisplayLabel
+#. dm..inventory_post..StringField16..DisplayLabel
+#. dm..inventoryref..StringField86..DisplayLabel
+#. gudangfrm..Panel1..Label1..Caption
+#: units/dmun.dfm:591  units/dmun.dfm:1264 units/dmun.dfm:3410
+#: units/gudangun.dfm:32
+msgid "Gudang"
+msgstr ""
+
+#. dm..barangrpt..barangrptVendor..FieldName
+#. polistfrm..caripn..lookfilter....Items.Strings
+#: units/dmun.dfm:1084  units/polistun.dfm:131
+msgid "Vendor"
+msgstr ""
+
+#. dm..salary_level_detail_t..LinkedFields
+#. dm..salary_level_detail_t..salary_level_detail_tsd_kode..FieldName
+#. dm..salary_level_detail_k..LinkedFields
+#. dm..salary_level_detail_k..StringField59..FieldName
+#. dm..salary_level_detail..StringField63..FieldName
+#: units/dmun.dfm:2853  units/dmun.dfm:2857 units/dmun.dfm:2886
+#: units/dmun.dfm:2890 units/dmun.dfm:2943
+msgid "sd_kode"
+msgstr ""
+
+#. dolistfrm..Panel1..Label1..Caption
+#. utamafrm..utamamn..Inventory1..ListDeliveryOrder1..Caption
+#: units/dolistun.dfm:33  units/utamaun.dfm:5825
+msgid "List Delivery Order"
+msgstr ""
+
+#. dolistfrm..Panel2..Label2..Caption
+#: units/dolistun.dfm:76 
+msgid "Cari #Delivery/#Transaki:"
+msgstr ""
+
+#. dolistfrm..Panel2..cbcust..Caption
+#: units/dolistun.dfm:113 
+msgid "Filter Customer"
+msgstr ""
+
+#. dolistfrm..griddo......Title.Caption
+#: units/dolistun.dfm:163 
+msgid "#Delivery Order"
+msgstr ""
+
+#. dolistfrm..griddo......Title.Caption
+#. invoicelistfrm..gridinv......Title.Caption
+#: units/dolistun.dfm:170  units/invoicelistun.dfm:165
+msgid "No Transaksi"
+msgstr ""
+
+#. dolistfrm..griddo......Title.Caption
+#: units/dolistun.dfm:177 
+msgid "Tgl Kirim"
+msgstr ""
+
+#. dolistfrm..popdo..RefreshData1..Caption
+#. fakturpajakfrm..poppajak..RefreshData1..Caption
+#. inventoryfrm..popinvent..RefreshData1..Caption
+#. invoicelistfrm..popinv..RefreshData1..Caption
+#. tagihanfrm..ptagihan..RefreshData1..Caption
+#: units/dolistun.dfm:221  units/fakturpajakun.dfm:409
+#: units/inventoryun.dfm:306 units/invoicelistun.dfm:333
+#: units/tagihanun.dfm:355
+msgid "Refresh Data"
+msgstr ""
+
+#. dolistfrm..popdo..CetakDeliveryOrder1..Caption
+#: units/dolistun.dfm:257 
+msgid "Cetak Delivery Order"
+msgstr ""
+
+#. dolistfrm..popdo..HapusDeliveryOrder1..Caption
+#: units/dolistun.dfm:264 
+msgid "Hapus Transaksi ini"
+msgstr ""
+
+#. dolistfrm..rsdeliver..TitlePreview
+#. invoicprintfrm..RvSystem1..TitlePreview
+#. glfrm..rsgl..TitlePreview
+#. labarugifrm..rslr..TitlePreview
+#. neracafrm..rsneraca..TitlePreview
+#. pajakAddfrm..rspajak..TitlePreview
+#. penawaranfrm..rsQuot..TitlePreview
+#. jualrptfrm..RvSystem1..TitlePreview
+#. projectlapfrm..RvSystem1..TitlePreview
+#. salaryrptfrm..rsgaji..TitlePreview
+#: units/dolistun.dfm:276  units/fakturdaninvoiceun.dfm:190
+#: units/glun.dfm:219 units/labarugiun.dfm:194 units/neracaun.dfm:177
+#: units/pajakaddun.dfm:593 units/penawaranun.dfm:558
+#: units/penjualanrptun.dfm:175 units/projectlapun.dfm:202
+#: units/salaryrptun.dfm:211
+msgid "Report Preview"
+msgstr ""
+
+#. invoicprintfrm..Panel1..Label1..Caption
+#. tagihanfrm..ptagihan..CetakInvoice1..Caption
+#: units/fakturdaninvoiceun.dfm:33  units/tagihanun.dfm:283
+msgid "Cetak Invoice"
+msgstr ""
+
+#. invoicprintfrm..Panel3..btntambah..Caption
+#. glfrm..Panel3..SpeedButton2..Caption
+#. labarugifrm..Panel3..SpeedButton2..Caption
+#. neracafrm..Panel3..SpeedButton2..Caption
+#. pajakAddfrm..Panel2..btncetak..Caption
+#. jualrptfrm..Panel3..SpeedButton2..Caption
+#. projectlapfrm..Panel3..SpeedButton2..Caption
+#. salaryrptfrm..Panel3..btntambah..Caption
+#: units/fakturdaninvoiceun.dfm:77  units/glun.dfm:170
+#: units/labarugiun.dfm:115 units/neracaun.dfm:77 units/pajakaddun.dfm:235
+#: units/penjualanrptun.dfm:74 units/projectlapun.dfm:153
+#: units/salaryrptun.dfm:77
+msgid "&Cetak"
+msgstr ""
+
+#. invoicprintfrm..Panel2..Label2..Caption
+#: units/fakturdaninvoiceun.dfm:130 
+msgid "No Invoice:"
+msgstr ""
+
+#. invoicprintfrm..Panel2..Label3..Caption
+#: units/fakturdaninvoiceun.dfm:143 
+msgid "No Transaksi:"
+msgstr ""
+
+#. fakturpajakfrm..Panel1..Label1..Caption
+#: units/fakturpajakun.dfm:32 
+msgid "List Faktur Pajak "
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#: units/fakturpajakun.dfm:212 
+msgid "No Dokumen"
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#: units/fakturpajakun.dfm:224 
+msgid "Nama Wajib Pajak/Lawan Transaksi"
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#: units/fakturpajakun.dfm:236 
+msgid "N.P.W.P"
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#. polistfrm..gridpo......Title.Caption
+#: units/fakturpajakun.dfm:248  units/polistun.dfm:175
+msgid "Tanggal"
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#: units/fakturpajakun.dfm:260 
+msgid "No Ref"
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#: units/fakturpajakun.dfm:272 
+msgid "DPP"
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#: units/fakturpajakun.dfm:283 
+msgid "PPN"
+msgstr ""
+
+#. fakturpajakfrm..DBGrid1......Title.Caption
+#: units/fakturpajakun.dfm:294 
+msgid "PPNBM"
+msgstr ""
+
+#. fakturpajakfrm..Panel3..Label2..Caption
+#: units/fakturpajakun.dfm:315 
+msgid "Cari No Dokumen/WP:"
+msgstr ""
+
+#. fakturpajakfrm..poppajak..CetakFaktur1..Caption
+#: units/fakturpajakun.dfm:373 
+msgid "&Cetak Faktur"
+msgstr ""
+
+#. fakturpajakviewfrm..Panel1..Label1..Caption
+#: units/fakturpajakviewun.dfm:32 
+msgid "List Faktur Pajak"
+msgstr ""
+
+#. fakturpajakviewfrm..Panel2..cbcust..Caption
+#. invoicelistfrm..Panel2..Label3..Caption
+#. tagihanfrm..Panel2..cbfilter..Caption
+#: units/fakturpajakviewun.dfm:100  units/invoicelistun.dfm:89
+#: units/tagihanun.dfm:124
+msgid "Filter Customer:"
+msgstr ""
+
+#. fakturpajakviewfrm..gridakun......Title.Caption
+#: units/fakturpajakviewun.dfm:155 
+msgid "No Faktur"
+msgstr ""
+
+#. fakturpajakviewfrm..gridakun......Title.Caption
+#. tagihanfrm..DBGrid1......Title.Caption
+#: units/fakturpajakviewun.dfm:162  units/tagihanun.dfm:171
+msgid "Kode Transaksi"
+msgstr ""
+
+#. fakturpajakviewfrm..gridakun......Title.Caption
+#: units/fakturpajakviewun.dfm:169 
+msgid "Tgl Faktur"
+msgstr ""
+
+#. fakturpajakviewfrm..popfaktur..RefreshPerbaharuiData1..Caption
+#: units/fakturpajakviewun.dfm:252 
+msgid "Refresh/Perbaharui Data"
+msgstr ""
+
+#. footnote_globalfrm..Caption
+#. invoiceamountfrm..Caption
+#. penguranggajifrm..Caption
+#. tanggalubahfrm..Caption
+#: units/foot_globalun.dfm:6  units/invoiceamountun.dfm:6
+#: units/penguranggajiun.dfm:6 units/tanggalubahun.dfm:6
+msgid "mERP"
+msgstr ""
+
+#. footnote_globalfrm..Panel1..Label1..Caption
+#: units/foot_globalun.dfm:32 
+msgid "Quotation Footnote"
+msgstr ""
+
+#. footnote_globalfrm..DBGrid1......Title.Caption
+#. footnotefrm..DBGrid1......Title.Caption
+#: units/foot_globalun.dfm:81  units/footnoteun.dfm:94
+msgid "Kolom 1"
+msgstr ""
+
+#. footnote_globalfrm..DBGrid1......Title.Caption
+#. footnotefrm..DBGrid1......Title.Caption
+#: units/foot_globalun.dfm:88  units/footnoteun.dfm:101
+msgid "Kolom 2"
+msgstr ""
+
+#. footnote_globalfrm..DBGrid1......Title.Caption
+#. footnotefrm..DBGrid1......Title.Caption
+#: units/foot_globalun.dfm:95  units/footnoteun.dfm:108
+msgid "Kolom 3"
+msgstr ""
+
+#. footnotefrm..Panel1..Label1..Caption
+#: units/footnoteun.dfm:31 
+msgid "Foot Note"
+msgstr ""
+
+#. glfrm..Panel1..Label1..Caption
+#: units/glun.dfm:32 
+msgid "General Ledger/Buku Besar"
+msgstr ""
+
+#. glfrm..Panel2..Label2..Caption
+#: units/glun.dfm:75 
+msgid "Periode Awal:"
+msgstr ""
+
+#. glfrm..Panel2..Label3..Caption
+#: units/glun.dfm:88 
+msgid "Periode Akhir:"
+msgstr ""
+
+#. glfrm..Panel2..blnawal..Text
+#. glfrm..Panel2..blnakhir..Text
+#: units/glun.dfm:103  units/glun.dfm:133
+msgid "blnawal"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:105  units/glun.dfm:135 units/labarugiun.dfm:80
+msgid "Januari"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:106  units/glun.dfm:136 units/labarugiun.dfm:81
+msgid "Februari"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:107  units/glun.dfm:137 units/labarugiun.dfm:82
+msgid "Maret"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:108  units/glun.dfm:138 units/labarugiun.dfm:83
+msgid "April"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:109  units/glun.dfm:139 units/labarugiun.dfm:84
+msgid "Mei"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:110  units/glun.dfm:140 units/labarugiun.dfm:85
+msgid "Juni"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:111  units/glun.dfm:141 units/labarugiun.dfm:86
+msgid "Juli"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:112  units/glun.dfm:142 units/labarugiun.dfm:87
+msgid "Agustus"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:113  units/glun.dfm:143 units/labarugiun.dfm:88
+msgid "September"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:114  units/glun.dfm:144 units/labarugiun.dfm:89
+msgid "Oktober"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:115  units/glun.dfm:145 units/labarugiun.dfm:90
+msgid "Nopember"
+msgstr ""
+
+#. glfrm..Panel2..blnawal....Items.Strings
+#. glfrm..Panel2..blnakhir....Items.Strings
+#. labarugifrm..Panel2..cbbulan....Items.Strings
+#: units/glun.dfm:116  units/glun.dfm:146 units/labarugiun.dfm:91
+msgid "Desember"
+msgstr ""
+
+#. groupaddfrm..Caption
+#: units/groupaddun.dfm:6 
+msgid "mERP Ver 1.0"
+msgstr ""
+
+#. groupaddfrm..Panel1..Label1..Caption
+#: units/groupaddun.dfm:32 
+msgid "Add/Edit Group"
+msgstr ""
+
+#. groupaddfrm..Panel2..Label2..Caption
+#: units/groupaddun.dfm:53 
+msgid "Nama Group:"
+msgstr ""
+
+#. groupfrm..Panel1..Label1..Caption
+#: units/grouplistun.dfm:32 
+msgid "Group List"
+msgstr ""
+
+#. groupfrm..Panel2..DBGrid1......Title.Caption
+#: units/grouplistun.dfm:65 
+msgid "Nama Group"
+msgstr ""
+
+#. gudangaddfrm..Panel1..Label1..Caption
+#: units/gudangaddun.dfm:11 
+msgid "Tambah/Edit Gudang"
+msgstr ""
+
+#. gudangaddfrm..Panel2..Label2..Caption
+#: units/gudangaddun.dfm:23 
+msgid "Nama Gudang:"
+msgstr ""
+
+#. gudangaddfrm..Panel2..Label3..Caption
+#: units/gudangaddun.dfm:36 
+msgid "Lokasi:"
+msgstr ""
+
+#. gudangpickfrm..Panel1..SpeedButton1..Caption
+#: units/gudangpickun.dfm:33 
+msgid "&Ok"
+msgstr ""
+
+#. gudangpickfrm..Panel2..Label2..Caption
+#: units/gudangpickun.dfm:79 
+msgid "Pilih Gudang"
+msgstr ""
+
+#. gudangfrm..DBGrid1......Title.Caption
+#: units/gudangun.dfm:123 
+msgid "Nama Gudang"
+msgstr ""
+
+#. gudangfrm..DBGrid1......Title.Caption
+#. projectfrm..DBGrid1......Title.Caption
+#: units/gudangun.dfm:130  units/projectun.dfm:339
+msgid "Lokasi"
+msgstr ""
+
+#. inventoryfrm..Panel3..Label1..Caption
+#. inventoryviewfrm..Panel1..Label1..Caption
+#: units/inventoryun.dfm:32  units/inventoryviewun.dfm:33
+msgid "Inventory Barang"
+msgstr ""
+
+#. inventoryfrm..caripn..Label2..Caption
+#. inventoryviewfrm..Panel2..Label2..Caption
+#: units/inventoryun.dfm:78  units/inventoryviewun.dfm:130
+msgid "Cari barang/type:"
+msgstr ""
+
+#. inventoryfrm..DBGrid1......Title.Caption
+#. inventoryviewfrm..gridinv......Title.Caption
+#: units/inventoryun.dfm:183  units/inventoryviewun.dfm:208
+msgid "Stock"
+msgstr ""
+
+#. inventoryviewfrm..gridinv......Title.Caption
+#: units/inventoryviewun.dfm:219 
+msgid "Harga (IDR)"
+msgstr ""
+
+#. invoiceamountfrm..Label2..Caption
+#: units/invoiceamountun.dfm:26 
+msgid "Jumlah (Rp):"
+msgstr ""
+
+#. invoiceamountfrm..Label3..Caption
+#. jabatanaddfrm..Panel2..Label3..Caption
+#. jurnalumumfrm..pntop..Label4..Caption
+#: units/invoiceamountun.dfm:39  units/jabatanaddun.dfm:281
+#: units/jurnalumumun.dfm:104
+msgid "Keterangan:"
+msgstr ""
+
+#. invoiceamountfrm..Panel1..Label1..Caption
+#. invoicelistfrm..popinv..cetakinv..Caption
+#: units/invoiceamountun.dfm:72  units/invoicelistun.dfm:376
+msgid "Generate Invoice"
+msgstr ""
+
+#. invoiceamountfrm..BitBtn1..Caption
+#: units/invoiceamountun.dfm:108 
+msgid "&Generate Invoice"
+msgstr ""
+
+#. invoicelistfrm..Panel1..Label1..Caption
+#. utamafrm..Panel3..pnshortcut..btnlistjual..Caption
+#: units/invoicelistun.dfm:32  units/utamaun.dfm:4829
+msgid "List Penjualan"
+msgstr ""
+
+#. invoicelistfrm..Panel2..Label2..Caption
+#: units/invoicelistun.dfm:76 
+msgid "Cari  PO/No Trans:"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#: units/invoicelistun.dfm:177 
+msgid "No PO"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#: units/invoicelistun.dfm:200 
+msgid "NPWP"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#. tagihanfrm..DBGrid1......Title.Caption
+#: units/invoicelistun.dfm:223  units/tagihanun.dfm:229
+msgid "Tgl Transaksi"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#. polistfrm..gridpo......Title.Caption
+#: units/invoicelistun.dfm:234  units/polistun.dfm:197
+msgid "Jth Tempo"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#: units/invoicelistun.dfm:245 
+msgid "Pembayaran"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#: units/invoicelistun.dfm:257 
+msgid "Nilai Transaksi"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#. invoicelistfrm..gridinv......Title.Caption
+#: units/invoicelistun.dfm:270  units/invoicelistun.dfm:295
+msgid "Down Payment"
+msgstr ""
+
+#. invoicelistfrm..gridinv......Title.Caption
+#: units/invoicelistun.dfm:283 
+msgid "Balance"
+msgstr ""
+
+#. invoicelistfrm..popinv..LihatDetail1..Caption
+#: units/invoicelistun.dfm:340 
+msgid "Lihat Detail"
+msgstr ""
+
+#. invoicelistfrm..popinv..HapusInvoice1..Caption
+#: units/invoicelistun.dfm:383 
+msgid "Hapus Transaksi Ini"
+msgstr ""
+
+#. invoicelistfrm..popinv..InputData1..Caption
+#: units/invoicelistun.dfm:390 
+msgid "Insert to DO"
+msgstr ""
+
+#. jabatanaddfrm..Panel1..Label1..Caption
+#: units/jabatanaddun.dfm:31 
+msgid "Add/Edit Jabatan"
+msgstr ""
+
+#. jabatanaddfrm..Panel2..Label2..Caption
+#. karyawanaddfrm..pagebio..tab2..Label24..Caption
+#: units/jabatanaddun.dfm:268  units/karyawanaddun.dfm:806
+msgid "Jabatan:"
+msgstr ""
+
+#. jasaaddfrm..Panel1..Label1..Caption
+#: units/jasaaddun.dfm:31 
+msgid "Add/Edit Jasa"
+msgstr ""
+
+#. jasaaddfrm..Panel2..Label2..Caption
+#: units/jasaaddun.dfm:274 
+msgid "Nama Jasa"
+msgstr ""
+
+#. jasaaddfrm..Panel2..Label3..Caption
+#: units/jasaaddun.dfm:287 
+msgid "Unit/Satuan"
+msgstr ""
+
+#. jasaaddfrm..Panel2..Label4..Caption
+#. jasafrm..DBGrid1......Title.Caption
+#: units/jasaaddun.dfm:300  units/jasaun.dfm:251
+msgid "Tarif"
+msgstr ""
+
+#. jasafrm..Panel1..Label1..Caption
+#: units/jasaun.dfm:33 
+msgid "Master Jasa"
+msgstr ""
+
+#. jasafrm..DBGrid1......Title.Caption
+#. utamafrm..utamamn..Master2..Jasa1..Caption
+#: units/jasaun.dfm:227  units/utamaun.dfm:5507
+msgid "Jasa"
+msgstr ""
+
+#. jasafrm..DBGrid1......Title.Caption
+#: units/jasaun.dfm:239 
+msgid "Satuan"
+msgstr ""
+
+#. jasafrm..Panel2..Label2..Caption
+#: units/jasaun.dfm:268 
+msgid "Cari Jasa:"
+msgstr ""
+
+#. jatuhtempofrm..Panel1..Label1..Caption
+#: units/jatuhtempoun.dfm:33 
+msgid "Jatuh Tempo Pembelian"
+msgstr ""
+
+#. jatuhtempofrm..Panel3..SpeedButton4..Caption
+#: units/jatuhtempoun.dfm:92 
+msgid "&OK"
+msgstr ""
+
+#. jobdesfrm..Panel1..Label1..Caption
+#: units/jobdesun.dfm:32 
+msgid "Jabatan"
+msgstr ""
+
+#. jobdesfrm..DBGrid1......Title.Caption
+#: units/jobdesun.dfm:252 
+msgid "Jataban"
+msgstr ""
+
+#. jobdesfrm..DBGrid1......Title.Caption
+#. jurnalumumlistfrm..DBGrid1......Title.Caption
+#. payadjustmentfrm..DBGrid1......Title.Caption
+#: units/jobdesun.dfm:259  units/jurnalumumlistun.dfm:271
+#: units/payadjustmentun.dfm:147
+msgid "Keterangan"
+msgstr ""
+
+#. jualfrm..Label10..Caption
+#. jualfrm..pnheader..Label8..Caption
+#: units/jualun.dfm:26  units/jualun.dfm:198
+msgid "No PO:"
+msgstr ""
+
+#. jualfrm..pnheader..Label2..Caption
+#: units/jualun.dfm:91 
+msgid "No. Trans:"
+msgstr ""
+
+#. jualfrm..pnheader..Label7..Caption
+#: units/jualun.dfm:185 
+msgid "Cash/Hutang:"
+msgstr ""
+
+#. jualfrm..pnheader..Label11..Caption
+#: units/jualun.dfm:234 
+msgid "PPN:"
+msgstr ""
+
+#. jualfrm..pnheader..Label14..Caption
+#: units/jualun.dfm:247 
+msgid "Down Payment (DP):"
+msgstr ""
+
+#. jualfrm..pnheader..lookppn....Items.Strings
+#: units/jualun.dfm:403 
+msgid "Ya"
+msgstr ""
+
+#. jualfrm..pnheader..lookppn....Items.Strings
+#: units/jualun.dfm:404 
+msgid "Tidak"
+msgstr ""
+
+#. jualfrm..Panel3..Label12..Caption
+#: units/jualun.dfm:626 
+msgid "[ENTER] - Input Barang"
+msgstr ""
+
+#. jualfrm..Panel3..Label13..Caption
+#: units/jualun.dfm:639 
+msgid "[F5] - Input Jasa"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:677 
+msgid "Kd Barang - Jasa"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:685 
+msgid "Nama Barang - Jasa"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:699 
+msgid "Satuan/Unit"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:707 
+msgid "Harga Pokok"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:714 
+msgid "Harga Jual"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:727 
+msgid "Disc (Rp)"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:734 
+msgid "Disc (%)"
+msgstr ""
+
+#. jualfrm..gridjual......Title.Caption
+#: units/jualun.dfm:740 
+msgid "Row Total"
+msgstr ""
+
+#. jurnalumumlistfrm..Panel1..Label1..Caption
+#: units/jurnalumumlistun.dfm:33 
+msgid "List Jurnal Umum"
+msgstr ""
+
+#. jurnalumumlistfrm..DBGrid1......Title.Caption
+#: units/jurnalumumlistun.dfm:219 
+msgid "Kode Ref"
+msgstr ""
+
+#. jurnalumumlistfrm..DBGrid1......Title.Caption
+#: units/jurnalumumlistun.dfm:236 
+msgid "Tanggal Jurnal"
+msgstr ""
+
+#. jurnalumumlistfrm..DBGrid1......Title.Caption
+#: units/jurnalumumlistun.dfm:254 
+msgid "Jumlah (Rp)"
+msgstr ""
+
+#. jurnalumumfrm..Panel1..Label1..Caption
+#. utamafrm..Panel3..pnshortcut..SpeedButton13..Caption
+#: units/jurnalumumun.dfm:33  units/utamaun.dfm:4641
+msgid "Jurnal Umum"
+msgstr ""
+
+#. jurnalumumfrm..pntop..Label2..Caption
+#: units/jurnalumumun.dfm:78 
+msgid "No Ref:"
+msgstr ""
+
+#. jurnalumumfrm..gridjurnal......Title.Caption
+#: units/jurnalumumun.dfm:204 
+msgid "Debet"
+msgstr ""
+
+#. jurnalumumfrm..gridjurnal......Title.Caption
+#: units/jurnalumumun.dfm:217 
+msgid "Kredit"
+msgstr ""
+
+#. jurnalumumfrm..Panel3..btnsimpan..Caption
+#: units/jurnalumumun.dfm:370 
+msgid "&Posting"
+msgstr ""
+
+#. karyawanaddfrm..Panel1..Label1..Caption
+#: units/karyawanaddun.dfm:32 
+msgid "Add/Edit Karyawan"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Caption
+#: units/karyawanaddun.dfm:266 
+msgid "Biodata"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label12..Caption
+#: units/karyawanaddun.dfm:278 
+msgid "email:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label11..Caption
+#: units/karyawanaddun.dfm:291 
+msgid "HP/Telp:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label7..Caption
+#: units/karyawanaddun.dfm:330 
+msgid "Nikah/Lajang:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label6..Caption
+#: units/karyawanaddun.dfm:343 
+msgid "Tgl Lahir:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label5..Caption
+#: units/karyawanaddun.dfm:356 
+msgid "Tempat Lahir:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label8..Caption
+#: units/karyawanaddun.dfm:369 
+msgid "Jenis Kelamin:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label4..Caption
+#. useraddfrm..Panel3..Label3..Caption
+#: units/karyawanaddun.dfm:382  units/useraddun.dfm:111
+msgid "Nama Belakang:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label3..Caption
+#. useraddfrm..Panel3..Label2..Caption
+#: units/karyawanaddun.dfm:395  units/useraddun.dfm:98
+msgid "Nama Depan:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..Label2..Caption
+#: units/karyawanaddun.dfm:408 
+msgid "No Induk:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..jk....Items.Strings
+#: units/karyawanaddun.dfm:482 
+msgid "Laki-laki"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..jk....Items.Strings
+#: units/karyawanaddun.dfm:483 
+msgid "Perempuan"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..status....Items.Strings
+#: units/karyawanaddun.dfm:537 
+msgid "Menikah"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab1..status....Items.Strings
+#: units/karyawanaddun.dfm:538 
+msgid "Lajang"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Caption
+#: units/karyawanaddun.dfm:613 
+msgid "Pekerjaan, Pembayaran && Pajak"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label14..Caption
+#: units/karyawanaddun.dfm:621 
+msgid "Tgl Mulai Kerja"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label15..Caption
+#: units/karyawanaddun.dfm:634 
+msgid "Tgl Berhenti Kerja"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label16..Caption
+#: units/karyawanaddun.dfm:647 
+msgid "Limit Pinjaman"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label18..Caption
+#: units/karyawanaddun.dfm:673 
+msgid "Level Gaji:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label19..Caption
+#: units/karyawanaddun.dfm:686 
+msgid "Metoda Bayar:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label21..Caption
+#: units/karyawanaddun.dfm:712 
+msgid "No Rekening:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label13..Caption
+#: units/karyawanaddun.dfm:758 
+msgid "Tarif PTKP:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..Label23..Caption
+#: units/karyawanaddun.dfm:784 
+msgid "Tgl NPWP:"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..metodabayar....Items.Strings
+#: units/karyawanaddun.dfm:929 
+msgid "Transfer"
+msgstr ""
+
+#. karyawanaddfrm..pagebio..tab2..metodabayar....Items.Strings
+#: units/karyawanaddun.dfm:930 
+msgid "Cash"
+msgstr ""
+
+#. karyawanfrm..Caption
+#: units/karyawanun.dfm:6 
+msgid "mRERP 1.0"
+msgstr ""
+
+#. karyawanfrm..Panel1..Label1..Caption
+#: units/karyawanun.dfm:32 
+msgid "Data Induk Karyawan"
+msgstr ""
+
+#. karyawanfrm..DBGrid1......Title.Caption
+#: units/karyawanun.dfm:276 
+msgid "No Induk"
+msgstr ""
+
+#. karyawanfrm..DBGrid1......Title.Caption
+#: units/karyawanun.dfm:297 
+msgid "Tgl Lahir"
+msgstr ""
+
+#. karyawanfrm..DBGrid1......Title.Caption
+#: units/karyawanun.dfm:303 
+msgid "Status Perkawinan"
+msgstr ""
+
+#. karyawanfrm..DBGrid1......Title.Caption
+#: units/karyawanun.dfm:324 
+msgid "Telp/Hp"
+msgstr ""
+
+#. karyawanfrm..DBGrid1......Title.Caption
+#. supp_pic_addfrm..Panel2..Label5..Caption
+#. supplierpicfrm..Panel2..DBGrid1......Title.Caption
+#: units/karyawanun.dfm:331  units/supp_pic_addun.dfm:60
+#: units/supplierpicun.dfm:40
+msgid "Email"
+msgstr ""
+
+#. karyawanfrm..Panel2..Label2..Caption
+#: units/karyawanun.dfm:353 
+msgid "Cari Karyawan:"
+msgstr ""
+
+#. kategoriaddfrm..Panel1..Label1..Caption
+#: units/kategoriaddun.dfm:14 
+msgid "Add/Edit Kategori"
+msgstr ""
+
+#. labarugifrm..Panel1..Label1..Caption
+#: units/labarugiun.dfm:33 
+msgid "Laba/Rugi"
+msgstr ""
+
+#. labarugifrm..Panel2..cbbulan..Text
+#. neracafrm..Panel2..cbbulan..Text
+#: units/labarugiun.dfm:78  units/neracaun.dfm:145
+msgid "cbbulan"
+msgstr ""
+
+#. listcobafrm..Caption
+#: units/listcobaun.dfm:2 
+msgid "listcobafrm"
+msgstr ""
+
+#. listrepfrm..Panel1..Label1..Caption
+#: units/listrep.dfm:388 
+msgid "[mTitle]"
+msgstr ""
+
+#. lunaspiutangfrm..Panel1..Label1..Caption
+#: units/lunaspiutangun.dfm:33 
+msgid "Pelunasan Piutang"
+msgstr ""
+
+#. lunaspiutangfrm..Panel3..SpeedButton1..Caption
+#: units/lunaspiutangun.dfm:77 
+msgid "&Proses Pelunasan"
+msgstr ""
+
+#. lunaspiutangfrm..Panel2..Label3..Caption
+#: units/lunaspiutangun.dfm:143 
+msgid "Jml (Rp):"
+msgstr ""
+
+#. neracafrm..Panel1..Label1..Caption
+#: units/neracaun.dfm:33 
+msgid "Neraca"
+msgstr ""
+
+#. neracafrm..Panel2..Label2..Caption
+#. jualrptfrm..Panel2..Label2..Caption
+#. projectlapfrm..Panel2..Label2..Caption
+#. salaryprosesfrm..Label2..Caption
+#. salaryrptfrm..Panel2..Label3..Caption
+#: units/neracaun.dfm:130  units/penjualanrptun.dfm:127
+#: units/projectlapun.dfm:75 units/salary_prosesun.dfm:25
+#: units/salaryrptun.dfm:159
+msgid "Periode:"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:147 
+msgid "JANUARI"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:148 
+msgid "FEBRUARI"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:149 
+msgid "MARET"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:150 
+msgid "APRIL"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:151 
+msgid "MEI"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:152 
+msgid "JUNI"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:153 
+msgid "JULI"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:154 
+msgid "AGUSTUS"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:155 
+msgid "SEPTEMBER"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:156 
+msgid "OKTOBER"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:157 
+msgid "NOPEMBER"
+msgstr ""
+
+#. neracafrm..Panel2..cbbulan....Items.Strings
+#: units/neracaun.dfm:158 
+msgid "DESEMBER"
+msgstr ""
+
+#. neracafrm..pdfneraca..DisplayName
+#: units/neracaun.dfm:198 
+msgid "Adobe Acrobat (PDF)"
+msgstr ""
+
+#. neracafrm..pdfneraca..DocInfo.Creator
+#: units/neracaun.dfm:204 
+msgid "Rave (http://www.nevrona.com/rave)"
+msgstr ""
+
+#. neracafrm..pdfneraca..DocInfo.Producer
+#: units/neracaun.dfm:205 
+msgid "Nevrona Designs"
+msgstr ""
+
+#. detailorderfrm..Panel1..Label1..Caption
+#: units/orderdetailun.dfm:32 
+msgid "Order Detail"
+msgstr ""
+
+#. detailorderfrm..Panel3..btntambah..Caption
+#: units/orderdetailun.dfm:76 
+msgid "&Simpan ke Gudang"
+msgstr ""
+
+#. pajakAddfrm..Panel1..Label1..Caption
+#: units/pajakaddun.dfm:34 
+msgid "Input Pajak Keluaran"
+msgstr ""
+
+#. pajakAddfrm..Panel2..btntambah..Caption
+#: units/pajakaddun.dfm:55 
+msgid "Tambah"
+msgstr ""
+
+#. pajakAddfrm..Panel3..Label2..Caption
+#: units/pajakaddun.dfm:288 
+msgid "NPWP Lawan"
+msgstr ""
+
+#. pajakAddfrm..Panel3..Label3..Caption
+#. wpviewfrm..Panel6..DBGrid1......Title.Caption
+#: units/pajakaddun.dfm:309  units/wpviewun.dfm:214
+msgid "Nama Lawan Transaksi"
+msgstr ""
+
+#. pajakAddfrm..Panel3..Label4..Caption
+#: units/pajakaddun.dfm:322 
+msgid "Nomor Dokumen"
+msgstr ""
+
+#. pajakAddfrm..Panel3..Label5..Caption
+#: units/pajakaddun.dfm:335 
+msgid "Tanggal Dokumen"
+msgstr ""
+
+#. pajakAddfrm..Panel3..Label6..Caption
+#: units/pajakaddun.dfm:356 
+msgid "Dasar Pengenaan Pajak (DPP)"
+msgstr ""
+
+#. pajakAddfrm..Panel3..Label7..Caption
+#: units/pajakaddun.dfm:369 
+msgid "Pajak Pertambahan Nilai (PPN)"
+msgstr ""
+
+#. pajakAddfrm..Panel3..Label8..Caption
+#: units/pajakaddun.dfm:382 
+msgid "Pajak Penjualan Atas Barang Mewah (PPnBM)"
+msgstr ""
+
+#. pajakAddfrm..Panel3..cbcetak..Caption
+#: units/pajakaddun.dfm:513 
+msgid "Cetak Faktur Pajak"
+msgstr ""
+
+#. passchangefrm..Panel1..Label1..Caption
+#: units/passchangeun.dfm:32 
+msgid "Ganti Password"
+msgstr ""
+
+#. passchangefrm..Panel2..Label7..Caption
+#: units/passchangeun.dfm:75 
+msgid "Password Lama:"
+msgstr ""
+
+#. passchangefrm..Panel2..Label2..Caption
+#: units/passchangeun.dfm:88 
+msgid "Password Baru:"
+msgstr ""
+
+#. passchangefrm..Panel2..Label3..Caption
+#. useraddfrm..Panel3..Label7..Caption
+#: units/passchangeun.dfm:101  units/useraddun.dfm:163
+msgid "Ulangi Password:"
+msgstr ""
+
+#. payadjustaddfrm..Panel1..Label1..Caption
+#: units/payadjustaddun.dfm:31 
+msgid "Add/Edit Penyesuaian Pembayaran"
+msgstr ""
+
+#. payadjustaddfrm..Panel2..Label3..Caption
+#: units/payadjustaddun.dfm:224 
+msgid "Item Penyesuaian:"
+msgstr ""
+
+#. payadjustaddfrm..Panel2..Label2..Caption
+#: units/payadjustaddun.dfm:237 
+msgid "Tambah/Potong:"
+msgstr ""
+
+#. payadjustmentfrm..Panel1..Label1..Caption
+#: units/payadjustmentun.dfm:31 
+msgid "Item Penyesuaian Pembayaran"
+msgstr ""
+
+#. payadjustmentfrm..DBGrid1......Title.Caption
+#: units/payadjustmentun.dfm:120 
+msgid "Item Penyesuaian"
+msgstr ""
+
+#. payadjustmentfrm..DBGrid1......Title.Caption
+#: units/payadjustmentun.dfm:127 
+msgid "Persentase"
+msgstr ""
+
+#. payadjustmentfrm..DBGrid1......Title.Caption
+#: units/payadjustmentun.dfm:133 
+msgid "Jml (Rp)"
+msgstr ""
+
+#. payadjustmentfrm..DBGrid1......Title.Caption
+#: units/payadjustmentun.dfm:140 
+msgid "Tambah/Potong"
+msgstr ""
+
+#. penawaranfrm..Panel1..Label1..Caption
+#: units/penawaranun.dfm:33 
+msgid "Penawaran"
+msgstr ""
+
+#. penawaranfrm..Panel2..Label2..Caption
+#: units/penawaranun.dfm:77 
+msgid "Quot.No:"
+msgstr ""
+
+#. penguranggajiaddfrm..Panel1..Label1..Caption
+#. penguranggajifrm..Panel1..Label1..Caption
+#: units/penguranggajiaddun.dfm:31  units/penguranggajiun.dfm:32
+msgid "Item Pengurang Gaji"
+msgstr ""
+
+#. penguranggajiaddfrm..Panel2..Label3..Caption
+#. salaryleveltambahaddfrm..Panel2..Label3..Caption
+#: units/penguranggajiaddun.dfm:87  units/salary_level_tambahaddun.dfm:87
+msgid "Nama Item :"
+msgstr ""
+
+#. penguranggajiaddfrm..Panel2..Label4..Caption
+#. salaryleveltambahaddfrm..Panel2..Label4..Caption
+#: units/penguranggajiaddun.dfm:100  units/salary_level_tambahaddun.dfm:100
+msgid "Nominal (Rp):"
+msgstr ""
+
+#. penguranggajifrm..gridkurang......Title.Caption
+#. salaryleveladdfrm..PageControl1..TabSheet1..DBGrid2......Title.Caption
+#. salaryleveladdfrm..PageControl1..TabSheet2..DBGrid1......Title.Caption
+#. salaryleveltambahfrm..gridtambah......Title.Caption
+#: units/penguranggajiun.dfm:89  units/salaryleveladdun.dfm:393
+#: units/salaryleveladdun.dfm:435 units/salaryleveltambahun.dfm:282
+msgid "Item"
+msgstr ""
+
+#. penguranggajifrm..gridkurang......Title.Caption
+#. salaryleveladdfrm..PageControl1..TabSheet1..DBGrid2......Title.Caption
+#. salaryleveladdfrm..PageControl1..TabSheet2..DBGrid1......Title.Caption
+#. salaryleveltambahfrm..gridtambah......Title.Caption
+#: units/penguranggajiun.dfm:96  units/salaryleveladdun.dfm:400
+#: units/salaryleveladdun.dfm:442 units/salaryleveltambahun.dfm:289
+msgid "Nominal (Rp)"
+msgstr ""
+
+#. jualrptfrm..Panel1..Label1..Caption
+#: units/penjualanrptun.dfm:30 
+msgid "Laporan Penjualan"
+msgstr ""
+
+#. jualrptfrm..Panel2..Label3..Caption
+#. projectlapfrm..Panel2..Label3..Caption
+#: units/penjualanrptun.dfm:140  units/projectlapun.dfm:88
+msgid "s/d"
+msgstr ""
+
+#. polistfrm..Panel3..Label1..Caption
+#: units/polistun.dfm:34 
+msgid "List Purchase Order (PO)"
+msgstr ""
+
+#. polistfrm..caripn..Label2..Caption
+#: units/polistun.dfm:80 
+msgid "Cari PO:"
+msgstr ""
+
+#. polistfrm..caripn..Label3..Caption
+#: units/polistun.dfm:93 
+msgid "Filter Pembelian:"
+msgstr ""
+
+#. polistfrm..caripn..lookfilter..Text
+#: units/polistun.dfm:126 
+msgid "Semua Pembelian"
+msgstr ""
+
+#. polistfrm..caripn..lookfilter....Items.Strings
+#: units/polistun.dfm:129 
+msgid "Semua"
+msgstr ""
+
+#. polistfrm..caripn..lookfilter....Items.Strings
+#: units/polistun.dfm:130 
+msgid "Langsung"
+msgstr ""
+
+#. polistfrm..gridpo......Title.Caption
+#: units/polistun.dfm:163 
+msgid "No. PO"
+msgstr ""
+
+#. polistfrm..popop..LihatDetail1..Caption
+#: units/polistun.dfm:211 
+msgid "&Lihat Detail"
+msgstr ""
+
+#. polistfrm..popop..HapusData1..Caption
+#: units/polistun.dfm:218 
+msgid "&Hapus Data"
+msgstr ""
+
+#. polistfrm..popop..CetakDeliveryOrderDO1..Caption
+#: units/polistun.dfm:225 
+msgid "Input/Edit Tanggal Jatuh Tempo "
+msgstr ""
+
+#. pphaddfrm..Panel1..Label1..Caption
+#: units/pphaddun.dfm:31 
+msgid "Add/Edit Tarif PPh 21"
+msgstr ""
+
+#. pphaddfrm..Panel2..Label2..Caption
+#. salaryleveladdfrm..Panel2..Label4..Caption
+#: units/pphaddun.dfm:52  units/salaryleveladdun.dfm:103
+msgid "Level:"
+msgstr ""
+
+#. pphaddfrm..Panel2..Label3..Caption
+#: units/pphaddun.dfm:65 
+msgid "Penghasilan per tahun s/d:"
+msgstr ""
+
+#. pphaddfrm..Panel2..Label4..Caption
+#: units/pphaddun.dfm:79 
+msgid "Tarif pajak:"
+msgstr ""
+
+#. pphfrm..Panel1..Label1..Caption
+#: units/pphun.dfm:32 
+msgid "Tarif PPh 21"
+msgstr ""
+
+#. pphfrm..DBGrid1......Title.Caption
+#. salarylevelfrm..gridlevel......Title.Caption
+#: units/pphun.dfm:83  units/salary_levelun.dfm:181
+msgid "Level"
+msgstr ""
+
+#. pphfrm..DBGrid1......Title.Caption
+#: units/pphun.dfm:90 
+msgid "Penghasilan"
+msgstr ""
+
+#. pphfrm..DBGrid1......Title.Caption
+#: units/pphun.dfm:97 
+msgid "Tarif (%)"
+msgstr ""
+
+#. progressfrm..Caption
+#: units/progressun.dfm:5 
+msgid "progressfrm"
+msgstr ""
+
+#. progressfrm..Panel1..Label1..Caption
+#: units/progressun.dfm:30 
+msgid "Sedang Membuka File. Mohon Tunggu...."
+msgstr ""
+
+#. projectaddfrm..Panel1..Label1..Caption
+#: units/projectaddun.dfm:32 
+msgid "Tambah/Edit Project"
+msgstr ""
+
+#. projectaddfrm..Panel2..Label2..Caption
+#: units/projectaddun.dfm:209 
+msgid "Nama Project:"
+msgstr ""
+
+#. projectaddfrm..Panel2..Label4..Caption
+#: units/projectaddun.dfm:235 
+msgid "Lokasi Project:"
+msgstr ""
+
+#. projectlapfrm..Panel1..Label1..Caption
+#: units/projectlapun.dfm:32 
+msgid "Laporan Project"
+msgstr ""
+
+#. projectfrm..Panel1..Label1..Caption
+#: units/projectun.dfm:32 
+msgid "Project List"
+msgstr ""
+
+#. projectfrm..DBGrid1......Title.Caption
+#: units/projectun.dfm:316 
+msgid "Project ID"
+msgstr ""
+
+#. projectfrm..DBGrid1......Title.Caption
+#: units/projectun.dfm:327 
+msgid "Nama Project"
+msgstr ""
+
+#. ptkpaddfrm..Panel1..Label1..Caption
+#: units/ptkpaddun.dfm:31 
+msgid "Add/Edit PTKP"
+msgstr ""
+
+#. ptkpaddfrm..Panel2..Label3..Caption
+#: units/ptkpaddun.dfm:75 
+msgid "Deskripsi:"
+msgstr ""
+
+#. ptkpaddfrm..Panel2..Label4..Caption
+#: units/ptkpaddun.dfm:88 
+msgid "Nilai per Tahun:"
+msgstr ""
+
+#. ptkpfrm..Panel1..Label1..Caption
+#: units/ptkpun.dfm:31 
+msgid "Penghasilan Tidak Kena Pajak (PTKP)"
+msgstr ""
+
+#. ptkpfrm..DBGrid1......Title.Caption
+#: units/ptkpun.dfm:125 
+msgid "Deskripsi"
+msgstr ""
+
+#. ptkpfrm..DBGrid1......Title.Caption
+#: units/ptkpun.dfm:132 
+msgid "Nilai (Tahun)"
+msgstr ""
+
+#. add_rep_frm..Panel1..Label1..Caption
+#: units/rep_add_frm.dfm:30 
+msgid "[mERP Title]"
+msgstr ""
+
+#. salaryleveltambahaddfrm..Panel1..Label1..Caption
+#. salaryleveltambahfrm..Panel1..Label1..Caption
+#: units/salary_level_tambahaddun.dfm:31  units/salaryleveltambahun.dfm:31
+msgid "Item Penambah Gaji"
+msgstr ""
+
+#. salarylevelfrm..Panel1..Label1..Caption
+#: units/salary_levelun.dfm:93 
+msgid "Level Gaji"
+msgstr ""
+
+#. salarylevelfrm..gridlevel......Title.Caption
+#: units/salary_levelun.dfm:188 
+msgid "Besar Gaji (IDR)"
+msgstr ""
+
+#. salaryprosesfrm..Panel1..Label1..Caption
+#: units/salary_prosesun.dfm:59 
+msgid "Proses Penggajian"
+msgstr ""
+
+#. salaryprosesfrm..Panel3..btntambah..Caption
+#: units/salary_prosesun.dfm:103 
+msgid "&Proses"
+msgstr ""
+
+#. salaryinputfrm..Panel1..Label1..Caption
+#: units/salaryinputun.dfm:32 
+msgid "Salary"
+msgstr ""
+
+#. salaryinputfrm..Panel3..btntambah..Caption
+#: units/salaryinputun.dfm:137 
+msgid "&Proses Penggajian"
+msgstr ""
+
+#. salaryinputfrm..gridsalary......Title.Caption
+#: units/salaryinputun.dfm:277 
+msgid "c"
+msgstr ""
+
+#. salaryinputfrm..gridsalary......Title.Caption
+#: units/salaryinputun.dfm:284 
+msgid "No Induk Karyawan"
+msgstr ""
+
+#. salaryleveladdfrm..Panel2..Label3..Caption
+#: units/salaryleveladdun.dfm:90 
+msgid "Gaji Pokok:"
+msgstr ""
+
+#. salaryleveladdfrm..PageControl1..TabSheet1..Caption
+#: units/salaryleveladdun.dfm:366 
+msgid "Komponen Penambah"
+msgstr ""
+
+#. salaryleveladdfrm..PageControl1..TabSheet2..Caption
+#: units/salaryleveladdun.dfm:407 
+msgid "Komponen Pengurang"
+msgstr ""
+
+#. salaryrptfrm..Panel1..Label1..Caption
+#: units/salaryrptun.dfm:33 
+msgid "Laporan/Slip Gaji"
+msgstr ""
+
+#. salaryrptfrm..Panel2..Label2..Caption
+#: units/salaryrptun.dfm:146 
+msgid "Karyawan:"
+msgstr ""
+
+#. salaryrptfrm..Panel2..cbperiode..Text
+#: units/salaryrptun.dfm:200 
+msgid "cbperiode"
+msgstr ""
+
+#. supp_pic_addfrm..Panel1..Label1..Caption
+#: units/supp_pic_addun.dfm:9 
+msgid "Add/Edit Supplier PIC"
+msgstr ""
+
+#. supp_pic_addfrm..Panel2..Label4..Caption
+#: units/supp_pic_addun.dfm:47 
+msgid "Handphone:"
+msgstr ""
+
+#. supplieraddfrm..Panel1..Label1..Caption
+#: units/supplieraddun.dfm:13 
+msgid "Add/Edit Supplier"
+msgstr ""
+
+#. supplieraddfrm..Panel2..Label5..Caption
+#: units/supplieraddun.dfm:64 
+msgid "Telp/Fax:"
+msgstr ""
+
+#. supplierpicfrm..Panel2..DBGrid1......Title.Caption
+#: units/supplierpicun.dfm:33 
+msgid "No Handphone"
+msgstr ""
+
+#. supplierpicfrm..Panel1..Label1..Caption
+#: units/supplierpicun.dfm:67 
+msgid "Contact Person List "
+msgstr ""
+
+#. supplierfrm..Panel3..SpeedButton10..Caption
+#: units/supplierun.dfm:141 
+msgid "Footnote"
+msgstr ""
+
+#. supplierfrm..Panel1..Label1..Caption
+#: units/supplierun.dfm:232 
+msgid "Supplier List"
+msgstr ""
+
+#. tagihanfrm..Panel1..Label1..Caption
+#: units/tagihanun.dfm:33 
+msgid "Daftar Tagihan/Invoice"
+msgstr ""
+
+#. tagihanfrm..Panel2..Label2..Caption
+#: units/tagihanun.dfm:76 
+msgid "Cari No.Invoice:"
+msgstr ""
+
+#. tagihanfrm..DBGrid1......Title.Caption
+#: units/tagihanun.dfm:159 
+msgid "No.Invoice"
+msgstr ""
+
+#. tagihanfrm..DBGrid1......Title.Caption
+#: units/tagihanun.dfm:193 
+msgid "Nilai Transaksi (Rp)"
+msgstr ""
+
+#. tagihanfrm..DBGrid1......Title.Caption
+#: units/tagihanun.dfm:205 
+msgid "Invoice Amount (Rp)"
+msgstr ""
+
+#. tagihanfrm..DBGrid1......Title.Caption
+#: units/tagihanun.dfm:217 
+msgid "Invoice Tax (Rp)"
+msgstr ""
+
+#. tagihanfrm..DBGrid1......Title.Caption
+#: units/tagihanun.dfm:240 
+msgid "Balance (Rp)"
+msgstr ""
+
+#. tagihanfrm..ptagihan..Pembayaran1..Caption
+#: units/tagihanun.dfm:319 
+msgid "Proses Pelunasan"
+msgstr ""
+
+#. tagihanfrm..ptagihan..gf..Caption
+#: units/tagihanun.dfm:422 
+msgid "Generate Faktur Pajak"
+msgstr ""
+
+#. tagihanfrm..ptagihan..UbahTanggalInvoice1..Caption
+#. tanggalubahfrm..Panel1..Label1..Caption
+#: units/tagihanun.dfm:429  units/tanggalubahun.dfm:32
+msgid "Ubah Tanggal Invoice"
+msgstr ""
+
+#. tanggalubahfrm..Panel2..BitBtn1..Caption
+#: units/tanggalubahun.dfm:75 
+msgid "&Ubah"
+msgstr ""
+
+#. useraddfrm..Panel1..Label1..Caption
+#: units/useraddun.dfm:34 
+msgid "Add/Edit User"
+msgstr ""
+
+#. useraddfrm..Panel3..Label4..Caption
+#: units/useraddun.dfm:124 
+msgid "Username:"
+msgstr ""
+
+#. useraddfrm..Panel3..Label5..Caption
+#: units/useraddun.dfm:137 
+msgid "Group Akses:"
+msgstr ""
+
+#. useraddfrm..Panel3..Label6..Caption
+#: units/useraddun.dfm:150 
+msgid "Password:"
+msgstr ""
+
+#. userlistfrm..Panel2..DBGrid1......Title.Caption
+#: units/userlistun.dfm:102 
+msgid "Group"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton1..Caption
+#: units/utamaun.dfm:3360 
+msgid "Jual"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton2..Caption
+#: units/utamaun.dfm:3481 
+msgid "Item Barang"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton5..Caption
+#: units/utamaun.dfm:3602 
+msgid "Stock Barang"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton6..Caption
+#: units/utamaun.dfm:3723 
+msgid "Barang Masuk"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton8..Caption
+#: units/utamaun.dfm:3965 
+msgid "List PO"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton10..Caption
+#: units/utamaun.dfm:4208 
+msgid "Set Password"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..Label4..Caption
+#: units/utamaun.dfm:4363 
+msgid "Manajemen Barang"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton11..Caption
+#: units/utamaun.dfm:4399 
+msgid "Daftar Akun"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..SpeedButton12..Caption
+#: units/utamaun.dfm:4520 
+msgid "Buku Besar"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..pnclosebtn..Hint
+#: units/utamaun.dfm:4789 
+msgid "Sembunyikan Shortcut"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..btndo..Caption
+#: units/utamaun.dfm:4950 
+msgid "Kirim Barang"
+msgstr ""
+
+#. utamafrm..Panel3..pnshortcut..btndolist..Caption
+#: units/utamaun.dfm:5071 
+msgid "List DO"
+msgstr ""
+
+#. utamafrm..Panel3..pnshow..SpeedButton17..Hint
+#. utamafrm..utamamn..File1..ampilkanShortcut1..Caption
+#: units/utamaun.dfm:5314  units/utamaun.dfm:5424
+msgid "Tampilkan Shortcut"
+msgstr ""
+
+#. utamafrm..utamamn..File1..Caption
+#: units/utamaun.dfm:5353 
+msgid "&File"
+msgstr ""
+
+#. utamafrm..utamamn..File1..UserSettings1..Caption
+#: units/utamaun.dfm:5384 
+msgid "&User Settings"
+msgstr ""
+
+#. utamafrm..utamamn..File1..GantiPassword1..Caption
+#: units/utamaun.dfm:5417 
+msgid "&Ganti Password"
+msgstr ""
+
+#. utamafrm..utamamn..File1..DataClean1..Caption
+#: units/utamaun.dfm:5431 
+msgid "Data Clean!"
+msgstr ""
+
+#. utamafrm..utamamn..File1..Exit1..Caption
+#: units/utamaun.dfm:5467 
+msgid "E&xit"
+msgstr ""
+
+#. utamafrm..utamamn..Master2..Caption
+#: units/utamaun.dfm:5472 
+msgid "&Data Induk/Master"
+msgstr ""
+
+#. utamafrm..utamamn..Master2..Barang2..Caption
+#: units/utamaun.dfm:5503 
+msgid "&Barang"
+msgstr ""
+
+#. utamafrm..utamamn..Master2..Gudang1..Caption
+#: units/utamaun.dfm:5540 
+msgid "&Gudang"
+msgstr ""
+
+#. utamafrm..utamamn..Master2..Supplier2..Caption
+#: units/utamaun.dfm:5576 
+msgid "&Supplier"
+msgstr ""
+
+#. utamafrm..utamamn..Master2..Customer1..Caption
+#: units/utamaun.dfm:5609 
+msgid "&Customer"
+msgstr ""
+
+#. utamafrm..utamamn..Master2..Kategori1..Caption
+#: units/utamaun.dfm:5645 
+msgid "&Kategori"
+msgstr ""
+
+#. utamafrm..utamamn..Master2..Project1..Caption
+#. utamafrm..utamamn..Laporan1..Project2..Caption
+#: units/utamaun.dfm:5681  units/utamaun.dfm:6683
+msgid "Project"
+msgstr ""
+
+#. utamafrm..utamamn..Inventory1..Caption
+#: units/utamaun.dfm:5686 
+msgid "Inventory"
+msgstr ""
+
+#. utamafrm..utamamn..Inventory1..StockBarang1..Caption
+#: units/utamaun.dfm:5717 
+msgid "&Stock Barang"
+msgstr ""
+
+#. utamafrm..utamamn..Inventory1..BarangMasuk1..Caption
+#: units/utamaun.dfm:5753 
+msgid "&Barang Masuk"
+msgstr ""
+
+#. utamafrm..utamamn..Inventory1..PengirimanBarang1..Caption
+#: units/utamaun.dfm:5789 
+msgid "Pengiriman Barang (DO)/Barang Keluar"
+msgstr ""
+
+#. utamafrm..utamamn..Pembelian1..Caption
+#: units/utamaun.dfm:5830 
+msgid "&Pembelian"
+msgstr ""
+
+#. utamafrm..utamamn..Pembelian1..Vendor1..Caption
+#: units/utamaun.dfm:5861 
+msgid "Supplier/Vendor"
+msgstr ""
+
+#. utamafrm..utamamn..Pembelian1..Langsung1..Caption
+#: units/utamaun.dfm:5933 
+msgid "Daftar Purchase Order (PO) "
+msgstr ""
+
+#. utamafrm..utamamn..Penjualan1..Caption
+#: units/utamaun.dfm:5938 
+msgid "P&enjualan"
+msgstr ""
+
+#. utamafrm..utamamn..Penjualan1..Ritel1..Caption
+#: units/utamaun.dfm:5969 
+msgid "&Ritel/Project"
+msgstr ""
+
+#. utamafrm..utamamn..Penjualan1..Penawaran1..Caption
+#: units/utamaun.dfm:6005 
+msgid "&Penawaran/Quotation"
+msgstr ""
+
+#. utamafrm..utamamn..Penjualan1..FootnoteQuotation1..Caption
+#: units/utamaun.dfm:6041 
+msgid "Footnote Quotation"
+msgstr ""
+
+#. utamafrm..utamamn..Penjualan1..ListInvoice1..Caption
+#: units/utamaun.dfm:6077 
+msgid "Daftar Penjualan && Faktur Pajak"
+msgstr ""
+
+#. utamafrm..utamamn..Penjualan1..ListDaftarInvoice1..Caption
+#: units/utamaun.dfm:6113 
+msgid "Daftar Invoice"
+msgstr ""
+
+#. utamafrm..utamamn..Penjualan1..DaftarFakturPajak1..Caption
+#: units/utamaun.dfm:6117 
+msgid "Daftar Faktur Pajak"
+msgstr ""
+
+#. utamafrm..utamamn..Keuangan1..Caption
+#: units/utamaun.dfm:6122 
+msgid "&Accounting"
+msgstr ""
+
+#. utamafrm..utamamn..Keuangan1..EntryJurnalUmum1..Caption
+#: units/utamaun.dfm:6153 
+msgid "Entry Jurnal Umum"
+msgstr ""
+
+#. utamafrm..utamamn..Keuangan1..DaftarAkun1..Caption
+#: units/utamaun.dfm:6189 
+msgid "&Daftar Rekening Perkiraan"
+msgstr ""
+
+#. utamafrm..utamamn..Keuangan1..GeneralLedgerBukuBesar1..Caption
+#: units/utamaun.dfm:6225 
+msgid "Laporan &General Ledger/Buku Besar"
+msgstr ""
+
+#. utamafrm..utamamn..Keuangan1..Neraca1..Caption
+#: units/utamaun.dfm:6258 
+msgid "Laporan &Neraca"
+msgstr ""
+
+#. utamafrm..utamamn..Keuangan1..LabaRugi1..Caption
+#: units/utamaun.dfm:6291 
+msgid "Laporan Laba &Rugi"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..Caption
+#: units/utamaun.dfm:6296 
+msgid "Payroll"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterKaryawan1..Caption
+#: units/utamaun.dfm:6327 
+msgid "Master Karyawan"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterPekerjaan1..Caption
+#: units/utamaun.dfm:6360 
+msgid "Master Pekerjaan/Jabatan"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterLevelGaji1..Caption
+#: units/utamaun.dfm:6396 
+msgid "Master Level Gaji (Gapok, Penambah && Pengurang)"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterPenambahGaji1..Caption
+#: units/utamaun.dfm:6429 
+msgid "Master Penambah Gaji"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterPengurangGaji1..Caption
+#: units/utamaun.dfm:6462 
+msgid "Master Pengurang Gaji"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..arifPph211..Caption
+#: units/utamaun.dfm:6498 
+msgid "&Tarif PPh 21"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterPTKP1..Caption
+#: units/utamaun.dfm:6531 
+msgid "Master PTKP"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterDepartemen1..Caption
+#: units/utamaun.dfm:6567 
+msgid "Master Departemen"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..MasterBank1..Caption
+#: units/utamaun.dfm:6600 
+msgid "Master Bank"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..InputPenggajian1..Caption
+#: units/utamaun.dfm:6636 
+msgid "Input Penggajian"
+msgstr ""
+
+#. utamafrm..utamamn..Payroll1..LaporanPenggajian1..Caption
+#: units/utamaun.dfm:6669 
+msgid "Laporan Penggajian"
+msgstr ""
+
+#. utamafrm..utamamn..Laporan1..Caption
+#: units/utamaun.dfm:6674 
+msgid "Laporan"
+msgstr ""
+
+#. wpviewfrm..Caption
+#: units/wpviewun.dfm:6 
+msgid "cpMerp"
+msgstr ""
+
+#. wpviewfrm..Panel1..Label1..Caption
+#: units/wpviewun.dfm:31 
+msgid "WP-Customer"
+msgstr ""
+
+#. wpviewfrm..Panel2..BitBtn1..Caption
+#: units/wpviewun.dfm:74 
+msgid "&Pilih"
+msgstr ""
+
+#. wpviewfrm..Panel3..Label2..Caption
+#: units/wpviewun.dfm:142 
+msgid "Pencarian Berdasarkan Nama:"
+msgstr ""
+
+#. wpviewfrm..Panel6..DBGrid1......Title.Caption
+#: units/wpviewun.dfm:197 
+msgid "N.P.W.P."
+msgstr ""
+
+#. Programmer's name for it: exitmessage
+#: units/utamaun.pas:9 
+msgid "Yakin keluar dari mERP ?"
+msgstr ""

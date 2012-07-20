@@ -3,24 +3,19 @@ unit userlistun;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,baseForm,
   Dialogs, ExtCtrls, Grids, DBGrids, StdCtrls, Buttons;
 
 type
-  Tuserlistfrm = class(TForm)
-    Panel1: TPanel;
+  Tuserlistfrm = class(TfrmBase)
     Panel2: TPanel;
     Panel3: TPanel;
     DBGrid1: TDBGrid;
-    Label1: TLabel;
-    Panel4: TPanel;
-    Panel5: TPanel;
     btnedit: TSpeedButton;
     btnadd: TSpeedButton;
     SpeedButton3: TSpeedButton;
     procedure FormCreate(Sender: TObject);
-    procedure btnaddClick(Sender: TObject);
-   
+    procedure btnaddClick(Sender: TObject);   
     procedure SpeedButton3Click(Sender: TObject);
     procedure btneditClick(Sender: TObject);
   private

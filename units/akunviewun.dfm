@@ -1,6 +1,6 @@
 object akunviewfrm: Takunviewfrm
   Left = 396
-  Top = 98
+  Top = 89
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'mERP 1.0'
