@@ -4,15 +4,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,baseForm,
-  Dialogs, ExtCtrls, Grids, DBGrids, StdCtrls, Buttons;
+  Dialogs, ExtCtrls, Grids, DBGrids, StdCtrls, Buttons,
+  DB, ImgList, JvXPCore, JvXPButtons, DBCtrls, JvDBControls,
+  JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
+  JvNetscapeSplitter;
 
 type
   Tuserlistfrm = class(TfrmBase)
     Panel2: TPanel;
     Panel3: TPanel;
     DBGrid1: TDBGrid;
-    btnedit: TSpeedButton;
-    btnadd: TSpeedButton;
     SpeedButton3: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure btnaddClick(Sender: TObject);   
@@ -29,7 +30,7 @@ var
 
 implementation
 
-uses dmun, useraddun,db;
+uses dmun, useraddun;
 
 {$R *.dfm}
 

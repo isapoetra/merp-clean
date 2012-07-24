@@ -4,7 +4,10 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, listrep, StdCtrls, Grids, DBGrids, Buttons, ExtCtrls, DBCtrls;
+  Dialogs, listrep, StdCtrls, Grids, DBGrids, Buttons, ExtCtrls, DBCtrls,
+  DB, ImgList, JvDBControls,
+  JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
+  JvNetscapeSplitter, JvXPCore, JvXPButtons;
 
 type
   Tcustpicfrm = class(Tlistrepfrm)

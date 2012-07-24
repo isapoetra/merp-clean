@@ -1,0 +1,425 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{652C3A78-69E6-4582-93CA-EC920559B8D1}</ProjectGuid>
+			<MainSource>mERP.dpr</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<TargetedPlatforms>1</TargetedPlatforms>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<ProjectVersion>13.4</ProjectVersion>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_UsePackage>vcl;rtl;vclx;indy;inet;xmlrtl;vclie;inetdbbde;inetdbxpress;dbrtl;dsnap;dsnapcon;vcldb;soaprtl;VclSmp;dbexpress;dbxcds;inetdb;bdertl;vcldbx;webdsnap;websnap;adortl;ibxpress;teeui;teedb;tee;dss;visualclx;visualdbclx;vclactnband;vclshlctrls;IntrawebDB_50_70;Intraweb_50_70;Rave50CLX;Rave50VCL;dclOfficeXP;DCPdelphi2007;$(DCC_UsePackage)</DCC_UsePackage>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=mErp;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=mERP;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<VerInfo_PreRelease>true</VerInfo_PreRelease>
+			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;System.Bindings;Winapi;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<DCC_ExeOutput>bin</DCC_ExeOutput>
+			<DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+			<DCC_K>false</DCC_K>
+			<DCC_N>true</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_F>false</DCC_F>
+			<DCC_DcuOutput>dcu</DCC_DcuOutput>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_E>false</DCC_E>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<Icon_MainIcon>mERP_Icon.ico</Icon_MainIcon>
+			<DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="$(MainSource)">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="units\acl.pas"/>
+			<DCCReference Include="units\utamaun.pas">
+				<Form>utamafrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\dmun.pas">
+				<Form>dm</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="units\userlistun.pas">
+				<Form>userlistfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\dsun.pas">
+				<Form>ds</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="units\grouplistun.pas">
+				<Form>groupfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\groupaddun.pas">
+				<Form>groupaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\useraddun.pas">
+				<Form>useraddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\passchangeun.pas">
+				<Form>passchangefrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\barangmstrun.pas">
+				<Form>barangmstrfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\barangaddun.pas">
+				<Form>barangaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\listrep.pas">
+				<Form>listrepfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\categorilistun.pas">
+				<Form>kategorifrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\rep_add_frm.pas">
+				<Form>add_rep_frm</Form>
+			</DCCReference>
+			<DCCReference Include="units\kategoriaddun.pas">
+				<Form>kategoriaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\fungsi_merp.pas"/>
+			<DCCReference Include="units\supplierun.pas">
+				<Form>supplierfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\supplieraddun.pas">
+				<Form>supplieraddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\customerun.pas">
+				<Form>customerfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\customeraddun.pas">
+				<Form>customeraddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\belisupun.pas">
+				<Form>belisupfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\supplierpicun.pas">
+				<Form>supplierpicfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\supp_pic_addun.pas">
+				<Form>supp_pic_addfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\barangviewun.pas">
+				<Form>barangviewfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\custpicun.pas">
+				<Form>custpicfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\custpicaddun.pas">
+				<Form>custpicaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\custandcpun.pas">
+				<Form>custncpfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\calendarun.pas">
+				<Form>calendarfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\polistun.pas">
+				<Form>polistfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jualun.pas">
+				<Form>jualfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\footnoteun.pas">
+				<Form>footnotefrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\gudangun.pas">
+				<Form>gudangfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\gudangaddun.pas">
+				<Form>gudangaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\inventoryun.pas">
+				<Form>inventoryfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\gudangpickun.pas">
+				<Form>gudangpickfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jatuhtempoun.pas">
+				<Form>jatuhtempofrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\inventoryviewun.pas">
+				<Form>inventoryviewfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\invoicelistun.pas">
+				<Form>invoicelistfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\deliveryun.pas">
+				<Form>deliveryfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\orderdetailun.pas">
+				<Form>detailorderfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\projectun.pas">
+				<Form>projectfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\projectaddun.pas">
+				<Form>projectaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\akunun.pas">
+				<Form>akunfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\neracaun.pas">
+				<Form>neracafrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\penawaranun.pas">
+				<Form>penawaranfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\foot_globalun.pas">
+				<Form>footnote_globalfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\labarugiun.pas">
+				<Form>labarugifrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\glun.pas">
+				<Form>glfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\karyawanun.pas">
+				<Form>karyawanfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\karyawanaddun.pas">
+				<Form>karyawanaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\payadjustmentun.pas">
+				<Form>payadjustmentfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\payadjustaddun.pas">
+				<Form>payadjustaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\progressun.pas">
+				<Form>progressfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jobdesun.pas">
+				<Form>jobdesfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jabatanaddun.pas">
+				<Form>jabatanaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salary_levelun.pas">
+				<Form>salarylevelfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salaryleveladdun.pas">
+				<Form>salaryleveladdfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\bankun.pas">
+				<Form>bankfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\bankaddun.pas">
+				<Form>bankaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\ptkpun.pas">
+				<Form>ptkpfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\ptkpaddun.pas">
+				<Form>ptkpaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\deptun.pas">
+				<Form>deptfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\deptaddun.pas">
+				<Form>deptaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\pphun.pas">
+				<Form>pphfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\pphaddun.pas">
+				<Form>pphaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salaryinputun.pas">
+				<Form>salaryinputfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salary_prosesun.pas">
+				<Form>salaryprosesfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salaryleveldetailun.pas">
+				<Form>salaryleveldetailfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salaryleveltambahun.pas">
+				<Form>salaryleveltambahfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salary_level_tambahaddun.pas">
+				<Form>salaryleveltambahaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\penguranggajiun.pas">
+				<Form>penguranggajifrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\penguranggajiaddun.pas">
+				<Form>penguranggajiaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\salaryrptun.pas">
+				<Form>salaryrptfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jurnalumumun.pas">
+				<Form>jurnalumumfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\akunviewun.pas">
+				<Form>akunviewfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\dolistun.pas">
+				<Form>dolistfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\cobagit.pas"/>
+			<DCCReference Include="units\fakturdaninvoiceun.pas">
+				<Form>invoicprintfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\tagihanun.pas">
+				<Form>tagihanfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\akuntansi.pas"/>
+			<DCCReference Include="units\lunaspiutangun.pas">
+				<Form>lunaspiutangfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\datacleanun.pas">
+				<Form>datacleanfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jurnalumumlistun.pas">
+				<Form>jurnalumumlistfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\penjualanrptun.pas">
+				<Form>jualrptfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\projectlapun.pas">
+				<Form>projectlapfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\fakturpajakviewun.pas">
+				<Form>fakturpajakviewfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jasaun.pas">
+				<Form>jasafrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\jasaaddun.pas">
+				<Form>jasaaddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\pajakaddun.pas">
+				<Form>pajakAddfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\wpviewun.pas">
+				<Form>wpviewfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\fakturpajakun.pas">
+				<Form>fakturpajakfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\invoiceamountun.pas">
+				<Form>invoiceamountfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\tanggalubahun.pas">
+				<Form>tanggalubahfrm</Form>
+			</DCCReference>
+			<DCCReference Include="units\Helper.pas"/>
+			<DCCReference Include="units\baseForm.pas">
+				<Form>frmBase</Form>
+			</DCCReference>
+			<DCCReference Include="units\mainform.pas">
+				<Form>frmMain</Form>
+			</DCCReference>
+			<DCCReference Include="units\splashform.pas">
+				<Form>frmSplash</Form>
+			</DCCReference>
+			<DCCReference Include="units\loginform.pas">
+				<Form>frmLogin</Form>
+			</DCCReference>
+			<DCCReference Include="units\initform.pas">
+				<Form>frmInit</Form>
+			</DCCReference>
+			<DCCReference Include="units\configuration.pas"/>
+			<DCCReference Include="units\dashboardform.pas">
+				<Form>frmDashboard</Form>
+			</DCCReference>
+			<DCCReference Include="units\gnugettext.pas"/>
+			<DCCReference Include="units\reportform.pas">
+				<Form>Form1</Form>
+				<FormType>dfm</FormType>
+			</DCCReference>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">mERP.dpr</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">True</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">mErp</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName">mERP</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

@@ -1,11 +1,10 @@
 object dm: Tdm
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 148
-  Top = 18
   Height = 644
   Width = 1158
   object conerp: TZConnection
+    Connected = True
     HostName = 'localhost'
     Port = 3306
     Database = 'merp'
@@ -3322,47 +3321,6 @@ object dm: Tdm
     Params = <>
     Left = 328
     Top = 248
-    object StringField79: TStringField
-      FieldName = 'ju_kode'
-      Size = 255
-    end
-    object DateField20: TDateField
-      FieldName = 'ju_tgl'
-    end
-    object IntegerField46: TIntegerField
-      FieldName = 'ju_cust_id'
-    end
-    object IntegerField47: TIntegerField
-      FieldName = 'ju_cust_pic'
-    end
-    object DateField21: TDateField
-      FieldName = 'ju_due'
-    end
-    object StringField80: TStringField
-      FieldName = 'ju_bayar'
-      Size = 10
-    end
-    object StringField81: TStringField
-      FieldName = 'ju_po'
-      Size = 255
-    end
-    object IntegerField48: TIntegerField
-      FieldName = 'ju_project'
-    end
-    object FloatField53: TFloatField
-      FieldName = 'ju_total'
-    end
-    object FloatField54: TFloatField
-      FieldName = 'ju_tax'
-    end
-    object StringField82: TStringField
-      FieldName = 'ju_akun'
-      Size = 255
-    end
-    object StringField83: TStringField
-      FieldName = 'ju_ppn'
-      Size = 5
-    end
   end
   object inventoryref: TZQuery
     Connection = conerp
@@ -3958,21 +3916,6 @@ object dm: Tdm
     Params = <>
     Left = 936
     Top = 488
-    object jasajs_nama: TStringField
-      FieldName = 'js_nama'
-      Size = 255
-    end
-    object jasajs_unit: TStringField
-      FieldName = 'js_unit'
-      Size = 255
-    end
-    object jasajs_tarif: TFloatField
-      FieldName = 'js_tarif'
-      DisplayFormat = '#,###'
-    end
-    object jasajs_id: TIntegerField
-      FieldName = 'js_id'
-    end
   end
   object wpview: TZQuery
     Connection = conerp

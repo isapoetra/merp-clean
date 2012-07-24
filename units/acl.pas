@@ -5,44 +5,69 @@ uses classes, SysUtils;
 resourcestring
   accessdenied = 'Access Denied';
 type
-  TACLPrivs = (aclRead, aclAdd, aclEdit, aclDelete);
-  TACLPrivsPriv = set of TACLPrivs;
+  TACLPrivs = (aclRead = 1, aclAdd = 2, aclEdit = 4, aclDelete = 7, aclManage =
+    127);
   TACLItem = class(TCollectionItem)
   private
     FObjectId: string;
-    FPrivs: TACLPrivsPriv;
+    FPrivs: TACLPrivs;
   public
     function isAllow(priv: TACLPrivs): Boolean;
     property ObjectId: string read FObjectId;
-    property Privs: TACLPrivsPriv read FPrivs;
+    property Privs: TACLPrivs read FPrivs;
 
   end;
   TACLCollection = class(TCollection)
   public
     constructor Create();
     function getItem(objectId: string): TACLItem; overload;
-    function Add(objectId: string; privs: TACLPrivsPriv): TACLItem;
+    function Add(objectId: string; privs: TACLPrivs): TACLItem;
+    function contains(objectId: string): boolean;
+  end;
+  TLogonInfo = class(TObject)
+  private
+    FUserId: Integer;
+    FFirstName: string;
+    FUserName: string;
+    FPassword: string;
+    FLastName: string;
+  public
+    property UserId: Integer read FUserId;
+    property LogonName: string read FUserName;
+    property FirstName: string read FFirstName;
+    property LastName: string read FLastName;
+    property Password: string read FPassword;
   end;
 function authenticate(userName: string; pass: string): Boolean;
 function isAuthentificated(): boolean;
 function isAllow(objectId: string; privs: TACLPrivs): Boolean;
 procedure logout();
+function getLogonInfo() : TLogonInfo;
 implementation
-uses dmun, zdataset, ZAbstractDataset;
+uses dmun, zdataset, ZAbstractDataset, helper;
 var
-  isAuth: boolean;
+  logonInfo: TLogonInfo;
   ACLCache: TACLCollection;
-
+function getLogonInfo() : TLogonInfo  ;
+begin
+  Result:= logonInfo;
+end;
 function grantRolePriv(objectId: string; privs: TACLPrivs; roleid: integer):
   Boolean;
 var
   rw: Integer;
 begin
   objectId := LowerCase(objectId);
-  dm.conerp.ExecuteDirect('insert into objects (object_id) values(''' + objectId
-    + ''')');
-  dm.conerp.ExecuteDirect('insert into role_privs values(' + inttostr(roleid) +
-    ',''' + objectId + ''',' + IntToStr(Ord(privs)) + ')', rw);
+  if not ACLCache.contains(objectId) then
+  begin
+    ACLCache.Add(objectId,privs);
+    dm.conerp.ExecuteDirect('insert into objects (object_id) values(''' +
+      objectId
+      + ''')');
+    dm.conerp.ExecuteDirect('insert into role_privs values(' + inttostr(roleid)
+      +
+      ',''' + objectId + ''',' + IntToStr(Ord(privs)) + ')', rw);
+  end;
   Result := true;
 end;
 
@@ -51,7 +76,7 @@ var
   item: TACLItem;
 begin
   objectId := LowerCase(objectId);
-  if not isAuth then
+  if not assigned(logonInfo) then
     Result := false
   else
   begin
@@ -63,17 +88,18 @@ begin
 
   end;
 {$IFDEF DEV_MODE}
-  grantRolePriv(objectId, privs, 1);
+  grantRolePriv(objectId, aclManage, 1);
 {$ENDIF}
 end;
 
 function authenticate(userName: string; pass: string): Boolean;
 var
   q: TZQuery;
-  privs: TACLPrivsPriv;
+  privs: TACLPrivs;
+  uid: integer;
 begin
 
-  if (not isAuth) then
+  if (not isAuthentificated) then
   begin
     ACLCache.Clear;
     q := TZQuery.Create(nil);
@@ -84,50 +110,67 @@ begin
     q.ParamByName('uname').Value := userName;
     q.ParamByName('pass').Value := pass;
     q.Active := true;
-    isAuth := q.RecordCount > 0;
-    if isAuth then
+    freeAndNil(logonInfo);
+    if q.RecordCount > 0 then
     begin
-      q.active := false;
-      q.SQL.Clear;
-      q.Params.Clear;
-      q.SQL.Add('select * from vw_userprivs where user_id=:uid');
-      q.ParamByName('uid').Value := q.FieldByName('us_id').Value;
+      ACLCache.Add('frm-main', aclRead);
+      logonInfo := TLogonInfo.Create;
+      with logonInfo do
+      begin
+        FUserId := q.FieldByName('us_id').AsInteger;
+        FFirstName := q.FieldValues['us_firstname'];
+        FLastName := q.FieldByName('us_lastname').asString;
+        FPassword := q.FieldValues['us_password'];
+        FUserName := q.FieldValues['us_username'];
+      end;
+    end;
+    if assigned(logonInfo) then
+    begin
+      uid := q.FieldByName('us_id').Value;
+      q := TZQuery.Create(nil);
+      q.Connection := dm.conerp;
+      q.ReadOnly := true;
+      q.SQL.Add('select * from vw_userprivs where us_id=:uid');
+      q.ParamByName('uid').Value := uid;
       q.Active := true;
       while not q.Eof do
       begin
-        privs := [];
-        privs := privs +  TACLPrivs. .valueOf(q.FieldByName('object_id').asInteger);
+        privs := TACLPrivs(q.FieldByName('privs').asInteger);
         ACLCache.Add(q.FieldByName('object_id').AsString, privs);
         q.Next;
       end;
     end;
     FreeAndNil(q);
   end;
-  Result := isAuth;
+  Result := isAuthentificated;
 end;
 
-function isAuthentificated(): boolean;
-
+function isAuthentificated(): Boolean;
 begin
-  Result := isAuth;
-  ACLCache.Add('frm-main', [aclRead]);
+  Result := assigned(logonInfo);
+
 end;
 
 procedure logout();
 begin
   ACLCache.Clear;
-  isAuth := false;
+  freeAndNil(logonInfo);
 end;
 { TACLCollection }
 
 function TACLCollection.Add(objectId: string;
-  privs: TACLPrivsPriv): TACLItem;
+  privs: TACLPrivs): TACLItem;
 begin
   Result := inherited Add() as TACLItem;
   Result.FObjectId := objectId;
   Result.FPrivs := privs;
   //TACLItem.Create(objectId,privs);
 
+end;
+
+function TACLCollection.contains(objectId: string): boolean;
+begin
+  Result := assigned(getItem(objectId));
 end;
 
 constructor TACLCollection.Create;
@@ -156,7 +199,10 @@ end;
 
 function TACLItem.isAllow(priv: TACLPrivs): Boolean;
 begin
-  Result := false;
+  if aclManage = FPrivs then
+    result := true
+  else
+    Result := IsBitSet(ord(priv), ord(FPrivs));
 end;
 
 initialization

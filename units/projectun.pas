@@ -4,26 +4,19 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids;
+  Dialogs, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids, baseform,
+  ImgList, JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
+  JvNetscapeSplitter, DB,  JvXPCore, JvXPButtons, DBCtrls,
+  JvDBControls, JvExButtons, JvBitBtn;
 
 type
-  Tprojectfrm = class(TForm)
-    Panel1: TPanel;
-    Label1: TLabel;
-    Panel4: TPanel;
-    Panel5: TPanel;
-    caripn: TPanel;
-    Label2: TLabel;
-    cari: TEdit;
+  Tprojectfrm = class(TfrmBase)
     Panel3: TPanel;
-    btnedit: TSpeedButton;
-    btntambah: TSpeedButton;
-    btnhapus: TSpeedButton;
     DBGrid1: TDBGrid;
-    procedure btntambahClick(Sender: TObject);
     procedure btneditClick(Sender: TObject);
-    procedure btnhapusClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnDeleteClick(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,29 +28,33 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, projectaddun;
+uses dmun, fungsi_merp, projectaddun;
 {$R *.dfm}
-
-procedure Tprojectfrm.btntambahClick(Sender: TObject);
-begin
-  dm.project.Append;
-  aktifkanform(projectaddfrm,TProjectaddfrm);
-end;
 
 procedure Tprojectfrm.btneditClick(Sender: TObject);
 begin
   dm.project.edit;
-  aktifkanform(projectaddfrm,TProjectaddfrm);
-end;
-
-procedure Tprojectfrm.btnhapusClick(Sender: TObject);
-begin
-  hapus(dm.project);
+  aktifkanform(projectaddfrm, TProjectaddfrm);
 end;
 
 procedure Tprojectfrm.FormCreate(Sender: TObject);
 begin
- aktifkandata(dm.customer);
+  inherited;
+  setDataset(dm.customer);
+end;
+
+procedure Tprojectfrm.btnDeleteClick(Sender: TObject);
+begin
+  inherited;
+  hapus(dm.project);
+end;
+
+procedure Tprojectfrm.btnAddClick(Sender: TObject);
+begin
+  inherited;
+  dm.project.Append;
+  aktifkanform(projectaddfrm, TProjectaddfrm);
 end;
 
 end.
+

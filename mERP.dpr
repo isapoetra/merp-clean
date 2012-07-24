@@ -1,5 +1,6 @@
 program mERP;
 {$DEFINE DXGETTEXTDEBUG}
+
 uses
   Controls,
   Forms,
@@ -73,8 +74,7 @@ uses
   salary_prosesun in 'units\salary_prosesun.pas' {salaryprosesfrm},
   salaryleveldetailun in 'units\salaryleveldetailun.pas' {salaryleveldetailfrm},
   salaryleveltambahun in 'units\salaryleveltambahun.pas' {salaryleveltambahfrm},
-  salary_level_tambahaddun in 'units\salary_level_tambahaddun.pas'
-  {salaryleveltambahaddfrm},
+  salary_level_tambahaddun in 'units\salary_level_tambahaddun.pas' {salaryleveltambahaddfrm},
   penguranggajiun in 'units\penguranggajiun.pas' {penguranggajifrm},
   penguranggajiaddun in 'units\penguranggajiaddun.pas' {penguranggajiaddfrm},
   salaryrptun in 'units\salaryrptun.pas' {salaryrptfrm},
@@ -98,34 +98,37 @@ uses
   fakturpajakun in 'units\fakturpajakun.pas' {fakturpajakfrm},
   invoiceamountun in 'units\invoiceamountun.pas' {invoiceamountfrm},
   tanggalubahun in 'units\tanggalubahun.pas' {tanggalubahfrm},
-  helper in 'units\Helper.pas',
-  gnugettext in 'units\gnugettext.pas',
+  Helper in 'units\Helper.pas',
   baseForm in 'units\baseForm.pas' {frmBase},
   mainform in 'units\mainform.pas' {frmMain},
   splashform in 'units\splashform.pas' {frmSplash},
   loginform in 'units\loginform.pas' {frmLogin},
-
   initform in 'units\initform.pas' {frmInit},
-  configuration in 'units\configuration.pas';
+  configuration in 'units\configuration.pas',
+  dashboardform in 'units\dashboardform.pas' {frmDashboard},
+  gnugettext in 'units\gnugettext.pas',
+  reportform in 'units\reportform.pas' {Form1};
 
 {$R *.res}
+
 var
   splash: TFrmSplash;
   ok: Boolean;
+
 begin
   ok := true;
   UseLanguage('en');
   Application.Initialize;
-  splash := TfrmSplash.create(nil);
+  splash := TFrmSplash.create(nil);
   splash.Show();
   splash.setStatus('Loading...');
-  //Application.Title := 'MIRP 1.0';
+  // Application.Title := 'MIRP 1.0';
   Application.Title := 'mERP';
 
   if (not FileExists(ChangeFileExt(Application.ExeName, '.ini'))) then
   begin
     splash.Hide;
-    with (TfrmInit.Create(nil)) do
+    with (TfrmInit.create(nil)) do
       try
         if (ShowModal <> mrOk) then
           ok := false;
@@ -138,10 +141,10 @@ begin
     splash.Show;
     splash.setStatus('Connecting to database');
     Application.CreateForm(Tdm, dm);
-    Application.CreateForm(Tds, ds);
-    splash.setStatus('Creating Main form');
+  Application.CreateForm(Tds, ds);
+  Application.CreateForm(TForm1, Form1);
+  splash.setStatus('Creating Main form');
     Application.CreateForm(TfrmMain, frmMain);
-    Application.CreateForm(Ttanggalubahfrm, tanggalubahfrm);
     splash.Free;
     Application.Run;
   end
@@ -149,4 +152,3 @@ begin
     splash.Free;
 
 end.
-

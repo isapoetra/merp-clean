@@ -6,7 +6,8 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids, baseform,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent, ImgList,
-  JvNetscapeSplitter;
+  JvNetscapeSplitter, DB,  JvXPCore, JvXPButtons, DBCtrls,
+  JvDBControls;
 
 type
   Tbarangmstrfrm = class(TfrmBase)

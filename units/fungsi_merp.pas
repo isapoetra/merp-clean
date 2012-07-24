@@ -1,7 +1,7 @@
 unit fungsi_merp;
 
 interface
-uses zdataset,dialogs,controls,qforms,forms,classes,Toolwin,windows,dmun,strutils,sysutils;
+uses zdataset,dialogs,controls,forms,classes,Toolwin,windows,dmun,strutils,sysutils;
 
 procedure simpan(namaDataSet:TZquery);
 procedure batal(namaDataSet:TZquery);

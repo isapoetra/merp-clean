@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, Buttons, Grids, DBGrids, Mask, DBCtrls,
-  RpCon, RpConDS, RpBase, RpSystem, RpDefine, RpRave, ComCtrls;
+  RpCon, RpConDS, RpBase, RpSystem, RpDefine, RpRave, ComCtrls, Vcl.DdeMan;
 
 type
   Tbelisupfrm = class(TForm)
@@ -51,6 +51,7 @@ type
     DBLookupComboBox1: TDBLookupComboBox;
     SpeedButton4: TSpeedButton;
     rdbarangbelimstr: TRvDataSetConnection;
+    DdeServerConv1: TDdeServerConv;
     procedure btntambahClick(Sender: TObject);
     procedure btnsimpanClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

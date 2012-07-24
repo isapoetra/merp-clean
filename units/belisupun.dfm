@@ -1,6 +1,6 @@
 object belisupfrm: Tbelisupfrm
-  Left = 255
-  Top = 106
+  Left = 226
+  Top = 16
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'mERP 1.0'
@@ -328,7 +328,7 @@ object belisupfrm: Tbelisupfrm
     object Label5: TLabel
       Left = 637
       Top = 18
-      Width = 48
+      Width = 49
       Height = 16
       Caption = 'Tanggal:'
       Font.Charset = ANSI_CHARSET
@@ -351,7 +351,7 @@ object belisupfrm: Tbelisupfrm
     object Label6: TLabel
       Left = 373
       Top = 10
-      Width = 63
+      Width = 64
       Height = 16
       Caption = 'Jth Tempo:'
       Font.Charset = ANSI_CHARSET
@@ -559,7 +559,6 @@ object belisupfrm: Tbelisupfrm
       Font.Height = -12
       Font.Name = 'Arial'
       Font.Style = []
-      ItemHeight = 15
       Items.Strings = (
         'HUTANG'
         'CASH')
@@ -807,5 +806,9 @@ object belisupfrm: Tbelisupfrm
     DataSet = dm.barangrpt
     Left = 512
     Top = 125
+  end
+  object DdeServerConv1: TDdeServerConv
+    Left = 520
+    Top = 80
   end
 end

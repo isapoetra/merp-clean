@@ -1,28 +1,35 @@
 inherited barangmstrfrm: Tbarangmstrfrm
   Left = 174
   Top = 18
-  Width = 1027
-  Height = 643
   Caption = 'Data Barang'
+  ClientHeight = 609
+  ClientWidth = 1019
   Position = poScreenCenter
+  ExplicitWidth = 1027
+  ExplicitHeight = 643
   PixelsPerInch = 96
   TextHeight = 13
   inherited JvNetscapeSplitter1: TJvNetscapeSplitter
     Left = 759
     Height = 564
     MinSize = 1
+    ExplicitLeft = 759
+    ExplicitHeight = 564
   end
   inherited Panel4: TPanel
     Width = 1019
     TabOrder = 1
+    ExplicitWidth = 1019
   end
   inherited Panel5: TPanel
     Width = 1019
     TabOrder = 2
+    ExplicitWidth = 1019
   end
   inherited Panel1: TPanel
     Width = 1019
     TabOrder = 3
+    ExplicitWidth = 1019
   end
   object DBGrid1: TDBGrid [4]
     Left = 0
@@ -108,11 +115,24 @@ inherited barangmstrfrm: Tbarangmstrfrm
     Left = 769
     Height = 564
     TabOrder = 4
+    ExplicitLeft = 769
+    ExplicitHeight = 564
+    inherited navdbcontainer: TJvScrollMaxBand
+      inherited dbnav: TJvDBNavigator
+        Hints.Strings = ()
+      end
+    end
     object JvScrollMaxBand1: TJvScrollMaxBand
       Width = 232
       Height = 70
       Caption = 'Data Manipulation'
       ExpandedHeight = 70
+      ButtonFont.Charset = DEFAULT_CHARSET
+      ButtonFont.Color = clWindowText
+      ButtonFont.Height = -11
+      ButtonFont.Name = 'MS Sans Serif'
+      ButtonFont.Style = []
+      ParentButtonFont = False
       object SpeedButton1: TSpeedButton
         Left = 7
         Top = 24
@@ -244,6 +264,12 @@ inherited barangmstrfrm: Tbarangmstrfrm
       Height = 50
       Caption = 'Data Reference'
       ExpandedHeight = 50
+      ButtonFont.Charset = DEFAULT_CHARSET
+      ButtonFont.Color = clWindowText
+      ButtonFont.Height = -11
+      ButtonFont.Name = 'MS Sans Serif'
+      ButtonFont.Style = []
+      ParentButtonFont = False
     end
   end
 end

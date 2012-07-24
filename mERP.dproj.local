@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/07/24 00:14:05.000.467,X:\merp\units\gnugettext.pas=</Transaction>
+    <Transaction>2012/07/24 00:16:52.000.952,=X:\merp\units\gnugettext.pas</Transaction>
+    <Transaction>2012/07/24 15:20:09.000.571,=X:\merp\Unit1.pas</Transaction>
+    <Transaction>2012/07/24 15:21:53.000.959,=X:\merp\Unit1.pas</Transaction>
+    <Transaction>2012/07/24 15:22:44.000.327,X:\merp\Unit1.dfm=X:\merp\units\reportform.dfm</Transaction>
+    <Transaction>2012/07/24 15:22:44.000.327,X:\merp\Unit1.pas=X:\merp\units\reportform.pas</Transaction>
+  </Transactions>
+</BorlandProject>

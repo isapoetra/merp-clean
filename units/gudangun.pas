@@ -4,14 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Grids, DBGrids, Buttons, StdCtrls, ExtCtrls;
+  Dialogs, Grids, DBGrids, Buttons, StdCtrls, ExtCtrls, baseform, ImgList,
+  JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
+  JvNetscapeSplitter, DB,  JvXPCore, JvXPButtons, DBCtrls,
+  JvDBControls;
 
 type
-  Tgudangfrm = class(TForm)
-    Panel1: TPanel;
-    Label1: TLabel;
-    Panel4: TPanel;
-    Panel5: TPanel;
+  Tgudangfrm = class(TfrmBase)
     Panel3: TPanel;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
@@ -30,24 +29,26 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, gudangaddun;
+uses dmun, fungsi_merp, gudangaddun;
 {$R *.dfm}
 
 procedure Tgudangfrm.FormCreate(Sender: TObject);
 begin
-   aktifkandata(dm.gudang);
+  inherited;
+  setDataset(dm.gudang);
 end;
 
 procedure Tgudangfrm.SpeedButton1Click(Sender: TObject);
 begin
- dm.gudang.Append;
- aktifkanform(gudangaddfrm,TGudangaddfrm);
+  dm.gudang.Append;
+  aktifkanform(gudangaddfrm, TGudangaddfrm);
 end;
 
 procedure Tgudangfrm.SpeedButton2Click(Sender: TObject);
 begin
   dm.gudang.Edit;
-  aktifkanform(gudangaddfrm,TGudangaddfrm);
+  aktifkanform(gudangaddfrm, TGudangaddfrm);
 end;
 
 end.
+

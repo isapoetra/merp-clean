@@ -1,72 +1,52 @@
-object gudangfrm: Tgudangfrm
-  Left = 753
-  Top = 189
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
-  Caption = 'mERP 1.0'
+inherited gudangfrm: Tgudangfrm
+  Left = 388
+  Top = 133
+  Caption = 'Data Gudang'
   ClientHeight = 442
-  ClientWidth = 440
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  OldCreateOrder = False
+  ClientWidth = 699
   Position = poScreenCenter
-  OnCreate = FormCreate
+  ExplicitWidth = 707
+  ExplicitHeight = 476
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 440
-    Height = 41
-    Align = alTop
-    TabOrder = 0
-    object Label1: TLabel
-      Left = 16
-      Top = 14
-      Width = 56
-      Height = 18
-      Caption = 'Gudang'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
+  inherited JvNetscapeSplitter1: TJvNetscapeSplitter
+    Left = 439
+    Height = 356
+    ExplicitLeft = 439
+    ExplicitHeight = 356
+  end
+  inherited Panel4: TPanel
+    Width = 699
+    TabOrder = 4
+    ExplicitWidth = 699
+  end
+  inherited Panel5: TPanel
+    Width = 699
+    TabOrder = 5
+    ExplicitWidth = 699
+  end
+  inherited Panel1: TPanel
+    Width = 699
+    ExplicitWidth = 699
+  end
+  inherited JvScrollMax1: TJvScrollMax
+    Left = 449
+    Height = 356
+    ExplicitLeft = 449
+    ExplicitHeight = 356
+    inherited navdbcontainer: TJvScrollMaxBand
+      inherited dbnav: TJvDBNavigator
+        Hints.Strings = ()
+      end
     end
   end
-  object Panel4: TPanel
-    Left = 0
-    Top = 41
-    Width = 440
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    TabOrder = 1
-  end
-  object Panel5: TPanel
-    Left = 0
-    Top = 49
-    Width = 440
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 805596
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 2
-  end
-  object Panel3: TPanel
+  object Panel3: TPanel [5]
     Left = 0
     Top = 401
-    Width = 440
+    Width = 699
     Height = 41
     Align = alBottom
-    TabOrder = 3
+    TabOrder = 0
     object SpeedButton1: TSpeedButton
       Left = 351
       Top = 0
@@ -102,15 +82,15 @@ object gudangfrm: Tgudangfrm
       OnClick = SpeedButton2Click
     end
   end
-  object DBGrid1: TDBGrid
+  object DBGrid1: TDBGrid [6]
     Left = 0
-    Top = 53
-    Width = 440
-    Height = 348
+    Top = 45
+    Width = 439
+    Height = 356
     Align = alClient
     DataSource = ds.gudang
     Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-    TabOrder = 4
+    TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11

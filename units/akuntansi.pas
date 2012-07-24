@@ -1,7 +1,7 @@
 unit akuntansi;
 
 interface
-uses zdataset,dialogs,controls,qforms,forms,classes,Toolwin,windows,dmun;
+uses zdataset,dialogs,controls,forms,classes,Toolwin,windows,dmun;
 
 procedure posting(Amount:double;DebetKredit:smallint;Akun:string;Tgl:TDate;Ref:string;desc:string;PlusMinus:smallint);
 

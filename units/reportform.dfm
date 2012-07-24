@@ -1,0 +1,31 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 521
+  ClientWidth = 720
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object frxPreview1: TfrxPreview
+    Left = 0
+    Top = 0
+    Width = 720
+    Height = 521
+    Align = alClient
+    OutlineVisible = True
+    OutlineWidth = 121
+    ThumbnailVisible = False
+    UseReportHints = True
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 217
+    ExplicitHeight = 158
+  end
+end

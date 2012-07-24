@@ -17,6 +17,10 @@ procedure initialize(frm: TfrmMain);
 function getConfig(configName: string): string; overload;
 function getConfig(configName: string; defValue: string): string; overload;
 function encryptPassword(pass: string): string;
+function IsBitSet(const val: Longint; const TheBit: Byte): Boolean;
+function BitOn(const val: Longint; const TheBit: Byte): Longint;
+function BitOff(const val: Longint; const TheBit: Byte): Longint;
+function BitToggle(const val: Longint; const TheBit: Byte): Longint;
 implementation
 uses Windows, Classes, SysUtils, configuration, DCPmd5;
 var
@@ -28,8 +32,7 @@ var
 function encryptPassword(pass: string): string;
 var
   md5: TDCP_md5;
-  Digest: array[0..19] of byte;
-  p: string;
+  Digest: array[0..15] of byte;
   i: Integer;
 begin
   md5 := TDCP_md5.Create(nil);
@@ -37,7 +40,7 @@ begin
   md5.UpdateStr(pass);
   md5.Final(Digest);
   Result := '';
-  for i := 0 to 19 do
+  for i := 0 to 15 do
     Result := Result + IntToHex(Digest[i], 2);
 end;
 
@@ -124,6 +127,26 @@ end;
 function getConfig(configName: string; defValue: string): string;
 begin
   Result := configuration.getInstance().getConfig(configName, defValue);
+end;
+
+function IsBitSet(const val: Longint; const TheBit: Byte): Boolean;
+begin
+  Result := (val and (1 shl TheBit)) <> 0;
+end;
+
+function BitOn(const val: Longint; const TheBit: Byte): Longint;
+begin
+  Result := val or (1 shl TheBit);
+end;
+
+function BitOff(const val: Longint; const TheBit: Byte): Longint;
+begin
+  Result := val and ((1 shl TheBit) xor $FFFFFFFF);
+end;
+
+function BitToggle(const val: Longint; const TheBit: Byte): Longint;
+begin
+  Result := val xor (1 shl TheBit);
 end;
 end.
 
