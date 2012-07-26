@@ -1,11 +1,11 @@
 unit listrep;
-
+
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids, baseform,
-  DB, ImgList,  JvXPCore, JvXPButtons, DBCtrls, JvDBControls,
+  DB, ImgList, JvXPCore, JvXPButtons, DBCtrls, JvDBControls,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
   JvNetscapeSplitter;
 
@@ -30,10 +30,10 @@ procedure Tlistrepfrm.btnDeleteClick(Sender: TObject);
 begin
   inherited;
   if messagedlg('Hapus Record ini?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
-    then
+  then
   begin
   end;
 end;
 
 end.
-
+

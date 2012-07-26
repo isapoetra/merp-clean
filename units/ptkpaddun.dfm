@@ -83,7 +83,7 @@ object ptkpaddfrm: Tptkpaddfrm
     object Label4: TLabel
       Left = 13
       Top = 66
-      Width = 89
+      Width = 90
       Height = 16
       Caption = 'Nilai per Tahun:'
       Font.Charset = ANSI_CHARSET
@@ -97,7 +97,7 @@ object ptkpaddfrm: Tptkpaddfrm
       Left = 120
       Top = 16
       Width = 285
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'pt_kode'
       DataSource = ds.ptkp
@@ -114,7 +114,7 @@ object ptkpaddfrm: Tptkpaddfrm
       Left = 120
       Top = 40
       Width = 285
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'pt_nama'
       DataSource = ds.ptkp
@@ -131,7 +131,7 @@ object ptkpaddfrm: Tptkpaddfrm
       Left = 120
       Top = 64
       Width = 285
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'pt_nilaipertahun'
       DataSource = ds.ptkp

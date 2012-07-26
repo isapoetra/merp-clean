@@ -125,7 +125,7 @@ object lunaspiutangfrm: Tlunaspiutangfrm
     object Label2: TLabel
       Left = 40
       Top = 32
-      Width = 55
+      Width = 56
       Height = 16
       Caption = 'Tanggal:'
       Font.Charset = ANSI_CHARSET
@@ -152,7 +152,7 @@ object lunaspiutangfrm: Tlunaspiutangfrm
       Left = 104
       Top = 32
       Width = 240
-      Height = 22
+      Height = 19
       Ctl3D = False
       EditMask = '!99/99/0000;1;_'
       Font.Charset = ANSI_CHARSET
@@ -170,7 +170,7 @@ object lunaspiutangfrm: Tlunaspiutangfrm
       Left = 104
       Top = 59
       Width = 241
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

@@ -1,12 +1,12 @@
 program mERP;
 {$DEFINE DXGETTEXTDEBUG}
+{$I merp.inc}
 
 uses
   Controls,
   Forms,
   SysUtils,
   acl in 'units\acl.pas',
-  utamaun in 'units\utamaun.pas' {utamafrm},
   dmun in 'units\dmun.pas' {dm: TDataModule},
   userlistun in 'units\userlistun.pas' {userlistfrm},
   dsun in 'units\dsun.pas' {ds: TDataModule},
@@ -107,7 +107,12 @@ uses
   configuration in 'units\configuration.pas',
   dashboardform in 'units\dashboardform.pas' {frmDashboard},
   gnugettext in 'units\gnugettext.pas',
-  reportform in 'units\reportform.pas' {Form1};
+  reportform in 'units\reportform.pas' {frmReport},
+  baseformsingle in 'units\baseformsingle.pas' {frmBaseSingle},
+  optionsform in 'units\optionsform.pas' {frmOptions},
+  Vcl.Themes,
+  Vcl.Styles,
+  aclform in 'units\aclform.pas' {frmACL};
 
 {$R *.res}
 
@@ -142,7 +147,6 @@ begin
     splash.setStatus('Connecting to database');
     Application.CreateForm(Tdm, dm);
   Application.CreateForm(Tds, ds);
-  Application.CreateForm(TForm1, Form1);
   splash.setStatus('Creating Main form');
     Application.CreateForm(TfrmMain, frmMain);
     splash.Free;

@@ -1,9 +1,9 @@
 object utamafrm: Tutamafrm
   Left = 196
   Top = 350
-  Width = 1125
-  Height = 532
   Caption = 'mERP 1.0'
+  ClientHeight = 390
+  ClientWidth = 737
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -3239,8 +3239,8 @@ object utamafrm: Tutamafrm
   TextHeight = 13
   object Label1: TLabel
     Left = 0
-    Top = 403
-    Width = 1117
+    Top = 315
+    Width = 737
     Height = 75
     Align = alBottom
     Alignment = taCenter
@@ -3252,11 +3252,12 @@ object utamafrm: Tutamafrm
     ParentFont = False
     ShowAccelChar = False
     WordWrap = True
+    ExplicitWidth = 18
   end
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1117
+    Width = 737
     Height = 8
     Align = alTop
     BevelOuter = bvNone
@@ -3268,7 +3269,7 @@ object utamafrm: Tutamafrm
   object Panel2: TPanel
     Left = 0
     Top = 8
-    Width = 1117
+    Width = 737
     Height = 4
     Align = alTop
     BevelOuter = bvNone
@@ -3280,7 +3281,7 @@ object utamafrm: Tutamafrm
   object Panel3: TPanel
     Left = 0
     Top = 12
-    Width = 1117
+    Width = 737
     Height = 90
     Align = alTop
     AutoSize = True
@@ -3289,12 +3290,12 @@ object utamafrm: Tutamafrm
     object pnshortcut: TPanel
       Left = 1
       Top = 1
-      Width = 1115
+      Width = 735
       Height = 88
       Align = alTop
       TabOrder = 0
       DesignSize = (
-        1115
+        735
         88)
       object SpeedButton1: TSpeedButton
         Left = 678
@@ -4726,7 +4727,7 @@ object utamafrm: Tutamafrm
         ParentFont = False
       end
       object pnclosebtn: TSpeedButton
-        Left = 1384
+        Left = 1004
         Top = 1
         Width = 46
         Height = 33
@@ -4763,6 +4764,7 @@ object utamafrm: Tutamafrm
           B556734AB55A7362526652667362945A944EB552BD77FF7FFF7FFF7FFF7FFF7F
           FF7FFF7FFF7FFF7FFF7FDE7B1863B556B552B552B552F75EBD77FF7FFF7FFF7F
           FF7FFF7FFF7F}
+        ExplicitLeft = 1384
       end
       object btnlistjual: TSpeedButton
         Left = 753
@@ -5239,20 +5241,20 @@ object utamafrm: Tutamafrm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 384
-    Width = 1117
+    Top = 296
+    Width = 737
     Height = 19
     Panels = <>
   end
   object ControlBar2: TControlBar
     Left = 0
     Top = 102
-    Width = 1117
+    Width = 737
     Height = 35
     Align = alTop
     TabOrder = 4
     DesignSize = (
-      1113
+      733
       31)
     object SpeedButton15: TSpeedButton
       Left = 11

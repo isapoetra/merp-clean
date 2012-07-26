@@ -25,7 +25,7 @@ object progressfrm: Tprogressfrm
     object Label1: TLabel
       Left = 24
       Top = 32
-      Width = 261
+      Width = 262
       Height = 16
       Caption = 'Sedang Membuka File. Mohon Tunggu....'
       Font.Charset = ANSI_CHARSET

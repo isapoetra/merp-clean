@@ -1,12 +1,12 @@
 unit gudangun;
-
+
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, Buttons, StdCtrls, ExtCtrls, baseform, ImgList,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
-  JvNetscapeSplitter, DB,  JvXPCore, JvXPButtons, DBCtrls,
+  JvNetscapeSplitter, DB, JvXPCore, JvXPButtons, DBCtrls,
   JvDBControls;
 
 type
@@ -51,4 +51,4 @@ begin
 end;
 
 end.
-
+

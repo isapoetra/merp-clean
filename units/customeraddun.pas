@@ -36,7 +36,7 @@ var
 
 implementation
 
-uses dmun,fungsi_merp,db;
+uses dmun, fungsi_merp, db;
 
 {$R *.dfm}
 
@@ -45,10 +45,11 @@ begin
   inherited;
   if speedbutton4.Caption = '&Simpan' then
   begin
-     speedbutton3.Visible := false;
-     speedbutton4.Caption := '&Tambah';
-     simpan(dm.customer);
-  end else
+    speedbutton3.Visible := false;
+    speedbutton4.Caption := '&Tambah';
+    simpan(dm.customer);
+  end
+  else
   begin
     speedbutton3.Visible := true;
     speedbutton4.Caption := '&Simpan';
@@ -58,7 +59,7 @@ end;
 
 procedure Tcustomeraddfrm.SpeedButton3Click(Sender: TObject);
 begin
-  //inherited;
+  // inherited;
   batal(dm.customer);
   close;
 end;
@@ -68,8 +69,8 @@ begin
   inherited;
   if dm.customer.State in [dsInsert] then
   begin
-     speedbutton4.Caption := '&Simpan';
-     speedbutton3.Visible := true;
+    speedbutton4.Caption := '&Simpan';
+    speedbutton3.Visible := true;
   end;
 end;
 

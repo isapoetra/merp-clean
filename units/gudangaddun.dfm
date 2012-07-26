@@ -7,14 +7,17 @@ inherited gudangaddfrm: Tgudangaddfrm
   TextHeight = 13
   inherited Panel1: TPanel
     inherited Label1: TLabel
-      Width = 147
+      Width = 148
       Caption = 'Tambah/Edit Gudang'
+      ExplicitWidth = 148
     end
   end
   inherited Panel2: TPanel
     Width = 508
     Height = 109
     Align = alClient
+    ExplicitWidth = 508
+    ExplicitHeight = 109
     object Label2: TLabel
       Left = 21
       Top = 26
@@ -45,7 +48,7 @@ inherited gudangaddfrm: Tgudangaddfrm
       Left = 141
       Top = 24
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'gd_nama'
       DataSource = ds.gudang
@@ -62,7 +65,7 @@ inherited gudangaddfrm: Tgudangaddfrm
       Left = 141
       Top = 48
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'gd_lokasi'
       DataSource = ds.gudang
@@ -78,6 +81,7 @@ inherited gudangaddfrm: Tgudangaddfrm
   end
   inherited Panel3: TPanel
     Top = 162
+    ExplicitTop = 162
     inherited SpeedButton3: TSpeedButton
       OnClick = SpeedButton3Click
     end

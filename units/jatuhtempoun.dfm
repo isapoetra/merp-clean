@@ -28,7 +28,7 @@ object jatuhtempofrm: Tjatuhtempofrm
     object Label1: TLabel
       Left = 8
       Top = 8
-      Width = 169
+      Width = 170
       Height = 18
       Caption = 'Jatuh Tempo Pembelian'
       Font.Charset = ANSI_CHARSET

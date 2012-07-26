@@ -47,6 +47,7 @@ var
   frmInit: TfrmInit;
 
 implementation
+
 uses helper, configuration;
 {$R *.dfm}
 
@@ -73,7 +74,7 @@ end;
 
 procedure TfrmInit.updateDBInfo(Sender: TObject);
 begin
-  dbTest.Connected := false;
+  dbtest.Connected := false;
   dbtest.Protocol := cbProtocol.Text;
   dbtest.HostName := txtHost.Text;
   dbtest.Password := txtPass.Text;
@@ -106,4 +107,3 @@ begin
 end;
 
 end.
-

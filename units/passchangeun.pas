@@ -36,22 +36,22 @@ var
 
 implementation
 
-uses dmun,db;
+uses dmun, db;
 
 {$R *.dfm}
 
 procedure Tpasschangefrm.validasiPassword;
 begin
-  if newpwd.Text ='' then
+  if newpwd.Text = '' then
   begin
-    messagedlg('password tidak boleh kosong',mtError,[mbok],0);
+    messagedlg('password tidak boleh kosong', mtError, [mbok], 0);
     newpwd.SetFocus;
     abort;
   end;
 
   if newpwd.Text <> repeatpwd.Text then
   begin
-    messagedlg('password tidak cocok',mtError,[mbOk],0);
+    messagedlg('password tidak cocok', mtError, [mbok], 0);
     repeatpwd.SetFocus;
     abort;
   end;
@@ -59,29 +59,32 @@ end;
 
 procedure Tpasschangefrm.oldpwdChange(Sender: TObject);
 begin
-  if dm.user.Active = false then dm.user.Active := true;
-  if dm.user.Locate('us_password',oldpwd.Text,[loCaseInsensitive])= true then
+  if dm.user.Active = false then
+    dm.user.Active := true;
+  if dm.user.Locate('us_password', oldpwd.Text, [loCaseInsensitive]) = true then
   begin
     newpwd.Visible := true;
     repeatpwd.Visible := true;
-  end else
+  end
+  else
   begin
-    newpwd.Visible    := false;
+    newpwd.Visible := false;
     repeatpwd.Visible := false;
   end;
 end;
 
 procedure Tpasschangefrm.SpeedButton1Click(Sender: TObject);
 begin
- validasiPassword;
- if messagedlg('Simpan perubahan password?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
- begin
-    
+  validasiPassword;
+  if messagedlg('Simpan perubahan password?', mtConfirmation, [mbYes, mbNo], 0)
+    = mrYes then
+  begin
+
     dm.user.Post;
     dm.user.ApplyUpdates;
-    messagedlg('Password telah berubah, password baru aktif setelah '+#13+
-    'Anda keluar dari mERP.',mtWarning,[mbok],0);
- end;
+    messagedlg('Password telah berubah, password baru aktif setelah ' + #13 +
+      'Anda keluar dari mERP.', mtWarning, [mbok], 0);
+  end;
 end;
 
 end.

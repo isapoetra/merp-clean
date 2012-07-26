@@ -95,7 +95,7 @@ object bankaddfrm: Tbankaddfrm
       Left = 120
       Top = 16
       Width = 278
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'bk_nama'
       DataSource = ds.bank
@@ -112,7 +112,7 @@ object bankaddfrm: Tbankaddfrm
       Left = 120
       Top = 40
       Width = 277
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'bk_alamat'
       DataSource = ds.bank

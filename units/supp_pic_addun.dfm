@@ -7,12 +7,15 @@ inherited supp_pic_addfrm: Tsupp_pic_addfrm
     inherited Label1: TLabel
       Width = 152
       Caption = 'Add/Edit Supplier PIC'
+      ExplicitWidth = 152
     end
   end
   inherited Panel2: TPanel
     Width = 508
     Height = 150
     Align = alClient
+    ExplicitWidth = 508
+    ExplicitHeight = 150
     object Label2: TLabel
       Left = 21
       Top = 26
@@ -69,7 +72,7 @@ inherited supp_pic_addfrm: Tsupp_pic_addfrm
       Left = 141
       Top = 24
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_nama'
       DataSource = ds.supplierpic
@@ -86,7 +89,7 @@ inherited supp_pic_addfrm: Tsupp_pic_addfrm
       Left = 141
       Top = 48
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_alamat'
       DataSource = ds.supplierpic
@@ -103,7 +106,7 @@ inherited supp_pic_addfrm: Tsupp_pic_addfrm
       Left = 141
       Top = 72
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_handphone'
       DataSource = ds.supplierpic
@@ -120,7 +123,7 @@ inherited supp_pic_addfrm: Tsupp_pic_addfrm
       Left = 141
       Top = 96
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_email'
       DataSource = ds.supplierpic
@@ -136,6 +139,7 @@ inherited supp_pic_addfrm: Tsupp_pic_addfrm
   end
   inherited Panel3: TPanel
     Top = 203
+    ExplicitTop = 203
     inherited SpeedButton3: TSpeedButton
       OnClick = SpeedButton3Click
     end

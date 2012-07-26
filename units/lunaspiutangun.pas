@@ -32,24 +32,27 @@ var
 
 implementation
 
-uses fungsi_merp,akuntansi,dmun;
+uses fungsi_merp, akuntansi, dmun;
 {$R *.dfm}
 
 procedure Tlunaspiutangfrm.FormActivate(Sender: TObject);
 begin
-    jmlbayar.Text := floatToStr(bayarpiutang);
-    tgl.Text      := dateToStr(date);
+  jmlbayar.Text := floatToStr(bayarpiutang);
+  tgl.Text := dateToStr(date);
 end;
 
 procedure Tlunaspiutangfrm.SpeedButton1Click(Sender: TObject);
-var amount : double;
-    ref : string;
+var
+  amount: double;
+  ref: string;
 begin
   amount := strToFloat(jmlbayar.Text);
-  ref    := dm.tagihanview.fieldbyname('in_kode_jual').Value;
-  //posting ke general ledger
-  posting(amount,0,'130-20',strToDate(tgl.Text),ref,'Pembayaran Piutang Untuk '+ref,-1);//piutang berkurang
-  posting(amount,1,'110-20',strToDate(tgl.Text),ref,'Pembayaran Piutang Untuk '+ref,1);//kas bertambah
+  ref := dm.tagihanview.fieldbyname('in_kode_jual').Value;
+  // posting ke general ledger
+  posting(amount, 0, '130-20', strToDate(tgl.Text), ref,
+    'Pembayaran Piutang Untuk ' + ref, -1); // piutang berkurang
+  posting(amount, 1, '110-20', strToDate(tgl.Text), ref,
+    'Pembayaran Piutang Untuk ' + ref, 1); // kas bertambah
   showmessage('Proses pembayaran selesai...');
 end;
 

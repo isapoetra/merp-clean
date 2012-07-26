@@ -1,75 +1,60 @@
-object inventoryfrm: Tinventoryfrm
+inherited inventoryfrm: Tinventoryfrm
   Left = 241
   Top = 113
   BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
-  Caption = 'mERP 1.0'
-  ClientHeight = 568
-  ClientWidth = 918
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  OldCreateOrder = False
-  Position = poScreenCenter
-  OnCreate = FormCreate
+  Caption = 'Inventory Barang'
+  ClientHeight = 566
+  ClientWidth = 916
+  ExplicitWidth = 924
+  ExplicitHeight = 600
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel3: TPanel
-    Left = 0
-    Top = 0
-    Width = 918
-    Height = 41
-    Align = alTop
-    TabOrder = 0
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 122
-      Height = 18
-      Caption = 'Inventory Barang'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
+  inherited JvNetscapeSplitter1: TJvNetscapeSplitter
+    Left = 656
+    Top = 97
+    Height = 469
+    ExplicitLeft = 658
+    ExplicitTop = 97
+    ExplicitHeight = 471
+  end
+  inherited Panel1: TPanel
+    Width = 916
+    ExplicitWidth = 916
+  end
+  inherited pnlbg1: TPanel
+    Width = 916
+    TabOrder = 4
+    ExplicitWidth = 916
+  end
+  inherited pnlbg2: TPanel
+    Top = 93
+    Width = 916
+    TabOrder = 5
+    ExplicitTop = 93
+    ExplicitWidth = 916
+  end
+  inherited JvScrollMax1: TJvScrollMax
+    Left = 666
+    Top = 97
+    Height = 469
+    TabOrder = 2
+    ExplicitLeft = 666
+    ExplicitTop = 97
+    ExplicitHeight = 469
+    inherited navdbcontainer: TJvScrollMaxBand
+      inherited dbnav: TJvDBNavigator
+        Hints.Strings = ()
+      end
     end
   end
-  object Panel1: TPanel
+  object caripn: TPanel [5]
     Left = 0
     Top = 41
-    Width = 918
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 1
-  end
-  object Panel2: TPanel
-    Left = 0
-    Top = 49
-    Width = 918
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 871389
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 2
-  end
-  object caripn: TPanel
-    Left = 0
-    Top = 53
-    Width = 918
+    Width = 916
     Height = 52
     Align = alTop
     Color = 14869218
-    TabOrder = 3
+    TabOrder = 0
     object Label2: TLabel
       Left = 8
       Top = 19
@@ -87,7 +72,7 @@ object inventoryfrm: Tinventoryfrm
       Left = 128
       Top = 16
       Width = 593
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -119,16 +104,16 @@ object inventoryfrm: Tinventoryfrm
       OnClick = lookgudangClick
     end
   end
-  object DBGrid1: TDBGrid
+  object DBGrid1: TDBGrid [6]
     Left = 0
-    Top = 105
-    Width = 918
-    Height = 463
+    Top = 97
+    Width = 656
+    Height = 469
     Align = alClient
     DataSource = ds.inventory
     Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
     PopupMenu = popinvent
-    TabOrder = 4
+    TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -148,33 +133,38 @@ object inventoryfrm: Tinventoryfrm
       end
       item
         Expanded = False
-        FieldName = 'barang'
+        FieldName = 'br_nama'
+        Title.Caption = 'Nama Barang'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clBlack
         Title.Font.Height = -13
         Title.Font.Name = 'Arial'
         Title.Font.Style = [fsBold]
-        Width = 300
+        Width = 249
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Type'
+        FieldName = 'br_type'
+        Title.Caption = 'Type'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clBlack
         Title.Font.Height = -13
         Title.Font.Name = 'Arial'
         Title.Font.Style = [fsBold]
+        Width = 134
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'gudang'
+        FieldName = 'gd_nama'
+        Title.Caption = 'Gudang'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clBlack
         Title.Font.Height = -13
         Title.Font.Name = 'Arial'
         Title.Font.Style = [fsBold]
+        Width = 101
         Visible = True
       end
       item
@@ -189,6 +179,7 @@ object inventoryfrm: Tinventoryfrm
         Visible = True
       end
       item
+        Alignment = taRightJustify
         Expanded = False
         FieldName = 'in_harga'
         Title.Caption = 'Harga'
@@ -200,28 +191,9 @@ object inventoryfrm: Tinventoryfrm
         Visible = True
       end
       item
+        ButtonStyle = cbsEllipsis
         Expanded = False
-        FieldName = 'in_kd_barang'
-        Title.Font.Charset = ANSI_CHARSET
-        Title.Font.Color = clBlack
-        Title.Font.Height = -13
-        Title.Font.Name = 'Arial'
-        Title.Font.Style = [fsBold]
-        Visible = False
-      end
-      item
-        Expanded = False
-        FieldName = 'in_kd_gudang'
-        Title.Font.Charset = ANSI_CHARSET
-        Title.Font.Color = clBlack
-        Title.Font.Height = -13
-        Title.Font.Name = 'Arial'
-        Title.Font.Style = [fsBold]
-        Visible = False
-      end
-      item
-        Expanded = False
-        FieldName = 'unit'
+        FieldName = 'br_unit'
         Title.Caption = 'Unit'
         Title.Font.Charset = ANSI_CHARSET
         Title.Font.Color = clBlack
@@ -230,6 +202,13 @@ object inventoryfrm: Tinventoryfrm
         Title.Font.Style = [fsBold]
         Visible = True
       end>
+  end
+  inherited ImageList1: TImageList
+    Left = 504
+    Top = 0
+  end
+  inherited dsform: TDataSource
+    Top = 8
   end
   object popinvent: TPopupMenu
     Left = 344

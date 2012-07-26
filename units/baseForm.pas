@@ -7,26 +7,21 @@ uses
   Dialogs, StdCtrls, ExtCtrls, ZAbstractDataset, ImgList, ComCtrls, ToolWin,
   JvExExtCtrls, JvExtComponent, JvScrollMax, JvNetscapeSplitter,
   JvExControls, DBCtrls, JvDBControls, DB, JvExStdCtrls, JvButton, JvCtrls,
-  JvXPCore, JvXPButtons;
+  JvXPCore, JvXPButtons, baseformsingle;
 
 type
-  TfrmBase = class(TForm)
-    Panel4: TPanel;
-    Panel5: TPanel;
-    Panel1: TPanel;
-    lblCaption: TLabel;
+  TfrmBase = class(TFrmBaseSingle)
     ImageList1: TImageList;
     JvScrollMax1: TJvScrollMax;
     JvNetscapeSplitter1: TJvNetscapeSplitter;
-    JvScrollMaxBand2: TJvScrollMaxBand;
-    txtSearch: TEdit;
-    Button1: TButton;
     navdbcontainer: TJvScrollMaxBand;
     dbnav: TJvDBNavigator;
-    dsform: TDataSource;
     btnAdd: TJvXPButton;
     btnEdit: TJvXPButton;
     btnDelete: TJvXPButton;
+    searchContainer: TJvScrollMaxBand;
+    txtSearch: TEdit;
+    Button1: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -34,51 +29,53 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure onKeyPressed(Sender: TObject; var Key: Char); virtual;
+
   private
     { Private declarations }
-    fDataset: TZAbstractDataset;
-    FDatasetChanged: TNotifyEvent;
+    FShowSearch: Boolean;
+    FDataReadOnly: Boolean;
+    procedure SetDataReadOnly(const Value: Boolean);
+    procedure setDataset(const Value: TZAbstractDataset); override;
   protected
-    procedure setDataset(const Value: TZAbstractDataset);
     procedure doSearch(const text: string); virtual;
     procedure doDataAction(); virtual; abstract;
-
+    procedure setShowSearch(Value: Boolean);
   public
-    property Dataset: TZAbstractDataset read fDataset write setDataset;
-    property OnDatasetChanged: TNotifyEvent read FDatasetChanged write
-      FDatasetChanged;
+    property ShowSearch: Boolean read FShowSearch write setShowSearch;
+    property DataReadOnly: Boolean read FDataReadOnly write SetDataReadOnly;
   end;
 
 var
   frmBase: TfrmBase;
 
 implementation
+
 uses helper, acl, mainform;
 {$R *.dfm}
 
-procedure TfrmBase.FormCreate(Sender: TObject);
-begin
-  if not acl.isAllow(self.ClassName, aclRead) then
-  begin
-    MessageDlg(accessdenied, mtError, [mbOK], -1);
-    self.Close;
-  end;
-  lblCaption.Caption := self.Caption;
-  frmMain.MDIChildCreated(self.Handle)
-end;
-
 procedure TfrmBase.setDataset(const Value: TZAbstractDataset);
 begin
-  fDataset := Value;
-  if (assigned(fDataset) and fDataset.Active = false) then
-    fDataset.Active := true;
-  dsform.DataSet := value;
-  btnadd.Enabled := Assigned(value) and acl.isAllow(self.ClassName, aclAdd);
-  btnEdit.Enabled := Assigned(value) and acl.isAllow(self.ClassName, aclEdit);
-  btndelete.Enabled := Assigned(value) and acl.isAllow(self.ClassName,
+  inherited;
+  btnAdd.Enabled := assigned(Value) and acl.isAllow(self.ClassName, aclAdd);
+  btnEdit.Enabled := assigned(Value) and acl.isAllow(self.ClassName, aclEdit);
+  btnDelete.Enabled := assigned(Value) and acl.isAllow(self.ClassName,
     aclDelete);
-  if Assigned(FDatasetChanged) then
-    FDatasetChanged(self);
+end;
+
+procedure TfrmBase.setShowSearch(Value: Boolean);
+begin
+  FShowSearch := Value;
+  searchContainer.Visible := Value;
+  if not searchContainer.Visible then
+    navdbcontainer.Top := 0
+  else
+    navdbcontainer.Top := 50;
+end;
+
+procedure TfrmBase.FormCreate(Sender: TObject);
+begin
+  inherited;
+  frmMain.MDIChildCreated(self.Handle)
 end;
 
 procedure TfrmBase.FormActivate(Sender: TObject);
@@ -93,7 +90,7 @@ end;
 
 procedure TfrmBase.txtSearchChange(Sender: TObject);
 begin
-  doSearch(txtSearch.Text);
+  doSearch(txtSearch.text);
 end;
 
 procedure TfrmBase.doSearch(const text: string);
@@ -103,7 +100,7 @@ end;
 
 procedure TfrmBase.Button1Click(Sender: TObject);
 begin
-  txtSearch.Text := '';
+  txtSearch.text := '';
 end;
 
 procedure TfrmBase.FormDestroy(Sender: TObject);
@@ -113,14 +110,23 @@ end;
 
 procedure TfrmBase.onKeyPressed(Sender: TObject; var Key: Char);
 begin
-  if (key in ['0'..'9']) or (key in ['a'..'z', 'A'..'Z']) then
+  if (Key in ['0' .. '9']) or (Key in ['a' .. 'z', 'A' .. 'Z']) then
   begin
     txtSearch.SetFocus;
     txtSearch.Clear;
-    txtSearch.text := txtSearch.text + key;
+    txtSearch.text := txtSearch.text + Key;
     txtSearch.SelStart := 1;
   end;
 end;
 
-end.
+procedure TfrmBase.SetDataReadOnly(const Value: Boolean);
+begin
+  FDataReadOnly := Value;
+  btnAdd.Visible := Value = false;
+  btnEdit.Visible := Value = false;
+  btnDelete.Visible := Value = false;
+  if Value = true then
+    navdbcontainer.ExpandedHeight := 50;
+end;
 
+end.

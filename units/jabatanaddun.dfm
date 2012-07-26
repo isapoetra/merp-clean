@@ -290,7 +290,7 @@ object jabatanaddfrm: Tjabatanaddfrm
       Left = 96
       Top = 16
       Width = 265
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'jd_nama'
       DataSource = ds.jobdes
@@ -307,7 +307,7 @@ object jabatanaddfrm: Tjabatanaddfrm
       Left = 96
       Top = 40
       Width = 265
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'jd_description'
       DataSource = ds.jobdes

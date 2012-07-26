@@ -11,12 +11,16 @@ inherited supplieraddfrm: Tsupplieraddfrm
       Top = 10
       Width = 123
       Caption = 'Add/Edit Supplier'
+      ExplicitTop = 10
+      ExplicitWidth = 123
     end
   end
   inherited Panel2: TPanel
     Width = 508
     Height = 141
     Align = alClient
+    ExplicitWidth = 508
+    ExplicitHeight = 141
     object Label2: TLabel
       Left = 21
       Top = 26
@@ -59,7 +63,7 @@ inherited supplieraddfrm: Tsupplieraddfrm
     object Label5: TLabel
       Left = 21
       Top = 98
-      Width = 53
+      Width = 54
       Height = 16
       Caption = 'Telp/Fax:'
       Font.Charset = ANSI_CHARSET
@@ -73,7 +77,7 @@ inherited supplieraddfrm: Tsupplieraddfrm
       Left = 141
       Top = 24
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_name'
       DataSource = ds.supplier
@@ -90,7 +94,7 @@ inherited supplieraddfrm: Tsupplieraddfrm
       Left = 141
       Top = 48
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_address'
       DataSource = ds.supplier
@@ -107,7 +111,7 @@ inherited supplieraddfrm: Tsupplieraddfrm
       Left = 141
       Top = 72
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_kota'
       DataSource = ds.supplier
@@ -124,7 +128,7 @@ inherited supplieraddfrm: Tsupplieraddfrm
       Left = 141
       Top = 96
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'sp_telp'
       DataSource = ds.supplier
@@ -140,6 +144,7 @@ inherited supplieraddfrm: Tsupplieraddfrm
   end
   inherited Panel3: TPanel
     Top = 194
+    ExplicitTop = 194
     inherited SpeedButton3: TSpeedButton
       OnClick = SpeedButton3Click
     end

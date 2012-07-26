@@ -39,7 +39,7 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, karyawanaddun;
+uses dmun, fungsi_merp, karyawanaddun;
 {$R *.dfm}
 
 procedure Tkaryawanfrm.FormActivate(Sender: TObject);
@@ -50,9 +50,9 @@ end;
 
 procedure Tkaryawanfrm.btntambahClick(Sender: TObject);
 begin
- dm.karyawan.Append;
- isTambahKaryawan :=1;
- aktifkanform(karyawanaddfrm,TKaryawanaddfrm);
+  dm.karyawan.Append;
+  isTambahKaryawan := 1;
+  aktifkanform(karyawanaddfrm, TKaryawanaddfrm);
 
 end;
 
@@ -60,35 +60,36 @@ procedure Tkaryawanfrm.cariChange(Sender: TObject);
 begin
   with dm.karyawan do
   begin
-    sql.Text := 'select * from karyawan where kr_firstname like (:nama) or kr_lastname like (:nama) '+
-    ' order by kr_id desc ';
-    params.ParamByName('nama').Value := '%'+cari.Text+'%';
+    sql.Text :=
+      'select * from karyawan where kr_firstname like (:nama) or kr_lastname like (:nama) '
+      + ' order by kr_id desc ';
+    params.ParamByName('nama').Value := '%' + cari.Text + '%';
     open;
   end;
 end;
 
 procedure Tkaryawanfrm.SpeedButton1Click(Sender: TObject);
 begin
- cari.Clear;
+  cari.Clear;
 end;
 
 procedure Tkaryawanfrm.btneditClick(Sender: TObject);
 begin
- dm.karyawan.edit;
- dm.karyawan_detail.Edit;
- aktifkanform(karyawanaddfrm,TKaryawanAddfrm);
+  dm.karyawan.edit;
+  dm.karyawan_detail.edit;
+  aktifkanform(karyawanaddfrm, TKaryawanaddfrm);
 end;
 
 procedure Tkaryawanfrm.SpeedButton2Click(Sender: TObject);
 begin
- hapus(dm.karyawan);
+  hapus(dm.karyawan);
 end;
 
 procedure Tkaryawanfrm.DBGrid1DblClick(Sender: TObject);
 begin
-  dm.karyawan.Edit;
-  dm.karyawan_detail.Edit;
-  aktifkanform(karyawanAddfrm,TKaryawanAddfrm);
+  dm.karyawan.edit;
+  dm.karyawan_detail.edit;
+  aktifkanform(karyawanaddfrm, TKaryawanaddfrm);
 end;
 
 end.

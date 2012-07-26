@@ -34,19 +34,19 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, penguranggajiaddun;
+uses dmun, fungsi_merp, penguranggajiaddun;
 {$R *.dfm}
 
 procedure Tpenguranggajifrm.btntambahClick(Sender: TObject);
 begin
   dm.penguranggaji.Append;
-  aktifkanform(penguranggajiaddfrm,TPengurangGajiaddfrm);
+  aktifkanform(penguranggajiaddfrm, TPengurangGajiaddfrm);
 end;
 
 procedure Tpenguranggajifrm.btneditClick(Sender: TObject);
 begin
   dm.penguranggaji.Edit;
-  aktifkanform(penguranggajiAddfrm,TPengurangGajiAddfrm);
+  aktifkanform(penguranggajiaddfrm, TPengurangGajiaddfrm);
 end;
 
 procedure Tpenguranggajifrm.SpeedButton1Click(Sender: TObject);
@@ -56,21 +56,24 @@ end;
 
 procedure Tpenguranggajifrm.FormActivate(Sender: TObject);
 begin
- aktifkandata(dm.penguranggaji);
+  aktifkandata(dm.penguranggaji);
 end;
 
 procedure Tpenguranggajifrm.gridkurangKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  if key=vk_return then
- begin
-   dm.salary_level_detail_k.Append;
-   dm.salary_level_detail_k.FieldByName('sd_kode_item').Value := gridkurang.Fields[0].Value;
-   dm.salary_level_detail_k.FieldByName('sd_nama').Value      := gridkurang.Fields[1].Value;
-   dm.salary_level_detail_k.FieldByName('sd_amount').Value    := gridkurang.Fields[2].Value;
-   dm.salary_level_detail_k.FieldByName('sd_jenis').Value  := 'kurang';
-   close;
- end;
+  if Key = vk_return then
+  begin
+    dm.salary_level_detail_k.Append;
+    dm.salary_level_detail_k.FieldByName('sd_kode_item').Value :=
+      gridkurang.Fields[0].Value;
+    dm.salary_level_detail_k.FieldByName('sd_nama').Value :=
+      gridkurang.Fields[1].Value;
+    dm.salary_level_detail_k.FieldByName('sd_amount').Value :=
+      gridkurang.Fields[2].Value;
+    dm.salary_level_detail_k.FieldByName('sd_jenis').Value := 'kurang';
+    close;
+  end;
 end;
 
 end.

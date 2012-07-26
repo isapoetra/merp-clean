@@ -1,10 +1,10 @@
 object frmInit: TfrmInit
   Left = 239
   Top = 104
-  Width = 928
-  Height = 480
-  ActiveControl = JvWizardInteriorPage3
+  ActiveControl = JvWizardWelcomePage1
   Caption = 'Installation'
+  ClientHeight = 446
+  ClientWidth = 920
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,7 +19,7 @@ object frmInit: TfrmInit
     Top = 0
     Width = 920
     Height = 446
-    ActivePage = JvWizardInteriorPage3
+    ActivePage = JvWizardWelcomePage1
     ButtonBarHeight = 42
     ButtonStart.Caption = 'To &Start Page'
     ButtonStart.NumGlyphs = 1
@@ -49,6 +49,7 @@ object frmInit: TfrmInit
       920
       446)
     object JvWizardWelcomePage1: TJvWizardWelcomePage
+      Header.ParentFont = False
       Header.Title.Color = clNone
       Header.Title.Text = 'Welcome'
       Header.Title.Anchors = [akLeft, akTop, akRight]
@@ -66,8 +67,11 @@ object frmInit: TfrmInit
       Header.Subtitle.Font.Name = 'MS Sans Serif'
       Header.Subtitle.Font.Style = []
       Caption = 'JvWizardWelcomePage1'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object JvWizardInteriorPage1: TJvWizardInteriorPage
+      Header.ParentFont = False
       Header.Title.Color = clNone
       Header.Title.Text = 'Database'
       Header.Title.Anchors = [akLeft, akTop, akRight]
@@ -86,6 +90,8 @@ object frmInit: TfrmInit
       Header.Subtitle.Font.Style = []
       OnEnterPage = JvWizardInteriorPage1EnterPage
       OnNextButtonClick = JvWizardInteriorPage1NextButtonClick
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 80
         Top = 88
@@ -103,8 +109,8 @@ object frmInit: TfrmInit
       object Label3: TLabel
         Left = 80
         Top = 144
-        Width = 65
-        Height = 17
+        Width = 32
+        Height = 13
         Caption = 'Label3'
       end
       object Label5: TLabel
@@ -119,7 +125,6 @@ object frmInit: TfrmInit
         Top = 104
         Width = 209
         Height = 21
-        ItemHeight = 13
         TabOrder = 0
         Text = 'mysqld-5'
         OnChange = updateDBInfo
@@ -157,8 +162,8 @@ object frmInit: TfrmInit
         object Label6: TLabel
           Left = 224
           Top = 80
-          Width = 1
-          Height = 41
+          Width = 32
+          Height = 13
           Caption = 'Label6'
         end
         object txtName: TEdit
@@ -185,7 +190,6 @@ object frmInit: TfrmInit
         Top = 264
         Width = 297
         Height = 21
-        ItemHeight = 13
         TabOrder = 3
         Text = 'merp'
         OnChange = updateDBInfo
@@ -201,6 +205,7 @@ object frmInit: TfrmInit
       end
     end
     object JvWizardInteriorPage2: TJvWizardInteriorPage
+      Header.ParentFont = False
       Header.Title.Color = clNone
       Header.Title.Text = 'Title'
       Header.Title.Anchors = [akLeft, akTop, akRight]
@@ -218,8 +223,11 @@ object frmInit: TfrmInit
       Header.Subtitle.Font.Name = 'MS Sans Serif'
       Header.Subtitle.Font.Style = []
       Caption = 'JvWizardInteriorPage2'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object JvWizardInteriorPage3: TJvWizardInteriorPage
+      Header.ParentFont = False
       Header.Title.Color = clNone
       Header.Title.Text = 'Title'
       Header.Title.Anchors = [akLeft, akTop, akRight]
@@ -238,6 +246,8 @@ object frmInit: TfrmInit
       Header.Subtitle.Font.Style = []
       VisibleButtons = [bkFinish, bkCancel]
       Caption = 'JvWizardInteriorPage3'
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
   end
   object dbtest: TZConnection

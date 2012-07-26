@@ -30,7 +30,7 @@ uses dmun, fungsi_merp;
 
 procedure Tfootnote_globalfrm.FormCreate(Sender: TObject);
 begin
- aktifkandata(dm.footnote_global);
+  aktifkandata(dm.footnote_global);
 end;
 
 end.

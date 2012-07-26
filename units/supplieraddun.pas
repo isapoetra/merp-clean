@@ -29,23 +29,24 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tsupplieraddfrm.SpeedButton4Click(Sender: TObject);
 begin
- // inherited;
- if speedbutton4.Caption = '&Simpan' then
- begin
-  simpan(dm.supplier);
-  speedbutton4.Caption := '&Tambah';
-  speedbutton3.Visible := false;
- end else
- begin
-   dm.supplier.Append;
-   speedbutton4.Caption := '&Simpan';
-   speedbutton3.Visible := true;
- end;
+  // inherited;
+  if speedbutton4.Caption = '&Simpan' then
+  begin
+    simpan(dm.supplier);
+    speedbutton4.Caption := '&Tambah';
+    speedbutton3.Visible := false;
+  end
+  else
+  begin
+    dm.supplier.Append;
+    speedbutton4.Caption := '&Simpan';
+    speedbutton3.Visible := true;
+  end;
 end;
 
 procedure Tsupplieraddfrm.SpeedButton3Click(Sender: TObject);

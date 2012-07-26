@@ -27,7 +27,7 @@ object projectaddfrm: Tprojectaddfrm
     object Label1: TLabel
       Left = 8
       Top = 9
-      Width = 142
+      Width = 143
       Height = 18
       Caption = 'Tambah/Edit Project'
       Font.Charset = ANSI_CHARSET
@@ -244,7 +244,7 @@ object projectaddfrm: Tprojectaddfrm
       Left = 112
       Top = 16
       Width = 345
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'pj_name'
       DataSource = ds.project
@@ -261,7 +261,7 @@ object projectaddfrm: Tprojectaddfrm
       Left = 112
       Top = 64
       Width = 345
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'pj_location'
       DataSource = ds.project

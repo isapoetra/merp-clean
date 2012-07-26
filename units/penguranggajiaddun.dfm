@@ -109,7 +109,7 @@ object penguranggajiaddfrm: Tpenguranggajiaddfrm
       Left = 104
       Top = 16
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'sk_kode'
       DataSource = ds.penguranggaji
@@ -126,7 +126,7 @@ object penguranggajiaddfrm: Tpenguranggajiaddfrm
       Left = 104
       Top = 40
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'sk_nama'
       DataSource = ds.penguranggaji
@@ -143,7 +143,7 @@ object penguranggajiaddfrm: Tpenguranggajiaddfrm
       Left = 104
       Top = 64
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'sk_amount'
       DataSource = ds.penguranggaji

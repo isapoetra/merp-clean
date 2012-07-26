@@ -8,12 +8,15 @@ inherited customeraddfrm: Tcustomeraddfrm
     inherited Label1: TLabel
       Width = 132
       Caption = 'Add/Edit Customer'
+      ExplicitWidth = 132
     end
   end
   inherited Panel2: TPanel
     Width = 508
     Height = 212
     Align = alClient
+    ExplicitWidth = 508
+    ExplicitHeight = 212
     object Label2: TLabel
       Left = 21
       Top = 36
@@ -56,7 +59,7 @@ inherited customeraddfrm: Tcustomeraddfrm
     object Label5: TLabel
       Left = 21
       Top = 108
-      Width = 27
+      Width = 28
       Height = 16
       Caption = 'Telp:'
       Font.Charset = ANSI_CHARSET
@@ -110,7 +113,7 @@ inherited customeraddfrm: Tcustomeraddfrm
       Left = 141
       Top = 34
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cu_nama'
       DataSource = ds.customer
@@ -127,7 +130,7 @@ inherited customeraddfrm: Tcustomeraddfrm
       Left = 141
       Top = 58
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cu_alamat'
       DataSource = ds.customer
@@ -144,7 +147,7 @@ inherited customeraddfrm: Tcustomeraddfrm
       Left = 141
       Top = 82
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cu_kota'
       DataSource = ds.customer
@@ -161,7 +164,7 @@ inherited customeraddfrm: Tcustomeraddfrm
       Left = 141
       Top = 106
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cu_telp'
       DataSource = ds.customer
@@ -178,7 +181,7 @@ inherited customeraddfrm: Tcustomeraddfrm
       Left = 141
       Top = 130
       Width = 343
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cu_npwp'
       DataSource = ds.customer
@@ -196,7 +199,7 @@ inherited customeraddfrm: Tcustomeraddfrm
       Left = 141
       Top = 10
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cu_kode'
       DataSource = ds.customer
@@ -214,7 +217,7 @@ inherited customeraddfrm: Tcustomeraddfrm
       Left = 141
       Top = 165
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cu_alamatfp'
       DataSource = ds.customer
@@ -230,16 +233,20 @@ inherited customeraddfrm: Tcustomeraddfrm
   end
   inherited Panel3: TPanel
     Top = 265
+    ExplicitTop = 265
     inherited SpeedButton1: TSpeedButton
       Height = 38
+      ExplicitHeight = 38
     end
     inherited SpeedButton3: TSpeedButton
       Height = 38
       OnClick = SpeedButton3Click
+      ExplicitHeight = 38
     end
     inherited SpeedButton4: TSpeedButton
       Height = 38
       OnClick = SpeedButton4Click
+      ExplicitHeight = 38
     end
   end
 end

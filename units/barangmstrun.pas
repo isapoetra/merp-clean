@@ -1,12 +1,12 @@
 unit barangmstrun;
-
+
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, StdCtrls, ExtCtrls, Grids, DBGrids, baseform,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent, ImgList,
-  JvNetscapeSplitter, DB,  JvXPCore, JvXPButtons, DBCtrls,
+  JvNetscapeSplitter, DB, JvXPCore, JvXPButtons, DBCtrls,
   JvDBControls;
 
 type
@@ -52,13 +52,13 @@ end;
 procedure Tbarangmstrfrm.SpeedButton2Click(Sender: TObject);
 begin
   dm.barang.Edit;
-  aktifkanform(BarangAddFrm, TBarangAddFrm);
+  aktifkanform(barangAddFrm, TBarangAddFrm);
 end;
 
 procedure Tbarangmstrfrm.DBGrid1DblClick(Sender: TObject);
 begin
   dm.barang.Edit;
-  aktifkanform(BarangAddFrm, TBarangAddFrm);
+  aktifkanform(barangAddFrm, TBarangAddFrm);
 end;
 
 procedure Tbarangmstrfrm.doSearch(const text: string);
@@ -66,7 +66,7 @@ begin
   inherited;
   with dm.barang do
   begin
-    sql.Text :=
+    sql.text :=
       'SELECT * FROM barang WHERE br_nama LIKE (:nama) ORDER BY br_id ASC ';
     params.ParamByName('nama').Value := '%' + text + '%';
     open;
@@ -74,4 +74,4 @@ begin
 end;
 
 end.
-
+

@@ -1,7 +1,9 @@
 unit configuration;
 
 interface
+
 uses inifiles;
+
 type
   TConfiguration = class(TIniFile)
   public
@@ -9,17 +11,22 @@ type
     function getConfig(configName: string; defValue: string): string;
     procedure setConfig(configName: string; value: string);
   end;
+
 function getInstance(): TConfiguration;
+
 implementation
+
 uses forms, sysutils;
+
 var
   config: TConfiguration;
+
   { TConfiguration }
 type
   TArrayOfString = array of string;
 
-function SplitString(const aSeparator, aString: string; aMax: Integer = 0):
-  TArrayOfString;
+function SplitString(const aSeparator, aString: string; aMax: Integer = 0)
+  : TArrayOfString;
 var
   i, strt, cnt: Integer;
   sepLen: Integer;
@@ -61,7 +68,7 @@ begin
   i := 1;
   strt := i;
   cnt := 0;
-  while (i<=(Length(aString) - sepLen + 1)) do
+  while (i <= (Length(aString) - sepLen + 1)) do
   begin
     if (aString[i] = aSeparator[1]) then
       if (Copy(aString, i, sepLen) = aSeparator) then
@@ -96,25 +103,24 @@ function getInstance(): TConfiguration;
 begin
   if (config = nil) then
     config := TConfiguration.Create;
-  Result := config;
+  result := config;
 end;
 
 function TConfiguration.getConfig(configName, defValue: string): string;
 var
   config: TArrayOfString;
 begin
-  config := SplitString('.', configname);
-  Result := self.ReadString(config[0], config[1], defValue);
+  config := SplitString('.', configName);
+  result := self.ReadString(config[0], config[1], defValue);
 end;
 
 procedure TConfiguration.setConfig(configName, value: string);
 var
   config: TArrayOfString;
-begin       
-  config := SplitString('.', configname);
-  WriteString(config[0],config[1],value);
+begin
+  config := SplitString('.', configName);
+  WriteString(config[0], config[1], value);
   UpdateFile;
 end;
 
 end.
-

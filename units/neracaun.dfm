@@ -140,7 +140,6 @@ object neracafrm: Tneracafrm
       Top = 48
       Width = 177
       Height = 21
-      ItemHeight = 13
       TabOrder = 0
       Text = 'cbbulan'
       Items.Strings = (
@@ -162,7 +161,6 @@ object neracafrm: Tneracafrm
       Top = 48
       Width = 81
       Height = 21
-      ItemHeight = 13
       TabOrder = 1
     end
   end
@@ -197,10 +195,6 @@ object neracafrm: Tneracafrm
   object pdfneraca: TRvRenderPDF
     DisplayName = 'Adobe Acrobat (PDF)'
     FileExtension = '*.pdf'
-    EmbedFonts = False
-    ImageQuality = 90
-    MetafileDPI = 300
-    FontEncoding = feWinAnsiEncoding
     DocInfo.Creator = 'Rave (http://www.nevrona.com/rave)'
     DocInfo.Producer = 'Nevrona Designs'
     Left = 80

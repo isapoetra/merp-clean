@@ -10,12 +10,15 @@ inherited custpicaddfrm: Tcustpicaddfrm
     inherited Label1: TLabel
       Width = 88
       Caption = 'Add/Edit PIC'
+      ExplicitWidth = 88
     end
   end
   inherited Panel2: TPanel
     Width = 508
     Height = 123
     Align = alClient
+    ExplicitWidth = 508
+    ExplicitHeight = 123
     object Label2: TLabel
       Left = 21
       Top = 16
@@ -72,7 +75,7 @@ inherited custpicaddfrm: Tcustpicaddfrm
       Left = 141
       Top = 14
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cp_nama'
       DataSource = ds.custpic
@@ -89,7 +92,7 @@ inherited custpicaddfrm: Tcustpicaddfrm
       Left = 141
       Top = 38
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cp_alamat'
       DataSource = ds.custpic
@@ -106,7 +109,7 @@ inherited custpicaddfrm: Tcustpicaddfrm
       Left = 141
       Top = 62
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cp_hp'
       DataSource = ds.custpic
@@ -123,7 +126,7 @@ inherited custpicaddfrm: Tcustpicaddfrm
       Left = 141
       Top = 86
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'cp_email'
       DataSource = ds.custpic
@@ -139,16 +142,20 @@ inherited custpicaddfrm: Tcustpicaddfrm
   end
   inherited Panel3: TPanel
     Top = 176
+    ExplicitTop = 176
     inherited SpeedButton1: TSpeedButton
       Height = 38
+      ExplicitHeight = 38
     end
     inherited SpeedButton3: TSpeedButton
       Height = 38
       OnClick = SpeedButton3Click
+      ExplicitHeight = 38
     end
     inherited SpeedButton4: TSpeedButton
       Height = 38
       OnClick = SpeedButton4Click
+      ExplicitHeight = 38
     end
   end
 end

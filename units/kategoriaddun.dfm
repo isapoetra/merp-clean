@@ -9,21 +9,27 @@ inherited kategoriaddfrm: Tkategoriaddfrm
   TextHeight = 13
   inherited Panel1: TPanel
     Width = 455
+    ExplicitWidth = 455
     inherited Label1: TLabel
       Width = 124
       Caption = 'Add/Edit Kategori'
+      ExplicitWidth = 124
     end
   end
   inherited Panel4: TPanel
     Width = 455
+    ExplicitWidth = 455
   end
   inherited Panel5: TPanel
     Width = 455
+    ExplicitWidth = 455
   end
   inherited Panel2: TPanel
     Width = 455
     Height = 96
     Align = alClient
+    ExplicitWidth = 455
+    ExplicitHeight = 96
     object Label2: TLabel
       Left = 16
       Top = 29
@@ -41,7 +47,7 @@ inherited kategoriaddfrm: Tkategoriaddfrm
       Left = 80
       Top = 27
       Width = 361
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'kg_nama'
       DataSource = ds.kategori
@@ -58,15 +64,21 @@ inherited kategoriaddfrm: Tkategoriaddfrm
   inherited Panel3: TPanel
     Top = 149
     Width = 455
+    ExplicitTop = 149
+    ExplicitWidth = 455
     inherited SpeedButton3: TSpeedButton
       Left = 277
       Top = -1
       OnClick = SpeedButton3Click
+      ExplicitLeft = 277
+      ExplicitTop = -1
     end
     inherited SpeedButton4: TSpeedButton
       Left = 366
       Top = -1
       OnClick = SpeedButton4Click
+      ExplicitLeft = 366
+      ExplicitTop = -1
     end
   end
 end

@@ -295,7 +295,7 @@ object barangaddfrm: Tbarangaddfrm
     object Label5: TLabel
       Left = 21
       Top = 98
-      Width = 31
+      Width = 32
       Height = 16
       Caption = 'Type:'
       Font.Charset = ANSI_CHARSET
@@ -366,7 +366,7 @@ object barangaddfrm: Tbarangaddfrm
       Left = 141
       Top = 24
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'br_id'
       DataSource = ds.barang
@@ -384,7 +384,7 @@ object barangaddfrm: Tbarangaddfrm
       Left = 141
       Top = 48
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'br_barcode'
       DataSource = ds.barang
@@ -401,7 +401,7 @@ object barangaddfrm: Tbarangaddfrm
       Left = 141
       Top = 72
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'br_nama'
       DataSource = ds.barang
@@ -418,7 +418,7 @@ object barangaddfrm: Tbarangaddfrm
       Left = 141
       Top = 96
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'br_type'
       DataSource = ds.barang
@@ -475,7 +475,7 @@ object barangaddfrm: Tbarangaddfrm
       Left = 141
       Top = 121
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'br_unit'
       DataSource = ds.barang

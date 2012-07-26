@@ -14,19 +14,19 @@ inherited projectfrm: Tprojectfrm
     ExplicitLeft = 467
     ExplicitHeight = 342
   end
-  inherited Panel4: TPanel
+  inherited Panel1: TPanel
+    Width = 727
+    TabOrder = 5
+    ExplicitWidth = 727
+  end
+  inherited pnlbg1: TPanel
     Width = 727
     TabOrder = 3
     ExplicitWidth = 727
   end
-  inherited Panel5: TPanel
+  inherited pnlbg2: TPanel
     Width = 727
     TabOrder = 4
-    ExplicitWidth = 727
-  end
-  inherited Panel1: TPanel
-    Width = 727
-    TabOrder = 5
     ExplicitWidth = 727
   end
   inherited JvScrollMax1: TJvScrollMax

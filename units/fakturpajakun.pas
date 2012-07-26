@@ -38,7 +38,7 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, pajakaddun;
+uses dmun, fungsi_merp, pajakaddun;
 {$R *.dfm}
 
 procedure Tfakturpajakfrm.FormCreate(Sender: TObject);
@@ -48,37 +48,43 @@ end;
 
 procedure Tfakturpajakfrm.cariChange(Sender: TObject);
 begin
- with dm.fakturpajak do
- begin
-   sql.Text := 'select * from fakturpajak where fp_kode like (:kd ) or fp_nama_cust like (:kd) order by fp_id asc ';
-   params.ParamByName('kd').Value   := '%'+cari.Text+'%';
-   open;
- end;
+  with dm.fakturpajak do
+  begin
+    sql.Text :=
+      'select * from fakturpajak where fp_kode like (:kd ) or fp_nama_cust like (:kd) order by fp_id asc ';
+    params.ParamByName('kd').Value := '%' + cari.Text + '%';
+    open;
+  end;
 end;
 
 procedure Tfakturpajakfrm.CetakFaktur1Click(Sender: TObject);
 begin
- isPrintPajak := 1;
- //generatefakturpajak;
- aktifkandata(dm.pajakinsert);
-// dm.pajakinsert.Append;
- dm.pajakinsert.Edit;
- dm.pajakinsert.FieldByName('fp_kode').Value      := dm.fakturpajaklist.FieldByName('fp_kode').Value;
- dm.pajakinsert.FieldByName('fp_npwp').Value      := dm.fakturpajaklist.FieldByName('fp_npwp').Value ;
- dm.pajakinsert.FieldByName('fp_nama_cust').Value := dm.fakturpajaklist.FieldByName('fp_nama_cust').Value;
- dm.pajakinsert.FieldByName('fp_dpp').Value       := dm.fakturpajaklist.FieldByName('fp_dpp').Value;
- dm.pajakinsert.FieldByName('fp_ppn').Value       := dm.fakturpajaklist.FieldByName('fp_ppn').Value;
- {dm.pajakinsert.FieldByName('fp_kode').Value      := gNofaktur;
- dm.pajakinsert.FieldByName('fp_cust_kode').Value := dm.tagihanview.fieldbyname('in_cust_kode').Value;
- dm.pajakinsert.FieldByName('fp_ref').Value       := dm.tagihanview.fieldbyname('in_kode_jual').Value;
- dm.pajakinsert.FieldByName('fp_total_transaksi').Value    := dm.tagihanview.fieldbyname('in_amount').Value;
- dm.pajakinsert.FieldByName('fp_balance').Value    := dm.tagihanview.fieldbyname('in_balance').Value;    }
- aktifkanform(pajakAddfrm,TPajakAddfrm);
+  isPrintPajak := 1;
+  // generatefakturpajak;
+  aktifkandata(dm.pajakinsert);
+  // dm.pajakinsert.Append;
+  dm.pajakinsert.Edit;
+  dm.pajakinsert.FieldByName('fp_kode').Value := dm.fakturpajaklist.FieldByName
+    ('fp_kode').Value;
+  dm.pajakinsert.FieldByName('fp_npwp').Value := dm.fakturpajaklist.FieldByName
+    ('fp_npwp').Value;
+  dm.pajakinsert.FieldByName('fp_nama_cust').Value :=
+    dm.fakturpajaklist.FieldByName('fp_nama_cust').Value;
+  dm.pajakinsert.FieldByName('fp_dpp').Value := dm.fakturpajaklist.FieldByName
+    ('fp_dpp').Value;
+  dm.pajakinsert.FieldByName('fp_ppn').Value := dm.fakturpajaklist.FieldByName
+    ('fp_ppn').Value;
+  { dm.pajakinsert.FieldByName('fp_kode').Value      := gNofaktur;
+    dm.pajakinsert.FieldByName('fp_cust_kode').Value := dm.tagihanview.fieldbyname('in_cust_kode').Value;
+    dm.pajakinsert.FieldByName('fp_ref').Value       := dm.tagihanview.fieldbyname('in_kode_jual').Value;
+    dm.pajakinsert.FieldByName('fp_total_transaksi').Value    := dm.tagihanview.fieldbyname('in_amount').Value;
+    dm.pajakinsert.FieldByName('fp_balance').Value    := dm.tagihanview.fieldbyname('in_balance').Value; }
+  aktifkanform(pajakAddfrm, TPajakAddfrm);
 end;
 
 procedure Tfakturpajakfrm.RefreshData1Click(Sender: TObject);
 begin
-    dm.fakturpajaklist.Refresh;
+  dm.fakturpajaklist.Refresh;
 end;
 
 end.

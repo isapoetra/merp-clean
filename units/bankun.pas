@@ -35,24 +35,24 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, bankaddun;
+uses dmun, fungsi_merp, bankaddun;
 {$R *.dfm}
 
 procedure Tbankfrm.btntambahClick(Sender: TObject);
 begin
   dm.bank.Append;
-  aktifkanform(bankaddfrm,TBankaddfrm);
+  aktifkanform(bankaddfrm, TBankaddfrm);
 end;
 
 procedure Tbankfrm.FormActivate(Sender: TObject);
 begin
- aktifkandata(dm.bank);
+  aktifkandata(dm.bank);
 end;
 
 procedure Tbankfrm.btneditClick(Sender: TObject);
 begin
   dm.bank.edit;
-  aktifkanform(bankaddfrm,TBankaddfrm);
+  aktifkanform(bankaddfrm, TBankaddfrm);
 end;
 
 procedure Tbankfrm.SpeedButton2Click(Sender: TObject);

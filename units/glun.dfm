@@ -98,7 +98,6 @@ object glfrm: Tglfrm
       Top = 33
       Width = 232
       Height = 21
-      ItemHeight = 13
       TabOrder = 0
       Text = 'blnawal'
       Items.Strings = (
@@ -120,7 +119,6 @@ object glfrm: Tglfrm
       Top = 33
       Width = 81
       Height = 21
-      ItemHeight = 13
       TabOrder = 1
     end
     object blnakhir: TComboBox
@@ -128,7 +126,6 @@ object glfrm: Tglfrm
       Top = 80
       Width = 232
       Height = 21
-      ItemHeight = 13
       TabOrder = 2
       Text = 'blnawal'
       Items.Strings = (
@@ -150,7 +147,6 @@ object glfrm: Tglfrm
       Top = 80
       Width = 81
       Height = 21
-      ItemHeight = 13
       TabOrder = 3
     end
   end

@@ -40,30 +40,32 @@ var
 
 implementation
 
-uses dmun,fungsi_merp,strutils;
+uses dmun, fungsi_merp, strutils;
 {$R *.dfm}
 
 procedure Tlabarugifrm.FormActivate(Sender: TObject);
-var curmonth : integer;
+var
+  curmonth: integer;
 begin
-  curmonth := strToInt(AnsiMidStr(dateToStr(date),4,2));
-  cbbulan.ItemIndex := curmonth-1;
-  cbthn.ItemIndex :=0;
+  curmonth := strToInt(AnsiMidStr(dateToStr(date), 4, 2));
+  cbbulan.ItemIndex := curmonth - 1;
+  cbthn.ItemIndex := 0;
 end;
 
 procedure Tlabarugifrm.SpeedButton2Click(Sender: TObject);
 begin
-   rplr.ProjectFile := 'lr.rav';
-   rplr.SelectReport('lr.rav',true);
-   rplr.Execute;
+  rplr.ProjectFile := 'lr.rav';
+  rplr.SelectReport('lr.rav', true);
+  rplr.Execute;
 end;
 
 procedure Tlabarugifrm.FormCreate(Sender: TObject);
-var thn : string;
+var
+  thn: string;
 begin
- thn := RightStr(dateToStr(date),4);
- cbthn.Items.Append(thn);
- cbthn.ItemIndex := 0;
+  thn := RightStr(dateToStr(date), 4);
+  cbthn.Items.Append(thn);
+  cbthn.ItemIndex := 0;
 end;
 
 end.

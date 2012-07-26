@@ -27,7 +27,7 @@ object pphfrm: Tpphfrm
     object Label1: TLabel
       Left = 8
       Top = 11
-      Width = 85
+      Width = 86
       Height = 18
       Caption = 'Tarif PPh 21'
       Font.Charset = ANSI_CHARSET

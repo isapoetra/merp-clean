@@ -23,7 +23,7 @@ type
     procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
-  procedure insertToPajak;
+    procedure insertToPajak;
   public
     { Public declarations }
   end;
@@ -33,23 +33,27 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, pajakaddun;
+uses dmun, fungsi_merp, pajakaddun;
 {$R *.dfm}
 
 procedure Twpviewfrm.insertToPajak;
 begin
   generateFakturPajak;
   dm.pajakinsert.Append;
-  dm.pajakinsert.FieldByName('fp_npwp').Value      := dm.wpview.fieldbyname('cu_npwp').Value;
-  dm.pajakinsert.FieldByName('fp_nama_cust').Value := dm.wpview.fieldbyname('cu_nama').Value;
-  dm.pajakinsert.FieldByName('fp_kode').Value      := gNoFaktur; // diambil dari variabel global hasil procedure generate faktur pajak
-  dm.pajakinsert.FieldByName('fp_cust_kode').Value := dm.wpview.fieldbyname('cu_kode').Value;
+  dm.pajakinsert.FieldByName('fp_npwp').Value :=
+    dm.wpview.FieldByName('cu_npwp').Value;
+  dm.pajakinsert.FieldByName('fp_nama_cust').Value :=
+    dm.wpview.FieldByName('cu_nama').Value;
+  dm.pajakinsert.FieldByName('fp_kode').Value := gNoFaktur;
+  // diambil dari variabel global hasil procedure generate faktur pajak
+  dm.pajakinsert.FieldByName('fp_cust_kode').Value :=
+    dm.wpview.FieldByName('cu_kode').Value;
   close;
 end;
 
 procedure Twpviewfrm.DBGrid1DblClick(Sender: TObject);
 begin
- insertToPajak;
+  insertToPajak;
 end;
 
 procedure Twpviewfrm.BitBtn1Click(Sender: TObject);

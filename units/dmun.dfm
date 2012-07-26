@@ -14,53 +14,11 @@ object dm: Tdm
     Left = 8
     Top = 8
   end
-  object user: TZQuery
-    Connection = conerp
-    CachedUpdates = True
-    SQL.Strings = (
-      'SELECT * FROM user ORDER BY us_id ASC')
-    Params = <>
-    Left = 72
-    Top = 8
-    object userus_firstname: TStringField
-      DisplayLabel = 'Nama Depan'
-      FieldName = 'us_firstname'
-      Size = 255
-    end
-    object userus_lastname: TStringField
-      DisplayLabel = 'Nama Belakang'
-      FieldName = 'us_lastname'
-      Size = 255
-    end
-    object userus_username: TStringField
-      DisplayLabel = 'Username'
-      FieldName = 'us_username'
-      Size = 255
-    end
-    object userus_password: TStringField
-      FieldName = 'us_password'
-      Size = 255
-    end
-    object userus_group: TStringField
-      FieldName = 'us_group'
-      Size = 255
-    end
-    object usergroup: TStringField
-      FieldKind = fkLookup
-      FieldName = 'Group Akses'
-      LookupDataSet = group
-      LookupKeyFields = 'ga_name'
-      LookupResultField = 'ga_name'
-      KeyFields = 'us_group'
-      Size = 30
-      Lookup = True
-    end
-  end
   object group: TZQuery
     Connection = conerp
     CachedUpdates = True
     SQL.Strings = (
-      'SELECT * FROM group_access ORDER BY ga_id ASC')
+      'SELECT * FROM roles')
     Params = <>
     Left = 136
     Top = 8
@@ -73,30 +31,30 @@ object dm: Tdm
     Params = <>
     Left = 72
     Top = 64
-    object StringField1: TStringField
+    object StringField1: TWideStringField
       DisplayLabel = 'Nama Depan'
       FieldName = 'us_firstname'
       Size = 255
     end
-    object StringField2: TStringField
+    object StringField2: TWideStringField
       DisplayLabel = 'Nama Belakang'
       FieldName = 'us_lastname'
       Size = 255
     end
-    object StringField3: TStringField
+    object StringField3: TWideStringField
       DisplayLabel = 'Username'
       FieldName = 'us_username'
       Size = 255
     end
-    object StringField4: TStringField
+    object StringField4: TWideStringField
       FieldName = 'us_password'
       Size = 255
     end
-    object StringField5: TStringField
+    object StringField5: TWideStringField
       FieldName = 'us_group'
       Size = 255
     end
-    object StringField6: TStringField
+    object StringField6: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Group Akses'
       LookupDataSet = group
@@ -142,30 +100,6 @@ object dm: Tdm
     Params = <>
     Left = 72
     Top = 120
-    object suppliersp_id: TIntegerField
-      FieldName = 'sp_id'
-    end
-    object suppliersp_name: TStringField
-      FieldName = 'sp_name'
-      Size = 255
-    end
-    object suppliersp_address: TStringField
-      FieldName = 'sp_address'
-      Size = 255
-    end
-    object suppliersp_kota: TStringField
-      FieldName = 'sp_kota'
-      Size = 255
-    end
-    object suppliersp_telp: TStringField
-      FieldName = 'sp_telp'
-      Size = 255
-    end
-    object suppliersp_refer: TStringField
-      FieldName = 'sp_refer'
-      ReadOnly = True
-      Size = 255
-    end
   end
   object customer: TZQuery
     Connection = conerp
@@ -175,38 +109,6 @@ object dm: Tdm
     Params = <>
     Left = 136
     Top = 120
-    object customercu_id: TIntegerField
-      FieldName = 'cu_id'
-    end
-    object customercu_kode: TStringField
-      FieldName = 'cu_kode'
-      Size = 255
-    end
-    object customercu_nama: TStringField
-      FieldName = 'cu_nama'
-      Size = 255
-    end
-    object customercu_alamat: TStringField
-      FieldName = 'cu_alamat'
-      Size = 255
-    end
-    object customercu_kota: TStringField
-      FieldName = 'cu_kota'
-      Size = 255
-    end
-    object customercu_telp: TStringField
-      FieldName = 'cu_telp'
-      Size = 255
-    end
-    object customercu_npwp: TStringField
-      FieldName = 'cu_npwp'
-      EditMask = '00\.000\.000\.0\-000\.000;1;_'
-      Size = 255
-    end
-    object customercu_alamatfp: TStringField
-      FieldName = 'cu_alamatfp'
-      Size = 255
-    end
   end
   object beli: TZQuery
     Connection = conerp
@@ -216,36 +118,6 @@ object dm: Tdm
     Params = <>
     Left = 192
     Top = 128
-    object belibe_kode: TStringField
-      FieldName = 'be_kode'
-      Size = 18
-    end
-    object belibe_tgl: TDateField
-      FieldName = 'be_tgl'
-    end
-    object belibe_due: TDateField
-      FieldName = 'be_due'
-      EditMask = '!99/99/0000;1;_'
-    end
-    object belibe_supplier_id: TIntegerField
-      FieldName = 'be_supplier_id'
-    end
-    object belibe_pic: TIntegerField
-      FieldName = 'be_pic'
-    end
-    object belibe_post: TSmallintField
-      FieldName = 'be_post'
-    end
-    object belibe_bayar: TStringField
-      FieldName = 'be_bayar'
-      Size = 10
-    end
-    object belibe_islangsung: TSmallintField
-      FieldName = 'be_islangsung'
-    end
-    object belibe_project_id: TIntegerField
-      FieldName = 'be_project_id'
-    end
   end
   object supplierpic: TZQuery
     Connection = conerp
@@ -268,47 +140,6 @@ object dm: Tdm
     LinkedFields = 'bd_kode'
     Left = 248
     Top = 128
-    object belidetailbd_kode: TStringField
-      FieldName = 'bd_kode'
-      Size = 255
-    end
-    object belidetailbd_nama_barang: TStringField
-      FieldName = 'bd_nama_barang'
-      Size = 255
-    end
-    object belidetailbd_qty: TIntegerField
-      FieldName = 'bd_qty'
-    end
-    object belidetailbd_harga: TFloatField
-      FieldName = 'bd_harga'
-      DisplayFormat = '#,###'
-      EditFormat = '###'
-    end
-    object belidetailbd_total: TFloatField
-      FieldName = 'bd_total'
-      DisplayFormat = '#,###'
-      EditFormat = '####'
-    end
-    object belidetailbd_chart_account: TStringField
-      FieldName = 'bd_chart_account'
-      Size = 255
-    end
-    object belidetailbd_tgl: TDateField
-      FieldName = 'bd_tgl'
-    end
-    object belidetailbd_sendto_nama: TStringField
-      FieldName = 'bd_sendto_nama'
-      Size = 255
-    end
-    object belidetailbd_kd_barang: TIntegerField
-      FieldName = 'bd_kd_barang'
-    end
-    object belidetailbd_sendto: TIntegerField
-      FieldName = 'bd_sendto'
-    end
-    object belidetailbd_up: TIntegerField
-      FieldName = 'bd_up'
-    end
   end
   object custpic: TZQuery
     Connection = conerp
@@ -340,7 +171,7 @@ object dm: Tdm
       FieldName = 'be_id'
       Required = True
     end
-    object polistnbe_kode: TStringField
+    object polistnbe_kode: TWideStringField
       FieldName = 'be_kode'
       Size = 18
     end
@@ -350,7 +181,7 @@ object dm: Tdm
     object polistnbe_due: TDateField
       FieldName = 'be_due'
     end
-    object polistnSupplier: TStringField
+    object polistnSupplier: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Supplier'
       LookupDataSet = supplier
@@ -378,25 +209,6 @@ object dm: Tdm
     Params = <>
     Left = 328
     Top = 128
-    object footnotefn_id: TIntegerField
-      FieldName = 'fn_id'
-    end
-    object footnotefn_supplier_id: TStringField
-      FieldName = 'fn_supplier_id'
-      Size = 5
-    end
-    object footnotefn_blok1: TStringField
-      FieldName = 'fn_blok1'
-      Size = 255
-    end
-    object footnotefn_blok2: TStringField
-      FieldName = 'fn_blok2'
-      Size = 255
-    end
-    object footnotefn_blok3: TStringField
-      FieldName = 'fn_blok3'
-      Size = 255
-    end
   end
   object jual: TZQuery
     Connection = conerp
@@ -406,7 +218,7 @@ object dm: Tdm
     Params = <>
     Left = 72
     Top = 176
-    object jualju_kode: TStringField
+    object jualju_kode: TWideStringField
       FieldName = 'ju_kode'
       Size = 255
     end
@@ -422,11 +234,11 @@ object dm: Tdm
     object jualju_due: TDateField
       FieldName = 'ju_due'
     end
-    object jualju_bayar: TStringField
+    object jualju_bayar: TWideStringField
       FieldName = 'ju_bayar'
       Size = 10
     end
-    object jualju_po: TStringField
+    object jualju_po: TWideStringField
       FieldName = 'ju_po'
       Size = 255
     end
@@ -439,15 +251,15 @@ object dm: Tdm
     object jualju_tax: TFloatField
       FieldName = 'ju_tax'
     end
-    object jualju_akun: TStringField
+    object jualju_akun: TWideStringField
       FieldName = 'ju_akun'
       Size = 255
     end
-    object jualju_ppn: TStringField
+    object jualju_ppn: TWideStringField
       FieldName = 'ju_ppn'
       Size = 5
     end
-    object jualju_cust_kode: TStringField
+    object jualju_cust_kode: TWideStringField
       FieldName = 'ju_cust_kode'
       Size = 255
     end
@@ -487,7 +299,7 @@ object dm: Tdm
     LinkedFields = 'jd_kode'
     Left = 136
     Top = 176
-    object jualdetailjd_kode: TStringField
+    object jualdetailjd_kode: TWideStringField
       FieldName = 'jd_kode'
       Size = 255
     end
@@ -497,7 +309,7 @@ object dm: Tdm
     object jualdetailjd_kd_barang: TIntegerField
       FieldName = 'jd_kd_barang'
     end
-    object jualdetailjd_nama_barang: TStringField
+    object jualdetailjd_nama_barang: TWideStringField
       FieldName = 'jd_nama_barang'
       Size = 255
     end
@@ -526,11 +338,11 @@ object dm: Tdm
     object jualdetailjd_margin: TFloatField
       FieldName = 'jd_margin'
     end
-    object jualdetailjd_satuan: TStringField
+    object jualdetailjd_satuan: TWideStringField
       FieldName = 'jd_satuan'
       Size = 255
     end
-    object jualdetailjd_type: TStringField
+    object jualdetailjd_type: TWideStringField
       FieldName = 'jd_type'
       Size = 255
     end
@@ -546,68 +358,21 @@ object dm: Tdm
   object inventory: TZQuery
     Connection = conerp
     SQL.Strings = (
-      'select * from inventory left join barang on (in_kd_barang=br_id)')
-    Params = <>
+      'select * from vw_stock_barang where in_kd_gudang=:kd_gudang')
+    Params = <
+      item
+        DataType = ftUnknown
+        Name = 'kd_gudang'
+        ParamType = ptUnknown
+      end>
     Left = 264
     Top = 184
-    object inventoryin_id: TIntegerField
-      FieldName = 'in_id'
-      Required = True
-    end
-    object inventoryin_kd_barang: TIntegerField
-      FieldName = 'in_kd_barang'
-    end
-    object inventoryin_kd_gudang: TSmallintField
-      FieldName = 'in_kd_gudang'
-    end
-    object inventoryin_stock: TIntegerField
-      FieldName = 'in_stock'
-    end
-    object inventoryin_harga: TFloatField
-      FieldName = 'in_harga'
-      DisplayFormat = '#,###'
-    end
-    object inventorybarang: TStringField
-      FieldKind = fkLookup
-      FieldName = 'barang'
-      LookupDataSet = barang
-      LookupKeyFields = 'br_id'
-      LookupResultField = 'br_nama'
-      KeyFields = 'in_kd_barang'
-      Size = 150
-      Lookup = True
-    end
-    object inventoryType: TStringField
-      FieldKind = fkLookup
-      FieldName = 'Type'
-      LookupDataSet = barang
-      LookupKeyFields = 'br_id'
-      LookupResultField = 'br_type'
-      KeyFields = 'in_kd_barang'
-      Size = 30
-      Lookup = True
-    end
-    object inventorygudang: TStringField
-      DisplayLabel = 'Gudang'
-      FieldKind = fkLookup
-      FieldName = 'gudang'
-      LookupDataSet = gudang
-      LookupKeyFields = 'gd_id'
-      LookupResultField = 'gd_nama'
-      KeyFields = 'in_kd_gudang'
-      Size = 15
-      Lookup = True
-    end
-    object inventoryunit: TStringField
-      FieldKind = fkLookup
-      FieldName = 'unit'
-      LookupDataSet = barang
-      LookupKeyFields = 'br_id'
-      LookupResultField = 'br_unit'
-      KeyFields = 'in_kd_barang'
-      Size = 15
-      Lookup = True
-    end
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'kd_gudang'
+        ParamType = ptUnknown
+      end>
   end
   object polist: TZQuery
     Connection = conerp
@@ -616,39 +381,6 @@ object dm: Tdm
     Params = <>
     Left = 336
     Top = 184
-    object polistbe_id: TIntegerField
-      FieldName = 'be_id'
-      Required = True
-    end
-    object polistbe_kode: TStringField
-      FieldName = 'be_kode'
-      Size = 18
-    end
-    object polistbe_supplier_id: TIntegerField
-      FieldName = 'be_supplier_id'
-    end
-    object polistbe_tgl: TDateField
-      FieldName = 'be_tgl'
-    end
-    object polistbe_pic: TIntegerField
-      FieldName = 'be_pic'
-    end
-    object polistbe_due: TDateField
-      FieldName = 'be_due'
-    end
-    object polistbe_post: TSmallintField
-      FieldName = 'be_post'
-    end
-    object polistsupplier: TStringField
-      FieldKind = fkLookup
-      FieldName = 'supplier'
-      LookupDataSet = supplier
-      LookupKeyFields = 'sp_id'
-      LookupResultField = 'sp_name'
-      KeyFields = 'be_supplier_id'
-      Size = 50
-      Lookup = True
-    end
   end
   object invoice: TZQuery
     Connection = conerp
@@ -657,7 +389,7 @@ object dm: Tdm
     Params = <>
     Left = 70
     Top = 240
-    object invoiceju_kode: TStringField
+    object invoiceju_kode: TWideStringField
       FieldName = 'ju_kode'
       Size = 255
     end
@@ -673,16 +405,16 @@ object dm: Tdm
     object invoiceju_due: TDateField
       FieldName = 'ju_due'
     end
-    object invoiceju_bayar: TStringField
+    object invoiceju_bayar: TWideStringField
       FieldName = 'ju_bayar'
       Size = 10
     end
-    object invoiceju_po: TStringField
+    object invoiceju_po: TWideStringField
       FieldName = 'ju_po'
       ReadOnly = True
       Size = 255
     end
-    object invoiceCustomer: TStringField
+    object invoiceCustomer: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Customer'
       LookupDataSet = customer
@@ -692,7 +424,7 @@ object dm: Tdm
       Size = 30
       Lookup = True
     end
-    object invoicePIC: TStringField
+    object invoicePIC: TWideStringField
       FieldKind = fkLookup
       FieldName = 'PIC'
       LookupDataSet = custpic
@@ -716,25 +448,25 @@ object dm: Tdm
       FieldName = 'ju_tax'
       DisplayFormat = '#,###'
     end
-    object invoiceju_akun: TStringField
+    object invoiceju_akun: TWideStringField
       FieldName = 'ju_akun'
       Size = 255
     end
     object invoiceju_invoice_sent: TSmallintField
       FieldName = 'ju_invoice_sent'
     end
-    object invoiceju_ppn: TStringField
+    object invoiceju_ppn: TWideStringField
       FieldName = 'ju_ppn'
       Size = 5
     end
     object invoiceju_barang_sent: TSmallintField
       FieldName = 'ju_barang_sent'
     end
-    object invoiceju_cust_kode: TStringField
+    object invoiceju_cust_kode: TWideStringField
       FieldName = 'ju_cust_kode'
       Size = 255
     end
-    object invoicecustnpwp: TStringField
+    object invoicecustnpwp: TWideStringField
       FieldKind = fkLookup
       FieldName = 'custnpwp'
       LookupDataSet = customer
@@ -769,11 +501,11 @@ object dm: Tdm
     Params = <>
     Left = 136
     Top = 240
-    object StringField7: TStringField
+    object StringField7: TWideStringField
       FieldName = 'bd_kode'
       Size = 255
     end
-    object StringField8: TStringField
+    object StringField8: TWideStringField
       FieldName = 'bd_nama_barang'
       Size = 255
     end
@@ -790,14 +522,14 @@ object dm: Tdm
       DisplayFormat = '#,###'
       EditFormat = '####'
     end
-    object StringField9: TStringField
+    object StringField9: TWideStringField
       FieldName = 'bd_chart_account'
       Size = 255
     end
     object DateField1: TDateField
       FieldName = 'bd_tgl'
     end
-    object StringField10: TStringField
+    object StringField10: TWideStringField
       FieldName = 'bd_sendto_nama'
       Size = 255
     end
@@ -819,31 +551,6 @@ object dm: Tdm
     Params = <>
     Left = 200
     Top = 240
-    object deliverydo_tgl: TDateField
-      FieldName = 'do_tgl'
-    end
-    object deliverydo_pic: TStringField
-      FieldName = 'do_pic'
-      Size = 255
-    end
-    object deliverydo_kode: TStringField
-      FieldName = 'do_kode'
-      Size = 255
-    end
-    object deliverydo_cust_id: TIntegerField
-      FieldName = 'do_cust_id'
-    end
-    object deliverydo_cust_pic: TIntegerField
-      FieldName = 'do_cust_pic'
-    end
-    object deliverydo_ju_trans: TStringField
-      FieldName = 'do_ju_trans'
-      Size = 255
-    end
-    object deliverydo_cust_kode: TStringField
-      FieldName = 'do_cust_kode'
-      Size = 255
-    end
   end
   object deliverydetail: TZQuery
     Connection = conerp
@@ -856,28 +563,6 @@ object dm: Tdm
     LinkedFields = 'dd_kode'
     Left = 264
     Top = 240
-    object deliverydetaildd_kode: TStringField
-      FieldName = 'dd_kode'
-      Size = 255
-    end
-    object deliverydetaildd_nama_barang: TStringField
-      FieldName = 'dd_nama_barang'
-      Size = 255
-    end
-    object deliverydetaildd_type: TStringField
-      FieldName = 'dd_type'
-      Size = 255
-    end
-    object deliverydetaildd_satuan: TStringField
-      FieldName = 'dd_satuan'
-      Size = 255
-    end
-    object deliverydetaildd_kode_barang: TIntegerField
-      FieldName = 'dd_kode_barang'
-    end
-    object deliverydetaildd_qty: TIntegerField
-      FieldName = 'dd_qty'
-    end
   end
   object barangdeliver: TZReadOnlyQuery
     Connection = conerp
@@ -889,7 +574,7 @@ object dm: Tdm
     object barangdeliverjd_id: TIntegerField
       FieldName = 'jd_id'
     end
-    object barangdeliverjd_kode: TStringField
+    object barangdeliverjd_kode: TWideStringField
       FieldName = 'jd_kode'
       Size = 255
     end
@@ -899,7 +584,7 @@ object dm: Tdm
     object barangdeliverjd_kd_barang: TIntegerField
       FieldName = 'jd_kd_barang'
     end
-    object barangdeliverjd_nama_barang: TStringField
+    object barangdeliverjd_nama_barang: TWideStringField
       FieldName = 'jd_nama_barang'
       Size = 255
     end
@@ -924,11 +609,11 @@ object dm: Tdm
     object barangdeliverjd_margin: TFloatField
       FieldName = 'jd_margin'
     end
-    object barangdeliverjd_satuan: TStringField
+    object barangdeliverjd_satuan: TWideStringField
       FieldName = 'jd_satuan'
       Size = 255
     end
-    object barangdeliverjd_type: TStringField
+    object barangdeliverjd_type: TWideStringField
       FieldName = 'jd_type'
       Size = 255
     end
@@ -941,28 +626,20 @@ object dm: Tdm
     Params = <>
     Left = 80
     Top = 312
-    object projectpj_name: TStringField
-      FieldName = 'pj_name'
-      Size = 255
-    end
-    object projectpj_location: TStringField
-      FieldName = 'pj_location'
-      Size = 255
-    end
     object projectpj_id: TIntegerField
       FieldName = 'pj_id'
+      Required = True
+    end
+    object projectpj_name: TWideStringField
+      FieldName = 'pj_name'
+      Size = 255
     end
     object projectpj_custid: TIntegerField
       FieldName = 'pj_custid'
     end
-    object projectcust: TStringField
-      FieldKind = fkLookup
-      FieldName = 'cust'
-      LookupDataSet = customer
-      LookupKeyFields = 'cu_id'
-      LookupResultField = 'cu_nama'
-      KeyFields = 'pj_custid'
-      Lookup = True
+    object projectpj_location: TWideStringField
+      FieldName = 'pj_location'
+      Size = 255
     end
   end
   object akun: TZQuery
@@ -973,11 +650,11 @@ object dm: Tdm
     Params = <>
     Left = 608
     Top = 488
-    object akunak_no: TStringField
+    object akunak_no: TWideStringField
       FieldName = 'ak_no'
       Size = 255
     end
-    object akunak_desc: TStringField
+    object akunak_desc: TWideStringField
       FieldName = 'ak_desc'
       Size = 255
     end
@@ -987,7 +664,7 @@ object dm: Tdm
     object akunak_class_id: TSmallintField
       FieldName = 'ak_class_id'
     end
-    object akunklas: TStringField
+    object akunklas: TWideStringField
       FieldKind = fkLookup
       FieldName = 'klas'
       LookupDataSet = akun_klas
@@ -997,7 +674,7 @@ object dm: Tdm
       Size = 50
       Lookup = True
     end
-    object akunsubklas: TStringField
+    object akunsubklas: TWideStringField
       FieldKind = fkLookup
       FieldName = 'subklas'
       LookupDataSet = akun_subklas
@@ -1047,48 +724,6 @@ object dm: Tdm
     Params = <>
     Left = 136
     Top = 376
-    object barangrptbr_kode: TStringField
-      FieldName = 'br_kode'
-      Size = 255
-    end
-    object barangrptbr_barcode: TStringField
-      FieldName = 'br_barcode'
-      Size = 255
-    end
-    object barangrptbr_nama: TStringField
-      FieldName = 'br_nama'
-      Size = 255
-    end
-    object barangrptbr_kategori: TStringField
-      FieldName = 'br_kategori'
-      Size = 255
-    end
-    object barangrptbr_type: TStringField
-      FieldName = 'br_type'
-      Size = 255
-    end
-    object barangrptbr_vendor: TStringField
-      FieldName = 'br_vendor'
-      Size = 255
-    end
-    object barangrptbr_unit: TStringField
-      FieldName = 'br_unit'
-      Size = 255
-    end
-    object barangrptbr_id: TIntegerField
-      FieldName = 'br_id'
-      Required = True
-    end
-    object barangrptVendor: TStringField
-      FieldKind = fkLookup
-      FieldName = 'Vendor'
-      LookupDataSet = supplier
-      LookupKeyFields = 'sp_id'
-      LookupResultField = 'sp_name'
-      KeyFields = 'br_vendor'
-      Size = 100
-      Lookup = True
-    end
   end
   object invoicedetail: TZQuery
     Connection = conerp
@@ -1098,7 +733,7 @@ object dm: Tdm
     Params = <>
     Left = 208
     Top = 376
-    object StringField11: TStringField
+    object StringField11: TWideStringField
       FieldName = 'jd_kode'
       Size = 255
     end
@@ -1108,7 +743,7 @@ object dm: Tdm
     object IntegerField5: TIntegerField
       FieldName = 'jd_kd_barang'
     end
-    object StringField12: TStringField
+    object StringField12: TWideStringField
       FieldName = 'jd_nama_barang'
       Size = 255
     end
@@ -1137,11 +772,11 @@ object dm: Tdm
     object FloatField7: TFloatField
       FieldName = 'jd_margin'
     end
-    object StringField13: TStringField
+    object StringField13: TWideStringField
       FieldName = 'jd_satuan'
       Size = 255
     end
-    object invoicedetailjd_type: TStringField
+    object invoicedetailjd_type: TWideStringField
       FieldName = 'jd_type'
       Size = 255
     end
@@ -1157,7 +792,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object kasneracagl_akun: TStringField
+    object kasneracagl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1171,7 +806,7 @@ object dm: Tdm
     object kasneracagl_tran_id: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object kasneracagl_desc: TStringField
+    object kasneracagl_desc: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1183,7 +818,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object kasneracagl_ref: TStringField
+    object kasneracagl_ref: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1196,7 +831,7 @@ object dm: Tdm
     Params = <>
     Left = 80
     Top = 432
-    object penawaranqt_kode: TStringField
+    object penawaranqt_kode: TWideStringField
       FieldName = 'qt_kode'
       Size = 255
     end
@@ -1206,7 +841,7 @@ object dm: Tdm
     object penawaranqt_up_id: TIntegerField
       FieldName = 'qt_up_id'
     end
-    object penawaranqt_pic: TStringField
+    object penawaranqt_pic: TWideStringField
       FieldName = 'qt_pic'
       Size = 255
     end
@@ -1241,7 +876,7 @@ object dm: Tdm
       FieldName = 'in_harga'
       DisplayFormat = '#,###'
     end
-    object StringField14: TStringField
+    object StringField14: TWideStringField
       FieldKind = fkLookup
       FieldName = 'barang'
       LookupDataSet = barang
@@ -1250,7 +885,7 @@ object dm: Tdm
       KeyFields = 'in_kd_barang'
       Lookup = True
     end
-    object StringField15: TStringField
+    object StringField15: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Type'
       LookupDataSet = barang
@@ -1260,7 +895,7 @@ object dm: Tdm
       Size = 30
       Lookup = True
     end
-    object StringField16: TStringField
+    object StringField16: TWideStringField
       DisplayLabel = 'Gudang'
       FieldKind = fkLookup
       FieldName = 'gudang'
@@ -1271,7 +906,7 @@ object dm: Tdm
       Size = 15
       Lookup = True
     end
-    object StringField17: TStringField
+    object StringField17: TWideStringField
       FieldKind = fkLookup
       FieldName = 'unit'
       LookupDataSet = barang
@@ -1294,22 +929,22 @@ object dm: Tdm
     LinkedFields = 'qd_kode'
     Left = 241
     Top = 432
-    object penawaran_detailqd_kode: TStringField
+    object penawaran_detailqd_kode: TWideStringField
       FieldName = 'qd_kode'
       Size = 255
     end
     object penawaran_detailqd_kd_barang: TIntegerField
       FieldName = 'qd_kd_barang'
     end
-    object penawaran_detailqd_nama_barang: TStringField
+    object penawaran_detailqd_nama_barang: TWideStringField
       FieldName = 'qd_nama_barang'
       Size = 255
     end
-    object penawaran_detailqd_type: TStringField
+    object penawaran_detailqd_type: TWideStringField
       FieldName = 'qd_type'
       Size = 255
     end
-    object penawaran_detailqd_unit: TStringField
+    object penawaran_detailqd_unit: TWideStringField
       FieldName = 'qd_unit'
       Size = 255
     end
@@ -1347,7 +982,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object sedianeracagl_akun: TStringField
+    object sedianeracagl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1361,7 +996,7 @@ object dm: Tdm
     object sedianeracagl_tran_id: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object sedianeracagl_desc: TStringField
+    object sedianeracagl_desc: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1373,7 +1008,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object sedianeracagl_ref: TStringField
+    object sedianeracagl_ref: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1388,7 +1023,7 @@ object dm: Tdm
     Params = <>
     Left = 544
     Top = 72
-    object hutangneracagl_akun: TStringField
+    object hutangneracagl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1413,40 +1048,6 @@ object dm: Tdm
     Params = <>
     Left = 616
     Top = 240
-    object glkasgl_id: TIntegerField
-      FieldName = 'gl_id'
-      Required = True
-    end
-    object glkasgl_akun: TStringField
-      FieldName = 'gl_akun'
-      Size = 255
-    end
-    object glkasgl_amount: TFloatField
-      FieldName = 'gl_amount'
-      DisplayFormat = '#,###'
-    end
-    object glkasgl_tgl: TDateField
-      FieldName = 'gl_tgl'
-    end
-    object glkasgl_tran_id: TIntegerField
-      FieldName = 'gl_tran_id'
-    end
-    object glkasgl_desc: TStringField
-      FieldName = 'gl_desc'
-      Size = 255
-    end
-    object glkasgl_debet: TFloatField
-      FieldName = 'gl_debet'
-      DisplayFormat = '#,###'
-    end
-    object glkasgl_kredit: TFloatField
-      FieldName = 'gl_kredit'
-      DisplayFormat = '#,###'
-    end
-    object glkasgl_ref: TStringField
-      FieldName = 'gl_ref'
-      Size = 255
-    end
   end
   object bd_inventory: TZQuery
     Connection = conerp
@@ -1456,11 +1057,11 @@ object dm: Tdm
     Params = <>
     Left = 465
     Top = 416
-    object StringField24: TStringField
+    object StringField24: TWideStringField
       FieldName = 'bd_kode'
       Size = 255
     end
-    object StringField25: TStringField
+    object StringField25: TWideStringField
       FieldName = 'bd_nama_barang'
       Size = 255
     end
@@ -1477,14 +1078,14 @@ object dm: Tdm
       DisplayFormat = '#,###'
       EditFormat = '####'
     end
-    object StringField26: TStringField
+    object StringField26: TWideStringField
       FieldName = 'bd_chart_account'
       Size = 255
     end
     object DateField5: TDateField
       FieldName = 'bd_tgl'
     end
-    object StringField27: TStringField
+    object StringField27: TWideStringField
       FieldName = 'bd_sendto_nama'
       Size = 255
     end
@@ -1509,7 +1110,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField28: TStringField
+    object StringField28: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1523,7 +1124,7 @@ object dm: Tdm
     object IntegerField15: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField29: TStringField
+    object StringField29: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1535,7 +1136,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField30: TStringField
+    object StringField30: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1547,40 +1148,6 @@ object dm: Tdm
     Params = <>
     Left = 544
     Top = 240
-    object IntegerField16: TIntegerField
-      FieldName = 'gl_id'
-      Required = True
-    end
-    object StringField31: TStringField
-      FieldName = 'gl_akun'
-      Size = 255
-    end
-    object FloatField20: TFloatField
-      FieldName = 'gl_amount'
-      DisplayFormat = '#,###'
-    end
-    object DateField7: TDateField
-      FieldName = 'gl_tgl'
-    end
-    object IntegerField17: TIntegerField
-      FieldName = 'gl_tran_id'
-    end
-    object StringField32: TStringField
-      FieldName = 'gl_desc'
-      Size = 255
-    end
-    object FloatField21: TFloatField
-      FieldName = 'gl_debet'
-      DisplayFormat = '#,###'
-    end
-    object FloatField22: TFloatField
-      FieldName = 'gl_kredit'
-      DisplayFormat = '#,###'
-    end
-    object StringField33: TStringField
-      FieldName = 'gl_ref'
-      Size = 255
-    end
   end
   object glhutangusaha: TZQuery
     Connection = conerp
@@ -1589,40 +1156,6 @@ object dm: Tdm
     Params = <>
     Left = 480
     Top = 240
-    object IntegerField18: TIntegerField
-      FieldName = 'gl_id'
-      Required = True
-    end
-    object StringField34: TStringField
-      FieldName = 'gl_akun'
-      Size = 255
-    end
-    object FloatField23: TFloatField
-      FieldName = 'gl_amount'
-      DisplayFormat = '#,###'
-    end
-    object DateField8: TDateField
-      FieldName = 'gl_tgl'
-    end
-    object IntegerField19: TIntegerField
-      FieldName = 'gl_tran_id'
-    end
-    object StringField35: TStringField
-      FieldName = 'gl_desc'
-      Size = 255
-    end
-    object FloatField24: TFloatField
-      FieldName = 'gl_debet'
-      DisplayFormat = '#,###'
-    end
-    object FloatField25: TFloatField
-      FieldName = 'gl_kredit'
-      DisplayFormat = '#,###'
-    end
-    object StringField36: TStringField
-      FieldName = 'gl_ref'
-      Size = 255
-    end
   end
   object glhutangpp: TZQuery
     Connection = conerp
@@ -1635,7 +1168,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField37: TStringField
+    object StringField37: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1649,7 +1182,7 @@ object dm: Tdm
     object IntegerField21: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField38: TStringField
+    object StringField38: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1661,7 +1194,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField39: TStringField
+    object StringField39: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1677,7 +1210,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField40: TStringField
+    object StringField40: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1691,7 +1224,7 @@ object dm: Tdm
     object IntegerField23: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField41: TStringField
+    object StringField41: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1703,7 +1236,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField42: TStringField
+    object StringField42: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1719,7 +1252,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField43: TStringField
+    object StringField43: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1733,7 +1266,7 @@ object dm: Tdm
     object IntegerField25: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField44: TStringField
+    object StringField44: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1745,7 +1278,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField45: TStringField
+    object StringField45: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1761,7 +1294,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField18: TStringField
+    object StringField18: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1775,7 +1308,7 @@ object dm: Tdm
     object IntegerField27: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField19: TStringField
+    object StringField19: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1787,7 +1320,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField20: TStringField
+    object StringField20: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1803,7 +1336,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField21: TStringField
+    object StringField21: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1817,7 +1350,7 @@ object dm: Tdm
     object IntegerField29: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField22: TStringField
+    object StringField22: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1829,7 +1362,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField23: TStringField
+    object StringField23: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1845,7 +1378,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField46: TStringField
+    object StringField46: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1859,7 +1392,7 @@ object dm: Tdm
     object IntegerField31: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField47: TStringField
+    object StringField47: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -1871,7 +1404,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField48: TStringField
+    object StringField48: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -1896,7 +1429,7 @@ object dm: Tdm
     Params = <>
     Left = 544
     Top = 16
-    object labaneracagl_akun: TStringField
+    object labaneracagl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1921,7 +1454,7 @@ object dm: Tdm
     Params = <>
     Left = 624
     Top = 72
-    object modalneracagl_akun: TStringField
+    object modalneracagl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -1939,40 +1472,6 @@ object dm: Tdm
     Params = <>
     Left = 472
     Top = 184
-    object glgl_id: TIntegerField
-      FieldName = 'gl_id'
-      Required = True
-    end
-    object glgl_akun: TStringField
-      FieldName = 'gl_akun'
-      Size = 255
-    end
-    object glgl_amount: TFloatField
-      FieldName = 'gl_amount'
-      DisplayFormat = '#,###'
-    end
-    object glgl_tgl: TDateField
-      FieldName = 'gl_tgl'
-    end
-    object glgl_tran_id: TIntegerField
-      FieldName = 'gl_tran_id'
-    end
-    object glgl_desc: TStringField
-      FieldName = 'gl_desc'
-      Size = 255
-    end
-    object glgl_debet: TFloatField
-      FieldName = 'gl_debet'
-      DisplayFormat = '#,###'
-    end
-    object glgl_kredit: TFloatField
-      FieldName = 'gl_kredit'
-      DisplayFormat = '#,###'
-    end
-    object glgl_ref: TStringField
-      FieldName = 'gl_ref'
-      Size = 255
-    end
   end
   object pendapatanlr: TZQuery
     Connection = conerp
@@ -1985,7 +1484,7 @@ object dm: Tdm
     Params = <>
     Left = 616
     Top = 360
-    object pendapatanlrgl_akun: TStringField
+    object pendapatanlrgl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -2008,7 +1507,7 @@ object dm: Tdm
     Params = <>
     Left = 616
     Top = 424
-    object biayalrgl_akun: TStringField
+    object biayalrgl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -2030,7 +1529,7 @@ object dm: Tdm
     Params = <>
     Left = 544
     Top = 424
-    object biayaoprlrgl_akun: TStringField
+    object biayaoprlrgl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -2052,7 +1551,7 @@ object dm: Tdm
     Params = <>
     Left = 464
     Top = 456
-    object pendapatanlainlrgl_akun: TStringField
+    object pendapatanlainlrgl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -2075,7 +1574,7 @@ object dm: Tdm
     Params = <>
     Left = 536
     Top = 352
-    object pengeluaranlainlrgl_akun: TStringField
+    object pengeluaranlainlrgl_akun: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -2104,11 +1603,11 @@ object dm: Tdm
       FieldName = 'jd_id'
       Required = True
     end
-    object jobdesjd_nama: TStringField
+    object jobdesjd_nama: TWideStringField
       FieldName = 'jd_nama'
       Size = 255
     end
-    object jobdesjd_description: TStringField
+    object jobdesjd_description: TWideStringField
       FieldName = 'jd_description'
       Size = 255
     end
@@ -2124,15 +1623,15 @@ object dm: Tdm
     object karyawankr_id: TIntegerField
       FieldName = 'kr_id'
     end
-    object karyawankr_no_induk: TStringField
+    object karyawankr_no_induk: TWideStringField
       FieldName = 'kr_no_induk'
       Size = 255
     end
-    object karyawankr_firstname: TStringField
+    object karyawankr_firstname: TWideStringField
       FieldName = 'kr_firstname'
       Size = 255
     end
-    object karyawankr_lastname: TStringField
+    object karyawankr_lastname: TWideStringField
       FieldName = 'kr_lastname'
       Size = 255
     end
@@ -2146,30 +1645,30 @@ object dm: Tdm
       FieldName = 'kr_dateofbirth'
       EditMask = '!99/99/0000;1;_'
     end
-    object karyawankr_maritalstatus: TStringField
+    object karyawankr_maritalstatus: TWideStringField
       FieldName = 'kr_maritalstatus'
     end
-    object karyawankr_phone: TStringField
+    object karyawankr_phone: TWideStringField
       FieldName = 'kr_phone'
       Size = 255
     end
-    object karyawankr_email: TStringField
+    object karyawankr_email: TWideStringField
       FieldName = 'kr_email'
       Size = 255
     end
-    object karyawankr_address: TStringField
+    object karyawankr_address: TWideStringField
       FieldName = 'kr_address'
       Size = 255
     end
-    object karyawankr_city: TStringField
+    object karyawankr_city: TWideStringField
       FieldName = 'kr_city'
       Size = 255
     end
-    object karyawankr_placeofbirth: TStringField
+    object karyawankr_placeofbirth: TWideStringField
       FieldName = 'kr_placeofbirth'
       Size = 255
     end
-    object karyawankr_jk: TStringField
+    object karyawankr_jk: TWideStringField
       FieldName = 'kr_jk'
       Size = 30
     end
@@ -2188,15 +1687,15 @@ object dm: Tdm
     object payadjustmentpa_amount: TFloatField
       FieldName = 'pa_amount'
     end
-    object payadjustmentpa_comment: TStringField
+    object payadjustmentpa_comment: TWideStringField
       FieldName = 'pa_comment'
       Size = 255
     end
-    object payadjustmentpa_add_or_deduct: TStringField
+    object payadjustmentpa_add_or_deduct: TWideStringField
       FieldName = 'pa_add_or_deduct'
       Size = 255
     end
-    object payadjustmentpa_item: TStringField
+    object payadjustmentpa_item: TWideStringField
       FieldName = 'pa_item'
       Size = 255
     end
@@ -2232,14 +1731,14 @@ object dm: Tdm
     object karyawan_detailkd_jb_id: TIntegerField
       FieldName = 'kd_jb_id'
     end
-    object karyawan_detailkd_cash_transfer: TStringField
+    object karyawan_detailkd_cash_transfer: TWideStringField
       FieldName = 'kd_cash_transfer'
       Size = 255
     end
     object karyawan_detailkd_ba_id: TIntegerField
       FieldName = 'kd_ba_id'
     end
-    object karyawan_detailkd_norek: TStringField
+    object karyawan_detailkd_norek: TWideStringField
       FieldName = 'kd_norek'
       Size = 255
     end
@@ -2253,7 +1752,7 @@ object dm: Tdm
     object karyawan_detailkd_pt_id: TSmallintField
       FieldName = 'kd_pt_id'
     end
-    object karyawan_detailkd_npwp: TStringField
+    object karyawan_detailkd_npwp: TWideStringField
       FieldName = 'kd_npwp'
       ReadOnly = True
       Size = 255
@@ -2265,14 +1764,14 @@ object dm: Tdm
     object karyawan_detailkd_sl_id: TIntegerField
       FieldName = 'kd_sl_id'
     end
-    object karyawan_detailkd_no_induk: TStringField
+    object karyawan_detailkd_no_induk: TWideStringField
       FieldName = 'kd_no_induk'
       Size = 255
     end
     object karyawan_detailkd_basic_salary: TFloatField
       FieldName = 'kd_basic_salary'
     end
-    object karyawan_detailkd_sl_kode: TStringField
+    object karyawan_detailkd_sl_kode: TWideStringField
       FieldName = 'kd_sl_kode'
       Size = 255
     end
@@ -2287,11 +1786,11 @@ object dm: Tdm
     object ptkppt_id: TIntegerField
       FieldName = 'pt_id'
     end
-    object ptkppt_kode: TStringField
+    object ptkppt_kode: TWideStringField
       FieldName = 'pt_kode'
       Size = 255
     end
-    object ptkppt_nama: TStringField
+    object ptkppt_nama: TWideStringField
       FieldName = 'pt_nama'
       Size = 255
     end
@@ -2316,7 +1815,7 @@ object dm: Tdm
     Params = <>
     Left = 929
     Top = 312
-    object salary_levelsl_name: TStringField
+    object salary_levelsl_name: TWideStringField
       FieldName = 'sl_name'
       Size = 255
     end
@@ -2327,7 +1826,7 @@ object dm: Tdm
     object salary_levelsl_id: TIntegerField
       FieldName = 'sl_id'
     end
-    object salary_levelsl_kode: TStringField
+    object salary_levelsl_kode: TWideStringField
       FieldName = 'sl_kode'
       Size = 255
     end
@@ -2350,7 +1849,7 @@ object dm: Tdm
     object pphph_id: TIntegerField
       FieldName = 'ph_id'
     end
-    object pphph_level: TStringField
+    object pphph_level: TWideStringField
       FieldName = 'ph_level'
       Size = 255
     end
@@ -2374,7 +1873,7 @@ object dm: Tdm
       FieldName = 'gl_id'
       Required = True
     end
-    object StringField49: TStringField
+    object StringField49: TWideStringField
       FieldName = 'gl_akun'
       Size = 255
     end
@@ -2388,7 +1887,7 @@ object dm: Tdm
     object IntegerField33: TIntegerField
       FieldName = 'gl_tran_id'
     end
-    object StringField50: TStringField
+    object StringField50: TWideStringField
       FieldName = 'gl_desc'
       Size = 255
     end
@@ -2400,7 +1899,7 @@ object dm: Tdm
       FieldName = 'gl_kredit'
       DisplayFormat = '#,###'
     end
-    object StringField51: TStringField
+    object StringField51: TWideStringField
       FieldName = 'gl_ref'
       Size = 255
     end
@@ -2412,7 +1911,7 @@ object dm: Tdm
     Params = <>
     Left = 144
     Top = 440
-    object StringField52: TStringField
+    object StringField52: TWideStringField
       FieldName = 'jd_kode'
       Size = 255
     end
@@ -2422,7 +1921,7 @@ object dm: Tdm
     object IntegerField34: TIntegerField
       FieldName = 'jd_kd_barang'
     end
-    object StringField53: TStringField
+    object StringField53: TWideStringField
       FieldName = 'jd_nama_barang'
       Size = 255
     end
@@ -2450,7 +1949,7 @@ object dm: Tdm
     object FloatField45: TFloatField
       FieldName = 'jd_margin'
     end
-    object StringField54: TStringField
+    object StringField54: TWideStringField
       FieldName = 'jd_satuan'
       Size = 255
     end
@@ -2462,11 +1961,11 @@ object dm: Tdm
     Params = <>
     Left = 177
     Top = 496
-    object StringField55: TStringField
+    object StringField55: TWideStringField
       FieldName = 'bd_kode'
       Size = 255
     end
-    object StringField56: TStringField
+    object StringField56: TWideStringField
       FieldName = 'bd_nama_barang'
       Size = 255
     end
@@ -2483,14 +1982,14 @@ object dm: Tdm
       DisplayFormat = '#,###'
       EditFormat = '####'
     end
-    object StringField57: TStringField
+    object StringField57: TWideStringField
       FieldName = 'bd_chart_account'
       Size = 255
     end
     object DateField15: TDateField
       FieldName = 'bd_tgl'
     end
-    object StringField58: TStringField
+    object StringField58: TWideStringField
       FieldName = 'bd_sendto_nama'
       Size = 255
     end
@@ -2512,54 +2011,6 @@ object dm: Tdm
     Params = <>
     Left = 736
     Top = 24
-    object fakturpajakfp_id: TIntegerField
-      FieldName = 'fp_id'
-      Required = True
-    end
-    object fakturpajakfp_kode: TStringField
-      FieldName = 'fp_kode'
-      Required = True
-      Size = 255
-    end
-    object fakturpajakfp_cust_id: TIntegerField
-      FieldName = 'fp_cust_id'
-    end
-    object fakturpajakfp_ref: TStringField
-      FieldName = 'fp_ref'
-      Size = 255
-    end
-    object fakturpajakfp_date: TDateField
-      FieldName = 'fp_date'
-    end
-    object fakturpajakfp_cust_kode: TStringField
-      FieldName = 'fp_cust_kode'
-      Size = 255
-    end
-    object fakturpajakfp_nama_cust: TStringField
-      FieldName = 'fp_nama_cust'
-      Size = 255
-    end
-    object fakturpajakfp_npwp: TStringField
-      FieldName = 'fp_npwp'
-      Size = 255
-    end
-    object fakturpajakfp_dpp: TFloatField
-      FieldName = 'fp_dpp'
-    end
-    object fakturpajakfp_ppn: TFloatField
-      FieldName = 'fp_ppn'
-    end
-    object fakturpajakfp_ppnbm: TFloatField
-      FieldName = 'fp_ppnbm'
-    end
-    object fakturpajakfp_total_transaksi: TFloatField
-      FieldName = 'fp_total_transaksi'
-      DisplayFormat = '#,###'
-    end
-    object fakturpajakfp_balance: TFloatField
-      FieldName = 'fp_balance'
-      DisplayFormat = '#,###'
-    end
   end
   object fakturpajakdetail: TZQuery
     Connection = conerp
@@ -2582,29 +2033,29 @@ object dm: Tdm
     object fakturpajakrptfp_id: TIntegerField
       FieldName = 'fp_id'
     end
-    object fakturpajakrptfp_kode: TStringField
+    object fakturpajakrptfp_kode: TWideStringField
       FieldName = 'fp_kode'
       Size = 255
     end
     object fakturpajakrptfp_cust_id: TIntegerField
       FieldName = 'fp_cust_id'
     end
-    object fakturpajakrptfp_ref: TStringField
+    object fakturpajakrptfp_ref: TWideStringField
       FieldName = 'fp_ref'
       Size = 255
     end
     object fakturpajakrptfp_date: TDateField
       FieldName = 'fp_date'
     end
-    object fakturpajakrptfp_cust_kode: TStringField
+    object fakturpajakrptfp_cust_kode: TWideStringField
       FieldName = 'fp_cust_kode'
       Size = 255
     end
-    object fakturpajakrptfp_nama_cust: TStringField
+    object fakturpajakrptfp_nama_cust: TWideStringField
       FieldName = 'fp_nama_cust'
       Size = 255
     end
-    object fakturpajakrptfp_npwp: TStringField
+    object fakturpajakrptfp_npwp: TWideStringField
       FieldName = 'fp_npwp'
       Size = 255
     end
@@ -2638,14 +2089,14 @@ object dm: Tdm
       FieldName = 'fd_id'
       Required = True
     end
-    object fakturpajakdetailrptfd_kode: TStringField
+    object fakturpajakdetailrptfd_kode: TWideStringField
       FieldName = 'fd_kode'
       Size = 255
     end
     object fakturpajakdetailrptfd_kd_barang: TIntegerField
       FieldName = 'fd_kd_barang'
     end
-    object fakturpajakdetailrptfd_nama_barang: TStringField
+    object fakturpajakdetailrptfd_nama_barang: TWideStringField
       FieldName = 'fd_nama_barang'
       Size = 255
     end
@@ -2689,15 +2140,15 @@ object dm: Tdm
       FieldName = 'kr_id'
       Required = True
     end
-    object salarykr_no_induk: TStringField
+    object salarykr_no_induk: TWideStringField
       FieldName = 'kr_no_induk'
       Size = 255
     end
-    object salarykr_firstname: TStringField
+    object salarykr_firstname: TWideStringField
       FieldName = 'kr_firstname'
       Size = 255
     end
-    object salarykr_lastname: TStringField
+    object salarykr_lastname: TWideStringField
       FieldName = 'kr_lastname'
       Size = 255
     end
@@ -2710,37 +2161,37 @@ object dm: Tdm
     object salarykr_dateofbirth: TDateField
       FieldName = 'kr_dateofbirth'
     end
-    object salarykr_maritalstatus: TStringField
+    object salarykr_maritalstatus: TWideStringField
       FieldName = 'kr_maritalstatus'
     end
-    object salarykr_phone: TStringField
+    object salarykr_phone: TWideStringField
       FieldName = 'kr_phone'
       Size = 255
     end
-    object salarykr_email: TStringField
+    object salarykr_email: TWideStringField
       FieldName = 'kr_email'
       Size = 255
     end
-    object salarykr_address: TStringField
+    object salarykr_address: TWideStringField
       FieldName = 'kr_address'
       Size = 255
     end
-    object salarykr_city: TStringField
+    object salarykr_city: TWideStringField
       FieldName = 'kr_city'
       Size = 255
     end
-    object salarykr_placeofbirth: TStringField
+    object salarykr_placeofbirth: TWideStringField
       FieldName = 'kr_placeofbirth'
       Size = 255
     end
-    object salarykr_jk: TStringField
+    object salarykr_jk: TWideStringField
       FieldName = 'kr_jk'
       Size = 30
     end
     object salarykr_workingstart: TDateField
       FieldName = 'kr_workingstart'
     end
-    object salarykr_cek: TStringField
+    object salarykr_cek: TWideStringField
       FieldName = 'kr_cek'
       Size = 1
     end
@@ -2768,14 +2219,14 @@ object dm: Tdm
     object inputsalarysa_date: TDateField
       FieldName = 'sa_date'
     end
-    object inputsalarysa_period: TStringField
+    object inputsalarysa_period: TWideStringField
       FieldName = 'sa_period'
       Size = 255
     end
     object inputsalarysa_checked: TSmallintField
       FieldName = 'sa_checked'
     end
-    object inputsalarysa_cek: TStringField
+    object inputsalarysa_cek: TWideStringField
       FieldName = 'sa_cek'
       Size = 1
     end
@@ -2791,7 +2242,7 @@ object dm: Tdm
     object inputsalarysa_objek_pajak: TFloatField
       FieldName = 'sa_objek_pajak'
     end
-    object inputsalarysa_no_induk: TStringField
+    object inputsalarysa_no_induk: TWideStringField
       FieldName = 'sa_no_induk'
       Size = 255
     end
@@ -2804,11 +2255,11 @@ object dm: Tdm
     object inputsalarysa_penambahan: TFloatField
       FieldName = 'sa_penambahan'
     end
-    object inputsalarysa_kode_level: TStringField
+    object inputsalarysa_kode_level: TWideStringField
       FieldName = 'sa_kode_level'
       Size = 255
     end
-    object inputsalarysa_ref: TStringField
+    object inputsalarysa_ref: TWideStringField
       FieldName = 'sa_ref'
       Size = 255
     end
@@ -2821,22 +2272,22 @@ object dm: Tdm
     Params = <>
     Left = 824
     Top = 251
-    object salary_level_tambahst_kode: TStringField
+    object salary_level_tambahst_kode: TWideStringField
       FieldName = 'st_kode'
       Size = 255
     end
-    object salary_level_tambahst_kode_item: TStringField
+    object salary_level_tambahst_kode_item: TWideStringField
       FieldName = 'st_kode_item'
       Size = 255
     end
     object salary_level_tambahst_amount: TFloatField
       FieldName = 'st_amount'
     end
-    object salary_level_tambahst_jenis: TStringField
+    object salary_level_tambahst_jenis: TWideStringField
       FieldName = 'st_jenis'
       Size = 255
     end
-    object salary_level_tambahst_nama: TStringField
+    object salary_level_tambahst_nama: TWideStringField
       FieldName = 'st_nama'
       Size = 255
     end
@@ -2853,15 +2304,15 @@ object dm: Tdm
     LinkedFields = 'sd_kode'
     Left = 1048
     Top = 184
-    object salary_level_detail_tsd_kode: TStringField
+    object salary_level_detail_tsd_kode: TWideStringField
       FieldName = 'sd_kode'
       Size = 255
     end
-    object salary_level_detail_tsd_kode_item: TStringField
+    object salary_level_detail_tsd_kode_item: TWideStringField
       FieldName = 'sd_kode_item'
       Size = 255
     end
-    object salary_level_detail_tsd_nama: TStringField
+    object salary_level_detail_tsd_nama: TWideStringField
       FieldName = 'sd_nama'
       Size = 255
     end
@@ -2869,7 +2320,7 @@ object dm: Tdm
       FieldName = 'sd_amount'
       DisplayFormat = '#,###'
     end
-    object salary_level_detail_tsd_jenis: TStringField
+    object salary_level_detail_tsd_jenis: TWideStringField
       FieldName = 'sd_jenis'
       Size = 255
     end
@@ -2886,15 +2337,15 @@ object dm: Tdm
     LinkedFields = 'sd_kode'
     Left = 936
     Top = 424
-    object StringField59: TStringField
+    object StringField59: TWideStringField
       FieldName = 'sd_kode'
       Size = 255
     end
-    object StringField60: TStringField
+    object StringField60: TWideStringField
       FieldName = 'sd_kode_item'
       Size = 255
     end
-    object StringField61: TStringField
+    object StringField61: TWideStringField
       FieldName = 'sd_nama'
       Size = 255
     end
@@ -2902,7 +2353,7 @@ object dm: Tdm
       FieldName = 'sd_amount'
       DisplayFormat = '#,###'
     end
-    object StringField62: TStringField
+    object StringField62: TWideStringField
       FieldName = 'sd_jenis'
       Size = 255
     end
@@ -2918,14 +2369,14 @@ object dm: Tdm
       FieldName = 'sk_id'
       Required = True
     end
-    object penguranggajisk_kode: TStringField
+    object penguranggajisk_kode: TWideStringField
       FieldName = 'sk_kode'
       Size = 255
     end
     object penguranggajisk_amount: TFloatField
       FieldName = 'sk_amount'
     end
-    object penguranggajisk_nama: TStringField
+    object penguranggajisk_nama: TWideStringField
       FieldName = 'sk_nama'
       Size = 255
     end
@@ -2939,15 +2390,15 @@ object dm: Tdm
     Params = <>
     Left = 1025
     Top = 376
-    object StringField63: TStringField
+    object StringField63: TWideStringField
       FieldName = 'sd_kode'
       Size = 255
     end
-    object StringField64: TStringField
+    object StringField64: TWideStringField
       FieldName = 'sd_kode_item'
       Size = 255
     end
-    object StringField65: TStringField
+    object StringField65: TWideStringField
       FieldName = 'sd_nama'
       Size = 255
     end
@@ -2955,7 +2406,7 @@ object dm: Tdm
       FieldName = 'sd_amount'
       DisplayFormat = '#,###'
     end
-    object StringField66: TStringField
+    object StringField66: TWideStringField
       FieldName = 'sd_jenis'
       Size = 255
     end
@@ -3018,14 +2469,14 @@ object dm: Tdm
     object salaryrptsa_date: TDateField
       FieldName = 'sa_date'
     end
-    object salaryrptsa_period: TStringField
+    object salaryrptsa_period: TWideStringField
       FieldName = 'sa_period'
       Size = 255
     end
     object salaryrptsa_checked: TSmallintField
       FieldName = 'sa_checked'
     end
-    object salaryrptsa_cek: TStringField
+    object salaryrptsa_cek: TWideStringField
       FieldName = 'sa_cek'
       Size = 1
     end
@@ -3045,7 +2496,7 @@ object dm: Tdm
       FieldName = 'sa_objek_pajak'
       DisplayFormat = '#,###'
     end
-    object salaryrptsa_no_induk: TStringField
+    object salaryrptsa_no_induk: TWideStringField
       FieldName = 'sa_no_induk'
       Size = 255
     end
@@ -3061,11 +2512,11 @@ object dm: Tdm
       FieldName = 'sa_penambahan'
       DisplayFormat = '#,###'
     end
-    object salaryrptsa_kode_level: TStringField
+    object salaryrptsa_kode_level: TWideStringField
       FieldName = 'sa_kode_level'
       Size = 255
     end
-    object salaryrptsa_ref: TStringField
+    object salaryrptsa_ref: TWideStringField
       FieldName = 'sa_ref'
       Size = 255
     end
@@ -3095,14 +2546,14 @@ object dm: Tdm
     object IntegerField42: TIntegerField
       FieldName = 'kd_jb_id'
     end
-    object StringField67: TStringField
+    object StringField67: TWideStringField
       FieldName = 'kd_cash_transfer'
       Size = 255
     end
     object IntegerField43: TIntegerField
       FieldName = 'kd_ba_id'
     end
-    object StringField68: TStringField
+    object StringField68: TWideStringField
       FieldName = 'kd_norek'
       Size = 255
     end
@@ -3116,7 +2567,7 @@ object dm: Tdm
     object SmallintField5: TSmallintField
       FieldName = 'kd_pt_id'
     end
-    object StringField69: TStringField
+    object StringField69: TWideStringField
       FieldName = 'kd_npwp'
       ReadOnly = True
       Size = 255
@@ -3128,18 +2579,18 @@ object dm: Tdm
     object IntegerField44: TIntegerField
       FieldName = 'kd_sl_id'
     end
-    object StringField70: TStringField
+    object StringField70: TWideStringField
       FieldName = 'kd_no_induk'
       Size = 255
     end
     object FloatField51: TFloatField
       FieldName = 'kd_basic_salary'
     end
-    object StringField71: TStringField
+    object StringField71: TWideStringField
       FieldName = 'kd_sl_kode'
       Size = 255
     end
-    object karyawandetailrptjabtan: TStringField
+    object karyawandetailrptjabtan: TWideStringField
       FieldKind = fkLookup
       FieldName = 'jabtan'
       LookupDataSet = jobdes
@@ -3149,7 +2600,7 @@ object dm: Tdm
       Size = 50
       Lookup = True
     end
-    object karyawandetailrptDepartemen: TStringField
+    object karyawandetailrptDepartemen: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Departemen'
       LookupDataSet = dept
@@ -3183,15 +2634,15 @@ object dm: Tdm
     object jurnal_umum_detailjl_id: TIntegerField
       FieldName = 'jl_id'
     end
-    object jurnal_umum_detailjl_kode: TStringField
+    object jurnal_umum_detailjl_kode: TWideStringField
       FieldName = 'jl_kode'
       Size = 255
     end
-    object jurnal_umum_detailjl_akun: TStringField
+    object jurnal_umum_detailjl_akun: TWideStringField
       FieldName = 'jl_akun'
       Size = 255
     end
-    object jurnal_umum_detailjl_desc: TStringField
+    object jurnal_umum_detailjl_desc: TWideStringField
       FieldName = 'jl_desc'
       Size = 255
     end
@@ -3215,11 +2666,11 @@ object dm: Tdm
     Params = <>
     Left = 664
     Top = 488
-    object StringField72: TStringField
+    object StringField72: TWideStringField
       FieldName = 'ak_no'
       Size = 255
     end
-    object StringField73: TStringField
+    object StringField73: TWideStringField
       FieldName = 'ak_desc'
       Size = 255
     end
@@ -3229,7 +2680,7 @@ object dm: Tdm
     object SmallintField7: TSmallintField
       FieldName = 'ak_class_id'
     end
-    object StringField74: TStringField
+    object StringField74: TWideStringField
       FieldKind = fkLookup
       FieldName = 'klas'
       LookupDataSet = akun_klas
@@ -3239,7 +2690,7 @@ object dm: Tdm
       Size = 50
       Lookup = True
     end
-    object StringField75: TStringField
+    object StringField75: TWideStringField
       FieldKind = fkLookup
       FieldName = 'subklas'
       LookupDataSet = akun_subklas
@@ -3261,7 +2712,7 @@ object dm: Tdm
     object jurnalumumju_id: TIntegerField
       FieldName = 'ju_id'
     end
-    object jurnalumumju_kode: TStringField
+    object jurnalumumju_kode: TWideStringField
       FieldName = 'ju_kode'
       Size = 255
     end
@@ -3273,11 +2724,11 @@ object dm: Tdm
       FieldName = 'ju_date'
       EditMask = '!99/99/0000;1;_'
     end
-    object jurnalumumju_pic: TStringField
+    object jurnalumumju_pic: TWideStringField
       FieldName = 'ju_pic'
       Size = 255
     end
-    object jurnalumumju_note: TStringField
+    object jurnalumumju_note: TWideStringField
       FieldName = 'ju_note'
       Size = 255
     end
@@ -3293,7 +2744,7 @@ object dm: Tdm
     object IntegerField45: TIntegerField
       FieldName = 'ju_id'
     end
-    object StringField76: TStringField
+    object StringField76: TWideStringField
       FieldName = 'ju_kode'
       Size = 255
     end
@@ -3304,11 +2755,11 @@ object dm: Tdm
       FieldName = 'ju_date'
       EditMask = '!99/99/0000;1;_'
     end
-    object StringField77: TStringField
+    object StringField77: TWideStringField
       FieldName = 'ju_pic'
       Size = 255
     end
-    object StringField78: TStringField
+    object StringField78: TWideStringField
       FieldName = 'ju_note'
       Size = 255
     end
@@ -3346,7 +2797,7 @@ object dm: Tdm
       FieldName = 'in_harga'
       DisplayFormat = '#,###'
     end
-    object StringField84: TStringField
+    object StringField84: TWideStringField
       FieldKind = fkLookup
       FieldName = 'barang'
       LookupDataSet = barang
@@ -3355,7 +2806,7 @@ object dm: Tdm
       KeyFields = 'in_kd_barang'
       Lookup = True
     end
-    object StringField85: TStringField
+    object StringField85: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Type'
       LookupDataSet = barang
@@ -3365,7 +2816,7 @@ object dm: Tdm
       Size = 30
       Lookup = True
     end
-    object StringField86: TStringField
+    object StringField86: TWideStringField
       DisplayLabel = 'Gudang'
       FieldKind = fkLookup
       FieldName = 'gudang'
@@ -3376,7 +2827,7 @@ object dm: Tdm
       Size = 15
       Lookup = True
     end
-    object StringField87: TStringField
+    object StringField87: TWideStringField
       FieldKind = fkLookup
       FieldName = 'unit'
       LookupDataSet = barang
@@ -3396,18 +2847,22 @@ object dm: Tdm
     Params = <>
     Left = 344
     Top = 368
+    object deliveryviewdo_id: TIntegerField
+      FieldName = 'do_id'
+      Required = True
+    end
     object deliveryviewdo_tgl: TDateField
       FieldName = 'do_tgl'
     end
-    object deliveryviewdo_pic: TStringField
+    object deliveryviewdo_pic: TWideStringField
       FieldName = 'do_pic'
       Size = 255
     end
-    object deliveryviewdo_ju_trans: TStringField
+    object deliveryviewdo_ju_trans: TWideStringField
       FieldName = 'do_ju_trans'
       Size = 255
     end
-    object deliveryviewdo_kode: TStringField
+    object deliveryviewdo_kode: TWideStringField
       FieldName = 'do_kode'
       Size = 255
     end
@@ -3417,11 +2872,7 @@ object dm: Tdm
     object deliveryviewdo_cust_pic: TIntegerField
       FieldName = 'do_cust_pic'
     end
-    object deliveryviewdo_cust_kode: TStringField
-      FieldName = 'do_cust_kode'
-      Size = 255
-    end
-    object deliveryviewCustomer: TStringField
+    object deliveryviewCustomer: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Customer'
       LookupDataSet = customer
@@ -3430,6 +2881,10 @@ object dm: Tdm
       KeyFields = 'do_cust_kode'
       Size = 100
       Lookup = True
+    end
+    object deliveryviewdo_cust_kode: TWideStringField
+      FieldName = 'do_cust_kode'
+      Size = 255
     end
   end
   object customeradd: TZQuery
@@ -3480,15 +2935,15 @@ object dm: Tdm
     Params = <>
     Left = 264
     Top = 568
-    object tagihanrptin_kode: TStringField
+    object tagihanrptin_kode: TWideStringField
       FieldName = 'in_kode'
       Size = 255
     end
-    object tagihanrptin_cust_kode: TStringField
+    object tagihanrptin_cust_kode: TWideStringField
       FieldName = 'in_cust_kode'
       Size = 255
     end
-    object tagihanrptin_order_kode: TStringField
+    object tagihanrptin_order_kode: TWideStringField
       FieldName = 'in_order_kode'
       Size = 255
     end
@@ -3503,7 +2958,7 @@ object dm: Tdm
     object tagihanrptin_date: TDateField
       FieldName = 'in_date'
     end
-    object tagihanrptin_kode_jual: TStringField
+    object tagihanrptin_kode_jual: TWideStringField
       FieldName = 'in_kode_jual'
       Size = 255
     end
@@ -3520,12 +2975,12 @@ object dm: Tdm
       FieldName = 'in_due'
       ReadOnly = True
     end
-    object tagihanrptin_payment_method: TStringField
+    object tagihanrptin_payment_method: TWideStringField
       FieldName = 'in_payment_method'
       ReadOnly = True
       Size = 255
     end
-    object tagihanrptin_po: TStringField
+    object tagihanrptin_po: TWideStringField
       FieldName = 'in_po'
       ReadOnly = True
       Size = 255
@@ -3555,15 +3010,15 @@ object dm: Tdm
     Params = <>
     Left = 336
     Top = 568
-    object tagihanviewin_kode: TStringField
+    object tagihanviewin_kode: TWideStringField
       FieldName = 'in_kode'
       Size = 255
     end
-    object tagihanviewin_cust_kode: TStringField
+    object tagihanviewin_cust_kode: TWideStringField
       FieldName = 'in_cust_kode'
       Size = 255
     end
-    object tagihanviewin_order_kode: TStringField
+    object tagihanviewin_order_kode: TWideStringField
       FieldName = 'in_order_kode'
       Size = 255
     end
@@ -3578,7 +3033,7 @@ object dm: Tdm
     object tagihanviewin_date: TDateField
       FieldName = 'in_date'
     end
-    object tagihanviewin_kode_jual: TStringField
+    object tagihanviewin_kode_jual: TWideStringField
       FieldName = 'in_kode_jual'
       Size = 255
     end
@@ -3591,7 +3046,7 @@ object dm: Tdm
     object tagihanviewin_paid: TSmallintField
       FieldName = 'in_paid'
     end
-    object tagihanviewCustomer: TStringField
+    object tagihanviewCustomer: TWideStringField
       FieldKind = fkLookup
       FieldName = 'Customer'
       LookupDataSet = customer
@@ -3601,7 +3056,7 @@ object dm: Tdm
       Size = 50
       Lookup = True
     end
-    object tagihanviewcustnpwp: TStringField
+    object tagihanviewcustnpwp: TWideStringField
       FieldKind = fkLookup
       FieldName = 'custnpwp'
       LookupDataSet = customer
@@ -3651,15 +3106,15 @@ object dm: Tdm
     object IntegerField54: TIntegerField
       FieldName = 'jl_id'
     end
-    object StringField91: TStringField
+    object StringField91: TWideStringField
       FieldName = 'jl_kode'
       Size = 255
     end
-    object StringField92: TStringField
+    object StringField92: TWideStringField
       FieldName = 'jl_akun'
       Size = 255
     end
-    object StringField93: TStringField
+    object StringField93: TWideStringField
       FieldName = 'jl_desc'
       Size = 255
     end
@@ -3692,28 +3147,6 @@ object dm: Tdm
     Params = <>
     Left = 376
     Top = 432
-    object StringField88: TStringField
-      FieldName = 'dd_kode'
-      Size = 255
-    end
-    object StringField90: TStringField
-      FieldName = 'dd_nama_barang'
-      Size = 255
-    end
-    object StringField94: TStringField
-      FieldName = 'dd_type'
-      Size = 255
-    end
-    object SmallintField9: TSmallintField
-      FieldName = 'dd_qty'
-    end
-    object StringField95: TStringField
-      FieldName = 'dd_satuan'
-      Size = 255
-    end
-    object deliverydetailrptdd_kode_barang: TIntegerField
-      FieldName = 'dd_kode_barang'
-    end
   end
   object supplierdelrpt: TZQuery
     Connection = conerp
@@ -3723,30 +3156,6 @@ object dm: Tdm
     Params = <>
     Left = 384
     Top = 512
-    object IntegerField52: TIntegerField
-      FieldName = 'sp_id'
-    end
-    object StringField89: TStringField
-      FieldName = 'sp_name'
-      Size = 255
-    end
-    object StringField96: TStringField
-      FieldName = 'sp_address'
-      Size = 255
-    end
-    object StringField97: TStringField
-      FieldName = 'sp_kota'
-      Size = 255
-    end
-    object StringField98: TStringField
-      FieldName = 'sp_telp'
-      Size = 255
-    end
-    object StringField99: TStringField
-      FieldName = 'sp_refer'
-      ReadOnly = True
-      Size = 255
-    end
   end
   object jualrpt: TZQuery
     Connection = conerp
@@ -3755,11 +3164,11 @@ object dm: Tdm
     Params = <>
     Left = 752
     Top = 360
-    object jualrptju_kode: TStringField
+    object jualrptju_kode: TWideStringField
       FieldName = 'ju_kode'
       Size = 255
     end
-    object jualrptju_cust_kode: TStringField
+    object jualrptju_cust_kode: TWideStringField
       FieldName = 'ju_cust_kode'
       Size = 255
     end
@@ -3775,11 +3184,11 @@ object dm: Tdm
     object jualrptju_due: TDateField
       FieldName = 'ju_due'
     end
-    object jualrptju_bayar: TStringField
+    object jualrptju_bayar: TWideStringField
       FieldName = 'ju_bayar'
       Size = 10
     end
-    object jualrptju_po: TStringField
+    object jualrptju_po: TWideStringField
       FieldName = 'ju_po'
       Size = 255
     end
@@ -3797,11 +3206,11 @@ object dm: Tdm
       FieldName = 'ju_tax'
       DisplayFormat = '#,###'
     end
-    object jualrptju_akun: TStringField
+    object jualrptju_akun: TWideStringField
       FieldName = 'ju_akun'
       Size = 255
     end
-    object jualrptju_ppn: TStringField
+    object jualrptju_ppn: TWideStringField
       FieldName = 'ju_ppn'
       Size = 5
     end
@@ -3827,7 +3236,7 @@ object dm: Tdm
     Params = <>
     Left = 768
     Top = 552
-    object jualdetailrptjd_kode: TStringField
+    object jualdetailrptjd_kode: TWideStringField
       FieldName = 'jd_kode'
       Size = 255
     end
@@ -3837,7 +3246,7 @@ object dm: Tdm
     object jualdetailrptjd_kd_barang: TIntegerField
       FieldName = 'jd_kd_barang'
     end
-    object jualdetailrptjd_nama_barang: TStringField
+    object jualdetailrptjd_nama_barang: TWideStringField
       FieldName = 'jd_nama_barang'
       Size = 255
     end
@@ -3866,7 +3275,7 @@ object dm: Tdm
       FieldName = 'jd_margin'
       DisplayFormat = '#,###'
     end
-    object jualdetailrptjd_satuan: TStringField
+    object jualdetailrptjd_satuan: TWideStringField
       FieldName = 'jd_satuan'
       Size = 255
     end
@@ -3878,25 +3287,25 @@ object dm: Tdm
     Params = <>
     Left = 760
     Top = 480
-    object fakturpajakviewfp_kode: TStringField
+    object fakturpajakviewfp_kode: TWideStringField
       FieldName = 'fp_kode'
       Size = 255
     end
     object fakturpajakviewfp_cust_id: TIntegerField
       FieldName = 'fp_cust_id'
     end
-    object fakturpajakviewfp_ref: TStringField
+    object fakturpajakviewfp_ref: TWideStringField
       FieldName = 'fp_ref'
       Size = 255
     end
     object fakturpajakviewfp_date: TDateField
       FieldName = 'fp_date'
     end
-    object fakturpajakviewfp_cust_kode: TStringField
+    object fakturpajakviewfp_cust_kode: TWideStringField
       FieldName = 'fp_cust_kode'
       Size = 255
     end
-    object fakturpajakviewCustomer: TStringField
+    object fakturpajakviewCustomer: TWideStringField
       DisplayWidth = 40
       FieldKind = fkLookup
       FieldName = 'Customer'
@@ -3928,32 +3337,32 @@ object dm: Tdm
     object IntegerField53: TIntegerField
       FieldName = 'cu_id'
     end
-    object StringField100: TStringField
+    object StringField100: TWideStringField
       FieldName = 'cu_kode'
       Size = 255
     end
-    object StringField101: TStringField
+    object StringField101: TWideStringField
       FieldName = 'cu_nama'
       Size = 255
     end
-    object StringField102: TStringField
+    object StringField102: TWideStringField
       FieldName = 'cu_alamat'
       Size = 255
     end
-    object StringField103: TStringField
+    object StringField103: TWideStringField
       FieldName = 'cu_kota'
       Size = 255
     end
-    object StringField104: TStringField
+    object StringField104: TWideStringField
       FieldName = 'cu_telp'
       Size = 255
     end
-    object StringField105: TStringField
+    object StringField105: TWideStringField
       FieldName = 'cu_npwp'
       EditMask = '00\.000\.000\.0\-000\.000;1;_'
       Size = 255
     end
-    object StringField106: TStringField
+    object StringField106: TWideStringField
       FieldName = 'cu_alamatfp'
       Size = 255
     end
@@ -3969,7 +3378,7 @@ object dm: Tdm
     object pajakinsertfp_id: TIntegerField
       FieldName = 'fp_id'
     end
-    object pajakinsertfp_kode: TStringField
+    object pajakinsertfp_kode: TWideStringField
       FieldName = 'fp_kode'
       EditMask = '000\.000\-00\.00000000;1;_'
       Size = 255
@@ -3977,22 +3386,22 @@ object dm: Tdm
     object pajakinsertfp_cust_id: TIntegerField
       FieldName = 'fp_cust_id'
     end
-    object pajakinsertfp_ref: TStringField
+    object pajakinsertfp_ref: TWideStringField
       FieldName = 'fp_ref'
       Size = 255
     end
     object pajakinsertfp_date: TDateField
       FieldName = 'fp_date'
     end
-    object pajakinsertfp_cust_kode: TStringField
+    object pajakinsertfp_cust_kode: TWideStringField
       FieldName = 'fp_cust_kode'
       Size = 255
     end
-    object pajakinsertfp_nama_cust: TStringField
+    object pajakinsertfp_nama_cust: TWideStringField
       FieldName = 'fp_nama_cust'
       Size = 255
     end
-    object pajakinsertfp_npwp: TStringField
+    object pajakinsertfp_npwp: TWideStringField
       FieldName = 'fp_npwp'
       EditMask = '00\.000\.000\.0\-000\.000;1;_'
       Size = 255
@@ -4032,7 +3441,7 @@ object dm: Tdm
     object fakturpajaklistfp_id: TIntegerField
       FieldName = 'fp_id'
     end
-    object fakturpajaklistfp_kode: TStringField
+    object fakturpajaklistfp_kode: TWideStringField
       FieldName = 'fp_kode'
       Required = True
       Size = 255
@@ -4040,22 +3449,22 @@ object dm: Tdm
     object fakturpajaklistfp_cust_id: TIntegerField
       FieldName = 'fp_cust_id'
     end
-    object fakturpajaklistfp_ref: TStringField
+    object fakturpajaklistfp_ref: TWideStringField
       FieldName = 'fp_ref'
       Size = 255
     end
     object fakturpajaklistfp_date: TDateField
       FieldName = 'fp_date'
     end
-    object fakturpajaklistfp_cust_kode: TStringField
+    object fakturpajaklistfp_cust_kode: TWideStringField
       FieldName = 'fp_cust_kode'
       Size = 255
     end
-    object fakturpajaklistfp_nama_cust: TStringField
+    object fakturpajaklistfp_nama_cust: TWideStringField
       FieldName = 'fp_nama_cust'
       Size = 255
     end
-    object fakturpajaklistfp_npwp: TStringField
+    object fakturpajaklistfp_npwp: TWideStringField
       FieldName = 'fp_npwp'
       Size = 255
     end
@@ -4080,48 +3489,6 @@ object dm: Tdm
     Params = <>
     Left = 856
     Top = 552
-    object IntegerField55: TIntegerField
-      FieldName = 'fp_id'
-    end
-    object StringField107: TStringField
-      FieldName = 'fp_kode'
-      Required = True
-      Size = 255
-    end
-    object IntegerField56: TIntegerField
-      FieldName = 'fp_cust_id'
-    end
-    object StringField108: TStringField
-      FieldName = 'fp_ref'
-      Size = 255
-    end
-    object DateField22: TDateField
-      FieldName = 'fp_date'
-    end
-    object StringField109: TStringField
-      FieldName = 'fp_cust_kode'
-      Size = 255
-    end
-    object StringField110: TStringField
-      FieldName = 'fp_nama_cust'
-      Size = 255
-    end
-    object StringField111: TStringField
-      FieldName = 'fp_npwp'
-      Size = 255
-    end
-    object FloatField59: TFloatField
-      FieldName = 'fp_dpp'
-      DisplayFormat = '#,###'
-    end
-    object FloatField60: TFloatField
-      FieldName = 'fp_ppn'
-      DisplayFormat = '#,###'
-    end
-    object FloatField61: TFloatField
-      FieldName = 'fp_ppnbm'
-      DisplayFormat = '#,###'
-    end
   end
   object customerview: TZQuery
     Connection = conerp
@@ -4134,32 +3501,32 @@ object dm: Tdm
     object IntegerField57: TIntegerField
       FieldName = 'cu_id'
     end
-    object StringField112: TStringField
+    object StringField112: TWideStringField
       FieldName = 'cu_kode'
       Size = 255
     end
-    object StringField113: TStringField
+    object StringField113: TWideStringField
       FieldName = 'cu_nama'
       Size = 255
     end
-    object StringField114: TStringField
+    object StringField114: TWideStringField
       FieldName = 'cu_alamat'
       Size = 255
     end
-    object StringField115: TStringField
+    object StringField115: TWideStringField
       FieldName = 'cu_kota'
       Size = 255
     end
-    object StringField116: TStringField
+    object StringField116: TWideStringField
       FieldName = 'cu_telp'
       Size = 255
     end
-    object StringField117: TStringField
+    object StringField117: TWideStringField
       FieldName = 'cu_npwp'
       EditMask = '00\.000\.000\.0\-000\.000;1;_'
       Size = 255
     end
-    object StringField118: TStringField
+    object StringField118: TWideStringField
       FieldName = 'cu_alamatfp'
       Size = 255
     end
@@ -4188,7 +3555,7 @@ object dm: Tdm
     Params = <>
     Left = 656
     Top = 560
-    object StringField119: TStringField
+    object StringField119: TWideStringField
       FieldName = 'ju_kode'
       Size = 255
     end
@@ -4204,11 +3571,11 @@ object dm: Tdm
     object DateField24: TDateField
       FieldName = 'ju_due'
     end
-    object StringField120: TStringField
+    object StringField120: TWideStringField
       FieldName = 'ju_bayar'
       Size = 10
     end
-    object StringField121: TStringField
+    object StringField121: TWideStringField
       FieldName = 'ju_po'
       Size = 255
     end
@@ -4221,15 +3588,15 @@ object dm: Tdm
     object FloatField63: TFloatField
       FieldName = 'ju_tax'
     end
-    object StringField122: TStringField
+    object StringField122: TWideStringField
       FieldName = 'ju_akun'
       Size = 255
     end
-    object StringField123: TStringField
+    object StringField123: TWideStringField
       FieldName = 'ju_ppn'
       Size = 5
     end
-    object StringField124: TStringField
+    object StringField124: TWideStringField
       FieldName = 'ju_cust_kode'
       Size = 255
     end
@@ -4266,7 +3633,7 @@ object dm: Tdm
     Params = <>
     Left = 392
     Top = 184
-    object StringField125: TStringField
+    object StringField125: TWideStringField
       FieldName = 'jd_kode'
       Size = 255
     end
@@ -4276,7 +3643,7 @@ object dm: Tdm
     object IntegerField61: TIntegerField
       FieldName = 'jd_kd_barang'
     end
-    object StringField126: TStringField
+    object StringField126: TWideStringField
       FieldName = 'jd_nama_barang'
       Size = 255
     end
@@ -4305,13 +3672,161 @@ object dm: Tdm
     object FloatField71: TFloatField
       FieldName = 'jd_margin'
     end
-    object StringField127: TStringField
+    object StringField127: TWideStringField
       FieldName = 'jd_satuan'
       Size = 255
     end
-    object StringField128: TStringField
+    object StringField128: TWideStringField
       FieldName = 'jd_type'
       Size = 255
     end
+  end
+  object imgcommon: TImageList
+    Left = 16
+    Top = 64
+    Bitmap = {
+      494C010103000500040010001000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000001000000001002000000000000010
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000DEDEDE00DEDEDE00DEDEDE00DEDEDE00DEDEDE00DEDEDE00DEDEDE00DEDE
+      DE00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000F7F7
+      F700BDBDBD00000000000000000000000000000000000000000000000000CEC6
+      C600E7E7E700000000000000000000000000000000007F7F0002B2420892A83C
+      00E687573DECA8ACACF2BBB4ACF2CCCBC6F2CDCDCFF2B0B0B0F599A2A8FF802E
+      01EBA23B03E6A2400FE39632027000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000E7E7E700C6C6
+      C6009C94940000000000F7F7F700F7F7F700F7F7F700F7F7F70000000000B5B5
+      B500A5A5A500E7E7E700000000000000000000000000C554049FBE6317FFCD79
+      27FF9E8770FFB98759FFCE700DFFDCAF7AFFFEFFFFFFFAFAFAFFD9E2EAFFAD70
+      24FFDD9435FFECBE75FFA5430AF700000000FFFFFF0000000000656565786F6F
+      6FF6585858BB5959596300000001000000000000000000000000000000000000
+      0000000000000000000000000000FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000F7F7F700BDBDBD00ADADAD005A5A
+      5A009C9C9C0000000000F7F7F700F7F7F700F7F7F700F7F7F70000000000B5B5
+      B500525252009C9C9C00B5B5B500EFEFEF0000000000C9680DFFC07028FFC36C
+      1EFFA7876BFFAE7C5AFFBA5809FFC69A6CFFD9DFE5FFF8F8F8FFF8FFFFFFA363
+      1DFFD5872DFFE5AF69FFA5460AFF00000000FFFFFF0000000000747474C5D4D4
+      D4FFB0B0B0FF848484FF666666DE5555559A5A5A5A1000000000000000000000
+      000000000000464646293636360CFFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000CECECE00C6C6C600ADADAD003939
+      39008C8C8C00E7E7E700DEDEDE00DEDEDE00DEDEDE00DEDEDE00E7E7E700A5A5
+      A500393939008C8C8C00D6D6D600C6C6C60000000000CB690CFFBB6823FFBF66
+      19FFB4906EFFB37C60FFAF4900FFB5875EFFBFC6CDFFDEE0E2FFFFFFFFFFA564
+      1FFFD4842DFFE4B06CFFA44409FF00000000FFFFFF0064646402787878F2C7C7
+      C7FFB1B1B1FFB3B3B3FFB4B4B4FF8B8B8BFF646464F65858589F000000000000
+      0000000000004343436A4141417AFFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000BDBDBD00DEDEDE00CECECE007B7B
+      8400848484008C8C8C008C8C8C008C8C8C008C8C8C008C8C8C008C8C8C008484
+      84007B7B7B00BDBDBD00E7E7E700C6C6C60000000000C9690AFFB8631FFFBC62
+      19FFB07F55FFC1BFBDFFB0ACA8FF98918BFF9A8E84FFA3978AFFAEA79FFF9058
+      1FFFA76723FFDA9542FFA6450DFF00000000FFFFFF005555556D858585FFC3C3
+      C3FFAEAEAEFFB8B8B8FFB7B7B7FFAEAEAEFFB4B4B4FF6C6C6CFD5E5E5E0E0000
+      000000000000414141673C3C3CB8FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000C6C6C600E7E7E700EFEFF700D6CE
+      C600A58C6300A58C6300A58C6300A58C6300A58C6300A58C6300A58C6300A58C
+      6300C6B5A500EFEFF700EFEFEF00C6C6C60000000000C9670AFFB55D1BFFB65D
+      17FFB85B0FFFBA5808FFBE5D0AFFC2620EFFC56710FFC86913FFC96E16FFCE78
+      24FFD07F2AFFD38932FFA5450EFF00000000FFFFFF005151517EB7B7B7FFB1B1
+      B1FFABABABFFBBBBBBFF6B6B6BFF484848BC515151B056565660000000000000
+      0000000000003F3F3F703F3F3FE0FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000C6C6C600E7E7E700F7F7F700AD94
+      7300AD8C4A00BD9C5A00B59C5A00B59C5A00B59C5A00B59C5A00B59C5A00B594
+      52009C845200E7E7E700EFEFEF00C6C6C60000000000C86809FFB05514FFB169
+      33FFAF7142FFAE703FFFAF7341FFB17340FFB07642FFB27741FFB47A43FFB47D
+      46FFBD8041FFD1842DFFA6460EFF00000000FFFFFF00545454ADCACACAFFAAAA
+      AAFFAAAAAAFFA9A9A9FFA2A2A2FF505050A60000000000000000000000000000
+      000000000000414141A0505050FCFFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000C6C6C600EFEFEF00F7F7F700B59C
+      7300D6C68400DECE8C00DECE8C00DECE8C00DECE8C00DECE8C00DECE8C00DECE
+      8C00AD946300E7E7E700F7F7F700C6C6C60000000000C76508FFAC4B09FFB59C
+      89FFE6F2FBFFE4EDF3FFE6EEF5FFE6EDF4FFE1E9EFFFDDE5ECFFD5DEE4FFD1DC
+      E6FFAD9A8AFFD07F26FFA4450EFF00000000FFFFFF00656565DCCBCBCBFF6E6E
+      6EF56B6B6BF3C8C8C8FFA6A6A6FF737373FB5252525700000000000000000000
+      0000000000004B4B4BCA515151FEFFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000C6C6C600EFEFEF00F7F7F700B5A5
+      7B00DECE8400E7D69400E7D69400E7D69400E7D69400E7D69400E7D69400E7DE
+      9400B59C6B00EFE7E700F7F7F700C6C6C60000000000C86509FFA84303FFB899
+      84FFF4F9FCFFD5D4D2FFBEBDBCFFC0BFBEFFC1C0BFFFC2C0BFFFCBCAC9FFDFE3
+      E6FFB19B85FFCF7C22FFA4440DFF00000000FFFFFF00717171FBB5B5B5FF4949
+      497B45454581BBBBBBFFA6A6A6FF9F9F9FFF545454E25151514D000000000000
+      000044444471666666FE484848ECFFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000DEDEDE00C6C6C60000000000AD94
+      7300BD9C5A00BDA56300BD9C6300BD9C6300BD9C6300BD9C6300BD9C6300C6A5
+      6300A58C5200EFEFEF00D6D6D600D6D6D60000000000C76508FFA23C00FFBA9B
+      85FFFAFFFFFFF1F1F1FFECECECFFEBEBEBFFE8E8E8FFE4E4E4FFE1E1E1FFE2E5
+      E9FFB29B88FFCD7920FFA5440DFF00000000FFFFFF005757577E5F5F5FAF4545
+      450643434309545454D6D0D0D0FF999999FF969696FF5D5D5DF8444444B34242
+      42BD5A5A5AFC858585FF333333B1FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000DEDEDE00BDC6C600AD9C
+      8C00947B5200A5946B00A58C6B00A58C6B00A58C6B00A58C6B00A58C6B009C84
+      5A00A5947B00BDBDBD00D6D6D6000000000000000000C66207FF9E3700FFBC9C
+      8AFFFFFFFFFFDDDCDBFFC2C1C0FFC4C3C2FFC4C3C2FFC2C1C0FFCECDCCFFE4E7
+      EBFFB39D89FFCD771FFFA4440EFF00000000FFFFFF0000000000000000000000
+      0000000000004C4C4C2C5E5E5EF0CDCDCDFF949494FF8E8E8EFF8C8C8CFF8585
+      85FF818181FF5C5C5CFE3F3F3F66FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000C6BDBD00F7FFFF00F7F7F700F7F7F700F7F7F700F7F7F70000000000CECE
+      CE00F7F7F70000000000000000000000000000000000C56206FF9A3100FFBF9D
+      8AFFFFFFFFFFFBFBFBFFEEEEEEFFEFEFEFFFE9E9E9FFE4E4E4FFE4E4E4FFE6EA
+      EDFFB5A089FFC2701DFFA9480DFF00000000FFFFFF0000000000000000000000
+      0000000000000000000048484838545454E8B8B8B8FFBBBBBBFFA7A7A7FF8D8D
+      8DFF616161FF3838389400000000FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000F7F7
+      F700C6C6C60000000000F7F7F700F7F7F700F7F7F700F7F7F70000000000D6D6
+      D600F7F7F70000000000000000000000000000000000C35F05FA932800FFBE9D
+      8DFFFFFFFFFFE5E4E3FFD0CFCEFFD1D0CFFFCFCECDFFCDCCCBFFD4D3D2FFE9ED
+      F1FFB9A38CFF8A4F14FFB14F0EFA00000000FFFFFF0000000000000000000000
+      0000000000000000000000000000393939163434348F464646DF4A4A4AF13737
+      37C63E3E3E780000000000000000FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000F7F7
+      F700C6C6C600000000000000000000000000000000000000000000000000D6D6
+      D600F7F7F70000000000000000000000000000000000D06E0784C25400FBC8A4
+      83FFD5D7D7FFD6D3D0FFD6D3D0FFD1CFCCFFCCCAC8FFC7C5C3FFC1BEBBFFBDBD
+      BDFFB1947BFFC25800FBB351098400000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000C6C6C600BDBDBD00BDBDBD00BDBDBD00BDBDBD00BDBDBD00BDBDBD00C6C6
+      C600000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000100000000100010000000000800000000000000000000000
+      000000000000000000000000FFFFFF00F00FFFFF00000000E7E7800100000000
+      C423800141FE0000042080014078000000008001003800000000800100180000
+      00008001003800000000800100F8000000008001007800000000800100300000
+      20008001000000008001800178000000F02780017C020000E42780017E060000
+      E7E7800100000000F00FFFFF00000000}
+  end
+  object user: TZTable
+    Connection = conerp
+    TableName = 'user'
+    Left = 24
+    Top = 144
   end
 end

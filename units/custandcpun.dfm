@@ -143,7 +143,6 @@ object custncpfrm: Tcustncpfrm
         Expanded = False
         FieldName = 'cu_telp'
         Title.Caption = 'Telp'
-        Width = -1
         Visible = False
       end
       item
@@ -258,7 +257,7 @@ object custncpfrm: Tcustncpfrm
       Left = 112
       Top = 8
       Width = 432
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

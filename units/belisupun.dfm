@@ -1,73 +1,40 @@
-object belisupfrm: Tbelisupfrm
+inherited belisupfrm: Tbelisupfrm
   Left = 226
   Top = 16
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
-  Caption = 'mERP 1.0'
-  ClientHeight = 562
-  ClientWidth = 883
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
+  Caption = 'Pembelian via Supplier'
+  ClientHeight = 560
+  ClientWidth = 881
   Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  OldCreateOrder = False
-  Position = poScreenCenter
+  Position = poMainFormCenter
   OnActivate = FormActivate
-  OnCreate = FormCreate
+  ExplicitWidth = 889
+  ExplicitHeight = 594
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 883
-    Height = 33
-    Align = alTop
-    TabOrder = 0
-    object title: TLabel
-      Left = 8
-      Top = 8
-      Width = 163
-      Height = 18
-      Caption = 'Pembelian via Supplier'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
+  inherited Panel1: TPanel
+    Width = 881
+    TabOrder = 3
+    ExplicitWidth = 881
   end
-  object Panel4: TPanel
-    Left = 0
-    Top = 33
-    Width = 883
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    TabOrder = 1
+  inherited pnlbg1: TPanel
+    Width = 881
+    TabOrder = 4
+    ExplicitWidth = 881
   end
-  object Panel5: TPanel
-    Left = 0
-    Top = 41
-    Width = 883
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 805596
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 2
+  inherited pnlbg2: TPanel
+    Top = 165
+    Width = 881
+    TabOrder = 5
+    ExplicitTop = 165
+    ExplicitWidth = 881
   end
   object Panel3: TPanel
     Left = 0
-    Top = 522
-    Width = 883
+    Top = 520
+    Width = 881
     Height = 40
     Align = alBottom
-    TabOrder = 3
+    TabOrder = 0
     object btntambah: TSpeedButton
       Left = 793
       Top = 0
@@ -259,13 +226,13 @@ object belisupfrm: Tbelisupfrm
   end
   object pnheader: TPanel
     Left = 0
-    Top = 45
-    Width = 883
+    Top = 41
+    Width = 881
     Height = 124
     Align = alTop
     Color = 14408667
     Enabled = False
-    TabOrder = 4
+    TabOrder = 1
     object Label2: TLabel
       Left = 21
       Top = 18
@@ -600,15 +567,15 @@ object belisupfrm: Tbelisupfrm
   object Panel6: TPanel
     Left = 0
     Top = 169
-    Width = 883
-    Height = 353
+    Width = 881
+    Height = 351
     Align = alClient
-    TabOrder = 5
+    TabOrder = 2
     object griditem: TDBGrid
       Left = 1
       Top = 1
-      Width = 881
-      Height = 351
+      Width = 879
+      Height = 349
       Align = alClient
       DataSource = ds.belidetail
       Enabled = False
@@ -804,11 +771,11 @@ object belisupfrm: Tbelisupfrm
   object rdbarangbelimstr: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.barangrpt
-    Left = 512
-    Top = 125
+    Left = 432
+    Top = 149
   end
   object DdeServerConv1: TDdeServerConv
-    Left = 520
-    Top = 80
+    Left = 544
+    Top = 208
   end
 end

@@ -73,7 +73,6 @@ object labarugifrm: Tlabarugifrm
       Top = 24
       Width = 217
       Height = 21
-      ItemHeight = 13
       TabOrder = 0
       Text = 'cbbulan'
       Items.Strings = (
@@ -95,7 +94,6 @@ object labarugifrm: Tlabarugifrm
       Top = 24
       Width = 81
       Height = 21
-      ItemHeight = 13
       TabOrder = 1
     end
   end

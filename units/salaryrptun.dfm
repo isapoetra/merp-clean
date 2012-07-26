@@ -193,7 +193,6 @@ object salaryrptfrm: Tsalaryrptfrm
       Font.Height = -13
       Font.Name = 'Arial'
       Font.Style = []
-      ItemHeight = 16
       ParentCtl3D = False
       ParentFont = False
       TabOrder = 1

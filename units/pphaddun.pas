@@ -37,28 +37,28 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tpphaddfrm.btnsimpanClick(Sender: TObject);
 begin
- simpan(dm.pph);
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
+  simpan(dm.pph);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 procedure Tpphaddfrm.btnbatalClick(Sender: TObject);
 begin
- batal(dm.pph);
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
+  batal(dm.pph);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 procedure Tpphaddfrm.btntambahClick(Sender: TObject);
 begin
- dm.pph.Append;
- btnsimpan.Visible := true;
- btnbatal.Visible  := true;
+  dm.pph.Append;
+  btnsimpan.Visible := true;
+  btnbatal.Visible := true;
 end;
 
 end.

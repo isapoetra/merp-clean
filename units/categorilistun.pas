@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, listrep, Grids, DBGrids, Buttons, StdCtrls, ExtCtrls,
-  DB, ImgList,  JvXPCore, JvXPButtons, DBCtrls, JvDBControls,
+  DB, ImgList, JvXPCore, JvXPButtons, DBCtrls, JvDBControls,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
   JvNetscapeSplitter;
 
@@ -56,7 +56,7 @@ procedure Tkategorifrm.btnAddClick(Sender: TObject);
 begin
   inherited;
   dm.kategori.Append;
-  aktifkanform(kategoriaddfrm, TKategoriaddfrm);
+  aktifkanform(kategoriaddfrm, TKategoriAddfrm);
 end;
 
 procedure Tkategorifrm.btnDeleteClick(Sender: TObject);
@@ -65,7 +65,9 @@ begin
   if dm.barang.Locate('br_kategori', dm.kategori.fieldbyname('kg_id').Value,
     [loCaseInsensitive]) = true then
   begin
-    messagedlg('Kategori ini tidak bisa dihapus karena dipakai oleh item barang pada master barang!', mtError, [mbOk], 0);
+    messagedlg
+      ('Kategori ini tidak bisa dihapus karena dipakai oleh item barang pada master barang!',
+      mtError, [mbOk], 0);
     abort;
   end
   else
@@ -75,5 +77,4 @@ begin
 end;
 
 end.
-
 

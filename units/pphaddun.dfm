@@ -26,7 +26,7 @@ object pphaddfrm: Tpphaddfrm
     object Label1: TLabel
       Left = 8
       Top = 11
-      Width = 148
+      Width = 149
       Height = 18
       Caption = 'Add/Edit Tarif PPh 21'
       Font.Charset = ANSI_CHARSET
@@ -74,7 +74,7 @@ object pphaddfrm: Tpphaddfrm
     object Label4: TLabel
       Left = 13
       Top = 66
-      Width = 62
+      Width = 63
       Height = 16
       Caption = 'Tarif pajak:'
       Font.Charset = ANSI_CHARSET
@@ -88,7 +88,7 @@ object pphaddfrm: Tpphaddfrm
       Left = 176
       Top = 16
       Width = 285
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'ph_level'
       DataSource = ds.pph
@@ -105,7 +105,7 @@ object pphaddfrm: Tpphaddfrm
       Left = 176
       Top = 40
       Width = 285
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'pp_penghasilan'
       DataSource = ds.pph
@@ -122,7 +122,7 @@ object pphaddfrm: Tpphaddfrm
       Left = 176
       Top = 64
       Width = 285
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'pp_tarif'
       DataSource = ds.pph

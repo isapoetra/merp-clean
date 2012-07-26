@@ -10,9 +10,12 @@ uses
   JvNavigationPane, JvExControls, JvExComCtrls, JvCoolBar, JvStatusBar,
   JvExExtCtrls, JvNetscapeSplitter, gnugettext, StdCtrls, JvExStdCtrls,
   JvButton, JvCtrls, JvComponentBase, JvPoweredBy, ActnColorMaps, Buttons,
-  JvExForms, JvScrollBox, JvTabBar;
+  JvExForms, JvScrollBox, JvTabBar, Vcl.Tabs, ZAbstractRODataset,
+  ZAbstractDataset, ZDataset;
+
 resourcestring
   asklogout = 'Do you want to logout ?';
+
 type
   TfrmMain = class(TForm)
     ActionToolBar1: TActionToolBar;
@@ -34,7 +37,7 @@ type
     WindowTileVertical1: TWindowTileVertical;
     WindowMinimizeAll1: TWindowMinimizeAll;
     WindowArrange1: TWindowArrange;
-    Action1: TAction;
+    actUserSettings: TAction;
     FileExit1: TFileExit;
     DataSetFirst1: TDataSetFirst;
     DataSetPrior1: TDataSetPrior;
@@ -68,12 +71,11 @@ type
     actMasterGudang: TAction;
     actMasterSuplier: TAction;
     actMasterCustomer: TAction;
-    Action9: TAction;
+    actInventIn: TAction;
     Action10: TAction;
     Action11: TAction;
     Action12: TAction;
     Action13: TAction;
-    Action14: TAction;
     Action15: TAction;
     Action16: TAction;
     JvScrollBox1: TJvScrollBox;
@@ -85,9 +87,26 @@ type
     Button1: TButton;
     SpeedButton4: TSpeedButton;
     SpeedButton6: TSpeedButton;
-    mdiTab: TJvTabBar;
     Button2: TButton;
     actShowHideDashboard: TAction;
+    actOptions: TAction;
+    mdiTab: TJvTabBar;
+    Quotation: TAction;
+    Action2: TAction;
+    Action5: TAction;
+    actInvoice: TAction;
+    Action6: TAction;
+    Action7: TAction;
+    Action8: TAction;
+    Action9: TAction;
+    Action14: TAction;
+    PTKP: TAction;
+    Action17: TAction;
+    Action18: TAction;
+    Action19: TAction;
+    Action20: TAction;
+    Project: TAction;
+    actSecutiry: TAction;
     procedure FormCreate(Sender: TObject);
     procedure actLoginUpdate(Sender: TObject);
     procedure checkAuth(Sender: TObject);
@@ -106,10 +125,39 @@ type
     procedure mdiTabTabSelected(Sender: TObject; Item: TJvTabBarItem);
     procedure actShowHideDashboardExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
+
+    procedure Action3Execute(Sender: TObject);
+    procedure actInventInExecute(Sender: TObject);
+    procedure Action10Execute(Sender: TObject);
+    procedure actOptionsExecute(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Action4Execute(Sender: TObject);
+    procedure Action12Execute(Sender: TObject);
+    procedure Action11Execute(Sender: TObject);
+    procedure actInvoiceExecute(Sender: TObject);
+    procedure Action5Execute(Sender: TObject);
+    procedure Action2Execute(Sender: TObject);
+    procedure QuotationExecute(Sender: TObject);
+    procedure Action13Execute(Sender: TObject);
+    procedure Action15Execute(Sender: TObject);
+    procedure Action6Execute(Sender: TObject);
+    procedure Action7Execute(Sender: TObject);
+    procedure Action8Execute(Sender: TObject);
+    procedure Action9Execute(Sender: TObject);
+    procedure Action14Execute(Sender: TObject);
+    procedure PTKPExecute(Sender: TObject);
+    procedure Action17Execute(Sender: TObject);
+    procedure Action18Execute(Sender: TObject);
+    procedure Action19Execute(Sender: TObject);
+    procedure Action20Execute(Sender: TObject);
+    procedure Action16Execute(Sender: TObject);
+    procedure ProjectExecute(Sender: TObject);
+    procedure actUserSettingsExecute(Sender: TObject);
+    procedure actSecutiryExecute(Sender: TObject);
   private
     { Private declarations }
     procedure doLogin();
-    procedure showForm(form: TFormClass);
     procedure ChildDatasetChanged(Sender: TObject);
     procedure WMMDIACTIVATE(var msg: TWMMDIACTIVATE); message WM_MDIACTIVATE;
     procedure closeForm(form: TFormClass);
@@ -125,7 +173,8 @@ var
   frmMain: TfrmMain;
 
 implementation
-uses helper, acl, barangmstrun, grouplistun, userlistun, passchangeun,
+
+uses dmun, helper, acl, barangmstrun, grouplistun, userlistun, passchangeun,
   categorilistun, supplierun, customerun, belisupun, polistun, jualun,
   gudangun, gudangaddun, inventoryun, invoicelistun, deliveryun, akunun,
   neracaun, projectun, penawaranun, foot_globalun, labarugiun, glun,
@@ -133,7 +182,7 @@ uses helper, acl, barangmstrun, grouplistun, userlistun, passchangeun,
   salaryinputun, salaryleveltambahun, penguranggajiun, salaryrptun,
   jurnalumumun, dolistun, tagihanun, datacleanun, jurnalumumlistun,
   penjualanrptun, projectlapun, fakturpajakviewun, jasaun, fakturpajakun,
-  dashboardform;
+  dashboardform, optionsform,aclform;
 {$R *.dfm}
 
 procedure TfrmMain.MDIChildDestroyed(const childHandle: THandle);
@@ -168,12 +217,31 @@ end;
 
 procedure TfrmMain.MDIChildCreated(const childHandle: THandle);
 var
-  item: TJvTabBarItem;
+  Item: TJvTabBarItem;
 begin
-  item := mdiTab.Tabs.Add as TJvTabBarItem;
-  item.Data := TObject(childHandle);
-  item.Caption := TForm(FindControl(childHandle)).Caption;
-  item.Selected := true;
+  Item := mdiTab.Tabs.Add as TJvTabBarItem;
+  Item.Data := TObject(childHandle);
+  Item.Caption := TForm(FindControl(childHandle)).Caption;
+  Item.Selected := true;
+end;
+
+procedure TfrmMain.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  while self.MDIChildCount > 0 do
+  begin
+    MDIChildren[0].Free;
+    Application.ProcessMessages;
+  end;
+end;
+
+procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+var
+  form: TForm;
+  i: Integer;
+begin
+  CanClose := true;
+  for i := 0 to self.MDIChildCount - 1 do
+    CanClose := CanClose and MDIChildren[i].CloseQuery;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
@@ -184,7 +252,7 @@ end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
 begin
- if (not acl.isAuthentificated) then
+  if (not acl.isAuthentificated) then
     doLogin();
 end;
 
@@ -204,12 +272,127 @@ end;
 
 procedure TfrmMain.checkAuth(Sender: TObject);
 begin
-  (sender as TAction).Enabled := acl.isAuthentificated;
+  (Sender as TAction).Enabled := acl.isAuthentificated;
+end;
+
+procedure TfrmMain.actInventInExecute(Sender: TObject);
+begin
+  showFormModal(TPolistfrm);
+end;
+
+procedure TfrmMain.actInvoiceExecute(Sender: TObject);
+begin
+  showFormModal(TTagihanfrm);
+end;
+
+procedure TfrmMain.Action10Execute(Sender: TObject);
+begin
+  showForm(TDolistfrm);
+end;
+
+procedure TfrmMain.Action11Execute(Sender: TObject);
+begin
+  showFormModal(TPolistfrm)
+end;
+
+procedure TfrmMain.Action12Execute(Sender: TObject);
+begin
+  showFormModal(TBeliSupFrm);
+end;
+
+procedure TfrmMain.Action13Execute(Sender: TObject);
+begin
+  showFormModal(TJualfrm);
+end;
+
+procedure TfrmMain.Action14Execute(Sender: TObject);
+begin
+  showForm(Tpphfrm);
+end;
+
+procedure TfrmMain.Action15Execute(Sender: TObject);
+begin
+  showForm(TKaryawanfrm);
+end;
+
+procedure TfrmMain.Action16Execute(Sender: TObject);
+begin
+  showFormModal(Tjualrptfrm);
+end;
+
+procedure TfrmMain.Action17Execute(Sender: TObject);
+begin
+  showForm(TDeptfrm);
+end;
+
+procedure TfrmMain.Action18Execute(Sender: TObject);
+begin
+  showForm(Tbankfrm);
+end;
+
+procedure TfrmMain.Action19Execute(Sender: TObject);
+begin
+  showFormModal(TSalaryinputfrm);
+end;
+
+procedure TfrmMain.actUserSettingsExecute(Sender: TObject);
+begin
+  showForm(Tuserlistfrm);
+end;
+
+procedure TfrmMain.Action20Execute(Sender: TObject);
+begin
+  showFormModal(TSalaryrptfrm);
+end;
+
+procedure TfrmMain.Action2Execute(Sender: TObject);
+begin
+  showFormModal(TFootnote_globalfrm);
+end;
+
+procedure TfrmMain.actOptionsExecute(Sender: TObject);
+begin
+  showFormModal(TFrmOptions);
+end;
+
+procedure TfrmMain.Action3Execute(Sender: TObject);
+begin
+  showForm(TInventoryfrm);
+end;
+
+procedure TfrmMain.Action4Execute(Sender: TObject);
+begin
+  showFormModal(TBeliSupFrm);
+end;
+
+procedure TfrmMain.Action5Execute(Sender: TObject);
+begin
+  showForm(TInvoiceListfrm);
+end;
+
+procedure TfrmMain.Action6Execute(Sender: TObject);
+begin
+  showForm(tjobdesfrm);
+end;
+
+procedure TfrmMain.Action7Execute(Sender: TObject);
+begin
+  showForm(TSalaryLevelfrm);
+end;
+
+procedure TfrmMain.Action8Execute(Sender: TObject);
+begin
+  showForm(TSalaryLevelTambahfrm);
+end;
+
+procedure TfrmMain.Action9Execute(Sender: TObject);
+begin
+  showForm(TPengurangGajifrm);
 end;
 
 procedure TfrmMain.actLoginExecute(Sender: TObject);
 var
-  i: integer;
+  i: Integer;
 begin
   if (acl.isAuthentificated) then
   begin
@@ -232,17 +415,30 @@ var
   dlg: TFrmLogin;
 begin
   helper.initialize(self);
-  dlg := TFrmLogin.create(self);
-  if (dlg.showModal() = mrOk) then
+  dlg := TFrmLogin.Create(self);
+  if (dlg.ShowModal() = mrOk) then
   begin
-    showform(TFrmDashboard);
+    showForm(TFrmDashboard);
   end;
+end;
+
+procedure TfrmMain.actSecutiryExecute(Sender: TObject);
+begin
+   ShowFormModal(TFrmACL);
+end;
+
+procedure TfrmMain.actShowHideDashboardExecute(Sender: TObject);
+begin
+  if actShowHideDashboard.Checked then
+    showForm(TFrmDashboard)
+  else
+    closeForm(TFrmDashboard);
 end;
 
 procedure TfrmMain.actShowHideSideExecute(Sender: TObject);
 begin
   splside.visible := actShowHideSide.Checked;
-  sidebar.Visible := actShowHideSide.Checked;
+  sidebar.visible := actShowHideSide.Checked;
 end;
 
 procedure TfrmMain.actBarangExecute(Sender: TObject);
@@ -252,41 +448,13 @@ end;
 
 procedure TfrmMain.closeForm(form: TFormClass);
 var
-  i: integer;
+  i: Integer;
 begin
   for i := 0 to self.MDIChildCount - 1 do
   begin
     if MDIChildren[i].ClassName = form.ClassName then
     begin
       MDIChildren[i].Close;
-    end;
-  end;
-end;
-
-procedure TfrmMain.showForm(form: TFormClass);
-var
-  i: integer;
-  found: boolean;
-  frm: TForm;
-begin
-  found := false;
-  for i := 0 to self.MDIChildCount - 1 do
-  begin
-    if MDIChildren[i].ClassName = form.ClassName then
-    begin
-      MDIChildActivated(MDIChildren[i].Handle);
-      found := true;
-      break;
-    end;
-  end;
-  if (not found) then
-  begin
-    if acl.isAllow(form.ClassName, aclRead) then
-    begin
-      frm := form.Create(self);
-      frm.FormStyle := fsMDIChild;
-      frm.WindowState := wsMaximized;
-      frm.Show;
     end;
   end;
 end;
@@ -326,14 +494,14 @@ begin
   showForm(TProjectfrm);
 end;
 
-procedure TfrmMain.mdiTabTabCloseQuery(Sender: TObject;
-  Item: TJvTabBarItem; var CanClose: Boolean);
+procedure TfrmMain.mdiTabTabCloseQuery(Sender: TObject; Item: TJvTabBarItem;
+  var CanClose: Boolean);
 var
   form: TfrmBase;
 begin
-  form := TfrmBase(FindControl(THandle(item.Data)));
+  form := TfrmBase(FindControl(THandle(Item.Data)));
   if Assigned(form) then
-    canClose := form.CloseQuery;
+    CanClose := form.CloseQuery;
 
 end;
 
@@ -341,9 +509,9 @@ procedure TfrmMain.mdiTabTabClosed(Sender: TObject; Item: TJvTabBarItem);
 var
   form: TfrmBase;
 begin
-  form := TfrmBase(FindControl(THandle(item.Data)));
+  form := TfrmBase(FindControl(THandle(Item.Data)));
   if Assigned(form) then
-    form.close();
+    form.Close();
 end;
 
 procedure TfrmMain.WMMDIACTIVATE(var msg: TWMMDIACTIVATE);
@@ -362,21 +530,26 @@ var
   form: TfrmBase;
 begin
   try
-    form := TfrmBase(FindControl(THandle(item.Data)));
-    if Assigned(form) and form.Visible then
+    form := TfrmBase(FindControl(THandle(Item.Data)));
+    if Assigned(form) and form.visible then
       SendMessage(ClientHandle, WM_MDIACTIVATE, form.Handle, 0);
   except
   end;
 end;
 
-procedure TfrmMain.actShowHideDashboardExecute(Sender: TObject);
+procedure TfrmMain.ProjectExecute(Sender: TObject);
 begin
-  if actShowHideDashboard.Checked then
-    showform(TFrmDashboard)
-  else
-    closeForm(TFrmDashboard);
+  showFormModal(TProjectlapfrm);
+end;
 
+procedure TfrmMain.PTKPExecute(Sender: TObject);
+begin
+  showForm(Tptkpfrm);
+end;
+
+procedure TfrmMain.QuotationExecute(Sender: TObject);
+begin
+  showForm(TPenawaranfrm);
 end;
 
 end.
-

@@ -1,9 +1,10 @@
 unit userlistun;
-
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,baseForm,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  baseForm,
   Dialogs, ExtCtrls, Grids, DBGrids, StdCtrls, Buttons,
   DB, ImgList, JvXPCore, JvXPButtons, DBCtrls, JvDBControls,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
@@ -16,7 +17,7 @@ type
     DBGrid1: TDBGrid;
     SpeedButton3: TSpeedButton;
     procedure FormCreate(Sender: TObject);
-    procedure btnaddClick(Sender: TObject);   
+    procedure btnaddClick(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure btneditClick(Sender: TObject);
   private
@@ -30,54 +31,40 @@ var
 
 implementation
 
-uses dmun, useraddun;
+uses dmun, useraddun, helper;
 
 {$R *.dfm}
 
 procedure Tuserlistfrm.FormCreate(Sender: TObject);
 begin
- if dm.user.Active = false then dm.user.Active := true;
- if dm.useradd.Active = false then dm.useradd.Active := true;
+  inherited;
+  setDataset(dm.user);
 end;
 
 procedure Tuserlistfrm.btnaddClick(Sender: TObject);
 begin
-  dm.useradd.Append;
- if useraddfrm= nil then
- begin
-   application.CreateForm(TUseraddfrm,UserAddfrm);
-   userAddfrm.Showmodal;
- end else
- begin
-   userAddfrm.Showmodal;
- end;
+  dm.user.Append;
+  if showFormModal(TUseraddfrm) = mrOk then
+    dm.user.Refresh;
 end;
-
-
 
 procedure Tuserlistfrm.SpeedButton3Click(Sender: TObject);
 begin
- if messagedlg('Anda Yakin menghapus user '+dm.user.fieldbyname('us_username').Value+'?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
- begin
-   dm.user.Delete;
-   dm.user.ApplyUpdates;
- end;
+  if messagedlg('Anda Yakin menghapus user ' + dm.user.fieldbyname
+    ('us_username').Value + '?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    dm.user.Delete;
+    dm.user.ApplyUpdates;
+  end;
 end;
 
 procedure Tuserlistfrm.btneditClick(Sender: TObject);
 begin
-  if dm.useradd.Locate('us_username',dm.user.fieldbyname('us_username').Value,[loCaseInsensitive])=true then
-  begin
-     dm.useradd.Edit;
-     if useraddfrm = nil then
-     begin
-        application.CreateForm(TUserAddfrm,UserAddfrm);
-        useraddfrm.ShowModal;
-     end else
-     begin
-        useraddfrm.ShowModal;
-     end;
-  end;
+  dm.user.Edit;
+  if showFormModal(TUseraddfrm) = mrOk then
+    dm.user.Refresh;
+
 end;
 
 end.
+

@@ -62,141 +62,150 @@ var
 
 implementation
 
-uses dmun,fungsi_merp,strutils, barangviewun;
+uses dmun, fungsi_merp, strutils, barangviewun;
 {$R *.dfm}
 
 procedure Tpenawaranfrm.generatePenawaran;
-var getNo                 : integer;
-    dbpo                  : string;
-    getMonth              : integer;
-    getMonthdb            : integer;
-    noPO                  : string;
-    zerofill,getYear      : string;
-    getyeardb             : string;
-    finalmonth            : string;
+var
+  getNo: integer;
+  dbpo: string;
+  getMonth: integer;
+  getMonthdb: integer;
+  noPO: string;
+  zerofill, getYear: string;
+  getyeardb: string;
+  finalmonth: string;
 begin
-   getMonth := strToInt(AnsiMidStr(dateToStr(date),4,2)); //ambil digit bulan dan jadikan integer utk membandingkan bulan saat ini dgn bln pd dbase
-   getYear  :=RightStr(DateToStr(date),4);
-   with dm.penawaran do
-   begin
-      sql.Text := 'SELECT * FROM quotation ORDER BY qt_id DESC LIMIT 1';
-      open;
-      dbpo       := fieldbyname('qt_kode').Value;
-      getMonthdb := StrToInt(AnsiMidStr(fieldbyname('qt_kode').Value,11,2));  //ambil digit bulan dari database untuk ditampilkan
-      getyeardb  := rightStr(dbpo,4);
-      getNo      := StrToInt(LeftStr(dbpo,3))+1;
-   end;
+  getMonth := strToInt(AnsiMidStr(dateToStr(date), 4, 2));
+  // ambil digit bulan dan jadikan integer utk membandingkan bulan saat ini dgn bln pd dbase
+  getYear := RightStr(dateToStr(date), 4);
+  with dm.penawaran do
+  begin
+    sql.Text := 'SELECT * FROM quotation ORDER BY qt_id DESC LIMIT 1';
+    open;
+    dbpo := fieldbyname('qt_kode').Value;
+    getMonthdb := strToInt(AnsiMidStr(fieldbyname('qt_kode').Value, 11, 2));
+    // ambil digit bulan dari database untuk ditampilkan
+    getyeardb := RightStr(dbpo, 4);
+    getNo := strToInt(LeftStr(dbpo, 3)) + 1;
+  end;
 
-    case Length(intToStr(getNo))of
-    1 :  zerofill := '00';
-    2 :  zerofill := '0';
-    3 :  zerofill := '';
-    end;
+  case Length(intToStr(getNo)) of
+    1:
+      zerofill := '00';
+    2:
+      zerofill := '0';
+    3:
+      zerofill := '';
+  end;
 
-      if length(intToStr(getmonth))=1 then
-       begin
-          finalmonth := '0'+intToStr(getmonth);
-       end else
-       begin
-          finalmonth := intToStr(getmonth);
-       end;
+  if Length(intToStr(getMonth)) = 1 then
+  begin
+    finalmonth := '0' + intToStr(getMonth);
+  end
+  else
+  begin
+    finalmonth := intToStr(getMonth);
+  end;
 
-    if (getyear <> getyeardb) then
-    begin
-      noPO := '001/SV/QT/01/'+getYear;
-    end else
-    if (getmonth <> getmonthdb)  then   // bandingkan apakah bulan database tidak sama dgn bulan di tanggal system
-    begin
-       //showmessage('bulan di db tdk sama dgn sistem');
+  if (getYear <> getyeardb) then
+  begin
+    noPO := '001/SV/QT/01/' + getYear;
+  end
+  else if (getMonth <> getMonthdb) then
+  // bandingkan apakah bulan database tidak sama dgn bulan di tanggal system
+  begin
+    // showmessage('bulan di db tdk sama dgn sistem');
 
-       
-       noPO := '001'+'/'+'SV/QT/'+finalmonth+'/'+getYear;     // jika tdk sama maka sistem menganggap bulan baru
-    end else if (getmonth = getmonthdb) then
-    begin
-      noPO := zerofill+intToStr(getNo)+'/'+'SV/QT/'+finalMonth+'/'+getYear;  // jika sama maka
-    end;
+    noPO := '001' + '/' + 'SV/QT/' + finalmonth + '/' + getYear;
+    // jika tdk sama maka sistem menganggap bulan baru
+  end
+  else if (getMonth = getMonthdb) then
+  begin
+    noPO := zerofill + intToStr(getNo) + '/' + 'SV/QT/' + finalmonth + '/' +
+      getYear; // jika sama maka
+  end;
 
-    dm.penawaran.Append;
-    dm.penawaran_detail.Append;
-    dbtgl.Text := dateToStr(date);
-    po.Text := noPO;
-    dm.penawaran.Post;
+  dm.penawaran.Append;
+  dm.penawaran_detail.Append;
+  dbtgl.Text := dateToStr(date);
+  po.Text := noPO;
+  dm.penawaran.Post;
 end;
 
 procedure Tpenawaranfrm.cetakQuotation;
 begin
   with dm.penawaran_detail do
   begin
-   sql.Text := 'select * from quotation_detail where qd_kode = (:qk) ';
-   params.ParamByName('qk').Value := po.Text;
-   open;
+    sql.Text := 'select * from quotation_detail where qd_kode = (:qk) ';
+    params.ParamByName('qk').Value := po.Text;
+    open;
   end;
 
-  
-
   rpQuotation.ProjectFile := 'quotation.rav';
-  rpQuotation.SelectReport('quotation.rav',true);
+  rpQuotation.SelectReport('quotation.rav', true);
   rpQuotation.Execute;
 end;
 
 procedure Tpenawaranfrm.FormCreate(Sender: TObject);
 begin
-   aktifkandata(dm.penawaran);
-   aktifkandata(dm.penawaran_detail);
-   aktifkandata(dm.customer);
-   aktifkandata(dm.project);
-   aktifkandata(dm.custpic);
+  aktifkandata(dm.penawaran);
+  aktifkandata(dm.penawaran_detail);
+  aktifkandata(dm.customer);
+  aktifkandata(dm.project);
+  aktifkandata(dm.custpic);
 end;
 
 procedure Tpenawaranfrm.btntambahClick(Sender: TObject);
 begin
- generatePenawaran;
- btnsimpan.Visible := true;
- btnbatal.Visible  := true;
+  generatePenawaran;
+  btnsimpan.Visible := true;
+  btnbatal.Visible := true;
 end;
 
 procedure Tpenawaranfrm.SpeedButton1Click(Sender: TObject);
 begin
- dbtgl.Enabled := true;
+  dbtgl.Enabled := true;
 end;
 
 procedure Tpenawaranfrm.btnsimpanClick(Sender: TObject);
 begin
-if messagedlg('Simpan Record ini?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
-begin
-  dbtgl.Enabled := false;
-  btnsimpan.Visible := false;
-  btnbatal.Visible  := false;
-  dm.penawaran.ApplyUpdates;
-  dm.penawaran_detail.ApplyUpdates;
-  cetakQuotation;
-end;  
+  if messagedlg('Simpan Record ini?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
+  begin
+    dbtgl.Enabled := false;
+    btnsimpan.Visible := false;
+    btnbatal.Visible := false;
+    dm.penawaran.ApplyUpdates;
+    dm.penawaran_detail.ApplyUpdates;
+    cetakQuotation;
+  end;
 end;
 
 procedure Tpenawaranfrm.DBGrid1KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
- if key=vk_return then
- begin
-   aktifkanform(barangviewfrm,TBarangViewfrm);
- end;
+  if Key = vk_return then
+  begin
+    aktifkanform(barangviewfrm, TBarangViewfrm);
+  end;
 end;
 
-procedure Tpenawaranfrm.FormClose(Sender: TObject;
-  var Action: TCloseAction);
+procedure Tpenawaranfrm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
- isPenawaran :=0;
+  isPenawaran := 0;
 end;
 
 procedure Tpenawaranfrm.btnbatalClick(Sender: TObject);
 begin
-if messagedlg('Batalkan Record ini?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
-begin
-   btnsimpan.Visible := false;
-   btnbatal.Visible  := false;
-   dm.penawaran.CancelUpdates;
-   dm.penawaran_detail.CancelUpdates;
-end;
+  if messagedlg('Batalkan Record ini?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
+  begin
+    btnsimpan.Visible := false;
+    btnbatal.Visible := false;
+    dm.penawaran.CancelUpdates;
+    dm.penawaran_detail.CancelUpdates;
+  end;
 end;
 
 end.

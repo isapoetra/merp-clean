@@ -1,65 +1,36 @@
-object deliveryfrm: Tdeliveryfrm
+inherited deliveryfrm: Tdeliveryfrm
   Left = 42
   Top = 124
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'mERP 1.0'
+  Caption = 'Pengiriman Barang'
   ClientHeight = 521
   ClientWidth = 763
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
   Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
-  OnCreate = FormCreate
+  ExplicitWidth = 769
+  ExplicitHeight = 553
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
+  inherited Panel1: TPanel
     Width = 763
-    Height = 33
-    Align = alTop
-    TabOrder = 0
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 135
-      Height = 18
-      Caption = 'Pengiriman Barang'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
+    TabOrder = 3
+    ExplicitWidth = 763
   end
-  object Panel4: TPanel
-    Left = 0
-    Top = 33
+  inherited pnlbg1: TPanel
     Width = 763
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    TabOrder = 1
+    TabOrder = 4
+    ExplicitLeft = -8
+    ExplicitTop = 31
+    ExplicitWidth = 763
   end
-  object Panel5: TPanel
-    Left = 0
-    Top = 41
+  inherited pnlbg2: TPanel
     Width = 763
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 805596
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 2
+    TabOrder = 5
+    ExplicitLeft = -8
+    ExplicitTop = 33
+    ExplicitWidth = 763
   end
   object pndo: TPanel
     Left = 0
@@ -69,7 +40,8 @@ object deliveryfrm: Tdeliveryfrm
     Align = alTop
     Color = 14408667
     Enabled = False
-    TabOrder = 3
+    TabOrder = 0
+    ExplicitTop = 33
     object Label2: TLabel
       Left = 45
       Top = 10
@@ -86,7 +58,7 @@ object deliveryfrm: Tdeliveryfrm
     object Label3: TLabel
       Left = 40
       Top = 83
-      Width = 47
+      Width = 48
       Height = 16
       Caption = 'Ship To:'
       Font.Charset = ANSI_CHARSET
@@ -132,7 +104,7 @@ object deliveryfrm: Tdeliveryfrm
     object Label5: TLabel
       Left = 42
       Top = 34
-      Width = 48
+      Width = 49
       Height = 16
       Caption = 'Tanggal:'
       Font.Charset = ANSI_CHARSET
@@ -165,8 +137,8 @@ object deliveryfrm: Tdeliveryfrm
       ParentFont = False
     end
     object SpeedButton2: TSpeedButton
-      Left = 424
-      Top = 56
+      Left = 423
+      Top = 51
       Width = 25
       Height = 25
       Glyph.Data = {
@@ -220,7 +192,7 @@ object deliveryfrm: Tdeliveryfrm
       Left = 101
       Top = 8
       Width = 348
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'do_kode'
       DataSource = ds.delivery
@@ -278,7 +250,7 @@ object deliveryfrm: Tdeliveryfrm
       Left = 101
       Top = 32
       Width = 145
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'do_tgl'
       DataSource = ds.delivery
@@ -295,7 +267,7 @@ object deliveryfrm: Tdeliveryfrm
       Left = 101
       Top = 56
       Width = 316
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'do_ju_trans'
       DataSource = ds.delivery
@@ -317,10 +289,10 @@ object deliveryfrm: Tdeliveryfrm
     Width = 763
     Height = 40
     Align = alBottom
-    TabOrder = 4
+    TabOrder = 1
     object btntambah: TSpeedButton
-      Left = 673
-      Top = 0
+      Left = 679
+      Top = 6
       Width = 89
       Height = 38
       Cursor = crHandPoint
@@ -381,7 +353,7 @@ object deliveryfrm: Tdeliveryfrm
       OnClick = btntambahClick
     end
     object btnsimpan: TSpeedButton
-      Left = 673
+      Left = 497
       Top = 1
       Width = 89
       Height = 38
@@ -518,7 +490,7 @@ object deliveryfrm: Tdeliveryfrm
     Enabled = False
     Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
     ParentCtl3D = False
-    TabOrder = 5
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11

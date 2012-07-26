@@ -1,6 +1,5 @@
 object ds: Tds
   OldCreateOrder = False
-  Left = 778
   Height = 644
   Width = 538
   object user: TDataSource

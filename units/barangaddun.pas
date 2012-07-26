@@ -51,38 +51,39 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, categorilistun, supplierun;
+uses dmun, fungsi_merp, categorilistun, supplierun;
 {$R *.dfm}
 
 procedure Tbarangaddfrm.FormCreate(Sender: TObject);
-begin    
+begin
   aktifkandata(dm.supplier);
   aktifkandata(dm.kategori);
 end;
 
 procedure Tbarangaddfrm.SpeedButton5Click(Sender: TObject);
 begin
-  aktifkanform(kategorifrm,TKategorifrm);
+  aktifkanform(kategorifrm, TKategorifrm);
 end;
 
 procedure Tbarangaddfrm.SpeedButton6Click(Sender: TObject);
 begin
- aktifkanform(SupplierFrm,TSupplierFrm);
+  aktifkanform(SupplierFrm, TSupplierFrm);
 end;
 
 procedure Tbarangaddfrm.SpeedButton4Click(Sender: TObject);
 begin
-   if speedbutton4.caption = '&Simpan' then
-   begin
-      simpan(dm.barang);
-      speedbutton4.Caption := '&Tambah';
-      speedbutton3.Visible := false;
-   end else
-   begin
-      dm.barang.Append;
-      speedbutton4.Caption := '&Simpan';
-      speedbutton3.Visible := true;
-   end;
+  if SpeedButton4.caption = '&Simpan' then
+  begin
+    simpan(dm.barang);
+    SpeedButton4.caption := '&Tambah';
+    SpeedButton3.Visible := false;
+  end
+  else
+  begin
+    dm.barang.Append;
+    SpeedButton4.caption := '&Simpan';
+    SpeedButton3.Visible := true;
+  end;
 end;
 
 procedure Tbarangaddfrm.SpeedButton3Click(Sender: TObject);

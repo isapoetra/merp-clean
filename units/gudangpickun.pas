@@ -29,12 +29,12 @@ var
 
 implementation
 
-uses dmun,fungsi_merp,db;
+uses dmun, fungsi_merp, db;
 {$R *.dfm}
 
 procedure Tgudangpickfrm.postToInventory;
 begin
-  
+
   with dm.polist do
   begin
     edit;
@@ -46,33 +46,41 @@ begin
   // kelompokkan data pembelian berdasarkan no po
   with dm.bd_inventory do
   begin
-    sql.Text := 'select * from belidetail '+
-    'where bd_kode = (:k) ';
+    sql.Text := 'select * from belidetail ' + 'where bd_kode = (:k) ';
     params.ParamByName('k').Value := dm.polist.fieldbyname('be_kode').Value;
     open;
     first;
     while not eof do
     begin
-      //cari di inventory apakah data barang sudah ada atau belum
+      // cari di inventory apakah data barang sudah ada atau belum
       aktifkandata(dm.inventory_post);
-      if dm.inventory_post.Locate('in_kd_barang',fieldbyname('bd_kd_barang').Value,[loCaseInsensitive]) = true then
+      if dm.inventory_post.Locate('in_kd_barang', fieldbyname('bd_kd_barang')
+        .Value, [loCaseInsensitive]) = true then
       begin
         // kalau sudah ada di edit;
-       // showmessage('ada');
-        dm.inventory_post.Edit;
-        dm.inventory_post.FieldByName('in_stock').Value     :=  dm.inventory_post.FieldByName('in_stock').Value+fieldbyname('bd_qty').Value;
-        dm.inventory_post.FieldByName('in_harga').Value     := fieldbyname('bd_harga').Value;
-        dm.inventory_post.Post;
-        dm.inventory_post.ApplyUpdates;
-      end else
+        // showmessage('ada');
+        dm.inventory_post.edit;
+        dm.inventory_post.fieldbyname('in_stock').Value :=
+          dm.inventory_post.fieldbyname('in_stock').Value +
+          fieldbyname('bd_qty').Value;
+        dm.inventory_post.fieldbyname('in_harga').Value :=
+          fieldbyname('bd_harga').Value;
+        dm.inventory_post.post;
+        dm.inventory_post.applyupdates;
+      end
+      else
       begin
         dm.inventory_post.Append;
-        dm.inventory_post.FieldByName('in_kd_barang').Value := fieldbyname('bd_kd_barang').Value;
-        dm.inventory_post.FieldByName('in_kd_gudang').Value := lookgudang.KeyValue;
-        dm.inventory_post.FieldByName('in_stock').Value     := fieldbyname('bd_qty').Value;
-        dm.inventory_post.FieldByName('in_harga').Value     := fieldbyname('bd_harga').Value;
-        dm.inventory_post.Post;
-        dm.inventory_post.ApplyUpdates;
+        dm.inventory_post.fieldbyname('in_kd_barang').Value :=
+          fieldbyname('bd_kd_barang').Value;
+        dm.inventory_post.fieldbyname('in_kd_gudang').Value :=
+          lookgudang.KeyValue;
+        dm.inventory_post.fieldbyname('in_stock').Value :=
+          fieldbyname('bd_qty').Value;
+        dm.inventory_post.fieldbyname('in_harga').Value :=
+          fieldbyname('bd_harga').Value;
+        dm.inventory_post.post;
+        dm.inventory_post.applyupdates;
       end; // end of inventory
       next;
     end; // end of while

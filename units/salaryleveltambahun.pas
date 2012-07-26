@@ -33,19 +33,19 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, salary_level_tambahaddun;
+uses dmun, fungsi_merp, salary_level_tambahaddun;
 {$R *.dfm}
 
 procedure Tsalaryleveltambahfrm.btntambahClick(Sender: TObject);
 begin
   dm.salary_level_tambah.Append;
-  aktifkanform(salaryleveltambahaddfrm,Tsalaryleveltambahaddfrm);
+  aktifkanform(salaryleveltambahaddfrm, Tsalaryleveltambahaddfrm);
 end;
 
 procedure Tsalaryleveltambahfrm.btneditClick(Sender: TObject);
 begin
   dm.salary_level_tambah.edit;
-  aktifkanform(salaryleveltambahaddfrm,Tsalaryleveltambahaddfrm);
+  aktifkanform(salaryleveltambahaddfrm, Tsalaryleveltambahaddfrm);
 end;
 
 procedure Tsalaryleveltambahfrm.SpeedButton1Click(Sender: TObject);
@@ -56,15 +56,18 @@ end;
 procedure Tsalaryleveltambahfrm.gridtambahKeyDown(Sender: TObject;
   var Key: Word; Shift: TShiftState);
 begin
- if key=vk_return then
- begin
-   dm.salary_level_detail_t.Append;
-   dm.salary_level_detail_t.FieldByName('sd_kode_item').Value := gridtambah.Fields[0].Value;
-   dm.salary_level_detail_t.FieldByName('sd_nama').Value      := gridtambah.Fields[1].Value;
-   dm.salary_level_detail_t.FieldByName('sd_amount').Value    := gridtambah.Fields[2].Value;
-   dm.salary_level_detail_t.FieldByName('sd_jenis').Value  := 'tambah';
-   close;
- end;
+  if Key = vk_return then
+  begin
+    dm.salary_level_detail_t.Append;
+    dm.salary_level_detail_t.FieldByName('sd_kode_item').Value :=
+      gridtambah.Fields[0].Value;
+    dm.salary_level_detail_t.FieldByName('sd_nama').Value :=
+      gridtambah.Fields[1].Value;
+    dm.salary_level_detail_t.FieldByName('sd_amount').Value :=
+      gridtambah.Fields[2].Value;
+    dm.salary_level_detail_t.FieldByName('sd_jenis').Value := 'tambah';
+    close;
+  end;
 end;
 
 end.

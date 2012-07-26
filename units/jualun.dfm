@@ -144,7 +144,7 @@ object jualfrm: Tjualfrm
     object Label5: TLabel
       Left = 909
       Top = 40
-      Width = 48
+      Width = 49
       Height = 16
       Caption = 'Tanggal:'
       Font.Charset = ANSI_CHARSET
@@ -167,7 +167,7 @@ object jualfrm: Tjualfrm
     object Label6: TLabel
       Left = 893
       Top = 64
-      Width = 63
+      Width = 64
       Height = 16
       Caption = 'Jth Tempo:'
       Font.Charset = ANSI_CHARSET
@@ -256,7 +256,7 @@ object jualfrm: Tjualfrm
       Left = 77
       Top = 16
       Width = 348
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'ju_kode'
       DataSource = ds.jual
@@ -314,7 +314,7 @@ object jualfrm: Tjualfrm
       Left = 968
       Top = 38
       Width = 145
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'ju_tgl'
       DataSource = ds.jual
@@ -336,7 +336,6 @@ object jualfrm: Tjualfrm
       Ctl3D = False
       DataField = 'ju_bayar'
       DataSource = ds.jual
-      ItemHeight = 13
       Items.Strings = (
         'CASH'
         'HUTANG')
@@ -347,7 +346,7 @@ object jualfrm: Tjualfrm
       Left = 77
       Top = 110
       Width = 348
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'ju_po'
       DataSource = ds.jual
@@ -398,7 +397,6 @@ object jualfrm: Tjualfrm
       Ctl3D = False
       DataField = 'ju_ppn'
       DataSource = ds.jual
-      ItemHeight = 13
       Items.Strings = (
         'Ya'
         'Tidak')
@@ -409,7 +407,7 @@ object jualfrm: Tjualfrm
       Left = 968
       Top = 110
       Width = 177
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'ju_downpayment'
       DataSource = ds.jual
@@ -621,7 +619,7 @@ object jualfrm: Tjualfrm
     object Label12: TLabel
       Left = 16
       Top = 10
-      Width = 138
+      Width = 166
       Height = 18
       Caption = '[ENTER] - Input Barang'
       Font.Charset = ANSI_CHARSET
@@ -634,7 +632,7 @@ object jualfrm: Tjualfrm
     object Label13: TLabel
       Left = 168
       Top = 10
-      Width = 96
+      Width = 112
       Height = 18
       Caption = '[F5] - Input Jasa'
       Font.Charset = ANSI_CHARSET

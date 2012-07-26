@@ -36,26 +36,27 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tprojectaddfrm.FormCreate(Sender: TObject);
 begin
- //aktifkandata(dm.customer);
+  // aktifkandata(dm.customer);
 end;
 
 procedure Tprojectaddfrm.btnsimpanClick(Sender: TObject);
 begin
   if btnsimpan.Caption = '&Simpan' then
   begin
-     btnsimpan.Caption := '&Tambah';
-     btnbatal.Visible  := false;
-     simpan(dm.project);
-  end else
+    btnsimpan.Caption := '&Tambah';
+    btnbatal.Visible := false;
+    simpan(dm.project);
+  end
+  else
   begin
-     btnsimpan.Caption := '&Simpan';
-     btnbatal.Visible  := true;
-     dm.project.Append;
+    btnsimpan.Caption := '&Simpan';
+    btnbatal.Visible := true;
+    dm.project.Append;
   end;
 end;
 

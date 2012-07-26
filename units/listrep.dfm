@@ -15,19 +15,19 @@ inherited listrepfrm: Tlistrepfrm
     ExplicitLeft = 267
     ExplicitHeight = 397
   end
-  inherited Panel4: TPanel
+  inherited Panel1: TPanel
+    Width = 527
+    TabOrder = 0
+    ExplicitWidth = 527
+  end
+  inherited pnlbg1: TPanel
     Width = 527
     TabOrder = 2
     ExplicitWidth = 527
   end
-  inherited Panel5: TPanel
+  inherited pnlbg2: TPanel
     Width = 527
     TabOrder = 3
-    ExplicitWidth = 527
-  end
-  inherited Panel1: TPanel
-    Width = 527
-    TabOrder = 0
     ExplicitWidth = 527
   end
   inherited JvScrollMax1: TJvScrollMax

@@ -31,29 +31,30 @@ var
   pphfrm: Tpphfrm;
 
 implementation
-uses dmun,fungsi_merp, pphaddun;
+
+uses dmun, fungsi_merp, pphaddun;
 {$R *.dfm}
 
 procedure Tpphfrm.btntambahClick(Sender: TObject);
 begin
- dm.pph.Append;
- aktifkanform(pphaddfrm,tpphaddfrm);
+  dm.pph.Append;
+  aktifkanform(pphaddfrm, tpphaddfrm);
 end;
 
 procedure Tpphfrm.btneditClick(Sender: TObject);
 begin
- dm.pph.edit;
- aktifkanform(pphaddfrm,tpphaddfrm);
+  dm.pph.edit;
+  aktifkanform(pphaddfrm, tpphaddfrm);
 end;
 
 procedure Tpphfrm.SpeedButton1Click(Sender: TObject);
 begin
- hapus(dm.pph);
+  hapus(dm.pph);
 end;
 
 procedure Tpphfrm.FormActivate(Sender: TObject);
 begin
- aktifkandata(dm.pph);
+  aktifkandata(dm.pph);
 end;
 
 end.

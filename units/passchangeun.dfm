@@ -110,7 +110,7 @@ object passchangefrm: Tpasschangefrm
       Left = 136
       Top = 20
       Width = 227
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -127,7 +127,7 @@ object passchangefrm: Tpasschangefrm
       Left = 136
       Top = 44
       Width = 227
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -144,7 +144,7 @@ object passchangefrm: Tpasschangefrm
       Left = 136
       Top = 68
       Width = 227
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

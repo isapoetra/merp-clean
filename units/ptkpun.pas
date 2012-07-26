@@ -33,24 +33,25 @@ var
   ptkpfrm: Tptkpfrm;
 
 implementation
-uses dmun,fungsi_merp, ptkpaddun;
+
+uses dmun, fungsi_merp, ptkpaddun;
 {$R *.dfm}
 
 procedure Tptkpfrm.btntambahClick(Sender: TObject);
 begin
- dm.ptkp.Append;
- aktifkanform(ptkpAddfrm,TptkpAddfrm);
+  dm.ptkp.Append;
+  aktifkanform(ptkpAddfrm, TptkpAddfrm);
 end;
 
 procedure Tptkpfrm.btneditClick(Sender: TObject);
 begin
- dm.ptkp.edit;
- aktifkanform(ptkpAddfrm,TptkpAddfrm);
+  dm.ptkp.edit;
+  aktifkanform(ptkpAddfrm, TptkpAddfrm);
 end;
 
 procedure Tptkpfrm.SpeedButton1Click(Sender: TObject);
 begin
- hapus(dm.ptkp);
+  hapus(dm.ptkp);
 end;
 
 end.

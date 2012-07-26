@@ -83,7 +83,7 @@ object deptfrm: Tdeptfrm
       Left = 54
       Top = 8
       Width = 307
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

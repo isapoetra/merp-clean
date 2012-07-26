@@ -14,19 +14,19 @@ inherited jasafrm: Tjasafrm
     ExplicitLeft = 359
     ExplicitHeight = 461
   end
-  inherited Panel4: TPanel
+  inherited Panel1: TPanel
+    Width = 619
+    TabOrder = 4
+    ExplicitWidth = 619
+  end
+  inherited pnlbg1: TPanel
     Width = 619
     TabOrder = 2
     ExplicitWidth = 619
   end
-  inherited Panel5: TPanel
+  inherited pnlbg2: TPanel
     Width = 619
     TabOrder = 3
-    ExplicitWidth = 619
-  end
-  inherited Panel1: TPanel
-    Width = 619
-    TabOrder = 4
     ExplicitWidth = 619
   end
   inherited JvScrollMax1: TJvScrollMax

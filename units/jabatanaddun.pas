@@ -34,7 +34,8 @@ var
   jabatanaddfrm: Tjabatanaddfrm;
 
 implementation
-uses dmun,fungsi_merp;
+
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tjabatanaddfrm.btnsimpanClick(Sender: TObject);

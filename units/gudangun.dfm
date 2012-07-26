@@ -15,23 +15,24 @@ inherited gudangfrm: Tgudangfrm
     ExplicitLeft = 439
     ExplicitHeight = 356
   end
-  inherited Panel4: TPanel
+  inherited Panel1: TPanel
+    Width = 699
+    ExplicitWidth = 699
+  end
+  inherited pnlbg1: TPanel
     Width = 699
     TabOrder = 4
     ExplicitWidth = 699
   end
-  inherited Panel5: TPanel
+  inherited pnlbg2: TPanel
     Width = 699
     TabOrder = 5
-    ExplicitWidth = 699
-  end
-  inherited Panel1: TPanel
-    Width = 699
     ExplicitWidth = 699
   end
   inherited JvScrollMax1: TJvScrollMax
     Left = 449
     Height = 356
+    TabOrder = 2
     ExplicitLeft = 449
     ExplicitHeight = 356
     inherited navdbcontainer: TJvScrollMaxBand

@@ -34,28 +34,29 @@ var
   bankaddfrm: Tbankaddfrm;
 
 implementation
- uses dmun,fungsi_merp;
+
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tbankaddfrm.btnsimpanClick(Sender: TObject);
 begin
- simpan(dm.bank);
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
+  simpan(dm.bank);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 procedure Tbankaddfrm.btnbatalClick(Sender: TObject);
 begin
   batal(dm.bank);
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 procedure Tbankaddfrm.btntambahClick(Sender: TObject);
 begin
   dm.bank.Append;
   btnsimpan.Visible := true;
-  btnbatal.Visible  := true;
+  btnbatal.Visible := true;
 end;
 
 end.

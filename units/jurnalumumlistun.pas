@@ -31,18 +31,20 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, jurnalumumun;
+uses dmun, fungsi_merp, jurnalumumun;
 {$R *.dfm}
 
 procedure Tjurnalumumlistfrm.hapusJurnalUmum;
-var kodetrans : string;
+var
+  kodetrans: string;
 begin
   kodetrans := dm.jurnalumum.fieldbyname('ju_kode').AsString;
 
   with dm.jurnaldetail do
   begin
     sql.Text := 'select * from jurnal_umum_detail where jl_kode = (:jk) ';
-    params.ParamByName('jk').Value := dm.jurnalumum.fieldbyname('ju_kode').Value;
+    params.ParamByName('jk').Value := dm.jurnalumum.fieldbyname
+      ('ju_kode').Value;
     open;
     last;
     while not bof do
@@ -61,28 +63,28 @@ begin
     last;
     while not bof do
     begin
-    delete;
-    previous;
+      delete;
+      previous;
     end;
     applyupdates;
   end;
 
-  dm.jurnalumum.Delete;
-  dm.jurnalumum.ApplyUpdates;
-
+  dm.jurnalumum.delete;
+  dm.jurnalumum.applyupdates;
 
 end;
 
 procedure Tjurnalumumlistfrm.SpeedButton5Click(Sender: TObject);
 begin
-  if messagedlg('Hapus Jurnal ini? ',mtConfirmation,[mbYes,mbNo],0)=mrYes then
+  if messagedlg('Hapus Jurnal ini? ', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
   begin
-    if dm.jurnalumum.FieldByName('ju_kode').Value = 'JU00000000' then
+    if dm.jurnalumum.fieldbyname('ju_kode').Value = 'JU00000000' then
     begin
-      messagedlg('Kode Sistem, tidak bisa dihapus!',mtError,[mbOk],0);
+      messagedlg('Kode Sistem, tidak bisa dihapus!', mtError, [mbOk], 0);
       abort;
     end;
-    hapusJurnalumum;
+    hapusJurnalUmum;
   end;
 end;
 
@@ -94,7 +96,7 @@ end;
 
 procedure Tjurnalumumlistfrm.SpeedButton4Click(Sender: TObject);
 begin
-  aktifkanform(jurnalumumfrm,Tjurnalumumfrm);
+  aktifkanform(jurnalumumfrm, Tjurnalumumfrm);
 end;
 
 end.

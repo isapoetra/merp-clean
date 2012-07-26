@@ -1,12 +1,17 @@
 unit acl;
 {$I merp.inc}
+
 interface
+
 uses classes, SysUtils;
+
 resourcestring
   accessdenied = 'Access Denied';
+
 type
-  TACLPrivs = (aclRead = 1, aclAdd = 2, aclEdit = 4, aclDelete = 7, aclManage =
-    127);
+  TACLPrivs = (aclRead = 1, aclAdd = 2, aclEdit = 4, aclDelete = 7,
+    aclManage = 127);
+
   TACLItem = class(TCollectionItem)
   private
     FObjectId: string;
@@ -17,13 +22,15 @@ type
     property Privs: TACLPrivs read FPrivs;
 
   end;
+
   TACLCollection = class(TCollection)
   public
     constructor Create();
-    function getItem(objectId: string): TACLItem; overload;
-    function Add(objectId: string; privs: TACLPrivs): TACLItem;
-    function contains(objectId: string): boolean;
+    function getItem(ObjectId: string): TACLItem; overload;
+    function Add(ObjectId: string; Privs: TACLPrivs): TACLItem;
+    function contains(ObjectId: string): Boolean;
   end;
+
   TLogonInfo = class(TObject)
   private
     FUserId: Integer;
@@ -38,65 +45,69 @@ type
     property LastName: string read FLastName;
     property Password: string read FPassword;
   end;
+
 function authenticate(userName: string; pass: string): Boolean;
-function isAuthentificated(): boolean;
-function isAllow(objectId: string; privs: TACLPrivs): Boolean;
+function isAuthentificated(): Boolean;
+function isAllow(ObjectId: string; Privs: TACLPrivs): Boolean;
 procedure logout();
-function getLogonInfo() : TLogonInfo;
+function getLogonInfo(): TLogonInfo;
+
 implementation
+
 uses dmun, zdataset, ZAbstractDataset, helper;
+
 var
   logonInfo: TLogonInfo;
   ACLCache: TACLCollection;
-function getLogonInfo() : TLogonInfo  ;
+
+function getLogonInfo(): TLogonInfo;
 begin
-  Result:= logonInfo;
+  Result := logonInfo;
 end;
-function grantRolePriv(objectId: string; privs: TACLPrivs; roleid: integer):
-  Boolean;
+
+function grantRolePriv(ObjectId: string; Privs: TACLPrivs;
+  roleid: Integer): Boolean;
 var
   rw: Integer;
 begin
-  objectId := LowerCase(objectId);
-  if not ACLCache.contains(objectId) then
+  ObjectId := LowerCase(ObjectId);
+  if not ACLCache.contains(ObjectId) then
   begin
-    ACLCache.Add(objectId,privs);
+    ACLCache.Add(ObjectId, Privs);
     dm.conerp.ExecuteDirect('insert into objects (object_id) values(''' +
-      objectId
-      + ''')');
+      ObjectId + ''')');
     dm.conerp.ExecuteDirect('insert into role_privs values(' + inttostr(roleid)
-      +
-      ',''' + objectId + ''',' + IntToStr(Ord(privs)) + ')', rw);
+      + ',''' + ObjectId + ''',' + inttostr(Ord(Privs)) + ')', rw);
   end;
   Result := true;
 end;
 
-function isAllow(objectId: string; privs: TACLPrivs): Boolean;
+function isAllow(ObjectId: string; Privs: TACLPrivs): Boolean;
 var
   item: TACLItem;
 begin
-  objectId := LowerCase(objectId);
+  ObjectId := LowerCase(ObjectId);
   if not assigned(logonInfo) then
     Result := false
   else
   begin
-    item := ACLCache.GetItem(objectId);
+    item := ACLCache.getItem(ObjectId);
     if assigned(item) then
-      Result := item.isAllow(privs)
+      Result := item.isAllow(Privs)
     else
       Result := false;
 
   end;
 {$IFDEF DEV_MODE}
-  grantRolePriv(objectId, aclManage, 1);
+  grantRolePriv(ObjectId, aclManage, 1);
 {$ENDIF}
 end;
 
 function authenticate(userName: string; pass: string): Boolean;
 var
   q: TZQuery;
-  privs: TACLPrivs;
-  uid: integer;
+  Privs: TACLPrivs;
+  uid: Integer;
 begin
 
   if (not isAuthentificated) then
@@ -135,12 +146,12 @@ begin
       q.Active := true;
       while not q.Eof do
       begin
-        privs := TACLPrivs(q.FieldByName('privs').asInteger);
-        ACLCache.Add(q.FieldByName('object_id').AsString, privs);
+        Privs := TACLPrivs(q.FieldByName('privs').AsInteger);
+        ACLCache.Add(q.FieldByName('object_id').asString, Privs);
         q.Next;
       end;
     end;
-    FreeAndNil(q);
+    freeAndNil(q);
   end;
   Result := isAuthentificated;
 end;
@@ -158,19 +169,18 @@ begin
 end;
 { TACLCollection }
 
-function TACLCollection.Add(objectId: string;
-  privs: TACLPrivs): TACLItem;
+function TACLCollection.Add(ObjectId: string; Privs: TACLPrivs): TACLItem;
 begin
   Result := inherited Add() as TACLItem;
-  Result.FObjectId := objectId;
-  Result.FPrivs := privs;
-  //TACLItem.Create(objectId,privs);
+  Result.FObjectId := ObjectId;
+  Result.FPrivs := Privs;
+  // TACLItem.Create(objectId,privs);
 
 end;
 
-function TACLCollection.contains(objectId: string): boolean;
+function TACLCollection.contains(ObjectId: string): Boolean;
 begin
-  Result := assigned(getItem(objectId));
+  Result := assigned(getItem(ObjectId));
 end;
 
 constructor TACLCollection.Create;
@@ -178,7 +188,7 @@ begin
   inherited Create(TACLItem);
 end;
 
-function TACLCollection.getItem(objectId: string): TACLItem;
+function TACLCollection.getItem(ObjectId: string): TACLItem;
 var
   i: Integer;
   item: TACLItem;
@@ -187,7 +197,7 @@ begin
   for i := 0 to Count - 1 do
   begin
     item := getItem(i) as TACLItem;
-    if item.objectId = objectId then
+    if item.ObjectId = ObjectId then
     begin
       Result := item;
       break;
@@ -200,12 +210,13 @@ end;
 function TACLItem.isAllow(priv: TACLPrivs): Boolean;
 begin
   if aclManage = FPrivs then
-    result := true
+    Result := true
   else
-    Result := IsBitSet(ord(priv), ord(FPrivs));
+    Result := IsBitSet(Ord(priv), Ord(FPrivs));
 end;
 
 initialization
-  ACLCache := TACLCollection.Create;
-end.
 
+ACLCache := TACLCollection.Create;
+
+end.

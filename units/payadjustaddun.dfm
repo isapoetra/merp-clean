@@ -232,7 +232,7 @@ object payadjustaddfrm: Tpayadjustaddfrm
     object Label2: TLabel
       Left = 13
       Top = 42
-      Width = 94
+      Width = 95
       Height = 16
       Caption = 'Tambah/Potong:'
       Font.Charset = ANSI_CHARSET
@@ -246,7 +246,7 @@ object payadjustaddfrm: Tpayadjustaddfrm
       Left = 128
       Top = 16
       Width = 298
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'gd_lokasi'
       DataSource = ds.gudang
@@ -265,7 +265,6 @@ object payadjustaddfrm: Tpayadjustaddfrm
       Width = 297
       Height = 21
       Ctl3D = False
-      ItemHeight = 13
       ParentCtl3D = False
       TabOrder = 1
     end

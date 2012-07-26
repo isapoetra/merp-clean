@@ -138,7 +138,7 @@ object invoicprintfrm: Tinvoicprintfrm
     object Label3: TLabel
       Left = 24
       Top = 53
-      Width = 96
+      Width = 97
       Height = 18
       Caption = 'No Transaksi:'
       Font.Charset = ANSI_CHARSET
@@ -152,7 +152,7 @@ object invoicprintfrm: Tinvoicprintfrm
       Left = 24
       Top = 24
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -167,7 +167,7 @@ object invoicprintfrm: Tinvoicprintfrm
       Left = 24
       Top = 72
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

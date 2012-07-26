@@ -7,8 +7,10 @@ uses
   Dialogs, Menus, ExtCtrls, ComCtrls, StdCtrls, Buttons, helper, gnugettext,
   ToolWin, ActnMan, ActnCtrls, ActnMenus, ImgList, XPStyleActnCtrls,
   ActnList, StdActns, CustomizeDlg, DBClientActns, DBActns;
+
 resourcestring
-  exitmessage =  'Yakin keluar dari mERP ?';
+  exitmessage = 'Yakin keluar dari mERP ?';
+
 type
   Tutamafrm = class(TForm)
     utamamn: TMainMenu;
@@ -218,7 +220,7 @@ begin
   end
   else
   begin
-    groupfrm.show;
+    groupfrm.Show;
   end;
 
 end;
@@ -227,7 +229,7 @@ procedure Tutamafrm.UserSettings1Click(Sender: TObject);
 begin
   if userlistfrm = nil then
   begin
-    application.createform(TUserlistFrm, UserListfrm);
+    application.CreateForm(TUserlistFrm, userlistfrm);
     userlistfrm.Show;
   end
   else
@@ -241,7 +243,7 @@ procedure Tutamafrm.GantiPassword1Click(Sender: TObject);
 begin
   if passchangefrm = nil then
   begin
-    application.CreateForm(TPasschangefrm, PassChangefrm);
+    application.CreateForm(TPasschangefrm, passchangefrm);
     passchangefrm.ShowModal;
   end
   else
@@ -254,12 +256,12 @@ procedure Tutamafrm.Barang2Click(Sender: TObject);
 begin
   if barangmstrfrm = nil then
   begin
-    application.CreateForm(TBarangMstrFrm, BarangMstrFrm);
-    barangmstrfrm.showmodal;
+    application.CreateForm(TBarangMstrFrm, barangmstrfrm);
+    barangmstrfrm.ShowModal;
   end
   else
   begin
-    barangmstrfrm.showmodal;
+    barangmstrfrm.ShowModal;
   end;
 
 end;
@@ -314,7 +316,7 @@ end;
 procedure Tutamafrm.BarangMasuk1Click(Sender: TObject);
 begin
   isInventory := 1;
-  aktifkanform(polistfrm, TPolistfrm);
+  aktifkanform(polistfrm, TPOListfrm);
 
 end;
 
@@ -402,11 +404,10 @@ end;
 
 procedure Tutamafrm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  if messagedlg(_(exitmessage), mtConfirmation, [mbYes, mbNo], 0) =
-    mrYes then
+  if messagedlg(_(exitmessage), mtConfirmation, [mbYes, mbNo], 0) = mrYes then
     Action := caFree
-else
-  Action := caNone;
+  else
+    Action := caNone;
 end;
 
 procedure Tutamafrm.InputPenggajian1Click(Sender: TObject);
@@ -447,7 +448,7 @@ end;
 
 procedure Tutamafrm.SpeedButton3Click(Sender: TObject);
 begin
-  aktifkanform(supplierfrm, Tsupplierfrm);
+  aktifkanform(supplierfrm, TSupplierFrm);
 end;
 
 procedure Tutamafrm.SpeedButton4Click(Sender: TObject);
@@ -457,7 +458,7 @@ end;
 
 procedure Tutamafrm.SpeedButton2Click(Sender: TObject);
 begin
-  aktifkanform(barangmstrfrm, Tbarangmstrfrm);
+  aktifkanform(barangmstrfrm, TBarangMstrFrm);
 end;
 
 procedure Tutamafrm.SpeedButton5Click(Sender: TObject);
@@ -468,7 +469,7 @@ end;
 procedure Tutamafrm.SpeedButton6Click(Sender: TObject);
 begin
   isInventory := 1;
-  aktifkanform(polistfrm, TPolistfrm);
+  aktifkanform(polistfrm, TPOListfrm);
 end;
 
 procedure Tutamafrm.SpeedButton7Click(Sender: TObject);
@@ -508,14 +509,10 @@ begin
   aktifkanform(glfrm, TGlfrm);
 end;
 
-
-
 procedure Tutamafrm.ampilkanShortcut1Click(Sender: TObject);
 begin
   pnshortcut.Visible := true;
 end;
-
-
 
 procedure Tutamafrm.btnlistjualClick(Sender: TObject);
 begin
@@ -535,10 +532,9 @@ end;
 procedure Tutamafrm.DataClean1Click(Sender: TObject);
 begin
   if messagedlg('Yakin Akan melakukan data Clean? Prosedure ini hanya untuk ' +
-    #13 +
-    'Super User yang akan mengakibatkan data transaksi penjualan/pembelian serta seluruh ' + #13
-    +
-    'Data yang terkait akan dihapus!', mtWarning, [mbYes, mbNo], 1) = mrYes then
+    #13 + 'Super User yang akan mengakibatkan data transaksi penjualan/pembelian serta seluruh '
+    + #13 + 'Data yang terkait akan dihapus!', mtWarning, [mbYes, mbNo], 1) = mrYes
+  then
   begin
     aktifkanform(dataCleanfrm, TDataCleanfrm);
   end;
@@ -556,7 +552,7 @@ end;
 
 procedure Tutamafrm.DaftarFakturPajak1Click(Sender: TObject);
 begin
-  //aktifkanform(fakturpajakviewfrm,TFakturPajakViewfrm);
+  // aktifkanform(fakturpajakviewfrm,TFakturPajakViewfrm);
   aktifkanform(fakturpajakfrm, TFakturPajakfrm);
 end;
 
@@ -579,14 +575,14 @@ end;
 
 procedure Tutamafrm.ShowHideMenu(Sender: TObject);
 begin
-   pnshortcut.Visible := not pnshortcut.Visible;
+  pnshortcut.Visible := not pnshortcut.Visible;
 end;
 
 procedure Tutamafrm.Action1Execute(Sender: TObject);
 begin
   if userlistfrm = nil then
   begin
-    application.createform(TUserlistFrm, UserListfrm);
+    application.CreateForm(TUserlistFrm, userlistfrm);
     userlistfrm.Show;
   end
   else
@@ -596,5 +592,4 @@ begin
 end;
 
 end.
-
 

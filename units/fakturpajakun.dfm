@@ -27,7 +27,7 @@ object fakturpajakfrm: Tfakturpajakfrm
     object Label1: TLabel
       Left = 8
       Top = 8
-      Width = 116
+      Width = 131
       Height = 19
       Caption = 'List Faktur Pajak '
       Font.Charset = ANSI_CHARSET
@@ -78,9 +78,6 @@ object fakturpajakfrm: Tfakturpajakfrm
       Font.Height = -13
       Font.Name = 'Calibri'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      Visible = False
       Glyph.Data = {
         76050000424D7605000000000000360000002800000015000000150000000100
         18000000000040050000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -126,6 +123,9 @@ object fakturpajakfrm: Tfakturpajakfrm
         B8B6B7B8B6B6B7B5B6B6B4B5B6B5B6B79E9F9FFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFD8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8
         D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9FAFAFAFFFFFFFFFFFF00}
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
     end
     object btnbatal: TBitBtn
       Left = 746
@@ -138,9 +138,6 @@ object fakturpajakfrm: Tfakturpajakfrm
       Font.Height = -13
       Font.Name = 'Calibri'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-      Visible = False
       Glyph.Data = {
         76050000424D7605000000000000360000002800000015000000150000000100
         18000000000040050000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -186,6 +183,9 @@ object fakturpajakfrm: Tfakturpajakfrm
         B8B6B7B8B6B6B7B5B6B6B4B5B6B5B6B79E9F9FFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFD8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8
         D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9FAFAFAFFFFFFFFFFFF00}
+      ParentFont = False
+      TabOrder = 1
+      Visible = False
     end
   end
   object DBGrid1: TDBGrid
@@ -310,7 +310,7 @@ object fakturpajakfrm: Tfakturpajakfrm
     object Label2: TLabel
       Left = 8
       Top = 11
-      Width = 140
+      Width = 155
       Height = 18
       Caption = 'Cari No Dokumen/WP:'
       Font.Charset = ANSI_CHARSET
@@ -324,7 +324,7 @@ object fakturpajakfrm: Tfakturpajakfrm
       Left = 160
       Top = 8
       Width = 761
-      Height = 24
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

@@ -1,12 +1,15 @@
 unit loginform;
 {$I merp.inc}
+
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, acl;
+
 resourcestring
   invalidpassword = 'Invalid Username/password';
+
 type
   TfrmLogin = class(TForm)
     Button1: TButton;
@@ -29,17 +32,18 @@ var
   frmLogin: TfrmLogin;
 
 implementation
+
 uses helper;
 {$R *.dfm}
 
 procedure TfrmLogin.Button1Click(Sender: TObject);
 begin
-  if (acl.authenticate(txtName.text, helper.encryptPassword(txtPass.Text))) then
+  if (acl.authenticate(txtName.text, helper.encryptPassword(txtPass.text))) then
     ModalResult := mrOk
   else
   begin
 {$IFNDEF DEV_MODE}
-    txtPass.Text := '';
+    txtPass.text := '';
 {$ENDIF}
     lblStatus.Caption := invalidpassword;
   end;
@@ -47,11 +51,10 @@ end;
 
 procedure TfrmLogin.FormCreate(Sender: TObject);
 begin
-  txtName.Text := helper.getConfig('app.lastlogin', 'administrator');
+  txtName.text := helper.getConfig('app.lastlogin', 'administrator');
 {$IFDEF DEV_MODE}
-  txtPass.Text := 'password';
+  txtPass.text := 'password';
 {$ENDIF}
 end;
 
 end.
-

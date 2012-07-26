@@ -29,7 +29,7 @@ object pajakAddfrm: TpajakAddfrm
     object Label1: TLabel
       Left = 8
       Top = 8
-      Width = 143
+      Width = 158
       Height = 19
       Caption = 'Input Pajak Keluaran'
       Font.Charset = ANSI_CHARSET
@@ -58,9 +58,6 @@ object pajakAddfrm: TpajakAddfrm
       Font.Height = -13
       Font.Name = 'Calibri'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-      OnClick = btntambahClick
       Glyph.Data = {
         76050000424D7605000000000000360000002800000015000000150000000100
         18000000000040050000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -106,6 +103,9 @@ object pajakAddfrm: TpajakAddfrm
         B8B6B7B8B6B6B7B5B6B6B4B5B6B5B6B79E9F9FFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFD8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8
         D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9FAFAFAFFFFFFFFFFFF00}
+      ParentFont = False
+      TabOrder = 2
+      OnClick = btntambahClick
     end
     object btnsimpan: TBitBtn
       Left = 376
@@ -118,9 +118,6 @@ object pajakAddfrm: TpajakAddfrm
       Font.Height = -13
       Font.Name = 'Calibri'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      OnClick = btnsimpanClick
       Glyph.Data = {
         76050000424D7605000000000000360000002800000015000000150000000100
         18000000000040050000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -166,6 +163,9 @@ object pajakAddfrm: TpajakAddfrm
         B8B6B7B8B6B6B7B5B6B6B4B5B6B5B6B79E9F9FFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFD8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8
         D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9FAFAFAFFFFFFFFFFFF00}
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnsimpanClick
     end
     object btnbatal: TBitBtn
       Left = 284
@@ -178,9 +178,6 @@ object pajakAddfrm: TpajakAddfrm
       Font.Height = -13
       Font.Name = 'Calibri'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-      OnClick = btnbatalClick
       Glyph.Data = {
         76050000424D7605000000000000360000002800000015000000150000000100
         18000000000040050000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -226,6 +223,9 @@ object pajakAddfrm: TpajakAddfrm
         B8B6B7B8B6B6B7B5B6B6B4B5B6B5B6B79E9F9FFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFD8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8
         D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9FAFAFAFFFFFFFFFFFF00}
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnbatalClick
     end
     object btncetak: TBitBtn
       Left = 377
@@ -238,10 +238,6 @@ object pajakAddfrm: TpajakAddfrm
       Font.Height = -13
       Font.Name = 'Calibri'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 3
-      Visible = False
-      OnClick = btncetakClick
       Glyph.Data = {
         62030000424D6203000000000000420000002800000014000000140000000100
         10000300000020030000120B0000120B00000000000000000000007C0000E003
@@ -271,6 +267,10 @@ object pajakAddfrm: TpajakAddfrm
         1863FF7FFF7FFF7FFF7FFF7FFF7FFF7FFF7F5A6BDE7BFF7FFF7FFF7FFF7FFF7F
         FF7FFF7FFF7FFF7F1863F75EF75EF75EF75EF75EF75EF75EF75E1863FF7FFF7F
         FF7FFF7FFF7F}
+      ParentFont = False
+      TabOrder = 3
+      Visible = False
+      OnClick = btncetakClick
     end
   end
   object Panel3: TPanel
@@ -283,8 +283,8 @@ object pajakAddfrm: TpajakAddfrm
     object Label2: TLabel
       Left = 16
       Top = 27
-      Width = 72
-      Height = 15
+      Width = 81
+      Height = 16
       Caption = 'NPWP Lawan'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -304,8 +304,8 @@ object pajakAddfrm: TpajakAddfrm
     object Label3: TLabel
       Left = 16
       Top = 52
-      Width = 126
-      Height = 15
+      Width = 135
+      Height = 16
       Caption = 'Nama Lawan Transaksi'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -317,8 +317,8 @@ object pajakAddfrm: TpajakAddfrm
     object Label4: TLabel
       Left = 16
       Top = 76
-      Width = 91
-      Height = 15
+      Width = 97
+      Height = 16
       Caption = 'Nomor Dokumen'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -330,8 +330,8 @@ object pajakAddfrm: TpajakAddfrm
     object Label5: TLabel
       Left = 16
       Top = 102
-      Width = 96
-      Height = 15
+      Width = 104
+      Height = 16
       Caption = 'Tanggal Dokumen'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -351,8 +351,8 @@ object pajakAddfrm: TpajakAddfrm
     object Label6: TLabel
       Left = 16
       Top = 144
-      Width = 163
-      Height = 15
+      Width = 179
+      Height = 16
       Caption = 'Dasar Pengenaan Pajak (DPP)'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -364,8 +364,8 @@ object pajakAddfrm: TpajakAddfrm
     object Label7: TLabel
       Left = 16
       Top = 168
-      Width = 171
-      Height = 15
+      Width = 182
+      Height = 16
       Caption = 'Pajak Pertambahan Nilai (PPN)'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -377,8 +377,8 @@ object pajakAddfrm: TpajakAddfrm
     object Label8: TLabel
       Left = 16
       Top = 192
-      Width = 252
-      Height = 15
+      Width = 272
+      Height = 16
       Caption = 'Pajak Penjualan Atas Barang Mewah (PPnBM)'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -391,7 +391,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 152
       Top = 97
       Width = 137
-      Height = 23
+      Height = 24
       Date = 40997.652699363430000000
       Time = 40997.652699363430000000
       Font.Charset = ANSI_CHARSET
@@ -406,7 +406,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 152
       Top = 25
       Width = 137
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_npwp'
       DataSource = ds.pajakinsert
@@ -424,7 +424,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 152
       Top = 49
       Width = 305
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_nama_cust'
       DataSource = ds.pajakinsert
@@ -441,7 +441,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 152
       Top = 73
       Width = 137
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_kode'
       DataSource = ds.pajakinsert
@@ -458,7 +458,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 272
       Top = 143
       Width = 185
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_dpp'
       DataSource = ds.pajakinsert
@@ -475,7 +475,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 272
       Top = 167
       Width = 185
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_ppn'
       DataSource = ds.pajakinsert
@@ -492,7 +492,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 272
       Top = 191
       Width = 185
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_ppnbm'
       DataSource = ds.pajakinsert
@@ -527,7 +527,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 8
       Top = 231
       Width = 185
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_cust_kode'
       DataSource = ds.pajakinsert
@@ -545,7 +545,7 @@ object pajakAddfrm: TpajakAddfrm
       Left = 296
       Top = 103
       Width = 169
-      Height = 21
+      Height = 19
       Ctl3D = False
       DataField = 'fp_ref'
       DataSource = ds.pajakinsert

@@ -36,7 +36,8 @@ var
   salarylevelfrm: Tsalarylevelfrm;
 
 implementation
-uses dmun,fungsi_merp, salaryleveladdun;
+
+uses dmun, fungsi_merp, salaryleveladdun;
 {$R *.dfm}
 
 procedure Tsalarylevelfrm.FormActivate(Sender: TObject);
@@ -51,38 +52,39 @@ begin
   dm.salary_level.Append;
   dm.salary_level_detail_t.Append;
   dm.salary_level_detail_k.Append;
-  aktifkanform(salaryLevelAddfrm,TSalaryLevelAddfrm);
+  aktifkanform(salaryLevelAddfrm, TSalaryLevelAddfrm);
 end;
 
 procedure Tsalarylevelfrm.btneditClick(Sender: TObject);
 begin
   dm.salary_level.edit;
-  aktifkanform(salaryLevelAddfrm,TSalaryLevelAddfrm);
+  aktifkanform(salaryLevelAddfrm, TSalaryLevelAddfrm);
 end;
 
 procedure Tsalarylevelfrm.SpeedButton1Click(Sender: TObject);
 begin
 
- if messagedlg('Hapus Data Ini?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
- begin
+  if messagedlg('Hapus Data Ini?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
+  begin
 
     with dm.salary_level_detail do
     begin
-      //sql.Clear;
+      // sql.Clear;
       sql.Text := 'delete from salary_level_detail where sd_kode = (:kd) ';
-      params.ParamByName('kd').Value := gridlevel.Fields[2].Value; //kd
+      params.ParamByName('kd').Value := gridlevel.Fields[2].Value; // kd
       execSQL;
     end;
     dm.salary_level.Delete;
     dm.salary_level.ApplyUpdates;
     dm.salary_level_detail.ApplyUpdates;
- end;
+  end;
 end;
 
 procedure Tsalarylevelfrm.gridlevelDblClick(Sender: TObject);
 begin
-  dm.salary_level.Edit;
-  aktifkanform(salaryleveladdfrm,TSalaryLevelAddfrm);
+  dm.salary_level.edit;
+  aktifkanform(salaryLevelAddfrm, TSalaryLevelAddfrm);
 end;
 
 end.

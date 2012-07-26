@@ -112,7 +112,7 @@ object salaryleveladdfrm: Tsalaryleveladdfrm
       Left = 120
       Top = 10
       Width = 409
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'sl_kode'
       DataSource = ds.salary_level
@@ -129,7 +129,7 @@ object salaryleveladdfrm: Tsalaryleveladdfrm
       Left = 120
       Top = 34
       Width = 409
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'sl_name'
       DataSource = ds.salary_level
@@ -146,7 +146,7 @@ object salaryleveladdfrm: Tsalaryleveladdfrm
       Left = 120
       Top = 58
       Width = 409
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'sl_amount'
       DataSource = ds.salary_level
@@ -364,6 +364,10 @@ object salaryleveladdfrm: Tsalaryleveladdfrm
     TabOrder = 5
     object TabSheet1: TTabSheet
       Caption = 'Komponen Penambah'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object DBGrid2: TDBGrid
         Left = 0
         Top = 0
@@ -406,6 +410,10 @@ object salaryleveladdfrm: Tsalaryleveladdfrm
     object TabSheet2: TTabSheet
       Caption = 'Komponen Pengurang'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object DBGrid1: TDBGrid
         Left = 0
         Top = 0

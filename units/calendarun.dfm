@@ -34,7 +34,7 @@ object calendarfrm: Tcalendarfrm
     Top = 0
     Width = 295
     Height = 201
-    Date = 40904.862857152780000000
+    Date = 40904.560993888890000000
     TabOrder = 0
     OnDblClick = kalenderDblClick
   end

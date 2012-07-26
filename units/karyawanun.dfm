@@ -437,7 +437,7 @@ object karyawanfrm: Tkaryawanfrm
       Left = 118
       Top = 8
       Width = 467
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

@@ -26,7 +26,7 @@ object wpviewfrm: Twpviewfrm
     object Label1: TLabel
       Left = 8
       Top = 8
-      Width = 94
+      Width = 106
       Height = 19
       Caption = 'WP-Customer'
       Font.Charset = ANSI_CHARSET
@@ -77,9 +77,6 @@ object wpviewfrm: Twpviewfrm
       Font.Height = -13
       Font.Name = 'Calibri'
       Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      OnClick = BitBtn1Click
       Glyph.Data = {
         76050000424D7605000000000000360000002800000015000000150000000100
         18000000000040050000C30E0000C30E00000000000000000000FFFFFFFFFFFF
@@ -125,6 +122,9 @@ object wpviewfrm: Twpviewfrm
         B8B6B7B8B6B6B7B5B6B6B4B5B6B5B6B79E9F9FFFFFFFFFFFFF00FFFFFFFFFFFF
         FFFFFFD8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8
         D9D8D8D9D8D8D9D8D8D9D8D8D9D8D8D9FAFAFAFFFFFFFFFFFF00}
+      ParentFont = False
+      TabOrder = 0
+      OnClick = BitBtn1Click
     end
   end
   object Panel3: TPanel
@@ -137,8 +137,8 @@ object wpviewfrm: Twpviewfrm
     object Label2: TLabel
       Left = 8
       Top = 4
-      Width = 162
-      Height = 15
+      Width = 194
+      Height = 16
       Caption = 'Pencarian Berdasarkan Nama:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -151,7 +151,7 @@ object wpviewfrm: Twpviewfrm
       Left = 8
       Top = 23
       Width = 417
-      Height = 21
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

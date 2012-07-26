@@ -49,90 +49,91 @@ var
   salaryleveladdfrm: Tsalaryleveladdfrm;
 
 implementation
- uses dmun,fungsi_merp, salaryleveltambahun, penguranggajiun;
+
+uses dmun, fungsi_merp, salaryleveltambahun, penguranggajiun;
 {$R *.dfm}
 
 procedure Tsalaryleveladdfrm.btnsimpanClick(Sender: TObject);
 begin
-if messagedlg('Simpan Record ini?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
-begin
- dm.salary_level.Edit;
- dm.salary_level.Post;
- dm.salary_level.ApplyUpdates;
+  if messagedlg('Simpan Record ini?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
+  begin
+    dm.salary_level.Edit;
+    dm.salary_level.Post;
+    dm.salary_level.ApplyUpdates;
 
- dm.salary_level_detail_t.Edit;
- dm.salary_level_detail_t.post;
- dm.salary_level_detail_t.ApplyUpdates;
+    dm.salary_level_detail_t.Edit;
+    dm.salary_level_detail_t.Post;
+    dm.salary_level_detail_t.ApplyUpdates;
 
- dm.salary_level_detail_k.Edit;
- dm.salary_level_detail_k.post;
- dm.salary_level_detail_k.ApplyUpdates;
+    dm.salary_level_detail_k.Edit;
+    dm.salary_level_detail_k.Post;
+    dm.salary_level_detail_k.ApplyUpdates;
 
-
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
- end; 
+    btnsimpan.Visible := false;
+    btnbatal.Visible := false;
+  end;
 end;
 
 procedure Tsalaryleveladdfrm.btnbatalClick(Sender: TObject);
 begin
- batal(dm.salary_level);
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
+  batal(dm.salary_level);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 procedure Tsalaryleveladdfrm.btntambahClick(Sender: TObject);
 begin
   dm.salary_level.Append;
-  btnsimpan.Visible  := true;
-  btnbatal.Visible   := true;
+  btnsimpan.Visible := true;
+  btnbatal.Visible := true;
 end;
 
 procedure Tsalaryleveladdfrm.DBGrid2KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
- if key=vk_return then
- begin
-   aktifkanform(salaryleveltambahfrm,Tsalaryleveltambahfrm);
- end;
+  if Key = vk_return then
+  begin
+    aktifkanform(salaryleveltambahfrm, Tsalaryleveltambahfrm);
+  end;
 
- if key=vk_delete then
- begin
-   hapus(dm.salary_level_detail_t);
- end;
+  if Key = vk_delete then
+  begin
+    hapus(dm.salary_level_detail_t);
+  end;
 
 end;
 
 procedure Tsalaryleveladdfrm.FormActivate(Sender: TObject);
 begin
- aktifkandata(dm.salary_level);
- aktifkandata(dm.salary_level_detail_t);
- aktifkandata(dm.salary_level_detail_k);
+  aktifkandata(dm.salary_level);
+  aktifkandata(dm.salary_level_detail_t);
+  aktifkandata(dm.salary_level_detail_k);
 end;
 
 procedure Tsalaryleveladdfrm.Panel2Enter(Sender: TObject);
 begin
- dm.salary_level.Edit;
+  dm.salary_level.Edit;
 end;
 
 procedure Tsalaryleveladdfrm.Panel2Exit(Sender: TObject);
 begin
- 
- dm.salary_level.Post;
+
+  dm.salary_level.Post;
 end;
 
 procedure Tsalaryleveladdfrm.DBGrid1KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
- if key=vk_return then
- begin
-   aktifkanform(penguranggajifrm,TPengurangGajifrm);
- end;
+  if Key = vk_return then
+  begin
+    aktifkanform(penguranggajifrm, TPengurangGajifrm);
+  end;
 
- if key=vk_delete then
- begin
-   hapus(dm.salary_level_detail_k);
- end;
+  if Key = vk_delete then
+  begin
+    hapus(dm.salary_level_detail_k);
+  end;
 end;
 
 end.

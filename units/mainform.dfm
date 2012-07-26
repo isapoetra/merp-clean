@@ -13,6 +13,8 @@ object frmMain: TfrmMain
   FormStyle = fsMDIForm
   OldCreateOrder = False
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
@@ -45,8 +47,6 @@ object frmMain: TfrmMain
     Font.Name = 'Tahoma'
     Font.Style = []
     Spacing = 0
-    ExplicitWidth = 115
-    ExplicitHeight = 115
   end
   object ActionToolBar1: TActionToolBar
     Left = 0
@@ -59,8 +59,6 @@ object frmMain: TfrmMain
     ColorMap.BtnSelectedColor = clBtnFace
     ColorMap.UnusedColor = 15660791
     Spacing = 0
-    ExplicitTop = 115
-    ExplicitWidth = 115
   end
   object sidebar: TJvNavigationPane
     Left = 0
@@ -76,8 +74,6 @@ object frmMain: TfrmMain
     Background.Transparent = False
     Caption = 'sidebar'
     MaximizedCount = 3
-    ExplicitTop = 164
-    ExplicitHeight = 354
     object tbmaster: TJvNavPanelPage
       Left = 0
       Top = 0
@@ -89,7 +85,6 @@ object frmMain: TfrmMain
       Background.Tile = False
       Background.Transparent = False
       Caption = 'Master'
-      ExplicitHeight = 233
       object JvScrollBox1: TJvScrollBox
         Left = 0
         Top = 0
@@ -100,7 +95,6 @@ object frmMain: TfrmMain
         BevelOuter = bvNone
         BorderStyle = bsNone
         TabOrder = 0
-        ExplicitHeight = 233
         object SpeedButton1: TSpeedButton
           Left = 8
           Top = 8
@@ -191,8 +185,6 @@ object frmMain: TfrmMain
       item
         Width = 50
       end>
-    ExplicitTop = -19
-    ExplicitWidth = 115
   end
   object mdiTab: TJvTabBar
     Left = 0
@@ -204,8 +196,6 @@ object frmMain: TfrmMain
     OnTabCloseQuery = mdiTabTabCloseQuery
     OnTabClosed = mdiTabTabClosed
     OnTabSelected = mdiTabTabSelected
-    ExplicitTop = 141
-    ExplicitWidth = 115
   end
   object ActionManager1: TActionManager
     ActionBars = <
@@ -217,8 +207,15 @@ object frmMain: TfrmMain
           item
             Items = <
               item
-                Action = Action1
+                Action = actUserSettings
                 Caption = '&User Settings'
+              end
+              item
+                Action = actSecutiry
+                Caption = '&Secutiry'
+              end
+              item
+                Caption = '-'
               end
               item
                 Action = actLogin
@@ -305,7 +302,7 @@ object frmMain: TfrmMain
                 Caption = '&Stock Barang'
               end
               item
-                Action = Action9
+                Action = actInventIn
                 Caption = '&Barang Masuk'
               end
               item
@@ -334,11 +331,26 @@ object frmMain: TfrmMain
             Items = <
               item
                 Action = Action13
-                Caption = '&Action13'
+                Caption = '&Ritel/Project'
               end
               item
-                Action = Action14
-                Caption = 'A&ccounting'
+                Action = Quotation
+                Caption = '&Quotation'
+              end
+              item
+                Action = Action2
+                Caption = '&Footnote Quotation'
+              end
+              item
+                Caption = '-'
+              end
+              item
+                Action = Action5
+                Caption = 'F&aktur Pajak'
+              end
+              item
+                Action = actInvoice
+                Caption = '&Daftar Invoice'
               end>
             Caption = 'Pen&jualan'
           end
@@ -346,7 +358,50 @@ object frmMain: TfrmMain
             Items = <
               item
                 Action = Action15
-                Caption = '&Payroll'
+                Caption = '&Employee'
+              end
+              item
+                Action = Action6
+                Caption = '&Job Desc'
+              end
+              item
+                Action = Action7
+                Caption = '&Salary'
+              end
+              item
+                Action = Action8
+                Caption = '&Additional Salary'
+              end
+              item
+                Action = Action9
+                Caption = '&Dec Salary'
+              end
+              item
+                Action = Action14
+                Caption = '&PPH 21'
+              end
+              item
+                Action = PTKP
+                Caption = 'P&TKP'
+              end
+              item
+                Action = Action17
+                Caption = 'Depa&rtment'
+              end
+              item
+                Action = Action18
+                Caption = '&Bank'
+              end
+              item
+                Caption = '-'
+              end
+              item
+                Action = Action19
+                Caption = '&Input Penggajian'
+              end
+              item
+                Action = Action20
+                Caption = '&Laporan Penggajian'
               end>
             Caption = '&Payroll'
           end
@@ -354,9 +409,21 @@ object frmMain: TfrmMain
             Items = <
               item
                 Action = Action16
-                Caption = '&Action16'
+                Caption = '&Penjualan'
+              end
+              item
+                Action = Project
+                Caption = 'P&roject'
               end>
-            Caption = '&Reporting'
+            Caption = 'Rep&orting'
+          end
+          item
+            Items = <
+              item
+                Action = actOptions
+                Caption = '&Options'
+              end>
+            Caption = '&Tools'
           end
           item
             Items = <
@@ -517,10 +584,16 @@ object frmMain: TfrmMain
       OnExecute = actLoginExecute
       OnUpdate = actLoginUpdate
     end
-    object Action1: TAction
+    object actUserSettings: TAction
       Category = 'File'
       Caption = 'User Settings'
+      OnExecute = actUserSettingsExecute
       OnUpdate = checkAuth
+    end
+    object actSecutiry: TAction
+      Category = 'File'
+      Caption = 'Secutiry'
+      OnExecute = actSecutiryExecute
     end
     object FileExit1: TFileExit
       Category = 'File'
@@ -616,10 +689,12 @@ object frmMain: TfrmMain
     object Action3: TAction
       Category = 'Inventory'
       Caption = 'Stock Barang'
+      OnExecute = Action3Execute
     end
     object Action4: TAction
       Category = 'Pembelian'
       Caption = 'Suplier/vendor'
+      OnExecute = Action4Execute
     end
     object actShowHideSide: TAction
       Category = 'File'
@@ -649,37 +724,40 @@ object frmMain: TfrmMain
       Caption = 'Customer'
       OnExecute = actMasterCustomerExecute
     end
-    object Action9: TAction
+    object actInventIn: TAction
       Category = 'Inventory'
       Caption = 'Barang Masuk'
+      OnExecute = actInventInExecute
     end
     object Action10: TAction
       Category = 'Inventory'
       Caption = 'Delivery Order'
-    end
-    object Action12: TAction
-      Category = 'Pembelian'
-      Caption = 'Pembelian Langsung'
+      OnExecute = Action10Execute
     end
     object Action11: TAction
       Category = 'Pembelian'
       Caption = 'Purchase Order'
+      OnExecute = Action11Execute
+    end
+    object Action12: TAction
+      Category = 'Pembelian'
+      Caption = 'Pembelian Langsung'
+      OnExecute = Action12Execute
     end
     object Action13: TAction
       Category = 'Penjualan'
-      Caption = 'Action13'
-    end
-    object Action14: TAction
-      Category = 'Penjualan'
-      Caption = 'Accounting'
+      Caption = 'Ritel/Project'
+      OnExecute = Action13Execute
     end
     object Action15: TAction
       Category = 'Payroll'
-      Caption = 'Payroll'
+      Caption = 'Employee'
+      OnExecute = Action15Execute
     end
     object Action16: TAction
       Category = 'Reporting'
-      Caption = 'Action16'
+      Caption = 'Penjualan'
+      OnExecute = Action16Execute
     end
     object actMasterCat: TAction
       Category = 'Master'
@@ -697,6 +775,86 @@ object frmMain: TfrmMain
       Caption = 'Dashboard'
       Checked = True
       OnExecute = actShowHideDashboardExecute
+    end
+    object actOptions: TAction
+      Category = 'Tools'
+      Caption = 'Options'
+      OnExecute = actOptionsExecute
+    end
+    object Quotation: TAction
+      Category = 'Penjualan'
+      Caption = 'Quotation'
+      OnExecute = QuotationExecute
+    end
+    object Action2: TAction
+      Category = 'Penjualan'
+      Caption = 'Footnote Quotation'
+      OnExecute = Action2Execute
+    end
+    object Action5: TAction
+      Category = 'Penjualan'
+      Caption = 'Faktur Pajak'
+      OnExecute = Action5Execute
+    end
+    object actInvoice: TAction
+      Category = 'Penjualan'
+      Caption = 'Daftar Invoice'
+      OnExecute = actInvoiceExecute
+    end
+    object Action6: TAction
+      Category = 'Payroll'
+      Caption = 'Job Desc'
+      OnExecute = Action6Execute
+    end
+    object Action7: TAction
+      Category = 'Payroll'
+      Caption = 'Salary'
+      OnExecute = Action7Execute
+    end
+    object Action8: TAction
+      Category = 'Payroll'
+      Caption = 'Additional Salary'
+      OnExecute = Action8Execute
+    end
+    object Action9: TAction
+      Category = 'Payroll'
+      Caption = 'Dec Salary'
+      OnExecute = Action9Execute
+    end
+    object Action14: TAction
+      Category = 'Payroll'
+      Caption = 'PPH 21'
+      OnExecute = Action14Execute
+    end
+    object PTKP: TAction
+      Category = 'Payroll'
+      Caption = 'PTKP'
+      OnExecute = PTKPExecute
+    end
+    object Action17: TAction
+      Category = 'Payroll'
+      Caption = 'Department'
+      OnExecute = Action17Execute
+    end
+    object Action18: TAction
+      Category = 'Payroll'
+      Caption = 'Bank'
+      OnExecute = Action18Execute
+    end
+    object Action19: TAction
+      Category = 'Payroll'
+      Caption = 'Input Penggajian'
+      OnExecute = Action19Execute
+    end
+    object Action20: TAction
+      Category = 'Payroll'
+      Caption = 'Laporan Penggajian'
+      OnExecute = Action20Execute
+    end
+    object Project: TAction
+      Category = 'Reporting'
+      Caption = 'Project'
+      OnExecute = ProjectExecute
     end
   end
   object ImageList1: TImageList

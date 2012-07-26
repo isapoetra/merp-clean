@@ -36,28 +36,29 @@ var
   salaryleveltambahaddfrm: Tsalaryleveltambahaddfrm;
 
 implementation
-uses dmun,fungsi_merp;
+
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tsalaryleveltambahaddfrm.btnsimpanClick(Sender: TObject);
 begin
-    simpan(dm.salary_level_tambah);
-    btnsimpan.Visible := false;
-    btnbatal.Visible := false;
+  simpan(dm.salary_level_tambah);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 procedure Tsalaryleveltambahaddfrm.btnbatalClick(Sender: TObject);
 begin
-   batal(dm.salary_level_tambah);
-    btnsimpan.Visible := false;
-    btnbatal.Visible := false;
+  batal(dm.salary_level_tambah);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 procedure Tsalaryleveltambahaddfrm.btntambahClick(Sender: TObject);
 begin
-   dm.salary_level_tambah.Append;
-    btnsimpan.Visible := true;
-    btnbatal.Visible :=  true;
+  dm.salary_level_tambah.Append;
+  btnsimpan.Visible := true;
+  btnbatal.Visible := true;
 end;
 
 end.

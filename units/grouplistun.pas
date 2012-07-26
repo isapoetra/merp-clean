@@ -35,14 +35,15 @@ uses groupaddun;
 
 procedure Tgroupfrm.SpeedButton1Click(Sender: TObject);
 begin
- if groupaddfrm = nil then
- begin
-   application.CreateForm(TgroupAddfrm,groupAddfrm);
-   groupAddfrm.Show;
- end else
- begin
-   groupAddfrm.Show;
- end;
+  if groupaddfrm = nil then
+  begin
+    application.CreateForm(TgroupAddfrm, groupaddfrm);
+    groupaddfrm.Show;
+  end
+  else
+  begin
+    groupaddfrm.Show;
+  end;
 end;
 
 end.

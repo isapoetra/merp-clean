@@ -83,7 +83,7 @@ object deptaddfrm: Tdeptaddfrm
       Left = 96
       Top = 16
       Width = 313
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'dp_nama'
       DataSource = ds.dept

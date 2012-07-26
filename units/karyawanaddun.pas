@@ -92,7 +92,7 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, db,jobdesun, salary_levelun, bankun, ptkpun, deptun;
+uses dmun, fungsi_merp, db, jobdesun, salary_levelun, bankun, ptkpun, deptun;
 {$R *.dfm}
 
 procedure Tkaryawanaddfrm.btntambahClick(Sender: TObject);
@@ -105,7 +105,7 @@ end;
 
 procedure Tkaryawanaddfrm.btnsimpanClick(Sender: TObject);
 begin
-  if length(noninduk.Text)=0 then
+  if length(noninduk.Text) = 0 then
   begin
     showmessage('No Induk Harus diisi!');
     if pagebio.ActivePageIndex = 1 then
@@ -114,34 +114,36 @@ begin
     end;
     noninduk.SetFocus;
     exit;
-  end; 
-
-  if messagedlg('Simpan Data ini? ',mtConfirmation,[mbYes,mbNo],0)=mrYes then
-  begin
-  if isTambahKaryawan = 1 then
-  begin
-  dm.karyawan.Edit;
-
-  dm.karyawan.Post;
-  dm.karyawan.ApplyUpdates;
-
-  dm.karyawan_Detail.Edit;
-  dm.karyawan_detail.FieldByName('kd_no_induk').Value := noninduk.Text;
-  dm.karyawan_detail.Post;
-  dm.karyawan_detail.ApplyUpdates;
-  btnsimpan.Visible := false;
-  btnbatal.Visible := false;
-  end else
-  begin
-  dm.karyawan.Edit;
-
-  dm.karyawan.Post;
-  dm.karyawan.ApplyUpdates;
-
-  dm.karyawan_Detail.Edit;
-  dm.karyawan_detail.Post;
-  dm.karyawan_detail.ApplyUpdates;
   end;
+
+  if messagedlg('Simpan Data ini? ', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
+  begin
+    if isTambahKaryawan = 1 then
+    begin
+      dm.karyawan.Edit;
+
+      dm.karyawan.Post;
+      dm.karyawan.ApplyUpdates;
+
+      dm.karyawan_Detail.Edit;
+      dm.karyawan_Detail.FieldByName('kd_no_induk').Value := noninduk.Text;
+      dm.karyawan_Detail.Post;
+      dm.karyawan_Detail.ApplyUpdates;
+      btnsimpan.Visible := false;
+      btnbatal.Visible := false;
+    end
+    else
+    begin
+      dm.karyawan.Edit;
+
+      dm.karyawan.Post;
+      dm.karyawan.ApplyUpdates;
+
+      dm.karyawan_Detail.Edit;
+      dm.karyawan_Detail.Post;
+      dm.karyawan_Detail.ApplyUpdates;
+    end;
 
   end;
 
@@ -149,62 +151,63 @@ end;
 
 procedure Tkaryawanaddfrm.btnbatalClick(Sender: TObject);
 begin
-   if messagedlg('Simpan Data ini? ',mtConfirmation,[mbYes,mbNo],0)=mrYes then
+  if messagedlg('Simpan Data ini? ', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
   begin
-  dm.karyawan.CancelUpdates;
-  dm.karyawan_detail.CancelUpdates;
-  btnsimpan.Visible := false;
-  btnbatal.Visible := false;
+    dm.karyawan.CancelUpdates;
+    dm.karyawan_Detail.CancelUpdates;
+    btnsimpan.Visible := false;
+    btnbatal.Visible := false;
   end;
 end;
 
 procedure Tkaryawanaddfrm.FormActivate(Sender: TObject);
 begin
- pagebio.ActivePageIndex := 0;
+  pagebio.ActivePageIndex := 0;
 
- aktifkandata(dm.jobdes);
- aktifkandata(dm.salary_level);
- aktifkandata(dm.dept);
- aktifkandata(dm.ptkp);
- aktifkandata(dm.bank);
+  aktifkandata(dm.jobdes);
+  aktifkandata(dm.salary_level);
+  aktifkandata(dm.dept);
+  aktifkandata(dm.ptkp);
+  aktifkandata(dm.bank);
 
- if isTambahkaryawan=1 then
- begin
-  noninduk.SetFocus;
- end;
+  if isTambahKaryawan = 1 then
+  begin
+    noninduk.SetFocus;
+  end;
 end;
 
 procedure Tkaryawanaddfrm.SpeedButton6Click(Sender: TObject);
 begin
-  aktifkanform(jobdesfrm,TJobdesfrm);
+  aktifkanform(jobdesfrm, TJobdesfrm);
 end;
 
 procedure Tkaryawanaddfrm.SpeedButton2Click(Sender: TObject);
 begin
- aktifkanform(salaryLevelfrm,TSalaryLevelfrm);
+  aktifkanform(salaryLevelfrm, TSalaryLevelfrm);
 end;
 
 procedure Tkaryawanaddfrm.tab2Enter(Sender: TObject);
 begin
- if isTambahKaryawan =1 then
- begin
-   dm.karyawan.Post;
- end;
+  if isTambahKaryawan = 1 then
+  begin
+    dm.karyawan.Post;
+  end;
 end;
 
 procedure Tkaryawanaddfrm.SpeedButton4Click(Sender: TObject);
 begin
- aktifkanform(bankfrm,TBankfrm);
+  aktifkanform(bankfrm, TBankfrm);
 end;
 
 procedure Tkaryawanaddfrm.SpeedButton5Click(Sender: TObject);
 begin
-  aktifkanform(ptkpfrm,Tptkpfrm);
+  aktifkanform(ptkpfrm, Tptkpfrm);
 end;
 
 procedure Tkaryawanaddfrm.SpeedButton1Click(Sender: TObject);
 begin
- aktifkanform(deptfrm,TDeptfrm);
+  aktifkanform(deptfrm, TDeptfrm);
 end;
 
 end.

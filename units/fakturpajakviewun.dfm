@@ -80,7 +80,7 @@ object fakturpajakviewfrm: Tfakturpajakviewfrm
       Left = 46
       Top = 8
       Width = 259
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

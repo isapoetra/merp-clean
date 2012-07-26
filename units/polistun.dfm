@@ -1,77 +1,71 @@
-object polistfrm: Tpolistfrm
+inherited polistfrm: Tpolistfrm
   Left = 395
   Top = 150
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'mERP 1.0'
+  Caption = 'List Purchase Order (PO)'
   ClientHeight = 507
   ClientWidth = 671
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  OnActivate = FormActivate
-  OnClose = FormClose
-  OnCreate = FormCreate
+  ExplicitWidth = 677
+  ExplicitHeight = 539
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel3: TPanel
-    Left = 0
-    Top = 0
+  inherited JvNetscapeSplitter1: TJvNetscapeSplitter
+    Left = 411
+    Top = 121
+    Height = 386
+    ExplicitLeft = 411
+    ExplicitTop = 121
+    ExplicitHeight = 386
+  end
+  inherited Panel1: TPanel
     Width = 671
-    Height = 41
-    Align = alTop
-    TabOrder = 2
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 179
-      Height = 18
-      Caption = 'List Purchase Order (PO)'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
+    TabOrder = 5
+    ExplicitWidth = 671
+  end
+  inherited pnlbg1: TPanel
+    Width = 671
+    TabOrder = 4
+    ExplicitWidth = 671
+  end
+  inherited pnlbg2: TPanel
+    Width = 671
+    TabOrder = 3
+    ExplicitWidth = 671
+  end
+  inherited JvScrollMax1: TJvScrollMax
+    Left = 421
+    Top = 121
+    Height = 386
+    TabOrder = 1
+    ExplicitLeft = 421
+    ExplicitTop = 121
+    ExplicitHeight = 386
+    inherited navdbcontainer: TJvScrollMaxBand
+      Height = 21
+      Expanded = False
+      ExpandedHeight = 21
+      ExplicitHeight = 21
+      inherited dbnav: TJvDBNavigator
+        Hints.Strings = ()
+      end
+    end
+    inherited searchContainer: TJvScrollMaxBand
+      Height = 50
+      Expanded = True
+      ExplicitTop = 21
+      ExplicitHeight = 50
     end
   end
-  object Panel1: TPanel
+  object caripn: TPanel [5]
     Left = 0
-    Top = 41
-    Width = 671
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 0
-  end
-  object Panel2: TPanel
-    Left = 0
-    Top = 49
-    Width = 671
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 871389
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 1
-  end
-  object caripn: TPanel
-    Left = 0
-    Top = 53
+    Top = 45
     Width = 671
     Height = 76
     Align = alTop
     Color = 14869218
-    TabOrder = 3
+    TabOrder = 0
     object Label2: TLabel
       Left = 58
       Top = 19
@@ -102,7 +96,7 @@ object polistfrm: Tpolistfrm
       Left = 120
       Top = 16
       Width = 529
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -120,7 +114,6 @@ object polistfrm: Tpolistfrm
       Width = 193
       Height = 21
       Ctl3D = False
-      ItemHeight = 13
       ParentCtl3D = False
       TabOrder = 1
       Text = 'Semua Pembelian'
@@ -131,25 +124,18 @@ object polistfrm: Tpolistfrm
         'Vendor')
     end
   end
-  object Panel4: TPanel
+  object gridpo: TDBGrid [6]
     Left = 0
-    Top = 466
-    Width = 661
-    Height = 41
-    TabOrder = 4
-  end
-  object gridpo: TDBGrid
-    Left = 0
-    Top = 129
-    Width = 671
-    Height = 378
+    Top = 121
+    Width = 411
+    Height = 386
     Align = alClient
     Ctl3D = False
     DataSource = ds.polist
     Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
     ParentCtl3D = False
     PopupMenu = popop
-    TabOrder = 5
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -203,6 +189,14 @@ object polistfrm: Tpolistfrm
         Visible = True
       end>
   end
+  inherited ImageList1: TImageList
+    Left = 280
+    Top = 216
+  end
+  inherited dsform: TDataSource
+    Left = 552
+    Top = 96
+  end
   object popop: TPopupMenu
     OnPopup = popopPopup
     Left = 216
@@ -250,26 +244,26 @@ object polistfrm: Tpolistfrm
     SystemPrinter.StatusFormat = 'Printing page %p'
     SystemPrinter.Title = 'ReportPrinter Report'
     SystemPrinter.UnitsFactor = 1.000000000000000000
-    Left = 384
-    Top = 5
+    Left = 400
+    Top = 29
   end
   object rdpo_supplier: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.supplier
-    Left = 344
-    Top = 5
+    Left = 352
+    Top = 29
   end
   object rdpo_supplierpic: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.supplierpic
-    Left = 272
+    Left = 240
     Top = 5
   end
   object rdpo_belidetail: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.belidetail
     Left = 312
-    Top = 5
+    Top = 21
   end
   object rdpo_footnote: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
@@ -279,9 +273,10 @@ object polistfrm: Tpolistfrm
   end
   object rdpo_customer: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
+    OnEOF = rdpo_customerEOF
     DataSet = dm.customer
-    Left = 536
-    Top = 5
+    Left = 488
+    Top = 53
   end
   object rdpo_custpic: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
@@ -431,12 +426,6 @@ object polistfrm: Tpolistfrm
       0000000100000000000000010000000000008001000000000000C00300000000
       0000E007000000008001F01F0000000000000000000000000000000000000000
       000000000000}
-  end
-  object RvDataSetConnection1: TRvDataSetConnection
-    RuntimeVisibility = rtDeveloper
-    DataSet = dm.supplierpic
-    Left = 240
-    Top = 5
   end
   object rdbarangmstr: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper

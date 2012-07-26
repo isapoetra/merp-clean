@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, Buttons, StdCtrls, ExtCtrls, baseform, ImgList,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
-  JvNetscapeSplitter, DB,  JvXPCore, JvXPButtons, DBCtrls,
+  JvNetscapeSplitter, DB, JvXPCore, JvXPButtons, DBCtrls,
   JvDBControls;
 
 type
@@ -35,18 +35,18 @@ implementation
 uses dmun, fungsi_merp, jasaaddun;
 {$R *.dfm}
 
-procedure Tjasafrm.isiToJual;
+procedure Tjasafrm.isiTojual;
 begin
   dm.jualdetail.Append;
   dm.jualdetail.FieldByName('jd_kd_barang').Value :=
-    dm.jasa.fieldbyname('js_id').Value;
+    dm.jasa.FieldByName('js_id').Value;
   dm.jualdetail.FieldByName('jd_nama_barang').Value :=
-    dm.jasa.fieldbyname('js_nama').Value;
+    dm.jasa.FieldByName('js_nama').Value;
   dm.jualdetail.FieldByName('jd_harga_pokok').Value := 0;
   dm.jualdetail.FieldByName('jd_satuan').Value :=
-    dm.jasa.fieldbyname('js_unit').Value;
+    dm.jasa.FieldByName('js_unit').Value;
   dm.jualdetail.FieldByName('jd_harga_jual').Value :=
-    dm.jasa.fieldbyname('js_tarif').Value;
+    dm.jasa.FieldByName('js_tarif').Value;
   close;
 end;
 
@@ -76,8 +76,8 @@ procedure Tjasafrm.DBGrid1KeyDown(Sender: TObject; var Key: Word;
 begin
   if isJual = 1 then
   begin
-    if key = vk_return then
-      isiToJual;
+    if Key = vk_return then
+      isiTojual;
   end; // end isJual
 end;
 
@@ -86,7 +86,7 @@ begin
   inherited;
   with dm.jasa do
   begin
-    sql.Text := 'select * from jasa where js_nama like (:js) ';
+    sql.text := 'select * from jasa where js_nama like (:js) ';
     params.ParamByName('js').Value := '%' + text + '%';
     open;
   end;
@@ -100,5 +100,4 @@ begin
 end;
 
 end.
-
 

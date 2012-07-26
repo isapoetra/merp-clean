@@ -37,29 +37,29 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tpenguranggajiaddfrm.btnsimpanClick(Sender: TObject);
 begin
- simpan(dm.penguranggaji);
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
+  simpan(dm.penguranggaji);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 
 end;
 
 procedure Tpenguranggajiaddfrm.btntambahClick(Sender: TObject);
 begin
- dm.penguranggaji.Append;
- btnsimpan.Visible := true;
- btnbatal.Visible  := true;
+  dm.penguranggaji.Append;
+  btnsimpan.Visible := true;
+  btnbatal.Visible := true;
 end;
 
 procedure Tpenguranggajiaddfrm.btnbatalClick(Sender: TObject);
 begin
- batal(dm.penguranggaji);
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
+  batal(dm.penguranggaji);
+  btnsimpan.Visible := false;
+  btnbatal.Visible := false;
 end;
 
 end.

@@ -1,6 +1,9 @@
 unit helper;
+
 interface
-uses baseForm, mainform;
+{$i merp.inc}
+uses baseForm, mainform, forms, db;
+
 type
   TExeInfo = class(TObject)
   private
@@ -11,6 +14,7 @@ type
     function GetFileVersion(): string;
     function GetProductName(): string;
   end;
+
 function getAppName(): string;
 procedure setActiveForm(frm: TfrmBase);
 procedure initialize(frm: TfrmMain);
@@ -21,18 +25,61 @@ function IsBitSet(const val: Longint; const TheBit: Byte): Boolean;
 function BitOn(const val: Longint; const TheBit: Byte): Longint;
 function BitOff(const val: Longint; const TheBit: Byte): Longint;
 function BitToggle(const val: Longint; const TheBit: Byte): Longint;
+procedure showForm(form: TFormClass);
+function showFormModal(form: TFormClass): Integer;
+function padleft(const aString: AnsiString; aCharCount: Integer;
+  aChar: AnsiChar): AnsiString;
+function padRight(const aString: AnsiString; aCharCount: Integer;
+  aChar: AnsiChar): AnsiString;
+procedure renderReport(reportName: string; ds: TDataset);
+function reportFile(report: string): String;
+
 implementation
-uses Windows, Classes, SysUtils, configuration, DCPmd5;
+
+uses Windows, Classes, SysUtils, configuration, DCPmd5, acl, reportform;
+
 var
   instance: TExeInfo;
   activeForm: TfrmBase;
   mainfrm: TfrmMain;
   config: TConfiguration;
 
+function padleft(const aString: AnsiString; aCharCount: Integer;
+  aChar: AnsiChar): AnsiString;
+var
+  PadCount: Integer;
+begin
+  PadCount := aCharCount - Length(aString);
+  if PadCount > 0 then
+  begin
+    SetLength(Result, aCharCount);
+    FillChar(Result[1], PadCount, aChar);
+    Move(aString[1], Result[PadCount + 1], Length(aString));
+  end
+  else
+    Result := aString;
+end;
+
+function padRight(const aString: AnsiString; aCharCount: Integer;
+  aChar: AnsiChar): AnsiString;
+var
+  PadCount: Integer;
+begin
+  PadCount := aCharCount - Length(aString);
+  if PadCount > 0 then
+  begin
+    SetLength(Result, aCharCount);
+    FillChar(Result[1], PadCount, aChar);
+    Move(aString[1], Result[PadCount + 1], Length(aString));
+  end
+  else
+    Result := aString;
+end;
+
 function encryptPassword(pass: string): string;
 var
   md5: TDCP_md5;
-  Digest: array[0..15] of byte;
+  Digest: array [0 .. 15] of Byte;
   i: Integer;
 begin
   md5 := TDCP_md5.Create(nil);
@@ -49,10 +96,49 @@ begin
   mainfrm := frm;
 end;
 
+function showFormModal(form: TFormClass): Integer;
+var
+  frm: TForm;
+begin
+  if acl.isAllow(form.ClassName, aclRead) then
+  begin
+    frm := form.Create(nil);
+    Result := frm.showModal;
+  end;
+end;
+
+procedure showForm(form: TFormClass);
+var
+  i: Integer;
+  found: Boolean;
+  frm: TForm;
+begin
+  found := false;
+  for i := 0 to mainfrm.MDIChildCount - 1 do
+  begin
+    if mainfrm.MDIChildren[i].ClassName = form.ClassName then
+    begin
+      mainfrm.MDIChildActivated(mainfrm.MDIChildren[i].Handle);
+      found := true;
+      break;
+    end;
+  end;
+  if (not found) then
+  begin
+    if acl.isAllow(form.ClassName, aclRead) then
+    begin
+      frm := form.Create(mainfrm);
+      frm.FormStyle := fsMDIChild;
+      frm.WindowState := wsMaximized;
+      frm.Show;
+    end;
+  end;
+end;
+
 function getConfiguration(): TConfiguration;
 begin
   if (config = nil) then
-    config := TConfiguration.create;
+    config := TConfiguration.Create;
   Result := config;
 end;
 
@@ -60,7 +146,7 @@ procedure setActiveForm(frm: TfrmBase);
 begin
   activeForm := frm;
   if (mainfrm <> nil) then
-    mainfrm.setActiveform(frm);
+    mainfrm.setActiveForm(frm);
 end;
 { TExeInfo }
 
@@ -115,8 +201,8 @@ end;
 
 function getAppName(): string;
 begin
-  Result := getInstance().GetProductName() + ' v.' +
-    getInstance().GetFileVersion();
+  Result := getInstance().GetProductName() + ' v.' + getInstance()
+    .GetFileVersion();
 end;
 
 function getConfig(configName: string): string;
@@ -148,5 +234,30 @@ function BitToggle(const val: Longint; const TheBit: Byte): Longint;
 begin
   Result := val xor (1 shl TheBit);
 end;
-end.
 
+procedure renderReport(reportName: string; ds: TDataset);
+var
+  frm: TfrmReport;
+begin
+  frm := TfrmReport.Create(mainfrm);
+  // TODO Dynamic load
+  // frm.frxReport1.LoadFromFile('reports\' + reportName + '.fr3',true);
+  // frm.frxDBDataset1.DataSet := ds;
+  // frm.Show;
+end;
+
+function reportFile(report: string): String;
+var
+  path: String;
+begin
+
+{$IFDEF DEV_MODE}
+  Result := ExtractFilePath(ParamStr(0)) + '..' + PathDelim + 'reports' +
+    PathDelim;
+{$ELSE}
+  Result := ExtractFilePath(ParamStr(0)) + 'reports' + PathDelim;
+{$ENDIF}
+  Result := report + '.rav';
+end;
+
+end.

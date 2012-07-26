@@ -40,7 +40,6 @@ object salaryprosesfrm: Tsalaryprosesfrm
     Font.Height = -13
     Font.Name = 'Arial'
     Font.Style = []
-    ItemHeight = 16
     ParentFont = False
     TabOrder = 0
   end

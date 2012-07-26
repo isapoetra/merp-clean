@@ -41,37 +41,38 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tprojectlapfrm.laporanProject;
-var fawal,fakhir : string;
+var
+  fawal, fakhir: string;
 begin
-  fawal   := formatDateTime('yyyy-mm-dd',tglawal.Date);
-  fakhir := formatDateTime('yyyy-mm-dd',tglakhir.Date);
+  fawal := formatDateTime('yyyy-mm-dd', tglawal.Date);
+  fakhir := formatDateTime('yyyy-mm-dd', tglakhir.Date);
 
   with dm.jualrpt do
   begin
-   sql.Text := 'select * from jual where ju_project = (:ckode) '+
-   'and ju_tgl between (:awal) and (:akhir) order by ju_id asc ';
-   params.ParamByName('ckode').Value := lookproject.KeyValue;
-   params.ParamByName('awal').Value  :=   fawal;
-   params.ParamByName('akhir').Value :=   fakhir;
-   open;
+    sql.Text := 'select * from jual where ju_project = (:ckode) ' +
+      'and ju_tgl between (:awal) and (:akhir) order by ju_id asc ';
+    params.ParamByName('ckode').Value := lookproject.KeyValue;
+    params.ParamByName('awal').Value := fawal;
+    params.ParamByName('akhir').Value := fakhir;
+    open;
   end; // with dm.jualrpt
   rpjualproject.ProjectFile := 'project.rav';
-  rpJualProject.SelectReport('project.rav',true);
-  rpJualProject.Execute;
+  rpjualproject.SelectReport('project.rav', true);
+  rpjualproject.Execute;
 end;
 
 procedure Tprojectlapfrm.FormCreate(Sender: TObject);
 begin
- aktifkandata(dm.project);
+  aktifkandata(dm.project);
 end;
 
 procedure Tprojectlapfrm.SpeedButton2Click(Sender: TObject);
 begin
- laporanProject;
+  laporanProject;
 end;
 
 end.

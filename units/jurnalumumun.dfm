@@ -86,7 +86,7 @@ object jurnalumumfrm: Tjurnalumumfrm
     object Label3: TLabel
       Left = 400
       Top = 15
-      Width = 48
+      Width = 49
       Height = 16
       Caption = 'Tanggal:'
       Font.Charset = ANSI_CHARSET
@@ -113,7 +113,7 @@ object jurnalumumfrm: Tjurnalumumfrm
       Left = 92
       Top = 12
       Width = 265
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'ju_kode'
       DataSource = ds.jurnalumum

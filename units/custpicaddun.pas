@@ -29,30 +29,32 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tcustpicaddfrm.SpeedButton4Click(Sender: TObject);
 begin
-  //inherited;
-    if speedbutton4.caption = '&Simpan' then
-   begin
-      dm.custpic.FieldByName('cp_custid').Value := dm.customer.fieldbyname('cu_id').AsString;
-      simpan(dm.custpic);
-      speedbutton4.Caption := '&Tambah';
-      speedbutton3.Visible := false;
-   end else
-   begin
-      dm.custpic.Append;
-      speedbutton4.Caption := '&Simpan';
-      speedbutton3.Visible := true;
-   end;
+  // inherited;
+  if speedbutton4.caption = '&Simpan' then
+  begin
+    dm.custpic.FieldByName('cp_custid').Value :=
+      dm.customer.FieldByName('cu_id').AsString;
+    simpan(dm.custpic);
+    speedbutton4.caption := '&Tambah';
+    speedbutton3.Visible := false;
+  end
+  else
+  begin
+    dm.custpic.Append;
+    speedbutton4.caption := '&Simpan';
+    speedbutton3.Visible := true;
+  end;
 end;
 
 procedure Tcustpicaddfrm.SpeedButton3Click(Sender: TObject);
 begin
-  //inherited;
-   batal(dm.custpic);
+  // inherited;
+  batal(dm.custpic);
 end;
 
 end.

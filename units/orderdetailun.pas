@@ -33,27 +33,29 @@ var
 
 implementation
 
-uses gudangpickun,dmun,fungsi_merp;
+uses gudangpickun, dmun, fungsi_merp;
 
 {$R *.dfm}
 
 procedure Tdetailorderfrm.btntambahClick(Sender: TObject);
 begin
-  if messagedlg('Simpan Barang ke Gudang?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
- begin
-   aktifkanform(gudangpickfrm,TGudangPickfrm);
- end;
+  if messagedlg('Simpan Barang ke Gudang?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
+  begin
+    aktifkanform(gudangpickfrm, TGudangPickfrm);
+  end;
 end;
 
 procedure Tdetailorderfrm.FormActivate(Sender: TObject);
 begin
- if isPost = 1 then
- begin
-   btntambah.Visible := false;
- end else if isPost=0 then
- begin
-   btntambah.Visible := true;
- end;
+  if isPost = 1 then
+  begin
+    btntambah.Visible := false;
+  end
+  else if isPost = 0 then
+  begin
+    btntambah.Visible := true;
+  end;
 
 end;
 

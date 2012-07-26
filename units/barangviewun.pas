@@ -21,8 +21,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure cariChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure cariKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
+    procedure cariKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure gridviewKeyPress(Sender: TObject; var Key: Char);
     procedure gridviewKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -39,21 +38,23 @@ var
 
 implementation
 
-uses dmun,fungsi_merp,db;
+uses dmun, fungsi_merp, db;
 
 {$R *.dfm}
 
 procedure Tbarangviewfrm.SpeedButton1Click(Sender: TObject);
 begin
- cari.Clear;
+  cari.Clear;
 end;
 
 procedure Tbarangviewfrm.isiToBeli;
 begin
 
   dm.belidetail.edit;
-  dm.belidetail.FieldByName('bd_kd_barang').Value        :=  dm.barang.fieldbyname('br_id').Value;
-  dm.belidetail.FieldByName('bd_nama_barang').Value      := dm.barang.fieldbyname('br_nama').Value;
+  dm.belidetail.FieldByName('bd_kd_barang').Value :=
+    dm.barang.FieldByName('br_id').Value;
+  dm.belidetail.FieldByName('bd_nama_barang').Value :=
+    dm.barang.FieldByName('br_nama').Value;
   dm.belidetail.Post;
   close;
 end;
@@ -62,28 +63,33 @@ procedure Tbarangviewfrm.isiToPenawaran;
 begin
 
   dm.penawaran_detail.edit;
-  dm.penawaran_detail.FieldByName('qd_kd_barang').Value        :=  dm.barang.fieldbyname('br_id').Value;
-  dm.penawaran_detail.FieldByName('qd_nama_barang').Value      :=  dm.barang.fieldbyname('br_nama').Value;
-  dm.penawaran_detail.FieldByName('qd_type').Value             :=  dm.barang.fieldbyname('br_type').Value;
-  dm.penawaran_detail.FieldByName('qd_unit').Value             :=  dm.barang.fieldbyname('br_unit').Value;
-  dm.penawaran_detail.FieldByName('qd_tgl').Value              :=  date;
+  dm.penawaran_detail.FieldByName('qd_kd_barang').Value :=
+    dm.barang.FieldByName('br_id').Value;
+  dm.penawaran_detail.FieldByName('qd_nama_barang').Value :=
+    dm.barang.FieldByName('br_nama').Value;
+  dm.penawaran_detail.FieldByName('qd_type').Value :=
+    dm.barang.FieldByName('br_type').Value;
+  dm.penawaran_detail.FieldByName('qd_unit').Value :=
+    dm.barang.FieldByName('br_unit').Value;
+  dm.penawaran_detail.FieldByName('qd_tgl').Value := date;
   dm.penawaran_detail.Post;
   close;
 end;
 
 procedure Tbarangviewfrm.FormActivate(Sender: TObject);
 begin
- cari.SetFocus;
+  cari.SetFocus;
 end;
 
 procedure Tbarangviewfrm.cariChange(Sender: TObject);
 begin
- with dm.barang do
- begin
-   sql.Text := 'SELECT * FROM barang WHERE br_nama LIKE (:br) OR br_type like (:br) ORDER BY br_id DESC ';
-   params.ParamByName('br').Value := '%'+cari.Text+'%';
-   open;
- end;
+  with dm.barang do
+  begin
+    sql.Text :=
+      'SELECT * FROM barang WHERE br_nama LIKE (:br) OR br_type like (:br) ORDER BY br_id DESC ';
+    params.ParamByName('br').Value := '%' + cari.Text + '%';
+    open;
+  end;
 end;
 
 procedure Tbarangviewfrm.FormCreate(Sender: TObject);
@@ -94,38 +100,40 @@ end;
 procedure Tbarangviewfrm.cariKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
- if key=vk_down then
- begin
-   gridview.SetFocus;
-   dm.barang.Next;
- end;
- if key=vk_return then isiToBeli;
+  if Key = vk_down then
+  begin
+    gridview.SetFocus;
+    dm.barang.Next;
+  end;
+  if Key = vk_return then
+    isiToBeli;
 end;
 
 procedure Tbarangviewfrm.gridviewKeyPress(Sender: TObject; var Key: Char);
 begin
-  if  (key in['0'..'9']) or (key in['a'..'z','A'..'Z']) then
-begin
-  cari.SetFocus;
-  cari.Clear;
-  cari.text:=key;
-  cari.SelStart :=1;
-end;
+  if (Key in ['0' .. '9']) or (Key in ['a' .. 'z', 'A' .. 'Z']) then
+  begin
+    cari.SetFocus;
+    cari.Clear;
+    cari.Text := Key;
+    cari.SelStart := 1;
+  end;
 end;
 
 procedure Tbarangviewfrm.gridviewKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
- if key=vk_return then
- begin
-  if isPenawaran = 1 then
+  if Key = vk_return then
   begin
-    isiToPenawaran;
-  end else
-  begin
-   isitoBeli;
-  end; 
- end;
+    if isPenawaran = 1 then
+    begin
+      isiToPenawaran;
+    end
+    else
+    begin
+      isiToBeli;
+    end;
+  end;
 end;
 
 end.

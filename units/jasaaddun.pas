@@ -37,35 +37,36 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tjasaaddfrm.btnsimpanClick(Sender: TObject);
 begin
-if messagedlg('Simpan Record?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
-begin
- dm.jasa.Post;
- dm.jasa.ApplyUpdates;
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
-end; 
+  if messagedlg('Simpan Record?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    dm.jasa.Post;
+    dm.jasa.ApplyUpdates;
+    btnsimpan.Visible := false;
+    btnbatal.Visible := false;
+  end;
 end;
 
 procedure Tjasaaddfrm.btnbatalClick(Sender: TObject);
 begin
-if messagedlg('Batalkan Record?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
-begin
- dm.jasa.CancelUpdates;
- btnsimpan.Visible := false;
- btnbatal.Visible  := false;
-end;
+  if messagedlg('Batalkan Record?', mtConfirmation, [mbYes, mbNo], 0) = mrYes
+  then
+  begin
+    dm.jasa.CancelUpdates;
+    btnsimpan.Visible := false;
+    btnbatal.Visible := false;
+  end;
 end;
 
 procedure Tjasaaddfrm.btntambahClick(Sender: TObject);
 begin
- dm.jasa.Append;
- btnsimpan.Visible := true;
- btnbatal.Visible := true;
+  dm.jasa.Append;
+  btnsimpan.Visible := true;
+  btnbatal.Visible := true;
 end;
 
 end.

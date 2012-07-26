@@ -27,7 +27,7 @@ object tanggalubahfrm: Ttanggalubahfrm
     object Label1: TLabel
       Left = 8
       Top = 11
-      Width = 153
+      Width = 154
       Height = 18
       Caption = 'Ubah Tanggal Invoice'
       Font.Charset = ANSI_CHARSET

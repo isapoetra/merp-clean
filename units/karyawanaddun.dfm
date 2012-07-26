@@ -270,6 +270,10 @@ object karyawanaddfrm: Tkaryawanaddfrm
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       ParentFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label12: TLabel
         Left = 26
         Top = 294
@@ -286,7 +290,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
       object Label11: TLabel
         Left = 26
         Top = 270
-        Width = 49
+        Width = 50
         Height = 16
         Caption = 'HP/Telp:'
         Font.Charset = ANSI_CHARSET
@@ -351,7 +355,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
       object Label5: TLabel
         Left = 26
         Top = 131
-        Width = 78
+        Width = 79
         Height = 16
         Caption = 'Tempat Lahir:'
         Font.Charset = ANSI_CHARSET
@@ -477,7 +481,6 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Font.Height = -12
         Font.Name = 'Arial'
         Font.Style = []
-        ItemHeight = 15
         Items.Strings = (
           'Laki-laki'
           'Perempuan')
@@ -532,7 +535,6 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Font.Height = -12
         Font.Name = 'Arial'
         Font.Style = []
-        ItemHeight = 15
         Items.Strings = (
           'Menikah'
           'Lajang')
@@ -613,6 +615,10 @@ object karyawanaddfrm: Tkaryawanaddfrm
       Caption = 'Pekerjaan, Pembayaran && Pajak'
       ImageIndex = 1
       OnEnter = tab2Enter
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label14: TLabel
         Left = 5
         Top = 26
@@ -753,7 +759,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
       object Label13: TLabel
         Left = 17
         Top = 280
-        Width = 71
+        Width = 72
         Height = 16
         Caption = 'Tarif PTKP:'
         Font.Charset = ANSI_CHARSET
@@ -824,7 +830,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Left = 125
         Top = 24
         Width = 380
-        Height = 22
+        Height = 19
         Ctl3D = False
         DataField = 'kd_tgl_mulaikerja'
         DataSource = ds.karyawan_detail
@@ -841,7 +847,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Left = 125
         Top = 48
         Width = 380
-        Height = 22
+        Height = 19
         Ctl3D = False
         DataField = 'kd_tgl_berhentikerja'
         DataSource = ds.karyawan_detail
@@ -858,7 +864,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Left = 125
         Top = 73
         Width = 380
-        Height = 22
+        Height = 19
         Ctl3D = False
         DataField = 'kd_limit_pinjaman'
         DataSource = ds.karyawan_detail
@@ -924,7 +930,6 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Font.Height = -13
         Font.Name = 'Arial Narrow'
         Font.Style = []
-        ItemHeight = 16
         Items.Strings = (
           'Transfer'
           'Cash')
@@ -956,7 +961,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Left = 125
         Top = 225
         Width = 380
-        Height = 22
+        Height = 19
         Ctl3D = False
         DataField = 'kd_norek'
         DataSource = ds.karyawan_detail
@@ -993,7 +998,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Left = 125
         Top = 304
         Width = 348
-        Height = 22
+        Height = 19
         Ctl3D = False
         DataField = 'kd_tgl_mulaikerja'
         DataSource = ds.karyawan_detail
@@ -1010,7 +1015,7 @@ object karyawanaddfrm: Tkaryawanaddfrm
         Left = 125
         Top = 328
         Width = 346
-        Height = 22
+        Height = 19
         Ctl3D = False
         DataField = 'kd_tgl_npwp'
         DataSource = ds.karyawan_detail

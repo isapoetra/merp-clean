@@ -29,46 +29,47 @@ var
   datacleanfrm: Tdatacleanfrm;
 
 implementation
-uses dmun,fungsi_merp;
+
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tdatacleanfrm.BitBtn1Click(Sender: TObject);
 begin
- if cbjual.Checked = true then
- begin
-   with dm.jual do
-   begin
-     sql.Text := 'delete from jual where ju_kode <> (:kd) ';
-     params.ParamByName('kd').Value := 'JL0000000000';
-     execSQL;
-   end;
+  if cbjual.Checked = true then
+  begin
+    with dm.jual do
+    begin
+      sql.Text := 'delete from jual where ju_kode <> (:kd) ';
+      params.ParamByName('kd').Value := 'JL0000000000';
+      execSQL;
+    end;
 
-   with dm.jualdetail do
-   begin
+    with dm.jualdetail do
+    begin
       sql.Text := 'delete from jualdetail ';
-      execSql;
-   end;
+      execSQL;
+    end;
 
- end;
+  end;
 
- if cbbeli.Checked = true then
- begin
+  if cbbeli.Checked = true then
+  begin
     with dm.beli do
-   begin
-    sql.Text := 'select * from beli where be_kode <> (:kb) ';
-    params.ParamByName('kb').Value := '0000000000000000';
-    execSql;
-   end;
+    begin
+      sql.Text := 'select * from beli where be_kode <> (:kb) ';
+      params.ParamByName('kb').Value := '0000000000000000';
+      execSQL;
+    end;
 
-   with dm.belidetail do
-   begin
-     sql.Text := 'delete from belidetail';
-     execsql;
-   end;
- end; // end of cbbeli
+    with dm.belidetail do
+    begin
+      sql.Text := 'delete from belidetail';
+      execSQL;
+    end;
+  end; // end of cbbeli
 
- if cbinvoice.Checked = true then
- begin
+  if cbinvoice.Checked = true then
+  begin
 
     with dm.tagihan do
     begin
@@ -76,29 +77,30 @@ begin
       params.ParamByName('ki').Value := '000/SV/IN/00/2012';
       execSQL;
     end;
- end; // end of cbinvoice
+  end; // end of cbinvoice
 
- if cbtax.Checked = true then
- begin
-   with dm.fakturpajak do
-   begin
-     sql.Text := 'delete from fakturpajak where fp_kode <> (:kf) ';
-     params.ParamByName('kf').Value := '010.000-12.00000000';
-     execSQL;
-   end;
- end; // end of cbtax
+  if cbtax.Checked = true then
+  begin
+    with dm.fakturpajak do
+    begin
+      sql.Text := 'delete from fakturpajak where fp_kode <> (:kf) ';
+      params.ParamByName('kf').Value := '010.000-12.00000000';
+      execSQL;
+    end;
+  end; // end of cbtax
 
- if cbacct.Checked = true then
- begin
-   with dm.general_ledger do
-   begin
-     sql.Text:= 'delete from general_ledger ';
-     execSQl;
-   end;
- end; // end of cbacct
+  if cbacct.Checked = true then
+  begin
+    with dm.general_ledger do
+    begin
+      sql.Text := 'delete from general_ledger ';
+      execSQL;
+    end;
+  end; // end of cbacct
 
- showmessage('Cleanup selesai.... Software mERP akan di shutdown untuk normalize');
- application.Terminate;
+  showmessage
+    ('Cleanup selesai.... Software mERP akan di shutdown untuk normalize');
+  application.Terminate;
 end;
 
 end.

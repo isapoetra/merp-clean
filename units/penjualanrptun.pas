@@ -37,7 +37,7 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun,fungsi_merp,helper;
 {$R *.dfm}
 
 procedure Tjualrptfrm.laporanPenjualan;
@@ -54,8 +54,8 @@ begin
     open;
   end;
   rpjualreport.SetParam('periode','Periode: '+dateToStr(tglawal.Date)+' s/d '+dateToStr(tglakhir.Date));
-  rpJualreport.ProjectFile := 'jual.rav';
-  rpJualReport.SelectReport('jual.rav',true);
+  rpJualreport.ProjectFile := reportFile('jual');
+  rpJualReport.SelectReport(reportFile('jual'),true);
   rpJualReport.Execute;
 end;
 

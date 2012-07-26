@@ -16,19 +16,19 @@ inherited barangmstrfrm: Tbarangmstrfrm
     ExplicitLeft = 759
     ExplicitHeight = 564
   end
-  inherited Panel4: TPanel
-    Width = 1019
-    TabOrder = 1
-    ExplicitWidth = 1019
-  end
-  inherited Panel5: TPanel
+  inherited Panel1: TPanel
     Width = 1019
     TabOrder = 2
     ExplicitWidth = 1019
   end
-  inherited Panel1: TPanel
+  inherited pnlbg1: TPanel
     Width = 1019
     TabOrder = 3
+    ExplicitWidth = 1019
+  end
+  inherited pnlbg2: TPanel
+    Width = 1019
+    TabOrder = 1
     ExplicitWidth = 1019
   end
   object DBGrid1: TDBGrid [4]

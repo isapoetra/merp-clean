@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, listrep, Grids, DBGrids, Buttons, StdCtrls, ExtCtrls, DBCtrls,
-  DB, ImgList,  JvXPCore, JvXPButtons, JvDBControls,
+  DB, ImgList, JvXPCore, JvXPButtons, JvDBControls,
   JvExControls, JvScrollMax, JvExExtCtrls, JvExtComponent,
   JvNetscapeSplitter;
 
@@ -26,7 +26,7 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, supp_pic_addun;
+uses dmun, fungsi_merp, supp_pic_addun;
 
 {$R *.dfm}
 
@@ -34,19 +34,19 @@ procedure Tsupplierpicfrm.SpeedButton4Click(Sender: TObject);
 begin
   inherited;
   dm.supplierpic.Append;
-  aktifkanform(supp_pic_addfrm,TSupp_pic_addfrm);
+  aktifkanform(supp_pic_addfrm, TSupp_pic_addfrm);
 end;
 
 procedure Tsupplierpicfrm.SpeedButton3Click(Sender: TObject);
 begin
-  //inherited;
+  // inherited;
   dm.supplierpic.Edit;
-  aktifkanform(supp_pic_addfrm,TSupp_pic_addfrm);
+  aktifkanform(supp_pic_addfrm, TSupp_pic_addfrm);
 end;
 
 procedure Tsupplierpicfrm.SpeedButton5Click(Sender: TObject);
 begin
-  //inherited;
+  // inherited;
   hapus(dm.supplier);
 end;
 

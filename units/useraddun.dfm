@@ -1,95 +1,78 @@
-object useraddfrm: Tuseraddfrm
+inherited useraddfrm: Tuseraddfrm
   Left = 639
   Top = 133
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'mERP 1.0'
-  ClientHeight = 267
-  ClientWidth = 379
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
+  Caption = 'Add/Edit User'
+  ClientHeight = 249
+  ClientWidth = 683
   Font.Name = 'MS Sans Serif'
-  Font.Style = []
   FormStyle = fsStayOnTop
-  OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
-  OnCreate = FormCreate
+  ExplicitWidth = 689
+  ExplicitHeight = 281
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 379
-    Height = 41
-    Align = alTop
-    TabOrder = 0
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 97
-      Height = 18
-      Caption = 'Add/Edit User'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
+  inherited Panel1: TPanel
+    Width = 683
+    TabOrder = 3
+    ExplicitTop = 2
+    ExplicitWidth = 683
   end
-  object Panel2: TPanel
+  inherited pnlbg1: TPanel
+    Width = 683
+    TabOrder = 4
+    ExplicitWidth = 379
+  end
+  inherited pnlbg2: TPanel
+    Width = 683
+    ExplicitWidth = 379
+  end
+  object Panel2: TPanel [3]
     Left = 0
-    Top = 226
-    Width = 379
-    Height = 41
+    Top = 199
+    Width = 683
+    Height = 50
     Align = alBottom
     Caption = ' '
-    TabOrder = 1
-    object SpeedButton2: TSpeedButton
-      Left = 201
-      Top = 0
-      Width = 89
-      Height = 40
-      Cursor = crHandPoint
-      Caption = '&Batal'
-      Flat = True
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clOlive
-      Font.Height = -13
-      Font.Name = 'Arial Narrow'
-      Font.Style = []
-      ParentFont = False
-      Transparent = False
-      OnClick = SpeedButton2Click
+    TabOrder = 0
+    ExplicitTop = 193
+    object btnSave: TButton
+      Left = 600
+      Top = 6
+      Width = 75
+      Height = 35
+      Caption = 'Save'
+      ImageIndex = 1
+      ImageMargins.Left = 4
+      Images = dm.imgcommon
+      TabOrder = 0
+      OnClick = btnSaveClick
     end
-    object SpeedButton1: TSpeedButton
-      Left = 290
-      Top = 0
-      Width = 89
-      Height = 40
-      Cursor = crHandPoint
-      Caption = '&Simpan'
-      Flat = True
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clOlive
-      Font.Height = -13
-      Font.Name = 'Arial Narrow'
-      Font.Style = []
-      ParentFont = False
-      Transparent = False
-      OnClick = SpeedButton1Click
+    object Button1: TButton
+      Left = 519
+      Top = 6
+      Width = 75
+      Height = 35
+      Caption = 'Cancel'
+      ImageIndex = 2
+      ImageMargins.Left = 4
+      Images = dm.imgcommon
+      TabOrder = 1
+      OnClick = Button1Click
     end
   end
-  object Panel3: TPanel
+  object Panel3: TPanel [4]
     Left = 0
-    Top = 53
-    Width = 379
-    Height = 173
+    Top = 45
+    Width = 683
+    Height = 154
     Align = alClient
-    TabOrder = 2
+    TabOrder = 1
+    ExplicitLeft = 112
+    ExplicitTop = 61
+    ExplicitHeight = 181
     object Label2: TLabel
       Left = 16
       Top = 16
@@ -129,22 +112,9 @@ object useraddfrm: Tuseraddfrm
       Font.Style = []
       ParentFont = False
     end
-    object Label5: TLabel
-      Left = 16
-      Top = 88
-      Width = 80
-      Height = 16
-      Caption = 'Group Akses:'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -13
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label6: TLabel
       Left = 16
-      Top = 112
+      Top = 94
       Width = 61
       Height = 16
       Caption = 'Password:'
@@ -157,7 +127,7 @@ object useraddfrm: Tuseraddfrm
     end
     object Label7: TLabel
       Left = 16
-      Top = 136
+      Top = 116
       Width = 101
       Height = 16
       Caption = 'Ulangi Password:'
@@ -170,12 +140,12 @@ object useraddfrm: Tuseraddfrm
     end
     object namadepan: TDBEdit
       Left = 136
-      Top = 14
+      Top = 10
       Width = 227
       Height = 22
       Ctl3D = False
       DataField = 'us_firstname'
-      DataSource = ds.useradd
+      DataSource = dsform
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -192,7 +162,7 @@ object useraddfrm: Tuseraddfrm
       Height = 22
       Ctl3D = False
       DataField = 'us_lastname'
-      DataSource = ds.useradd
+      DataSource = dsform
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -209,7 +179,7 @@ object useraddfrm: Tuseraddfrm
       Height = 22
       Ctl3D = False
       DataField = 'us_username'
-      DataSource = ds.useradd
+      DataSource = dsform
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -219,34 +189,14 @@ object useraddfrm: Tuseraddfrm
       ParentFont = False
       TabOrder = 2
     end
-    object groupakses: TDBLookupComboBox
-      Left = 136
-      Top = 86
-      Width = 227
-      Height = 22
-      Ctl3D = False
-      DataField = 'us_group'
-      DataSource = ds.useradd
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -13
-      Font.Name = 'Arial'
-      Font.Style = []
-      KeyField = 'ga_id'
-      ListField = 'ga_name'
-      ListSource = ds.group
-      ParentCtl3D = False
-      ParentFont = False
-      TabOrder = 3
-    end
     object pwd: TDBEdit
       Left = 136
-      Top = 110
+      Top = 90
       Width = 227
       Height = 22
       Ctl3D = False
       DataField = 'us_password'
-      DataSource = ds.useradd
+      DataSource = dsform
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -255,11 +205,11 @@ object useraddfrm: Tuseraddfrm
       ParentCtl3D = False
       ParentFont = False
       PasswordChar = '*'
-      TabOrder = 4
+      TabOrder = 3
     end
     object repeatpwd: TEdit
       Left = 136
-      Top = 134
+      Top = 114
       Width = 227
       Height = 22
       Ctl3D = False
@@ -271,29 +221,20 @@ object useraddfrm: Tuseraddfrm
       ParentCtl3D = False
       ParentFont = False
       PasswordChar = '*'
-      TabOrder = 5
+      TabOrder = 4
     end
   end
-  object Panel4: TPanel
-    Left = 0
-    Top = 41
-    Width = 379
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    TabOrder = 3
+  object DBListBox1: TDBListBox [5]
+    Left = 369
+    Top = 63
+    Width = 306
+    Height = 118
+    DataSource = dsform
+    ItemHeight = 13
+    TabOrder = 5
   end
-  object Panel5: TPanel
+  inherited dsform: TDataSource
     Left = 0
-    Top = 49
-    Width = 379
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 805596
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 4
+    Top = 0
   end
 end

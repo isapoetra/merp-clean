@@ -47,7 +47,7 @@ object invoiceamountfrm: Tinvoiceamountfrm
   object Label4: TLabel
     Left = 16
     Top = 60
-    Width = 55
+    Width = 56
     Height = 16
     Caption = 'Tanggal:'
     Font.Charset = ANSI_CHARSET
@@ -113,7 +113,7 @@ object invoiceamountfrm: Tinvoiceamountfrm
     Left = 104
     Top = 83
     Width = 249
-    Height = 22
+    Height = 19
     Ctl3D = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack

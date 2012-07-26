@@ -109,7 +109,7 @@ object salaryleveltambahaddfrm: Tsalaryleveltambahaddfrm
       Left = 104
       Top = 16
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'st_kode'
       DataSource = ds.salary_level_tambah
@@ -126,7 +126,7 @@ object salaryleveltambahaddfrm: Tsalaryleveltambahaddfrm
       Left = 104
       Top = 40
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'st_nama'
       DataSource = ds.salary_level_tambah
@@ -143,7 +143,7 @@ object salaryleveltambahaddfrm: Tsalaryleveltambahaddfrm
       Left = 104
       Top = 64
       Width = 353
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'st_amount'
       DataSource = ds.salary_level_tambah

@@ -33,20 +33,21 @@ var
   jobdesfrm: Tjobdesfrm;
 
 implementation
-uses dmun,fungsi_merp, jabatanaddun;
+
+uses dmun, fungsi_merp, jabatanaddun;
 {$R *.dfm}
 
 procedure Tjobdesfrm.btntambahClick(Sender: TObject);
 begin
   dm.jobdes.Append;
-  aktifkanform(jabatanaddfrm,TJabatanaddfrm);
+  aktifkanform(jabatanaddfrm, TJabatanaddfrm);
 
 end;
 
 procedure Tjobdesfrm.btneditClick(Sender: TObject);
 begin
   dm.jobdes.Edit;
-  aktifkanform(jabatanAddfrm,TJabatanAddfrm);
+  aktifkanform(jabatanaddfrm, TJabatanaddfrm);
 end;
 
 procedure Tjobdesfrm.FormActivate(Sender: TObject);
@@ -58,9 +59,9 @@ procedure Tjobdesfrm.cariChange(Sender: TObject);
 begin
   with dm.jobdes do
   begin
-   sql.Text := 'select * from jobdes where jd_nama like (:nama) ';
-   params.ParamByName('nama').Value := '%'+cari.Text+'%';
-   open;
+    sql.Text := 'select * from jobdes where jd_nama like (:nama) ';
+    params.ParamByName('nama').Value := '%' + cari.Text + '%';
+    open;
   end;
 end;
 

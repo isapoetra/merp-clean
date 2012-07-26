@@ -295,7 +295,7 @@ object jasaaddfrm: Tjasaaddfrm
     object Label4: TLabel
       Left = 21
       Top = 74
-      Width = 23
+      Width = 24
       Height = 16
       Caption = 'Tarif'
       Font.Charset = ANSI_CHARSET
@@ -309,7 +309,7 @@ object jasaaddfrm: Tjasaaddfrm
       Left = 141
       Top = 24
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'js_nama'
       DataSource = ds.jasa
@@ -326,7 +326,7 @@ object jasaaddfrm: Tjasaaddfrm
       Left = 141
       Top = 48
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'js_unit'
       DataSource = ds.jasa
@@ -343,7 +343,7 @@ object jasaaddfrm: Tjasaaddfrm
       Left = 141
       Top = 72
       Width = 345
-      Height = 22
+      Height = 21
       Ctl3D = False
       DataField = 'js_tarif'
       DataSource = ds.jasa

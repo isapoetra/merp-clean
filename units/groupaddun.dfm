@@ -62,7 +62,7 @@ object groupaddfrm: Tgroupaddfrm
       Left = 24
       Top = 48
       Width = 361
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'ga_name'
       DataSource = ds.group

@@ -140,7 +140,7 @@ object barangviewfrm: Tbarangviewfrm
       Left = 48
       Top = 8
       Width = 529
-      Height = 23
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack

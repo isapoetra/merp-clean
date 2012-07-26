@@ -130,7 +130,7 @@ object penawaranfrm: Tpenawaranfrm
     object Label5: TLabel
       Left = 637
       Top = 16
-      Width = 48
+      Width = 49
       Height = 16
       Caption = 'Tanggal:'
       Font.Charset = ANSI_CHARSET
@@ -176,7 +176,7 @@ object penawaranfrm: Tpenawaranfrm
       Left = 77
       Top = 16
       Width = 348
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'qt_kode'
       DataSource = ds.penawaran
@@ -234,7 +234,7 @@ object penawaranfrm: Tpenawaranfrm
       Left = 696
       Top = 14
       Width = 145
-      Height = 22
+      Height = 19
       Ctl3D = False
       DataField = 'qt_date'
       DataSource = ds.penawaran

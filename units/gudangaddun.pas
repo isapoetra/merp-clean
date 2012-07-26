@@ -25,30 +25,31 @@ var
 
 implementation
 
-uses dmun,fungsi_merp;
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tgudangaddfrm.SpeedButton4Click(Sender: TObject);
 begin
- // inherited;
- if speedbutton4.Caption = '&Simpan' then
- begin
+  // inherited;
+  if speedbutton4.Caption = '&Simpan' then
+  begin
     speedbutton4.Caption := '&Tambah';
     speedbutton3.Visible := false;
     simpan(dm.gudang);
- end else
- begin
+  end
+  else
+  begin
     speedbutton4.Caption := '&Simpan';
     speedbutton3.Visible := true;
     dm.gudang.Append;
- end;
+  end;
 end;
 
 procedure Tgudangaddfrm.SpeedButton3Click(Sender: TObject);
 begin
- // inherited;
- batal(dm.gudang);
- close;
+  // inherited;
+  batal(dm.gudang);
+  close;
 end;
 
 end.

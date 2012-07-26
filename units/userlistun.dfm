@@ -17,28 +17,35 @@ inherited userlistfrm: Tuserlistfrm
     ExplicitLeft = 361
     ExplicitHeight = 373
   end
-  inherited Panel4: TPanel
-    Width = 623
-    ExplicitWidth = 621
-  end
-  inherited Panel5: TPanel
-    Width = 623
-    TabOrder = 5
-    ExplicitWidth = 621
-  end
   inherited Panel1: TPanel
     Width = 623
     TabOrder = 4
-    ExplicitWidth = 621
+    ExplicitWidth = 623
+  end
+  inherited pnlbg1: TPanel
+    Width = 623
+    TabOrder = 3
+    ExplicitWidth = 623
+  end
+  inherited pnlbg2: TPanel
+    Width = 623
+    TabOrder = 5
+    ExplicitWidth = 623
   end
   inherited JvScrollMax1: TJvScrollMax
     Left = 373
     Height = 375
-    ExplicitLeft = 371
-    ExplicitHeight = 373
+    ExplicitLeft = 373
+    ExplicitHeight = 375
     inherited navdbcontainer: TJvScrollMaxBand
       inherited dbnav: TJvDBNavigator
         Hints.Strings = ()
+      end
+      inherited btnAdd: TJvXPButton
+        OnClick = btnAddClick
+      end
+      inherited btnEdit: TJvXPButton
+        OnClick = btnEditClick
       end
     end
   end
@@ -49,15 +56,13 @@ inherited userlistfrm: Tuserlistfrm
     Height = 375
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 361
-    ExplicitHeight = 373
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
-      Width = 359
-      Height = 371
+      Width = 361
+      Height = 373
       Align = alClient
-      DataSource = ds.user
+      DataSource = dsform
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -139,8 +144,6 @@ inherited userlistfrm: Tuserlistfrm
     Height = 41
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 418
-    ExplicitWidth = 621
     object SpeedButton3: TSpeedButton
       Left = 353
       Top = 0

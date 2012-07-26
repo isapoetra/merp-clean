@@ -1,78 +1,39 @@
-object dolistfrm: Tdolistfrm
+inherited dolistfrm: Tdolistfrm
   Left = 240
   Top = 178
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
-  Caption = 'mERP 1.0'
-  ClientHeight = 442
-  ClientWidth = 864
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'MS Sans Serif'
-  Font.Style = []
-  FormStyle = fsStayOnTop
-  OldCreateOrder = False
-  Position = poScreenCenter
-  OnActivate = FormActivate
+  Caption = 'List Delivery Order'
+  ClientHeight = 440
+  ClientWidth = 862
+  ExplicitWidth = 870
+  ExplicitHeight = 474
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 864
-    Height = 33
-    Align = alTop
-    TabOrder = 0
-    object Label1: TLabel
-      Left = 8
-      Top = 8
-      Width = 135
-      Height = 18
-      Caption = 'List Delivery Order'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -15
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
+  inherited JvNetscapeSplitter1: TJvNetscapeSplitter
+    Left = 602
+    Top = 86
+    Height = 354
+    ExplicitLeft = 604
+    ExplicitTop = 86
+    ExplicitHeight = 356
   end
-  object Panel4: TPanel
-    Left = 0
-    Top = 33
-    Width = 864
-    Height = 8
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 33023
-    TabOrder = 1
+  inherited Panel1: TPanel
+    Width = 862
+    ExplicitTop = 2
+    ExplicitWidth = 862
   end
-  object Panel5: TPanel
-    Left = 0
-    Top = 41
-    Width = 864
-    Height = 4
-    Align = alTop
-    BevelOuter = bvNone
-    Color = 805596
-    Ctl3D = False
-    ParentCtl3D = False
-    TabOrder = 2
-  end
-  object Panel2: TPanel
+  object Panel2: TPanel [2]
     Left = 0
     Top = 45
-    Width = 864
+    Width = 862
     Height = 41
     Align = alTop
-    TabOrder = 3
+    TabOrder = 4
+    ExplicitTop = 33
     object Label2: TLabel
       Left = 7
       Top = 10
-      Width = 134
-      Height = 15
+      Width = 158
+      Height = 16
       Caption = 'Cari #Delivery/#Transaki:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -93,7 +54,7 @@ object dolistfrm: Tdolistfrm
       Left = 144
       Top = 8
       Width = 313
-      Height = 22
+      Height = 19
       Ctl3D = False
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlack
@@ -139,18 +100,18 @@ object dolistfrm: Tdolistfrm
       OnClick = lookcustClick
     end
   end
-  object griddo: TDBGrid
+  object griddo: TDBGrid [3]
     Left = 0
     Top = 86
-    Width = 864
-    Height = 356
+    Width = 602
+    Height = 354
     Align = alClient
     Ctl3D = False
     DataSource = ds.deliveryview
     Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
     ParentCtl3D = False
     PopupMenu = popdo
-    TabOrder = 4
+    TabOrder = 5
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -184,6 +145,41 @@ object dolistfrm: Tdolistfrm
         Width = 350
         Visible = True
       end>
+  end
+  inherited pnlbg1: TPanel
+    Width = 862
+    ExplicitLeft = -3
+    ExplicitTop = 32
+    ExplicitWidth = 862
+  end
+  inherited pnlbg2: TPanel
+    Width = 862
+    ExplicitLeft = 8
+    ExplicitWidth = 862
+  end
+  inherited JvScrollMax1: TJvScrollMax
+    Left = 612
+    Top = 86
+    Height = 354
+    ExplicitLeft = 612
+    ExplicitTop = 86
+    ExplicitHeight = 354
+    inherited navdbcontainer: TJvScrollMaxBand
+      inherited dbnav: TJvDBNavigator
+        Hints.Strings = ()
+      end
+      inherited btnAdd: TJvXPButton
+        OnClick = btnAddClick
+      end
+    end
+  end
+  inherited ImageList1: TImageList
+    Left = 576
+    Top = 0
+  end
+  inherited dsform: TDataSource
+    Left = 496
+    Top = 0
   end
   object popdo: TPopupMenu
     Left = 176
@@ -267,8 +263,8 @@ object dolistfrm: Tdolistfrm
   end
   object rpDeliver: TRvProject
     Engine = rsdeliver
-    Left = 616
-    Top = 149
+    Left = 656
+    Top = 261
   end
   object rsdeliver: TRvSystem
     TitleSetup = 'Output Options'
@@ -283,14 +279,14 @@ object dolistfrm: Tdolistfrm
     SystemPrinter.StatusFormat = 'Printing page %p'
     SystemPrinter.Title = 'ReportPrinter Report'
     SystemPrinter.UnitsFactor = 1.000000000000000000
-    Left = 616
-    Top = 181
+    Left = 632
+    Top = 261
   end
   object rdcustdeliver: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.customer
-    Left = 656
-    Top = 181
+    Left = 600
+    Top = 269
   end
   object rdcustpicdeliver: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
@@ -301,19 +297,19 @@ object dolistfrm: Tdolistfrm
   object rddeliverydetail: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.deliverydetailrpt
-    Left = 688
-    Top = 149
+    Left = 496
+    Top = 197
   end
   object rddeliver: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.deliveryrpt
-    Left = 656
-    Top = 149
+    Left = 536
+    Top = 253
   end
   object rdbarangdelrpt: TRvDataSetConnection
     RuntimeVisibility = rtDeveloper
     DataSet = dm.barangdeliverrpt
-    Left = 720
-    Top = 149
+    Left = 504
+    Top = 197
   end
 end

@@ -1,3 +1,5 @@
+/__history
+/images
 /dcu
 /bin
 *.~*
@@ -5,3 +7,6 @@
 *.dof
 *.res
 *.ddp
+*.bak
+
+*.tvsconfig

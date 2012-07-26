@@ -41,7 +41,8 @@ var
   salaryrptfrm: Tsalaryrptfrm;
 
 implementation
-uses dmun,fungsi_merp;
+
+uses dmun, fungsi_merp;
 {$R *.dfm}
 
 procedure Tsalaryrptfrm.FormActivate(Sender: TObject);
@@ -49,37 +50,36 @@ begin
   aktifkandata(dm.karyawanlookup);
 end;
 
-
 procedure Tsalaryrptfrm.cetakSlip;
 begin
   with dm.salaryrpt do
   begin
-    sql.Text := 'select * from salary where sa_kr_id = (:id) '+
-    'and sa_period = (:pr) ';
+    sql.Text := 'select * from salary where sa_kr_id = (:id) ' +
+      'and sa_period = (:pr) ';
     params.ParamByName('id').Value := cbkaryawan.KeyValue;
     params.ParamByName('pr').Value := cbperiode.Text;
     open;
   end;
 
   rpGaji.ProjectFile := 'slipgaji.rav';
-  rpGaji.SelectReport('slipgaji.rav',true);
+  rpGaji.SelectReport('slipgaji.rav', true);
   rpGaji.Execute;
 end;
 
-
 procedure Tsalaryrptfrm.FormCreate(Sender: TObject);
-var i: integer;
-    tgl : TDateTime;
-    curdate : TDateTime;
+var
+  i: integer;
+  tgl: TDateTime;
+  curdate: TDateTime;
 begin
-    curDate := incmonth(date,0);
-    for i:=-1 to 10 do
-    begin
-      tgl :=incmonth(date,i);
-      cbperiode.Items.Add(formatDateTime('mmmm yyyy',tgl));
-    end;
+  curdate := incmonth(date, 0);
+  for i := -1 to 10 do
+  begin
+    tgl := incmonth(date, i);
+    cbperiode.Items.Add(formatDateTime('mmmm yyyy', tgl));
+  end;
 
-    cbperiode.Text :=  formatDateTime('mmmm yyyy',curdate);
+  cbperiode.Text := formatDateTime('mmmm yyyy', curdate);
 end;
 
 procedure Tsalaryrptfrm.btntambahClick(Sender: TObject);

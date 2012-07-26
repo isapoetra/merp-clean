@@ -34,7 +34,7 @@ uses dmun, fungsi_merp;
 
 procedure Tjatuhtempofrm.FormCreate(Sender: TObject);
 begin
-  tgl.Date := date;
+  tgl.Date := Date;
 end;
 
 procedure Tjatuhtempofrm.SpeedButton4Click(Sender: TObject);
@@ -48,7 +48,7 @@ procedure Tjatuhtempofrm.FormActivate(Sender: TObject);
 begin
   if dm.polist.FieldByName('be_due').Value <> null then
   begin
-    tgl.Date := dm.polist.fieldbyname('be_due').Value;
+    tgl.Date := dm.polist.FieldByName('be_due').Value;
   end;
 end;
 

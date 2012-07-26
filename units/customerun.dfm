@@ -15,15 +15,15 @@ inherited customerfrm: Tcustomerfrm
     ExplicitLeft = 625
     ExplicitHeight = 571
   end
-  inherited Panel4: TPanel
-    Width = 885
-    ExplicitWidth = 885
-  end
-  inherited Panel5: TPanel
-    Width = 885
-    ExplicitWidth = 885
-  end
   inherited Panel1: TPanel
+    Width = 885
+    ExplicitWidth = 885
+  end
+  inherited pnlbg1: TPanel
+    Width = 885
+    ExplicitWidth = 885
+  end
+  inherited pnlbg2: TPanel
     Width = 885
     ExplicitWidth = 885
   end
@@ -39,6 +39,9 @@ inherited customerfrm: Tcustomerfrm
       inherited dbnav: TJvDBNavigator
         Hints.Strings = ()
       end
+    end
+    inherited searchContainer: TJvScrollMaxBand
+      ExplicitTop = 150
     end
     object JvScrollMaxBand3: TJvScrollMaxBand
       Width = 232

@@ -33,24 +33,25 @@ var
   deptfrm: Tdeptfrm;
 
 implementation
-uses dmun,fungsi_merp, deptaddun;
+
+uses dmun, fungsi_merp, deptaddun;
 {$R *.dfm}
 
 procedure Tdeptfrm.SpeedButton1Click(Sender: TObject);
 begin
- hapus(dm.dept);
+  hapus(dm.dept);
 end;
 
 procedure Tdeptfrm.btntambahClick(Sender: TObject);
 begin
   dm.dept.Append;
-  aktifkanform(deptaddfrm,TDeptAddfrm);
+  aktifkanform(deptaddfrm, TDeptAddfrm);
 end;
 
 procedure Tdeptfrm.btneditClick(Sender: TObject);
 begin
- dm.dept.edit;
-  aktifkanform(deptaddfrm,TDeptAddfrm);
+  dm.dept.edit;
+  aktifkanform(deptaddfrm, TDeptAddfrm);
 end;
 
 end.

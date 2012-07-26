@@ -38,88 +38,87 @@ var
 
 implementation
 
-uses dmun,fungsi_merp, salary_prosesun;
+uses dmun, fungsi_merp, salary_prosesun;
 
 {$R *.dfm}
 
 procedure Tsalaryinputfrm.gridsalaryDrawColumnCell(Sender: TObject;
-  const Rect: TRect; DataCol: Integer; Column: TColumn;
-  State: TGridDrawState);
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
 var
-  bitmap : TBitmap;
-  fixRect : TRect;
-  bmpWidth : integer;
+  bitmap: TBitmap;
+  fixRect: TRect;
+  bmpWidth: Integer;
 
-  imgIndex : integer;
+  imgIndex: Integer;
 begin
   fixRect := Rect;
 
   // customizing the 'LastName' field
   if Column.Field = dm.salary.FieldByName('kr_checked') then
   begin
-    //adding some logic to grab the required image
+    // adding some logic to grab the required image
     if dm.salary.FieldByName('kr_checked').Value = 1 then
     begin
       imgIndex := 1;
-    end else
+    end
+    else
     begin
-      imgIndex :=0;
+      imgIndex := 0;
     end;
 
     bitmap := TBitmap.Create;
     try
-      //grab the image from the ImageList 
-      //(using the "Salary" field's value)
-      ImageList.GetBitmap(imgIndex,bitmap);
-      //Fix the bitmap dimensions
+      // grab the image from the ImageList
+      // (using the "Salary" field's value)
+      ImageList.GetBitmap(imgIndex, bitmap);
+      // Fix the bitmap dimensions
       bmpWidth := (Rect.Bottom - Rect.Top);
       fixRect.Right := Rect.Left + bmpWidth;
-      //draw the bitmap
-     gridsalary.Canvas.StretchDraw(fixRect,bitmap);
+      // draw the bitmap
+      gridsalary.Canvas.StretchDraw(fixRect, bitmap);
     finally
       bitmap.Free;
     end;
 
-    // reset the output rectangle, 
+    // reset the output rectangle,
     // add space for the graphics
     fixRect := Rect;
     fixRect.Left := fixRect.Left + bmpWidth;
   end;
 
-  //draw default text (fixed position)
-  gridsalary.DefaultDrawColumnCell(
-     fixRect,
-     DataCol,
-     Column,
-     State);
+  // draw default text (fixed position)
+  gridsalary.DefaultDrawColumnCell(fixRect, DataCol, Column, State);
 
 end;
+
 procedure Tsalaryinputfrm.gridsalaryKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  if key=vk_space then
+  if Key = vk_space then
   begin
     dm.salary.Edit;
     if dm.salary.FieldByName('kr_Cek').Value = 'X' then
     begin
-     dm.salary.FieldByName('kr_Cek').Value := '';
-     end else
-     begin
+      dm.salary.FieldByName('kr_Cek').Value := '';
+    end
+    else
+    begin
       dm.salary.FieldByName('kr_Cek').Value := 'X';
-     end;
+    end;
   end;
 end;
 
 procedure Tsalaryinputfrm.gridsalaryCellClick(Column: TColumn);
 begin
-   dm.salary.Edit;
-    if dm.salary.FieldByName('kr_Cek').Value = 'X' then
-    begin
-     dm.salary.FieldByName('kr_Cek').Value := '';
-     end else
-     begin
-      dm.salary.FieldByName('kr_Cek').Value := 'X';
-     end;
+  dm.salary.Edit;
+  if dm.salary.FieldByName('kr_Cek').Value = 'X' then
+  begin
+    dm.salary.FieldByName('kr_Cek').Value := '';
+  end
+  else
+  begin
+    dm.salary.FieldByName('kr_Cek').Value := 'X';
+  end;
 end;
 
 procedure Tsalaryinputfrm.cbClick(Sender: TObject);
@@ -127,36 +126,37 @@ begin
 
   with dm.salary do
   begin
-  first;
-  if  cb.Checked = true then
-  begin
+    first;
+    if cb.Checked = true then
+    begin
       while not eof do
       begin
-        edit;
-        fieldbyname('kr_cek').Value := 'X';
+        Edit;
+        FieldByName('kr_cek').Value := 'X';
         next;
       end; // end of while
- end else
- begin
+    end
+    else
+    begin
 
-    while not eof do
+      while not eof do
       begin
-        edit;
-        fieldbyname('kr_cek').Value := '';
+        Edit;
+        FieldByName('kr_cek').Value := '';
         next;
       end;
- end;
- end;
+    end;
+  end;
 end;
 
 procedure Tsalaryinputfrm.FormActivate(Sender: TObject);
 begin
- aktifkandata(dm.salary);
+  aktifkandata(dm.salary);
 end;
 
 procedure Tsalaryinputfrm.btntambahClick(Sender: TObject);
 begin
- aktifkanform(salaryprosesfrm,TSalaryProsesfrm);
+  aktifkanform(salaryprosesfrm, TSalaryProsesfrm);
 end;
 
 end.
